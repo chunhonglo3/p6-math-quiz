@@ -1,6 +1,6 @@
 {
  "title": "P6 Maths – Extra Practice Question Bank",
- "count": 190,
+ "count": 237,
  "categories": [
   "T9 Average (mean): new average, missing value, combined groups",
   "T12 Water level: displacement, height of liquid, thickness/inner capacity",
@@ -916,6 +916,211 @@
    "working": "A hexagon has 6 sides → 6 rectangles."
   },
   {
+   "id": "T13-14",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "Which of the following nets can be folded into a cube?",
+   "options": [
+    "Diagram A",
+    "Diagram B",
+    "Diagram C",
+    "Diagram D"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "Diagram C"
+   ],
+   "unit": "",
+   "hints": [
+    "Imagine folding one square as the base and lifting the others up.",
+    "Two squares that land on the same face means it cannot be a cube.",
+    "A row of more than 4 squares or a 2 × 2 block can never work."
+   ],
+   "working": "Folding each net: only Diagram C gives 6 different faces. The others have two squares landing on the same face.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"458\" height=\"242\" viewBox=\"0 0 458 242\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><svg x=\"0\" y=\"0\" width=\"50.0\" height=\"220.0\" viewBox=\"0 0 50.0 220.0\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"144.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"178.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"25.0\" y=\"237.0\" text-anchor=\"middle\" font-weight=\"bold\">(A)</text><svg x=\"68.0\" y=\"0\" width=\"118.0\" height=\"152.0\" viewBox=\"0 0 118.0 152.0\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"127.0\" y=\"237.0\" text-anchor=\"middle\" font-weight=\"bold\">(B)</text><svg x=\"204.0\" y=\"0\" width=\"118.0\" height=\"152.0\" viewBox=\"0 0 118.0 152.0\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"263.0\" y=\"237.0\" text-anchor=\"middle\" font-weight=\"bold\">(C)</text><svg x=\"340.0\" y=\"0\" width=\"118.0\" height=\"118.0\" viewBox=\"0 0 118.0 118.0\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"399.0\" y=\"237.0\" text-anchor=\"middle\" font-weight=\"bold\">(D)</text></svg>",
+   "option_svgs": [
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"50\" height=\"220\" viewBox=\"0 0 50 220\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"144.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"178.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"118\" height=\"152\" viewBox=\"0 0 118 152\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"118\" height=\"152\" viewBox=\"0 0 118 152\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"118\" height=\"118\" viewBox=\"0 0 118 118\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+   ]
+  },
+  {
+   "id": "T13-19",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "The net below is folded into a cube. Which face is opposite to face B?",
+   "answer": "D",
+   "accepted_answers": [
+    "D",
+    "d"
+   ],
+   "unit": "",
+   "hints": [
+    "Faces opposite each other are never next to each other on the net.",
+    "In a straight row of 3 squares, the 1st and 3rd are opposite."
+   ],
+   "working": "Folding the net, face D ends up opposite face B.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"176\" height=\"136\" viewBox=\"0 0 176 136\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"28.0\" y=\"33.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">A</text><rect x=\"8.0\" y=\"48.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"28.0\" y=\"73.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">B</text><rect x=\"8.0\" y=\"88.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"28.0\" y=\"113.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">F</text><rect x=\"48.0\" y=\"48.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"68.0\" y=\"73.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">C</text><rect x=\"88.0\" y=\"48.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"108.0\" y=\"73.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">D</text><rect x=\"128.0\" y=\"48.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"148.0\" y=\"73.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">E</text></svg>"
+  },
+  {
+   "id": "T13-23",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "The diagram shows the net of a solid. What is the name of the solid?",
+   "options": [
+    "Square pyramid",
+    "Triangular pyramid",
+    "Cuboid",
+    "Triangular prism"
+   ],
+   "answer": "D",
+   "accepted_answers": [
+    "D",
+    "Triangular prism"
+   ],
+   "unit": "",
+   "hints": [
+    "Count the faces of each shape in the net.",
+    "Rectangles all round + 2 matching bases → prism. Triangles meeting at one point + 1 base → pyramid."
+   ],
+   "working": "The net has 5 faces: 2 bases and rectangles → triangular prism.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"300\" height=\"220\" viewBox=\"0 0 300 220\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><polygon points=\"67.5,59.6 122.5,59.6 122.5,160.4 67.5,160.4\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"122.5,59.6 177.5,59.6 177.5,160.4 122.5,160.4\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"177.5,59.6 232.5,59.6 232.5,160.4 177.5,160.4\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"177.5,59.6 122.5,59.6 150.0,12.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"122.5,160.4 177.5,160.4 150.0,208.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+  },
+  {
+   "id": "T13-24",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "The diagram shows the net of a solid. What is the name of the solid?",
+   "options": [
+    "Square pyramid",
+    "Triangular prism",
+    "Triangular pyramid",
+    "Cube"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "Square pyramid"
+   ],
+   "unit": "",
+   "hints": [
+    "Count the faces of each shape in the net.",
+    "Rectangles all round + 2 matching bases → prism. Triangles meeting at one point + 1 base → pyramid."
+   ],
+   "working": "The net has 5 faces: 1 base and triangles → square pyramid.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"300\" height=\"220\" viewBox=\"0 0 300 220\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><polygon points=\"120.2,80.2 179.8,80.2 179.8,139.8 120.2,139.8\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"179.8,80.2 120.2,80.2 150.0,12.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"179.8,139.8 179.8,80.2 248.0,110.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"120.2,139.8 179.8,139.8 150.0,208.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"120.2,80.2 120.2,139.8 52.0,110.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+  },
+  {
+   "id": "T13-28",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "A corner of a cube is cut off along the dotted lines, which pass through three vertices of the cube. What is the shape of the cross-section?",
+   "options": [
+    "Pentagon",
+    "Triangle",
+    "Rectangle",
+    "Square"
+   ],
+   "answer": "B",
+   "accepted_answers": [
+    "B",
+    "Triangle"
+   ],
+   "unit": "",
+   "hints": [
+    "Count how many faces of the solid the cut passes through — that is the number of sides.",
+    "The drawing is slanted; think about the TRUE lengths of the sides."
+   ],
+   "working": "The cut passes through 3 faces, giving 3 sides; checking side lengths/parallel sides gives a triangle.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"220\" height=\"200\" viewBox=\"0 0 220 200\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"24.6\" y1=\"178.0\" x2=\"145.8\" y2=\"178.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"24.6\" y1=\"178.0\" x2=\"24.6\" y2=\"56.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"24.6\" y1=\"56.8\" x2=\"145.8\" y2=\"56.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"145.8\" y1=\"178.0\" x2=\"145.8\" y2=\"56.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"24.6\" y1=\"178.0\" x2=\"74.2\" y2=\"143.2\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"145.8\" y1=\"178.0\" x2=\"195.4\" y2=\"143.2\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"74.2\" y1=\"143.2\" x2=\"195.4\" y2=\"143.2\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"145.8\" y1=\"56.8\" x2=\"195.4\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"195.4\" y1=\"143.2\" x2=\"195.4\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"74.2\" y1=\"143.2\" x2=\"74.2\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"24.6\" y1=\"56.8\" x2=\"74.2\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"74.2\" y1=\"22.0\" x2=\"195.4\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><polygon points=\"195.4,22.0 145.8,178.0 24.6,56.8\" fill=\"#d33\" fill-opacity=\"0.15\" stroke=\"#c00\" stroke-width=\"1.8\" stroke-dasharray=\"3,3\"/></svg>"
+  },
+  {
+   "id": "T13-33",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "A cylinder is cut vertically through the centres of its top and bottom faces (along the dotted lines). What is the shape of the cross-section?",
+   "options": [
+    "Rectangle",
+    "Trapezium",
+    "Triangle",
+    "Circle"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "Rectangle"
+   ],
+   "unit": "",
+   "hints": [
+    "Count how many faces of the solid the cut passes through — that is the number of sides.",
+    "The drawing is slanted; think about the TRUE lengths of the sides."
+   ],
+   "working": "The cut passes through 4 faces, giving 4 sides; checking side lengths/parallel sides gives a rectangle.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"220\" height=\"200\" viewBox=\"0 0 220 200\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"175.7\" y1=\"159.2\" x2=\"171.6\" y2=\"161.6\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"175.7\" y1=\"40.8\" x2=\"171.6\" y2=\"43.3\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"166.5\" y1=\"45.7\" x2=\"171.6\" y2=\"43.3\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"166.5\" y1=\"164.0\" x2=\"171.6\" y2=\"161.6\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"153.5\" y1=\"50.3\" x2=\"160.4\" y2=\"48.1\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"153.5\" y1=\"168.6\" x2=\"160.4\" y2=\"166.4\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"160.4\" y1=\"166.4\" x2=\"166.5\" y2=\"164.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"160.4\" y1=\"48.1\" x2=\"166.5\" y2=\"45.7\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"60.0\" y1=\"176.6\" x2=\"67.0\" y2=\"177.4\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"60.0\" y1=\"58.3\" x2=\"67.0\" y2=\"59.1\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"53.8\" y1=\"175.5\" x2=\"60.0\" y2=\"176.6\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"53.8\" y1=\"57.2\" x2=\"60.0\" y2=\"58.3\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"44.5\" y1=\"54.2\" x2=\"48.6\" y2=\"55.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"44.5\" y1=\"172.5\" x2=\"48.6\" y2=\"174.1\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"48.6\" y1=\"174.1\" x2=\"53.8\" y2=\"175.5\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"48.6\" y1=\"55.8\" x2=\"53.8\" y2=\"57.2\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"44.3\" y1=\"159.2\" x2=\"41.3\" y2=\"161.6\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"44.3\" y1=\"40.8\" x2=\"41.3\" y2=\"43.3\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"181.0\" y1=\"151.9\" x2=\"180.4\" y2=\"149.7\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"181.0\" y1=\"33.6\" x2=\"180.4\" y2=\"31.4\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"180.5\" y1=\"154.3\" x2=\"181.0\" y2=\"151.9\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"180.5\" y1=\"36.0\" x2=\"181.0\" y2=\"33.6\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"110.3\" y1=\"176.6\" x2=\"119.5\" y2=\"175.5\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"110.3\" y1=\"58.3\" x2=\"119.5\" y2=\"57.2\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"101.0\" y1=\"59.1\" x2=\"110.3\" y2=\"58.3\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"101.0\" y1=\"177.4\" x2=\"110.3\" y2=\"176.6\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"91.9\" y1=\"177.8\" x2=\"101.0\" y2=\"177.4\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"91.9\" y1=\"59.5\" x2=\"101.0\" y2=\"59.1\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"67.0\" y1=\"177.4\" x2=\"74.7\" y2=\"177.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"67.0\" y1=\"59.1\" x2=\"74.7\" y2=\"59.5\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"41.5\" y1=\"170.6\" x2=\"44.5\" y2=\"172.5\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"41.5\" y1=\"52.3\" x2=\"44.5\" y2=\"54.2\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"39.6\" y1=\"50.3\" x2=\"41.5\" y2=\"52.3\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"39.6\" y1=\"168.6\" x2=\"41.5\" y2=\"170.6\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"39.0\" y1=\"166.4\" x2=\"39.6\" y2=\"168.6\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"39.0\" y1=\"48.1\" x2=\"39.6\" y2=\"50.3\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"166.2\" y1=\"142.8\" x2=\"160.0\" y2=\"141.7\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"166.2\" y1=\"24.5\" x2=\"160.0\" y2=\"23.4\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"171.4\" y1=\"144.2\" x2=\"166.2\" y2=\"142.8\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"171.4\" y1=\"25.9\" x2=\"166.2\" y2=\"24.5\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"175.5\" y1=\"145.8\" x2=\"171.4\" y2=\"144.2\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"175.5\" y1=\"27.5\" x2=\"171.4\" y2=\"25.9\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"160.0\" y1=\"141.7\" x2=\"153.0\" y2=\"140.9\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"160.0\" y1=\"23.4\" x2=\"153.0\" y2=\"22.6\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"153.0\" y1=\"140.9\" x2=\"145.3\" y2=\"140.5\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"153.0\" y1=\"22.6\" x2=\"145.3\" y2=\"22.2\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"136.9\" y1=\"22.0\" x2=\"128.1\" y2=\"22.2\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"136.9\" y1=\"140.3\" x2=\"128.1\" y2=\"140.5\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"145.3\" y1=\"140.5\" x2=\"136.9\" y2=\"140.3\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"145.3\" y1=\"22.2\" x2=\"136.9\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"175.7\" y1=\"159.2\" x2=\"178.7\" y2=\"156.7\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"175.7\" y1=\"40.8\" x2=\"178.7\" y2=\"38.4\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"178.7\" y1=\"38.4\" x2=\"180.5\" y2=\"36.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"178.7\" y1=\"156.7\" x2=\"180.5\" y2=\"154.3\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"145.8\" y1=\"170.6\" x2=\"153.5\" y2=\"168.6\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"145.8\" y1=\"52.3\" x2=\"153.5\" y2=\"50.3\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"137.4\" y1=\"54.2\" x2=\"145.8\" y2=\"52.3\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"137.4\" y1=\"172.5\" x2=\"145.8\" y2=\"170.6\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"128.7\" y1=\"55.8\" x2=\"137.4\" y2=\"54.2\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"128.7\" y1=\"174.1\" x2=\"137.4\" y2=\"172.5\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"119.5\" y1=\"175.5\" x2=\"128.7\" y2=\"174.1\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"119.5\" y1=\"57.2\" x2=\"128.7\" y2=\"55.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"83.1\" y1=\"59.7\" x2=\"91.9\" y2=\"59.5\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"83.1\" y1=\"178.0\" x2=\"91.9\" y2=\"177.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"74.7\" y1=\"177.8\" x2=\"83.1\" y2=\"178.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"74.7\" y1=\"59.5\" x2=\"83.1\" y2=\"59.7\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"41.3\" y1=\"43.3\" x2=\"39.5\" y2=\"45.7\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"41.3\" y1=\"161.6\" x2=\"39.5\" y2=\"164.0\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"39.5\" y1=\"164.0\" x2=\"39.0\" y2=\"166.4\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"39.5\" y1=\"45.7\" x2=\"39.0\" y2=\"48.1\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"128.1\" y1=\"22.2\" x2=\"119.0\" y2=\"22.6\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"128.1\" y1=\"140.5\" x2=\"119.0\" y2=\"140.9\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"119.0\" y1=\"140.9\" x2=\"109.7\" y2=\"141.7\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"119.0\" y1=\"22.6\" x2=\"109.7\" y2=\"23.4\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"109.7\" y1=\"23.4\" x2=\"100.5\" y2=\"24.5\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"109.7\" y1=\"141.7\" x2=\"100.5\" y2=\"142.8\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"66.5\" y1=\"31.4\" x2=\"59.6\" y2=\"33.6\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"66.5\" y1=\"149.7\" x2=\"59.6\" y2=\"151.9\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"180.4\" y1=\"149.7\" x2=\"178.5\" y2=\"147.7\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"178.5\" y1=\"147.7\" x2=\"175.5\" y2=\"145.8\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"100.5\" y1=\"142.8\" x2=\"91.3\" y2=\"144.2\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"91.3\" y1=\"144.2\" x2=\"82.6\" y2=\"145.8\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"82.6\" y1=\"145.8\" x2=\"74.2\" y2=\"147.7\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"74.2\" y1=\"147.7\" x2=\"66.5\" y2=\"149.7\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"59.6\" y1=\"151.9\" x2=\"53.5\" y2=\"154.3\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"53.5\" y1=\"154.3\" x2=\"48.4\" y2=\"156.7\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"48.4\" y1=\"156.7\" x2=\"44.3\" y2=\"159.2\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"82.6\" y1=\"27.5\" x2=\"74.2\" y2=\"29.4\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"74.2\" y1=\"29.4\" x2=\"66.5\" y2=\"31.4\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"48.4\" y1=\"38.4\" x2=\"44.3\" y2=\"40.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"180.4\" y1=\"31.4\" x2=\"178.5\" y2=\"29.4\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"178.5\" y1=\"29.4\" x2=\"175.5\" y2=\"27.5\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"91.3\" y1=\"25.9\" x2=\"82.6\" y2=\"27.5\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"100.5\" y1=\"24.5\" x2=\"91.3\" y2=\"25.9\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"53.5\" y1=\"36.0\" x2=\"48.4\" y2=\"38.4\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"59.6\" y1=\"33.6\" x2=\"53.5\" y2=\"36.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"39.0\" y1=\"166.4\" x2=\"39.0\" y2=\"48.1\" stroke=\"#000\" stroke-width=\"1.6\"/><line x1=\"181.0\" y1=\"151.9\" x2=\"181.0\" y2=\"33.6\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"83.1,59.7 136.9,22.0 136.9,140.3 83.1,178.0\" fill=\"#d33\" fill-opacity=\"0.15\" stroke=\"#c00\" stroke-width=\"1.8\" stroke-dasharray=\"3,3\"/></svg>"
+  },
+  {
+   "id": "T13-35",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "Mandy made the model of a pentagonal prism below using plasticine balls and sticks. How many balls and how many sticks did she use?",
+   "answer": "10 balls and 15 sticks",
+   "accepted_answers": [
+    "10 balls and 15 sticks",
+    "10, 15"
+   ],
+   "unit": "",
+   "hints": [
+    "Balls are at the vertices (corners).",
+    "Sticks are the edges. Don't forget the ones at the back!"
+   ],
+   "working": "Pentagonal prism: 10 vertices → 10 balls; 15 edges → 15 sticks.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"220\" height=\"200\" viewBox=\"0 0 220 200\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"35.3\" y1=\"158.7\" x2=\"60.4\" y2=\"178.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"152.8\" y1=\"169.6\" x2=\"60.4\" y2=\"178.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"152.8\" y1=\"169.6\" x2=\"184.7\" y2=\"145.1\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"184.7\" y1=\"145.1\" x2=\"112.1\" y2=\"138.4\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"112.1\" y1=\"138.4\" x2=\"35.3\" y2=\"158.7\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"152.8\" y1=\"169.6\" x2=\"152.8\" y2=\"53.2\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"60.4\" y1=\"178.0\" x2=\"60.4\" y2=\"61.6\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"152.8\" y1=\"53.2\" x2=\"60.4\" y2=\"61.6\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"184.7\" y1=\"145.1\" x2=\"184.7\" y2=\"28.7\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"152.8\" y1=\"53.2\" x2=\"184.7\" y2=\"28.7\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"184.7\" y1=\"28.7\" x2=\"112.1\" y2=\"22.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"112.1\" y1=\"138.4\" x2=\"112.1\" y2=\"22.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"35.3\" y1=\"42.3\" x2=\"60.4\" y2=\"61.6\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"112.1\" y1=\"22.0\" x2=\"35.3\" y2=\"42.3\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"35.3\" y1=\"158.7\" x2=\"35.3\" y2=\"42.3\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><circle cx=\"152.8\" cy=\"169.6\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"184.7\" cy=\"145.1\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"112.1\" cy=\"138.4\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"35.3\" cy=\"158.7\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"60.4\" cy=\"178.0\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"152.8\" cy=\"53.2\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"184.7\" cy=\"28.7\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"112.1\" cy=\"22.0\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"35.3\" cy=\"42.3\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"60.4\" cy=\"61.6\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/></svg>"
+  },
+  {
+   "id": "T13-36",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "Mandy made the model of a hexagonal pyramid below using plasticine balls and sticks. How many balls and how many sticks did she use?",
+   "answer": "7 balls and 12 sticks",
+   "accepted_answers": [
+    "7 balls and 12 sticks",
+    "7, 12"
+   ],
+   "unit": "",
+   "hints": [
+    "Balls are at the vertices (corners).",
+    "Sticks are the edges. Don't forget the ones at the back!"
+   ],
+   "working": "Hexagonal pyramid: 7 vertices → 7 balls; 12 edges → 12 sticks.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"220\" height=\"200\" viewBox=\"0 0 220 200\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"25.6\" y1=\"157.0\" x2=\"37.9\" y2=\"178.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"25.6\" y1=\"157.0\" x2=\"110.0\" y2=\"22.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"37.9\" y1=\"178.0\" x2=\"110.0\" y2=\"22.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"194.4\" y1=\"157.0\" x2=\"182.1\" y2=\"136.1\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"194.4\" y1=\"157.0\" x2=\"110.0\" y2=\"22.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"182.1\" y1=\"136.1\" x2=\"110.0\" y2=\"22.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"122.3\" y1=\"178.0\" x2=\"194.4\" y2=\"157.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"122.3\" y1=\"178.0\" x2=\"110.0\" y2=\"22.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"122.3\" y1=\"178.0\" x2=\"37.9\" y2=\"178.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"97.7\" y1=\"136.1\" x2=\"25.6\" y2=\"157.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"97.7\" y1=\"136.1\" x2=\"110.0\" y2=\"22.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"182.1\" y1=\"136.1\" x2=\"97.7\" y2=\"136.1\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><circle cx=\"122.3\" cy=\"178.0\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"194.4\" cy=\"157.0\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"182.1\" cy=\"136.1\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"97.7\" cy=\"136.1\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"25.6\" cy=\"157.0\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"37.9\" cy=\"178.0\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"110.0\" cy=\"22.0\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/></svg>"
+  },
+  {
    "id": "T13-02",
    "code": "T13",
    "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
@@ -1052,6 +1257,362 @@
    "working": "9 − 1 = 8 → octagonal pyramid; edges 2 × 8 = 16"
   },
   {
+   "id": "T13-15",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Which of the following nets can be folded into a cube?",
+   "options": [
+    "Diagram A",
+    "Diagram B",
+    "Diagram C",
+    "Diagram D"
+   ],
+   "answer": "B",
+   "accepted_answers": [
+    "B",
+    "Diagram B"
+   ],
+   "unit": "",
+   "hints": [
+    "Imagine folding one square as the base and lifting the others up.",
+    "Two squares that land on the same face means it cannot be a cube.",
+    "A row of more than 4 squares or a 2 × 2 block can never work."
+   ],
+   "working": "Folding each net: only Diagram B gives 6 different faces. The others have two squares landing on the same face.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"492\" height=\"174\" viewBox=\"0 0 492 174\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><svg x=\"0\" y=\"0\" width=\"84.0\" height=\"152.0\" viewBox=\"0 0 84.0 152.0\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"42.0\" y=\"169.0\" text-anchor=\"middle\" font-weight=\"bold\">(A)</text><svg x=\"102.0\" y=\"0\" width=\"152.0\" height=\"118.0\" viewBox=\"0 0 152.0 118.0\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"110.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"110.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"178.0\" y=\"169.0\" text-anchor=\"middle\" font-weight=\"bold\">(B)</text><svg x=\"272.0\" y=\"0\" width=\"84.0\" height=\"118.0\" viewBox=\"0 0 84.0 118.0\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"314.0\" y=\"169.0\" text-anchor=\"middle\" font-weight=\"bold\">(C)</text><svg x=\"374.0\" y=\"0\" width=\"118.0\" height=\"152.0\" viewBox=\"0 0 118.0 152.0\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"433.0\" y=\"169.0\" text-anchor=\"middle\" font-weight=\"bold\">(D)</text></svg>",
+   "option_svgs": [
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"84\" height=\"152\" viewBox=\"0 0 84 152\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"152\" height=\"118\" viewBox=\"0 0 152 118\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"110.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"110.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"84\" height=\"118\" viewBox=\"0 0 84 118\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"118\" height=\"152\" viewBox=\"0 0 118 152\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+   ]
+  },
+  {
+   "id": "T13-17",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Which of the following nets CANNOT be folded into a cube?",
+   "options": [
+    "Diagram A",
+    "Diagram B",
+    "Diagram C",
+    "Diagram D"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "Diagram A"
+   ],
+   "unit": "",
+   "hints": [
+    "Fold each net in your mind, one square at a time.",
+    "Look for two squares that would cover the same face."
+   ],
+   "working": "Diagram A: two squares overlap when folded, so it is not a net of a cube. The other three are cube nets.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"526\" height=\"174\" viewBox=\"0 0 526 174\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><svg x=\"0\" y=\"0\" width=\"84.0\" height=\"152.0\" viewBox=\"0 0 84.0 152.0\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"42.0\" y=\"169.0\" text-anchor=\"middle\" font-weight=\"bold\">(A)</text><svg x=\"102.0\" y=\"0\" width=\"152.0\" height=\"118.0\" viewBox=\"0 0 152.0 118.0\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"110.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"178.0\" y=\"169.0\" text-anchor=\"middle\" font-weight=\"bold\">(B)</text><svg x=\"272.0\" y=\"0\" width=\"118.0\" height=\"152.0\" viewBox=\"0 0 118.0 152.0\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"331.0\" y=\"169.0\" text-anchor=\"middle\" font-weight=\"bold\">(C)</text><svg x=\"408.0\" y=\"0\" width=\"118.0\" height=\"152.0\" viewBox=\"0 0 118.0 152.0\"><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"467.0\" y=\"169.0\" text-anchor=\"middle\" font-weight=\"bold\">(D)</text></svg>",
+   "option_svgs": [
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"84\" height=\"152\" viewBox=\"0 0 84 152\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"152\" height=\"118\" viewBox=\"0 0 152 118\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"110.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"118\" height=\"152\" viewBox=\"0 0 118 152\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"118\" height=\"152\" viewBox=\"0 0 118 152\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+   ]
+  },
+  {
+   "id": "T13-18",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Which of the following nets CANNOT be folded into a cube?",
+   "options": [
+    "Diagram A",
+    "Diagram B",
+    "Diagram C",
+    "Diagram D"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "Diagram C"
+   ],
+   "unit": "",
+   "hints": [
+    "Fold each net in your mind, one square at a time.",
+    "Look for two squares that would cover the same face."
+   ],
+   "working": "Diagram C: two squares overlap when folded, so it is not a net of a cube. The other three are cube nets.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"492\" height=\"208\" viewBox=\"0 0 492 208\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><svg x=\"0\" y=\"0\" width=\"84.0\" height=\"186.0\" viewBox=\"0 0 84.0 186.0\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"144.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"42.0\" y=\"203.0\" text-anchor=\"middle\" font-weight=\"bold\">(A)</text><svg x=\"102.0\" y=\"0\" width=\"118.0\" height=\"152.0\" viewBox=\"0 0 118.0 152.0\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"161.0\" y=\"203.0\" text-anchor=\"middle\" font-weight=\"bold\">(B)</text><svg x=\"238.0\" y=\"0\" width=\"118.0\" height=\"118.0\" viewBox=\"0 0 118.0 118.0\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"297.0\" y=\"203.0\" text-anchor=\"middle\" font-weight=\"bold\">(C)</text><svg x=\"374.0\" y=\"0\" width=\"118.0\" height=\"152.0\" viewBox=\"0 0 118.0 152.0\"><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"433.0\" y=\"203.0\" text-anchor=\"middle\" font-weight=\"bold\">(D)</text></svg>",
+   "option_svgs": [
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"84\" height=\"186\" viewBox=\"0 0 84 186\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"144.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"118\" height=\"152\" viewBox=\"0 0 118 152\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"118\" height=\"118\" viewBox=\"0 0 118 118\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"118\" height=\"152\" viewBox=\"0 0 118 152\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+   ]
+  },
+  {
+   "id": "T13-20",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "The net below is folded into a cube. Which face is opposite to face A?",
+   "answer": "D",
+   "accepted_answers": [
+    "D",
+    "d"
+   ],
+   "unit": "",
+   "hints": [
+    "Faces opposite each other are never next to each other on the net.",
+    "In a straight row of 3 squares, the 1st and 3rd are opposite."
+   ],
+   "working": "Folding the net, face D ends up opposite face A.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"136\" height=\"176\" viewBox=\"0 0 136 176\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"28.0\" y=\"33.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">A</text><rect x=\"8.0\" y=\"48.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"28.0\" y=\"73.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">B</text><rect x=\"48.0\" y=\"48.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"68.0\" y=\"73.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">C</text><rect x=\"48.0\" y=\"88.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"68.0\" y=\"113.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">D</text><rect x=\"88.0\" y=\"88.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"108.0\" y=\"113.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">E</text><rect x=\"88.0\" y=\"128.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"108.0\" y=\"153.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">F</text></svg>"
+  },
+  {
+   "id": "T13-22",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "The net below is folded into a cube. Which number is on the face opposite to 3?",
+   "answer": "6",
+   "accepted_answers": [
+    "6",
+    6
+   ],
+   "unit": "",
+   "hints": [
+    "Opposite faces never touch on the net.",
+    "Fold the squares around the 3 one at a time."
+   ],
+   "working": "Opposite pairs: 1 & 5, 2 & 4, 3 & 6. So 6 is opposite 3.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"136\" height=\"176\" viewBox=\"0 0 136 176\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"28.0\" y=\"33.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">1</text><rect x=\"8.0\" y=\"48.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"28.0\" y=\"73.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">2</text><rect x=\"48.0\" y=\"48.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"68.0\" y=\"73.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">3</text><rect x=\"48.0\" y=\"88.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"68.0\" y=\"113.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">5</text><rect x=\"48.0\" y=\"128.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"68.0\" y=\"153.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">6</text><rect x=\"88.0\" y=\"48.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"108.0\" y=\"73.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">4</text></svg>"
+  },
+  {
+   "id": "T13-25",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "The diagram shows the net of a solid. What is the name of the solid?",
+   "options": [
+    "Hexagonal prism",
+    "Pentagonal pyramid",
+    "Pentagonal prism",
+    "Decagonal pyramid"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "Pentagonal prism"
+   ],
+   "unit": "",
+   "hints": [
+    "Count the faces of each shape in the net.",
+    "Rectangles all round + 2 matching bases → prism. Triangles meeting at one point + 1 base → pyramid."
+   ],
+   "working": "The net has 7 faces: 2 bases and rectangles → pentagonal prism.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"300\" height=\"220\" viewBox=\"0 0 300 220\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><polygon points=\"51.6,72.6 90.9,72.6 90.9,147.4 51.6,147.4\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"90.9,72.6 130.3,72.6 130.3,147.4 90.9,147.4\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"130.3,72.6 169.7,72.6 169.7,147.4 130.3,147.4\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"169.7,72.6 209.1,72.6 209.1,147.4 169.7,147.4\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"209.1,72.6 248.4,72.6 248.4,147.4 209.1,147.4\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"90.9,72.6 130.3,72.6 142.5,35.1 110.6,12.0 78.8,35.1\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"169.7,147.4 130.3,147.4 118.1,184.9 150.0,208.0 181.9,184.9\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+  },
+  {
+   "id": "T13-26",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "The diagram shows the net of a solid. What is the name of the solid?",
+   "options": [
+    "Hexagonal pyramid",
+    "Hexagonal prism",
+    "Pentagonal pyramid",
+    "Heptagonal pyramid"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "Hexagonal pyramid"
+   ],
+   "unit": "",
+   "hints": [
+    "Count the faces of each shape in the net.",
+    "Rectangles all round + 2 matching bases → prism. Triangles meeting at one point + 1 base → pyramid."
+   ],
+   "working": "The net has 7 faces: 1 base and triangles → hexagonal pyramid.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"300\" height=\"220\" viewBox=\"0 0 300 220\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><polygon points=\"129.3,74.1 170.7,74.1 191.4,110.0 170.7,145.9 129.3,145.9 108.6,110.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"170.7,74.1 129.3,74.1 150.0,12.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"191.4,110.0 170.7,74.1 234.9,61.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"170.7,145.9 191.4,110.0 234.9,159.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"129.3,145.9 170.7,145.9 150.0,208.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"108.6,110.0 129.3,145.9 65.1,159.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"129.3,74.1 108.6,110.0 65.1,61.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+  },
+  {
+   "id": "T13-27",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Peter wants to draw a net of a hexagonal prism. He has drawn part of it below. How many more faces does he need to draw?",
+   "answer": "3",
+   "accepted_answers": [
+    "3",
+    3
+   ],
+   "unit": "faces",
+   "hints": [
+    "How many faces does a hexagonal prism have?",
+    "Count the faces already drawn."
+   ],
+   "working": "Hexagonal prism: 8 faces (2 hexagons + 6 rectangles). Drawn: 5. Need 3 more (1 hexagon + 2 rectangles).",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"300\" height=\"220\" viewBox=\"0 0 300 220\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><polygon points=\"102.4,74.1 143.8,74.1 164.5,110.0 143.8,145.9 102.4,145.9 81.7,110.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"143.8,74.1 102.4,74.1 102.4,12.0 143.8,12.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"164.5,110.0 143.8,74.1 197.6,43.1 218.3,78.9\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"143.8,145.9 164.5,110.0 218.3,141.1 197.6,176.9\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"102.4,145.9 143.8,145.9 143.8,208.0 102.4,208.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+  },
+  {
+   "id": "T13-31",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "A square pyramid is cut by a vertical plane parallel to one side of its base (along the dotted lines). What is the shape of the cross-section?",
+   "options": [
+    "Square",
+    "Rectangle",
+    "Trapezium",
+    "Triangle"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "Trapezium"
+   ],
+   "unit": "",
+   "hints": [
+    "Count how many faces of the solid the cut passes through — that is the number of sides.",
+    "The drawing is slanted; think about the TRUE lengths of the sides."
+   ],
+   "working": "The cut passes through 4 faces, giving 4 sides; checking side lengths/parallel sides gives a trapezium.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"220\" height=\"200\" viewBox=\"0 0 220 200\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"22.0\" y1=\"165.1\" x2=\"146.9\" y2=\"165.1\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"22.0\" y1=\"165.1\" x2=\"110.0\" y2=\"34.9\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"146.9\" y1=\"165.1\" x2=\"110.0\" y2=\"34.9\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"198.0\" y1=\"129.3\" x2=\"110.0\" y2=\"34.9\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"198.0\" y1=\"129.3\" x2=\"146.9\" y2=\"165.1\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"73.1\" y1=\"129.3\" x2=\"22.0\" y2=\"165.1\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"73.1\" y1=\"129.3\" x2=\"110.0\" y2=\"34.9\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"198.0\" y1=\"129.3\" x2=\"73.1\" y2=\"129.3\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><polygon points=\"166.8,129.3 115.6,165.1 128.4,100.0 154.0,82.1\" fill=\"#d33\" fill-opacity=\"0.15\" stroke=\"#c00\" stroke-width=\"1.8\" stroke-dasharray=\"3,3\"/></svg>"
+  },
+  {
+   "id": "T13-32",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "A triangular prism stands on its triangular base. It is cut by a vertical plane along the dotted lines. What is the shape of the cross-section?",
+   "options": [
+    "Rectangle",
+    "Trapezium",
+    "Square",
+    "Triangle"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "Rectangle"
+   ],
+   "unit": "",
+   "hints": [
+    "Count how many faces of the solid the cut passes through — that is the number of sides.",
+    "The drawing is slanted; think about the TRUE lengths of the sides."
+   ],
+   "working": "The cut passes through 4 faces, giving 4 sides; checking side lengths/parallel sides gives a rectangle.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"220\" height=\"200\" viewBox=\"0 0 220 200\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"180.0\" y1=\"178.0\" x2=\"40.0\" y2=\"178.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"180.0\" y1=\"178.0\" x2=\"159.7\" y2=\"143.2\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"159.7\" y1=\"143.2\" x2=\"40.0\" y2=\"178.0\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"180.0\" y1=\"56.8\" x2=\"159.7\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"180.0\" y1=\"56.8\" x2=\"40.0\" y2=\"56.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"159.7\" y1=\"22.0\" x2=\"40.0\" y2=\"56.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"180.0\" y1=\"178.0\" x2=\"180.0\" y2=\"56.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"159.7\" y1=\"143.2\" x2=\"159.7\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"40.0\" y1=\"178.0\" x2=\"40.0\" y2=\"56.8\" stroke=\"#000\" stroke-width=\"1.6\" /><polygon points=\"79.9,45.2 79.9,166.4 173.2,166.4 173.2,45.2\" fill=\"#d33\" fill-opacity=\"0.15\" stroke=\"#c00\" stroke-width=\"1.8\" stroke-dasharray=\"3,3\"/></svg>"
+  },
+  {
+   "id": "T13-37",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Ken made Fig. I and Fig. II with plasticine balls and sticks. How many more balls and how many more sticks are used in Fig. II than in Fig. I?",
+   "answer": "3 more balls and 4 more sticks",
+   "accepted_answers": [
+    "3 more balls and 4 more sticks",
+    "3 balls, 4 sticks",
+    "3, 4"
+   ],
+   "unit": "",
+   "hints": [
+    "Count balls (vertices) and sticks (edges) in each figure.",
+    "Then subtract."
+   ],
+   "working": "Fig. I: 5 balls, 8 sticks. Fig. II: 8 balls, 12 sticks. Difference: 3 balls, 4 sticks.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"458\" height=\"222\" viewBox=\"0 0 458 222\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><svg x=\"0\" y=\"0\" width=\"220.0\" height=\"200.0\" viewBox=\"0 0 220.0 200.0\"><line x1=\"22.0\" y1=\"158.9\" x2=\"146.9\" y2=\"158.9\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"22.0\" y1=\"158.9\" x2=\"110.0\" y2=\"41.1\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"146.9\" y1=\"158.9\" x2=\"110.0\" y2=\"41.1\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"198.0\" y1=\"123.1\" x2=\"110.0\" y2=\"41.1\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"198.0\" y1=\"123.1\" x2=\"146.9\" y2=\"158.9\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"73.1\" y1=\"123.1\" x2=\"22.0\" y2=\"158.9\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"73.1\" y1=\"123.1\" x2=\"110.0\" y2=\"41.1\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"198.0\" y1=\"123.1\" x2=\"73.1\" y2=\"123.1\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><circle cx=\"198.0\" cy=\"123.1\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"73.1\" cy=\"123.1\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"22.0\" cy=\"158.9\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"146.9\" cy=\"158.9\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"110.0\" cy=\"41.1\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/></svg><text x=\"110.0\" y=\"217.0\" text-anchor=\"middle\" font-weight=\"bold\">Fig. I</text><svg x=\"238.0\" y=\"0\" width=\"220.0\" height=\"200.0\" viewBox=\"0 0 220.0 200.0\"><line x1=\"73.1\" y1=\"108.8\" x2=\"198.0\" y2=\"108.8\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"22.0\" y1=\"144.6\" x2=\"73.1\" y2=\"108.8\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"22.0\" y1=\"144.6\" x2=\"146.9\" y2=\"144.6\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"146.9\" y1=\"144.6\" x2=\"198.0\" y2=\"108.8\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"22.0\" y1=\"144.6\" x2=\"66.0\" y2=\"73.3\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"66.0\" y1=\"73.3\" x2=\"128.4\" y2=\"73.3\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"146.9\" y1=\"144.6\" x2=\"128.4\" y2=\"73.3\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"66.0\" y1=\"73.3\" x2=\"91.6\" y2=\"55.4\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"73.1\" y1=\"108.8\" x2=\"91.6\" y2=\"55.4\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"128.4\" y1=\"73.3\" x2=\"154.0\" y2=\"55.4\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"198.0\" y1=\"108.8\" x2=\"154.0\" y2=\"55.4\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"91.6\" y1=\"55.4\" x2=\"154.0\" y2=\"55.4\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><circle cx=\"22.0\" cy=\"144.6\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"73.1\" cy=\"108.8\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"146.9\" cy=\"144.6\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"198.0\" cy=\"108.8\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"66.0\" cy=\"73.3\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"91.6\" cy=\"55.4\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"128.4\" cy=\"73.3\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"154.0\" cy=\"55.4\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/></svg><text x=\"348.0\" y=\"217.0\" text-anchor=\"middle\" font-weight=\"bold\">Fig. II</text></svg>"
+  },
+  {
+   "id": "T13-39",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Ivy made the triangular prism below with balls and sticks. She wants to use ALL of these balls and sticks, plus some more, to make a pentagonal prism. How many more balls and how many more sticks does she need?",
+   "answer": "4 more balls and 6 more sticks",
+   "accepted_answers": [
+    "4 more balls and 6 more sticks",
+    "4, 6"
+   ],
+   "unit": "",
+   "hints": [
+    "Count the balls and sticks in the picture.",
+    "A pentagonal prism has 2 × 5 balls and 3 × 5 sticks."
+   ],
+   "working": "Triangular prism 6 balls, 9 sticks; pentagonal prism 10 balls, 15 sticks → 4 balls, 6 sticks more.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"220\" height=\"200\" viewBox=\"0 0 220 200\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"176.5\" y1=\"178.0\" x2=\"43.5\" y2=\"178.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"176.5\" y1=\"178.0\" x2=\"157.2\" y2=\"144.9\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"157.2\" y1=\"144.9\" x2=\"43.5\" y2=\"178.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"176.5\" y1=\"55.1\" x2=\"157.2\" y2=\"22.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"176.5\" y1=\"55.1\" x2=\"43.5\" y2=\"55.1\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"157.2\" y1=\"22.0\" x2=\"43.5\" y2=\"55.1\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"157.2\" y1=\"144.9\" x2=\"157.2\" y2=\"22.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"176.5\" y1=\"178.0\" x2=\"176.5\" y2=\"55.1\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"43.5\" y1=\"178.0\" x2=\"43.5\" y2=\"55.1\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><circle cx=\"176.5\" cy=\"178.0\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"157.2\" cy=\"144.9\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"43.5\" cy=\"178.0\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"176.5\" cy=\"55.1\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"157.2\" cy=\"22.0\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"43.5\" cy=\"55.1\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/></svg>"
+  },
+  {
+   "id": "T13-40",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A triangular prism is joined to the top of a cuboid as shown, so that a rectangular face of the prism exactly covers the top of the cuboid. How many faces and how many edges does the new solid have?",
+   "answer": "7 faces and 15 edges",
+   "accepted_answers": [
+    "7 faces and 15 edges",
+    "7, 15"
+   ],
+   "unit": "",
+   "hints": [
+    "Faces that are glued together disappear.",
+    "Two faces that become ONE flat face count as one; their shared edge disappears."
+   ],
+   "working": "The new solid has 7 faces, 15 edges and 10 vertices (check: 10 − 15 + 7 = 2).",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"220\" height=\"200\" viewBox=\"0 0 220 200\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"22.0\" y1=\"172.9\" x2=\"59.7\" y2=\"146.4\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"22.0\" y1=\"172.9\" x2=\"160.3\" y2=\"172.9\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"160.3\" y1=\"172.9\" x2=\"198.0\" y2=\"146.4\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"59.7\" y1=\"146.4\" x2=\"198.0\" y2=\"146.4\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"22.0\" y1=\"92.2\" x2=\"40.9\" y2=\"27.1\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"22.0\" y1=\"172.9\" x2=\"22.0\" y2=\"92.2\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"59.7\" y1=\"146.4\" x2=\"59.7\" y2=\"65.8\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"59.7\" y1=\"65.8\" x2=\"40.9\" y2=\"27.1\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"59.7\" y1=\"65.8\" x2=\"198.0\" y2=\"65.8\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"198.0\" y1=\"65.8\" x2=\"179.1\" y2=\"27.1\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"40.9\" y1=\"27.1\" x2=\"179.1\" y2=\"27.1\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"198.0\" y1=\"146.4\" x2=\"198.0\" y2=\"65.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"160.3\" y1=\"172.9\" x2=\"160.3\" y2=\"92.2\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"160.3\" y1=\"92.2\" x2=\"179.1\" y2=\"27.1\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"22.0\" y1=\"92.2\" x2=\"160.3\" y2=\"92.2\" stroke=\"#000\" stroke-width=\"1.6\" /></svg>"
+  },
+  {
+   "id": "T13-41",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A square pyramid is joined to the top of a cube as shown. The base of the pyramid exactly covers the top face of the cube. How many faces and how many edges does the new solid have?",
+   "answer": "9 faces and 16 edges",
+   "accepted_answers": [
+    "9 faces and 16 edges",
+    "9, 16"
+   ],
+   "unit": "",
+   "hints": [
+    "Faces that are glued together disappear.",
+    "Two faces that become ONE flat face count as one; their shared edge disappears."
+   ],
+   "working": "The new solid has 9 faces, 16 edges and 9 vertices (check: 9 − 16 + 9 = 2).",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"220\" height=\"200\" viewBox=\"0 0 220 200\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"45.1\" y1=\"85.9\" x2=\"110.0\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"137.2\" y1=\"85.9\" x2=\"110.0\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"45.1\" y1=\"85.9\" x2=\"137.2\" y2=\"85.9\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"174.9\" y1=\"59.5\" x2=\"110.0\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"137.2\" y1=\"85.9\" x2=\"174.9\" y2=\"59.5\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"82.8\" y1=\"59.5\" x2=\"110.0\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"45.1\" y1=\"85.9\" x2=\"82.8\" y2=\"59.5\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"82.8\" y1=\"59.5\" x2=\"174.9\" y2=\"59.5\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"45.1\" y1=\"178.0\" x2=\"82.8\" y2=\"151.6\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"45.1\" y1=\"178.0\" x2=\"137.2\" y2=\"178.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"137.2\" y1=\"178.0\" x2=\"174.9\" y2=\"151.6\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"82.8\" y1=\"151.6\" x2=\"174.9\" y2=\"151.6\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"45.1\" y1=\"178.0\" x2=\"45.1\" y2=\"85.9\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"137.2\" y1=\"178.0\" x2=\"137.2\" y2=\"85.9\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"174.9\" y1=\"151.6\" x2=\"174.9\" y2=\"59.5\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"82.8\" y1=\"151.6\" x2=\"82.8\" y2=\"59.5\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/></svg>"
+  },
+  {
    "id": "T13-09",
    "code": "T13",
    "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
@@ -1109,6 +1670,205 @@
     "Find n, then vertices = 2 × n."
    ],
    "working": "21 ÷ 3 = 7 → heptagonal prism; vertices 2 × 7 = 14"
+  },
+  {
+   "id": "T13-16",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "hard",
+   "format": "mcq",
+   "question": "Which of the following nets can be folded into a cube?",
+   "options": [
+    "Diagram A",
+    "Diagram B",
+    "Diagram C",
+    "Diagram D"
+   ],
+   "answer": "D",
+   "accepted_answers": [
+    "D",
+    "Diagram D"
+   ],
+   "unit": "",
+   "hints": [
+    "Imagine folding one square as the base and lifting the others up.",
+    "Two squares that land on the same face means it cannot be a cube.",
+    "A row of more than 4 squares or a 2 × 2 block can never work."
+   ],
+   "working": "Folding each net: only Diagram D gives 6 different faces. The others have two squares landing on the same face.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"526\" height=\"208\" viewBox=\"0 0 526 208\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><svg x=\"0\" y=\"0\" width=\"84.0\" height=\"186.0\" viewBox=\"0 0 84.0 186.0\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"144.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"42.0\" y=\"203.0\" text-anchor=\"middle\" font-weight=\"bold\">(A)</text><svg x=\"102.0\" y=\"0\" width=\"118.0\" height=\"152.0\" viewBox=\"0 0 118.0 152.0\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"161.0\" y=\"203.0\" text-anchor=\"middle\" font-weight=\"bold\">(B)</text><svg x=\"238.0\" y=\"0\" width=\"118.0\" height=\"118.0\" viewBox=\"0 0 118.0 118.0\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"297.0\" y=\"203.0\" text-anchor=\"middle\" font-weight=\"bold\">(C)</text><svg x=\"374.0\" y=\"0\" width=\"152.0\" height=\"118.0\" viewBox=\"0 0 152.0 118.0\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"110.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"450.0\" y=\"203.0\" text-anchor=\"middle\" font-weight=\"bold\">(D)</text></svg>",
+   "option_svgs": [
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"84\" height=\"186\" viewBox=\"0 0 84 186\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"144.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"118\" height=\"152\" viewBox=\"0 0 118 152\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"110.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"118\" height=\"118\" viewBox=\"0 0 118 118\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"152\" height=\"118\" viewBox=\"0 0 152 118\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"8.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"8.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"42.0\" y=\"76.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"76.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><rect x=\"110.0\" y=\"42.0\" width=\"34\" height=\"34\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+   ]
+  },
+  {
+   "id": "T13-21",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "The net below is folded into a cube. Which face is opposite to face D?",
+   "answer": "B",
+   "accepted_answers": [
+    "B",
+    "b"
+   ],
+   "unit": "",
+   "hints": [
+    "Faces opposite each other are never next to each other on the net.",
+    "In a straight row of 3 squares, the 1st and 3rd are opposite."
+   ],
+   "working": "Folding the net, face B ends up opposite face D.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"136\" height=\"176\" viewBox=\"0 0 136 176\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><rect x=\"8.0\" y=\"48.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"28.0\" y=\"73.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">B</text><rect x=\"48.0\" y=\"8.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"68.0\" y=\"33.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">A</text><rect x=\"48.0\" y=\"48.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"68.0\" y=\"73.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">C</text><rect x=\"48.0\" y=\"88.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"68.0\" y=\"113.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">E</text><rect x=\"48.0\" y=\"128.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"68.0\" y=\"153.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">F</text><rect x=\"88.0\" y=\"48.0\" width=\"40\" height=\"40\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"108.0\" y=\"73.0\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">D</text></svg>"
+  },
+  {
+   "id": "T13-29",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "hard",
+   "format": "mcq",
+   "question": "A cube is cut along the dotted lines, which pass through two opposite edges of the cube. What is the shape of the cross-section?",
+   "options": [
+    "Square",
+    "Rectangle",
+    "Parallelogram",
+    "Rhombus"
+   ],
+   "answer": "B",
+   "accepted_answers": [
+    "B",
+    "Rectangle"
+   ],
+   "unit": "",
+   "hints": [
+    "Count how many faces of the solid the cut passes through — that is the number of sides.",
+    "The drawing is slanted; think about the TRUE lengths of the sides."
+   ],
+   "working": "The cut passes through 4 faces, giving 4 sides; checking side lengths/parallel sides gives a rectangle.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"220\" height=\"200\" viewBox=\"0 0 220 200\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"24.6\" y1=\"178.0\" x2=\"145.8\" y2=\"178.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"24.6\" y1=\"178.0\" x2=\"24.6\" y2=\"56.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"24.6\" y1=\"56.8\" x2=\"145.8\" y2=\"56.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"145.8\" y1=\"178.0\" x2=\"145.8\" y2=\"56.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"24.6\" y1=\"178.0\" x2=\"74.2\" y2=\"143.2\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"145.8\" y1=\"178.0\" x2=\"195.4\" y2=\"143.2\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"74.2\" y1=\"143.2\" x2=\"195.4\" y2=\"143.2\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"145.8\" y1=\"56.8\" x2=\"195.4\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"195.4\" y1=\"143.2\" x2=\"195.4\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"74.2\" y1=\"143.2\" x2=\"74.2\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"24.6\" y1=\"56.8\" x2=\"74.2\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"74.2\" y1=\"22.0\" x2=\"195.4\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><polygon points=\"74.2,143.2 145.8,178.0 145.8,56.8 74.2,22.0\" fill=\"#d33\" fill-opacity=\"0.15\" stroke=\"#c00\" stroke-width=\"1.8\" stroke-dasharray=\"3,3\"/></svg>"
+  },
+  {
+   "id": "T13-30",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "hard",
+   "format": "mcq",
+   "question": "A cube is cut along the dotted lines, which pass through the midpoints of six edges. What is the shape of the cross-section?",
+   "options": [
+    "Hexagon",
+    "Pentagon",
+    "Triangle",
+    "Rectangle"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "Hexagon"
+   ],
+   "unit": "",
+   "hints": [
+    "Count how many faces of the solid the cut passes through — that is the number of sides.",
+    "The drawing is slanted; think about the TRUE lengths of the sides."
+   ],
+   "working": "The cut passes through 6 faces, giving 6 sides; checking side lengths/parallel sides gives a hexagon.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"220\" height=\"200\" viewBox=\"0 0 220 200\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"24.6\" y1=\"178.0\" x2=\"145.8\" y2=\"178.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"24.6\" y1=\"178.0\" x2=\"24.6\" y2=\"56.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"24.6\" y1=\"56.8\" x2=\"145.8\" y2=\"56.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"145.8\" y1=\"178.0\" x2=\"145.8\" y2=\"56.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"24.6\" y1=\"178.0\" x2=\"74.2\" y2=\"143.2\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"145.8\" y1=\"178.0\" x2=\"195.4\" y2=\"143.2\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"74.2\" y1=\"143.2\" x2=\"195.4\" y2=\"143.2\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"145.8\" y1=\"56.8\" x2=\"195.4\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"195.4\" y1=\"143.2\" x2=\"195.4\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"74.2\" y1=\"143.2\" x2=\"74.2\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"24.6\" y1=\"56.8\" x2=\"74.2\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"74.2\" y1=\"22.0\" x2=\"195.4\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><polygon points=\"195.4,82.6 170.6,160.6 85.2,178.0 24.6,117.4 49.4,39.4 134.8,22.0\" fill=\"#d33\" fill-opacity=\"0.15\" stroke=\"#c00\" stroke-width=\"1.8\" stroke-dasharray=\"3,3\"/></svg>"
+  },
+  {
+   "id": "T13-34",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "hard",
+   "format": "mcq",
+   "question": "A cube is cut along the dotted lines. What is the shape of the cross-section?",
+   "options": [
+    "Hexagon",
+    "Trapezium",
+    "Pentagon",
+    "Rectangle"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "Pentagon"
+   ],
+   "unit": "",
+   "hints": [
+    "Count how many faces of the solid the cut passes through — that is the number of sides.",
+    "The drawing is slanted; think about the TRUE lengths of the sides."
+   ],
+   "working": "The cut passes through 5 faces, giving 5 sides; checking side lengths/parallel sides gives a pentagon.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"220\" height=\"200\" viewBox=\"0 0 220 200\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"24.6\" y1=\"178.0\" x2=\"145.8\" y2=\"178.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"24.6\" y1=\"178.0\" x2=\"24.6\" y2=\"56.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"24.6\" y1=\"56.8\" x2=\"145.8\" y2=\"56.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"145.8\" y1=\"178.0\" x2=\"145.8\" y2=\"56.8\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"24.6\" y1=\"178.0\" x2=\"74.2\" y2=\"143.2\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"145.8\" y1=\"178.0\" x2=\"195.4\" y2=\"143.2\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"74.2\" y1=\"143.2\" x2=\"195.4\" y2=\"143.2\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"145.8\" y1=\"56.8\" x2=\"195.4\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"195.4\" y1=\"143.2\" x2=\"195.4\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"74.2\" y1=\"143.2\" x2=\"74.2\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"24.6\" y1=\"56.8\" x2=\"74.2\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"74.2\" y1=\"22.0\" x2=\"195.4\" y2=\"22.0\" stroke=\"#000\" stroke-width=\"1.6\" /><polygon points=\"145.8,147.7 24.6,87.1 49.4,39.4 134.8,22.0 195.4,52.3\" fill=\"#d33\" fill-opacity=\"0.15\" stroke=\"#c00\" stroke-width=\"1.8\" stroke-dasharray=\"3,3\"/></svg>"
+  },
+  {
+   "id": "T13-38",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "The model below is made of plasticine balls and sticks. It is a square pyramid on top of a cube. How many balls and how many sticks are used?",
+   "answer": "9 balls and 16 sticks",
+   "accepted_answers": [
+    "9 balls and 16 sticks",
+    "9, 16"
+   ],
+   "unit": "",
+   "hints": [
+    "The cube has 8 balls; the pyramid adds only its top ball.",
+    "The top edges are shared — count the cube's 12 sticks plus the slanting ones."
+   ],
+   "working": "Balls: 8 + 1 = 9. Sticks: 12 + 4 = 16.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"220\" height=\"200\" viewBox=\"0 0 220 200\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"45.1\" y1=\"85.9\" x2=\"110.0\" y2=\"22.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"137.2\" y1=\"85.9\" x2=\"110.0\" y2=\"22.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"45.1\" y1=\"85.9\" x2=\"137.2\" y2=\"85.9\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"174.9\" y1=\"59.5\" x2=\"110.0\" y2=\"22.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"137.2\" y1=\"85.9\" x2=\"174.9\" y2=\"59.5\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"82.8\" y1=\"59.5\" x2=\"110.0\" y2=\"22.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"45.1\" y1=\"85.9\" x2=\"82.8\" y2=\"59.5\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"82.8\" y1=\"59.5\" x2=\"174.9\" y2=\"59.5\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"45.1\" y1=\"178.0\" x2=\"82.8\" y2=\"151.6\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"45.1\" y1=\"178.0\" x2=\"137.2\" y2=\"178.0\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"137.2\" y1=\"178.0\" x2=\"174.9\" y2=\"151.6\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"82.8\" y1=\"151.6\" x2=\"174.9\" y2=\"151.6\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"45.1\" y1=\"178.0\" x2=\"45.1\" y2=\"85.9\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"137.2\" y1=\"178.0\" x2=\"137.2\" y2=\"85.9\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"174.9\" y1=\"151.6\" x2=\"174.9\" y2=\"59.5\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><line x1=\"82.8\" y1=\"151.6\" x2=\"82.8\" y2=\"59.5\" stroke=\"#8a5a2b\" stroke-width=\"3\" /><circle cx=\"45.1\" cy=\"178.0\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"82.8\" cy=\"151.6\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"45.1\" cy=\"85.9\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"82.8\" cy=\"59.5\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"137.2\" cy=\"178.0\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"174.9\" cy=\"151.6\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"137.2\" cy=\"85.9\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"174.9\" cy=\"59.5\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/><circle cx=\"110.0\" cy=\"22.0\" r=\"6\" fill=\"#2b6cb0\" stroke=\"#123\" stroke-width=\"1\"/></svg>"
+  },
+  {
+   "id": "T13-42",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "Two identical cubes are joined face to face to make the new solid below. How many faces and how many edges does the new solid have?",
+   "answer": "6 faces and 12 edges",
+   "accepted_answers": [
+    "6 faces and 12 edges",
+    "6, 12"
+   ],
+   "unit": "",
+   "hints": [
+    "Faces that are glued together disappear.",
+    "Two faces that become ONE flat face count as one; their shared edge disappears."
+   ],
+   "working": "The new solid has 6 faces, 12 edges and 8 vertices (check: 8 − 12 + 6 = 2).",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"220\" height=\"200\" viewBox=\"0 0 220 200\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"22.0\" y1=\"147.0\" x2=\"168.1\" y2=\"147.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"22.0\" y1=\"147.0\" x2=\"22.0\" y2=\"74.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"22.0\" y1=\"74.0\" x2=\"168.1\" y2=\"74.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"168.1\" y1=\"147.0\" x2=\"168.1\" y2=\"74.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"22.0\" y1=\"147.0\" x2=\"51.9\" y2=\"126.0\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"168.1\" y1=\"147.0\" x2=\"198.0\" y2=\"126.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"51.9\" y1=\"126.0\" x2=\"198.0\" y2=\"126.0\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"168.1\" y1=\"74.0\" x2=\"198.0\" y2=\"53.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"198.0\" y1=\"126.0\" x2=\"198.0\" y2=\"53.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"51.9\" y1=\"126.0\" x2=\"51.9\" y2=\"53.0\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"22.0\" y1=\"74.0\" x2=\"51.9\" y2=\"53.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"51.9\" y1=\"53.0\" x2=\"198.0\" y2=\"53.0\" stroke=\"#000\" stroke-width=\"1.6\" /></svg>"
+  },
+  {
+   "id": "T13-43",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "A triangular prism (with a right-angled triangle as its base) is joined to the right side of a cuboid to make the solid below. The faces fit exactly. How many faces and how many edges does the new solid have?",
+   "answer": "6 faces and 12 edges",
+   "accepted_answers": [
+    "6 faces and 12 edges",
+    "6, 12"
+   ],
+   "unit": "",
+   "hints": [
+    "Faces that are glued together disappear.",
+    "Two faces that become ONE flat face count as one; their shared edge disappears."
+   ],
+   "working": "The new solid has 6 faces, 12 edges and 8 vertices (check: 8 − 12 + 6 = 2).",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"220\" height=\"200\" viewBox=\"0 0 220 200\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"22.0\" y1=\"147.0\" x2=\"168.1\" y2=\"147.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"22.0\" y1=\"147.0\" x2=\"22.0\" y2=\"74.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"22.0\" y1=\"74.0\" x2=\"119.4\" y2=\"74.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"119.4\" y1=\"74.0\" x2=\"168.1\" y2=\"147.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"22.0\" y1=\"147.0\" x2=\"51.9\" y2=\"126.0\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"168.1\" y1=\"147.0\" x2=\"198.0\" y2=\"126.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"51.9\" y1=\"126.0\" x2=\"198.0\" y2=\"126.0\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"119.4\" y1=\"74.0\" x2=\"149.3\" y2=\"53.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"149.3\" y1=\"53.0\" x2=\"198.0\" y2=\"126.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"22.0\" y1=\"74.0\" x2=\"51.9\" y2=\"53.0\" stroke=\"#000\" stroke-width=\"1.6\" /><line x1=\"51.9\" y1=\"126.0\" x2=\"51.9\" y2=\"53.0\" stroke=\"#000\" stroke-width=\"1.6\" stroke-dasharray=\"5,4\"/><line x1=\"51.9\" y1=\"53.0\" x2=\"149.3\" y2=\"53.0\" stroke=\"#000\" stroke-width=\"1.6\" /></svg>"
   },
   {
    "id": "T8-01",
@@ -2639,6 +3399,130 @@
    "working": "Side 9 cm; 9 × 9 = 81 cm²"
   },
   {
+   "id": "T14-10",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "The figure is drawn on 1 cm square grid paper. What is the area of the shaded triangle?",
+   "answer": "15",
+   "accepted_answers": [
+    "15",
+    15
+   ],
+   "unit": "cm²",
+   "hints": [
+    "Count whole squares, and put half squares together.",
+    "Or use the formula: find base and height by counting squares."
+   ],
+   "working": "By formula / counting squares: area = 15 cm².",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"228\" height=\"202\" viewBox=\"0 0 228 202\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"36\" y1=\"10\" x2=\"36\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"62\" y1=\"10\" x2=\"62\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"88\" y1=\"10\" x2=\"88\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"114\" y1=\"10\" x2=\"114\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"140\" y1=\"10\" x2=\"140\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"166\" y1=\"10\" x2=\"166\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"192\" y1=\"10\" x2=\"192\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"218\" y1=\"10\" x2=\"218\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"218\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"36\" x2=\"218\" y2=\"36\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"62\" x2=\"218\" y2=\"62\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"88\" x2=\"218\" y2=\"88\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"114\" x2=\"218\" y2=\"114\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"140\" x2=\"218\" y2=\"140\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"166\" x2=\"218\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"192\" x2=\"218\" y2=\"192\" stroke=\"#bbb\"/><polygon points=\"36,166 192,166 114,36\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+  },
+  {
+   "id": "T14-11",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "The figure is drawn on 1 cm square grid paper. What is the area of the shaded parallelogram?",
+   "answer": "16",
+   "accepted_answers": [
+    "16",
+    16
+   ],
+   "unit": "cm²",
+   "hints": [
+    "Count whole squares, and put half squares together.",
+    "Or use the formula: find base and height by counting squares."
+   ],
+   "working": "By formula / counting squares: area = 16 cm².",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"228\" height=\"176\" viewBox=\"0 0 228 176\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"36\" y1=\"10\" x2=\"36\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"62\" y1=\"10\" x2=\"62\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"88\" y1=\"10\" x2=\"88\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"114\" y1=\"10\" x2=\"114\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"140\" y1=\"10\" x2=\"140\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"166\" y1=\"10\" x2=\"166\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"192\" y1=\"10\" x2=\"192\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"218\" y1=\"10\" x2=\"218\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"218\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"36\" x2=\"218\" y2=\"36\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"62\" x2=\"218\" y2=\"62\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"88\" x2=\"218\" y2=\"88\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"114\" x2=\"218\" y2=\"114\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"140\" x2=\"218\" y2=\"140\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"166\" x2=\"218\" y2=\"166\" stroke=\"#bbb\"/><polygon points=\"36,140 140,140 192,36 88,36\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+  },
+  {
+   "id": "T14-16",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "A square is drawn on a square grid. What fraction of the square is shaded?",
+   "options": [
+    "2/3",
+    "1/4",
+    "1/2",
+    "3/8"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "1/2"
+   ],
+   "unit": "",
+   "hints": [
+    "The 4 white corners are triangles — fit them together.",
+    "Each white triangle is half of a 2 × 2 block."
+   ],
+   "working": "Shaded = 16 − 4 × 2 = 8 squares; 8/16 = 1/2",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"124\" height=\"124\" viewBox=\"0 0 124 124\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"114\" stroke=\"#bbb\"/><line x1=\"36\" y1=\"10\" x2=\"36\" y2=\"114\" stroke=\"#bbb\"/><line x1=\"62\" y1=\"10\" x2=\"62\" y2=\"114\" stroke=\"#bbb\"/><line x1=\"88\" y1=\"10\" x2=\"88\" y2=\"114\" stroke=\"#bbb\"/><line x1=\"114\" y1=\"10\" x2=\"114\" y2=\"114\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"114\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"36\" x2=\"114\" y2=\"36\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"62\" x2=\"114\" y2=\"62\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"88\" x2=\"114\" y2=\"88\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"114\" x2=\"114\" y2=\"114\" stroke=\"#bbb\"/><polygon points=\"10,10 114,10 114,114 10,114\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"62,10 114,62 62,114 10,62\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+  },
+  {
+   "id": "T14-17",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "Which of the following quadrilaterals is a trapezium? (Each one is drawn on a square grid.)",
+   "options": [
+    "Diagram A",
+    "Diagram B",
+    "Diagram C",
+    "Diagram D"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "Diagram A"
+   ],
+   "unit": "",
+   "hints": [
+    "Check which sides are parallel by counting grid squares along each side.",
+    "Check which sides are equal in length."
+   ],
+   "working": "Shapes: A trapezium; B rectangle; C parallelogram; D kite. Answer Diagram A.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"614\" height=\"142\" viewBox=\"0 0 614 142\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><svg x=\"0\" y=\"0\" width=\"140.0\" height=\"120.0\" viewBox=\"0 0 140.0 120.0\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"10,90 110,90 90,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"70.0\" y=\"137.0\" text-anchor=\"middle\" font-weight=\"bold\">(A)</text><svg x=\"158.0\" y=\"0\" width=\"140.0\" height=\"120.0\" viewBox=\"0 0 140.0 120.0\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"30,90 110,90 110,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"228.0\" y=\"137.0\" text-anchor=\"middle\" font-weight=\"bold\">(B)</text><svg x=\"316.0\" y=\"0\" width=\"140.0\" height=\"120.0\" viewBox=\"0 0 140.0 120.0\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"10,90 90,90 110,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"386.0\" y=\"137.0\" text-anchor=\"middle\" font-weight=\"bold\">(C)</text><svg x=\"474.0\" y=\"0\" width=\"140.0\" height=\"120.0\" viewBox=\"0 0 140.0 120.0\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"70,10 110,50 70,110 30,50\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"544.0\" y=\"137.0\" text-anchor=\"middle\" font-weight=\"bold\">(D)</text></svg>",
+   "option_svgs": [
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"120\" viewBox=\"0 0 140 120\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"10,90 110,90 90,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"120\" viewBox=\"0 0 140 120\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"30,90 110,90 110,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"120\" viewBox=\"0 0 140 120\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"10,90 90,90 110,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"120\" viewBox=\"0 0 140 120\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"70,10 110,50 70,110 30,50\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+   ]
+  },
+  {
+   "id": "T14-21",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "How many pairs of parallel sides does the quadrilateral below have? What is its name?",
+   "answer": "1 pair; trapezium",
+   "accepted_answers": [
+    "1 pair; trapezium",
+    "1, trapezium",
+    "1 pair, trapezium"
+   ],
+   "unit": "",
+   "hints": [
+    "Look at the top and bottom sides along the grid lines.",
+    "Do the two slanting sides go in the same direction?"
+   ],
+   "working": "Only the top and bottom sides are parallel → 1 pair → trapezium.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"202\" height=\"150\" viewBox=\"0 0 202 150\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"140\" stroke=\"#bbb\"/><line x1=\"36\" y1=\"10\" x2=\"36\" y2=\"140\" stroke=\"#bbb\"/><line x1=\"62\" y1=\"10\" x2=\"62\" y2=\"140\" stroke=\"#bbb\"/><line x1=\"88\" y1=\"10\" x2=\"88\" y2=\"140\" stroke=\"#bbb\"/><line x1=\"114\" y1=\"10\" x2=\"114\" y2=\"140\" stroke=\"#bbb\"/><line x1=\"140\" y1=\"10\" x2=\"140\" y2=\"140\" stroke=\"#bbb\"/><line x1=\"166\" y1=\"10\" x2=\"166\" y2=\"140\" stroke=\"#bbb\"/><line x1=\"192\" y1=\"10\" x2=\"192\" y2=\"140\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"192\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"36\" x2=\"192\" y2=\"36\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"62\" x2=\"192\" y2=\"62\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"88\" x2=\"192\" y2=\"88\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"114\" x2=\"192\" y2=\"114\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"140\" x2=\"192\" y2=\"140\" stroke=\"#bbb\"/><polygon points=\"10,114 166,114 114,36 36,36\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+  },
+  {
    "id": "T14-02",
    "code": "T14",
    "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
@@ -2771,6 +3655,215 @@
    "working": "In both a kite and a rhombus the diagonals are perpendicular."
   },
   {
+   "id": "T14-12",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "The figure is drawn on 1 cm square grid paper. What is the area of the shaded trapezium?",
+   "answer": "22",
+   "accepted_answers": [
+    "22",
+    22
+   ],
+   "unit": "cm²",
+   "hints": [
+    "Count whole squares, and put half squares together.",
+    "Or use the formula: find base and height by counting squares."
+   ],
+   "working": "By formula / counting squares: area = 22 cm².",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"280\" height=\"202\" viewBox=\"0 0 280 202\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"36\" y1=\"10\" x2=\"36\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"62\" y1=\"10\" x2=\"62\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"88\" y1=\"10\" x2=\"88\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"114\" y1=\"10\" x2=\"114\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"140\" y1=\"10\" x2=\"140\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"166\" y1=\"10\" x2=\"166\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"192\" y1=\"10\" x2=\"192\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"218\" y1=\"10\" x2=\"218\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"244\" y1=\"10\" x2=\"244\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"270\" y1=\"10\" x2=\"270\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"270\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"36\" x2=\"270\" y2=\"36\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"62\" x2=\"270\" y2=\"62\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"88\" x2=\"270\" y2=\"88\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"114\" x2=\"270\" y2=\"114\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"140\" x2=\"270\" y2=\"140\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"166\" x2=\"270\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"192\" x2=\"270\" y2=\"192\" stroke=\"#bbb\"/><polygon points=\"36,166 244,166 166,62 88,62\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+  },
+  {
+   "id": "T14-15",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "The rectangle below is drawn on a square grid. The shaded part is what fraction of the WHITE part?",
+   "options": [
+    "1/2",
+    "1/3",
+    "2/3",
+    "1/4"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "1/2"
+   ],
+   "unit": "",
+   "hints": [
+    "Find the shaded area and the white area by counting squares.",
+    "Compare shaded with WHITE, not with the whole rectangle."
+   ],
+   "working": "Shaded 8 squares, white 16 squares → 1/2",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"176\" height=\"124\" viewBox=\"0 0 176 124\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"114\" stroke=\"#bbb\"/><line x1=\"36\" y1=\"10\" x2=\"36\" y2=\"114\" stroke=\"#bbb\"/><line x1=\"62\" y1=\"10\" x2=\"62\" y2=\"114\" stroke=\"#bbb\"/><line x1=\"88\" y1=\"10\" x2=\"88\" y2=\"114\" stroke=\"#bbb\"/><line x1=\"114\" y1=\"10\" x2=\"114\" y2=\"114\" stroke=\"#bbb\"/><line x1=\"140\" y1=\"10\" x2=\"140\" y2=\"114\" stroke=\"#bbb\"/><line x1=\"166\" y1=\"10\" x2=\"166\" y2=\"114\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"166\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"36\" x2=\"166\" y2=\"36\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"62\" x2=\"166\" y2=\"62\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"88\" x2=\"166\" y2=\"88\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"114\" x2=\"166\" y2=\"114\" stroke=\"#bbb\"/><polygon points=\"10,10 166,10 166,114 10,114\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"10,114 114,114 10,10\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+  },
+  {
+   "id": "T14-18",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Which of the following quadrilaterals is a rhombus? (Each one is drawn on a square grid.)",
+   "options": [
+    "Diagram A",
+    "Diagram B",
+    "Diagram C",
+    "Diagram D"
+   ],
+   "answer": "B",
+   "accepted_answers": [
+    "B",
+    "Diagram B"
+   ],
+   "unit": "",
+   "hints": [
+    "Check which sides are parallel by counting grid squares along each side.",
+    "Check which sides are equal in length."
+   ],
+   "working": "Shapes: A rectangle; B rhombus; C parallelogram; D trapezium. Answer Diagram B.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"614\" height=\"142\" viewBox=\"0 0 614 142\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><svg x=\"0\" y=\"0\" width=\"140.0\" height=\"120.0\" viewBox=\"0 0 140.0 120.0\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"30,90 110,90 110,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"70.0\" y=\"137.0\" text-anchor=\"middle\" font-weight=\"bold\">(A)</text><svg x=\"158.0\" y=\"0\" width=\"140.0\" height=\"120.0\" viewBox=\"0 0 140.0 120.0\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"30,10 90,30 110,90 50,70\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"228.0\" y=\"137.0\" text-anchor=\"middle\" font-weight=\"bold\">(B)</text><svg x=\"316.0\" y=\"0\" width=\"140.0\" height=\"120.0\" viewBox=\"0 0 140.0 120.0\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"10,90 90,90 110,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"386.0\" y=\"137.0\" text-anchor=\"middle\" font-weight=\"bold\">(C)</text><svg x=\"474.0\" y=\"0\" width=\"140.0\" height=\"120.0\" viewBox=\"0 0 140.0 120.0\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"10,90 110,90 90,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"544.0\" y=\"137.0\" text-anchor=\"middle\" font-weight=\"bold\">(D)</text></svg>",
+   "option_svgs": [
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"120\" viewBox=\"0 0 140 120\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"30,90 110,90 110,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"120\" viewBox=\"0 0 140 120\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"30,10 90,30 110,90 50,70\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"120\" viewBox=\"0 0 140 120\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"10,90 90,90 110,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"120\" viewBox=\"0 0 140 120\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"10,90 110,90 90,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+   ]
+  },
+  {
+   "id": "T14-19",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Which of the following quadrilaterals is a kite? (Each one is drawn on a square grid.)",
+   "options": [
+    "Diagram A",
+    "Diagram B",
+    "Diagram C",
+    "Diagram D"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "Diagram A"
+   ],
+   "unit": "",
+   "hints": [
+    "Check which sides are parallel by counting grid squares along each side.",
+    "Check which sides are equal in length."
+   ],
+   "working": "Shapes: A kite; B parallelogram; C rectangle; D trapezium. Answer Diagram A.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"614\" height=\"142\" viewBox=\"0 0 614 142\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><svg x=\"0\" y=\"0\" width=\"140.0\" height=\"120.0\" viewBox=\"0 0 140.0 120.0\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"70,10 110,50 70,110 30,50\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"70.0\" y=\"137.0\" text-anchor=\"middle\" font-weight=\"bold\">(A)</text><svg x=\"158.0\" y=\"0\" width=\"140.0\" height=\"120.0\" viewBox=\"0 0 140.0 120.0\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"10,90 90,90 110,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"228.0\" y=\"137.0\" text-anchor=\"middle\" font-weight=\"bold\">(B)</text><svg x=\"316.0\" y=\"0\" width=\"140.0\" height=\"120.0\" viewBox=\"0 0 140.0 120.0\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"30,90 110,90 110,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"386.0\" y=\"137.0\" text-anchor=\"middle\" font-weight=\"bold\">(C)</text><svg x=\"474.0\" y=\"0\" width=\"140.0\" height=\"120.0\" viewBox=\"0 0 140.0 120.0\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"10,90 110,90 90,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"544.0\" y=\"137.0\" text-anchor=\"middle\" font-weight=\"bold\">(D)</text></svg>",
+   "option_svgs": [
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"120\" viewBox=\"0 0 140 120\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"70,10 110,50 70,110 30,50\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"120\" viewBox=\"0 0 140 120\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"10,90 90,90 110,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"120\" viewBox=\"0 0 140 120\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"30,90 110,90 110,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"120\" viewBox=\"0 0 140 120\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"10,90 110,90 90,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+   ]
+  },
+  {
+   "id": "T14-20",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Which of the following quadrilaterals is a parallelogram? (Each one is drawn on a square grid.)",
+   "options": [
+    "Diagram A",
+    "Diagram B",
+    "Diagram C",
+    "Diagram D"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "Diagram C"
+   ],
+   "unit": "",
+   "hints": [
+    "Check which sides are parallel by counting grid squares along each side.",
+    "Check which sides are equal in length."
+   ],
+   "working": "Shapes: A trapezium; B kite; C parallelogram; D quadrilateral. Answer Diagram C.",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"614\" height=\"142\" viewBox=\"0 0 614 142\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><svg x=\"0\" y=\"0\" width=\"140.0\" height=\"120.0\" viewBox=\"0 0 140.0 120.0\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"10,90 110,90 90,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"70.0\" y=\"137.0\" text-anchor=\"middle\" font-weight=\"bold\">(A)</text><svg x=\"158.0\" y=\"0\" width=\"140.0\" height=\"120.0\" viewBox=\"0 0 140.0 120.0\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"70,10 110,50 70,110 30,50\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"228.0\" y=\"137.0\" text-anchor=\"middle\" font-weight=\"bold\">(B)</text><svg x=\"316.0\" y=\"0\" width=\"140.0\" height=\"120.0\" viewBox=\"0 0 140.0 120.0\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"30,90 110,90 130,30 50,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"386.0\" y=\"137.0\" text-anchor=\"middle\" font-weight=\"bold\">(C)</text><svg x=\"474.0\" y=\"0\" width=\"140.0\" height=\"120.0\" viewBox=\"0 0 140.0 120.0\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"10,30 110,10 130,90 50,110\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg><text x=\"544.0\" y=\"137.0\" text-anchor=\"middle\" font-weight=\"bold\">(D)</text></svg>",
+   "option_svgs": [
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"120\" viewBox=\"0 0 140 120\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"10,90 110,90 90,30 30,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"120\" viewBox=\"0 0 140 120\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"70,10 110,50 70,110 30,50\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"120\" viewBox=\"0 0 140 120\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"30,90 110,90 130,30 50,30\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"120\" viewBox=\"0 0 140 120\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"90\" y1=\"10\" x2=\"90\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"130\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"30\" x2=\"130\" y2=\"30\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"70\" x2=\"130\" y2=\"70\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"90\" x2=\"130\" y2=\"90\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"110\" x2=\"130\" y2=\"110\" stroke=\"#bbb\"/><polygon points=\"10,30 110,10 130,90 50,110\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+   ]
+  },
+  {
+   "id": "T14-22",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Find the area of the parallelogram below.",
+   "answer": "36",
+   "accepted_answers": [
+    "36",
+    36
+   ],
+   "unit": "cm²",
+   "hints": [
+    "Area = base × height.",
+    "The height must be at RIGHT ANGLES to the base — the 5 cm side is not the height."
+   ],
+   "working": "9 × 4 = 36 cm²",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"210\" viewBox=\"0 0 320 210\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><polygon points=\"42.0,144.3 219.0,144.3 278.0,65.7 101.0,65.7\" fill=\"#e8edf6\" stroke=\"#000\" stroke-width=\"1.6\"/><line x1=\"101.0\" y1=\"65.7\" x2=\"101.0\" y2=\"144.3\" stroke=\"#000\" stroke-dasharray=\"4,3\"/><polyline points=\"101.0,135.3 110.0,135.3 110.0,144.3\" fill=\"none\" stroke=\"#000\"/><text x=\"130.5\" y=\"162.1\" text-anchor=\"middle\" style=\"paint-order:stroke\" stroke=\"#fff\" stroke-width=\"3\">9 cm</text><text x=\"264.2\" y=\"116.9\" text-anchor=\"middle\" style=\"paint-order:stroke\" stroke=\"#fff\" stroke-width=\"3\">5 cm</text><text x=\"116.7\" y=\"109.0\" text-anchor=\"middle\" style=\"paint-order:stroke\" stroke=\"#fff\" stroke-width=\"3\">4 cm</text></svg>"
+  },
+  {
+   "id": "T14-23",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Find the area of the trapezium below.",
+   "answer": "48",
+   "accepted_answers": [
+    "48",
+    48
+   ],
+   "unit": "cm²",
+   "hints": [
+    "Area = (upper base + lower base) × height ÷ 2."
+   ],
+   "working": "(5 + 11) × 6 ÷ 2 = 48 cm²",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"210\" viewBox=\"0 0 320 210\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><polygon points=\"44.5,168.0 275.5,168.0 212.5,42.0 107.5,42.0\" fill=\"#e8edf6\" stroke=\"#000\" stroke-width=\"1.6\"/><line x1=\"107.5\" y1=\"42.0\" x2=\"107.5\" y2=\"168.0\" stroke=\"#000\" stroke-dasharray=\"4,3\"/><polyline points=\"107.5,159.0 116.5,159.0 116.5,168.0\" fill=\"none\" stroke=\"#000\"/><text x=\"160.0\" y=\"188.8\" text-anchor=\"middle\" style=\"paint-order:stroke\" stroke=\"#fff\" stroke-width=\"3\">11 cm</text><text x=\"160.0\" y=\"35.5\" text-anchor=\"middle\" style=\"paint-order:stroke\" stroke=\"#fff\" stroke-width=\"3\">5 cm</text><text x=\"139.0\" y=\"109.0\" text-anchor=\"middle\" style=\"paint-order:stroke\" stroke=\"#fff\" stroke-width=\"3\">6 cm</text></svg>"
+  },
+  {
+   "id": "T14-26",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "The figure is made of a rectangle and a triangle. Find its area.",
+   "answer": "52",
+   "accepted_answers": [
+    "52",
+    52
+   ],
+   "unit": "cm²",
+   "hints": [
+    "Split it into the rectangle and the triangle.",
+    "Triangle: base 8 cm, height 3 cm."
+   ],
+   "working": "8 × 5 + 8 × 3 ÷ 2 = 40 + 12 = 52 cm²",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"210\" viewBox=\"0 0 320 210\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><polygon points=\"97.0,168.0 223.0,168.0 223.0,89.2 160.0,42.0 97.0,89.2\" fill=\"#e8edf6\" stroke=\"#000\" stroke-width=\"1.6\"/><line x1=\"160.0\" y1=\"42.0\" x2=\"160.0\" y2=\"89.2\" stroke=\"#000\" stroke-dasharray=\"4,3\"/><polyline points=\"160.0,80.2 169.0,80.2 169.0,89.2\" fill=\"none\" stroke=\"#000\"/><text x=\"160.0\" y=\"184.6\" text-anchor=\"middle\" style=\"paint-order:stroke\" stroke=\"#fff\" stroke-width=\"3\">8 cm</text><text x=\"81.2\" y=\"132.6\" text-anchor=\"middle\" style=\"paint-order:stroke\" stroke=\"#fff\" stroke-width=\"3\">5 cm</text><text x=\"175.8\" y=\"71.2\" text-anchor=\"middle\" style=\"paint-order:stroke\" stroke=\"#fff\" stroke-width=\"3\">3 cm</text></svg>"
+  },
+  {
    "id": "T14-08",
    "code": "T14",
    "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
@@ -2788,6 +3881,90 @@
     "Area of triangle = base × height ÷ 2."
    ],
    "working": "Height 96 ÷ 12 = 8 cm; 12 × 8 ÷ 2 = 48 cm²"
+  },
+  {
+   "id": "T14-13",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "The figure is drawn on 1 cm square grid paper. What is the area of the shaded figure?",
+   "answer": "28",
+   "accepted_answers": [
+    "28",
+    28
+   ],
+   "unit": "cm²",
+   "hints": [
+    "Count whole squares, and put half squares together.",
+    "Or use the formula: find base and height by counting squares."
+   ],
+   "working": "By formula / counting squares: area = 28 cm².",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"228\" height=\"202\" viewBox=\"0 0 228 202\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"36\" y1=\"10\" x2=\"36\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"62\" y1=\"10\" x2=\"62\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"88\" y1=\"10\" x2=\"88\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"114\" y1=\"10\" x2=\"114\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"140\" y1=\"10\" x2=\"140\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"166\" y1=\"10\" x2=\"166\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"192\" y1=\"10\" x2=\"192\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"218\" y1=\"10\" x2=\"218\" y2=\"192\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"218\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"36\" x2=\"218\" y2=\"36\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"62\" x2=\"218\" y2=\"62\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"88\" x2=\"218\" y2=\"88\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"114\" x2=\"218\" y2=\"114\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"140\" x2=\"218\" y2=\"140\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"166\" x2=\"218\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"192\" x2=\"218\" y2=\"192\" stroke=\"#bbb\"/><polygon points=\"36,36 140,36 192,88 192,166 36,166\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+  },
+  {
+   "id": "T14-14",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "The figure is drawn on 1 cm square grid paper. What is the total area of the two shaded triangles?",
+   "answer": "16",
+   "accepted_answers": [
+    "16",
+    16
+   ],
+   "unit": "cm²",
+   "hints": [
+    "Count whole squares, and put half squares together.",
+    "Or use the formula: find base and height by counting squares."
+   ],
+   "working": "By formula / counting squares: area = 16 cm².",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"228\" height=\"176\" viewBox=\"0 0 228 176\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"36\" y1=\"10\" x2=\"36\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"62\" y1=\"10\" x2=\"62\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"88\" y1=\"10\" x2=\"88\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"114\" y1=\"10\" x2=\"114\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"140\" y1=\"10\" x2=\"140\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"166\" y1=\"10\" x2=\"166\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"192\" y1=\"10\" x2=\"192\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"218\" y1=\"10\" x2=\"218\" y2=\"166\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"10\" x2=\"218\" y2=\"10\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"36\" x2=\"218\" y2=\"36\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"62\" x2=\"218\" y2=\"62\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"88\" x2=\"218\" y2=\"88\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"114\" x2=\"218\" y2=\"114\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"140\" x2=\"218\" y2=\"140\" stroke=\"#bbb\"/><line x1=\"10\" y1=\"166\" x2=\"218\" y2=\"166\" stroke=\"#bbb\"/><polygon points=\"36,140 114,36 166,140\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/><polygon points=\"114,36 192,36 166,140\" fill=\"#9aa9c9\" stroke=\"#000\" stroke-width=\"1.6\"/></svg>"
+  },
+  {
+   "id": "T14-24",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "Find the area of the triangle below. (The dotted line is the height.)",
+   "answer": "15",
+   "accepted_answers": [
+    "15",
+    15
+   ],
+   "unit": "cm²",
+   "hints": [
+    "The height can be OUTSIDE the triangle.",
+    "Area = base × height ÷ 2, with base 6 cm."
+   ],
+   "working": "6 × 5 ÷ 2 = 15 cm²",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"210\" viewBox=\"0 0 320 210\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><polygon points=\"46.6,168.0 197.8,168.0 273.4,42.0\" fill=\"#e8edf6\" stroke=\"#000\" stroke-width=\"1.6\"/><line x1=\"273.4\" y1=\"42.0\" x2=\"273.4\" y2=\"168.0\" stroke=\"#000\" stroke-dasharray=\"4,3\"/><polyline points=\"273.4,159.0 282.4,159.0 282.4,168.0\" fill=\"none\" stroke=\"#000\"/><text x=\"122.2\" y=\"192.2\" text-anchor=\"middle\" style=\"paint-order:stroke\" stroke=\"#fff\" stroke-width=\"3\">6 cm</text><text x=\"293.6\" y=\"109.0\" text-anchor=\"middle\" style=\"paint-order:stroke\" stroke=\"#fff\" stroke-width=\"3\">5 cm</text></svg>"
+  },
+  {
+   "id": "T14-25",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "A right-angled triangle is cut from one corner of a rectangle 10 cm × 6 cm, as shown. Find the area of the remaining figure.",
+   "answer": "54",
+   "accepted_answers": [
+    "54",
+    54
+   ],
+   "unit": "cm²",
+   "hints": [
+    "Area of the whole rectangle first.",
+    "The cut-off triangle has legs 4 cm and 3 cm."
+   ],
+   "working": "10 × 6 − 4 × 3 ÷ 2 = 60 − 6 = 54 cm²",
+   "has_diagram": true,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"210\" viewBox=\"0 0 320 210\" font-family=\"DejaVu Sans, Arial\" font-size=\"13\"><polygon points=\"55.0,168.0 265.0,168.0 265.0,105.0 181.0,42.0 55.0,42.0\" fill=\"#e8edf6\" stroke=\"#000\" stroke-width=\"1.6\"/><text x=\"160.0\" y=\"188.8\" text-anchor=\"middle\" style=\"paint-order:stroke\" stroke=\"#fff\" stroke-width=\"3\">10 cm</text><text x=\"34.0\" y=\"109.0\" text-anchor=\"middle\" style=\"paint-order:stroke\" stroke=\"#fff\" stroke-width=\"3\">6 cm</text><text x=\"223.0\" y=\"33.4\" text-anchor=\"middle\" style=\"paint-order:stroke\" stroke=\"#fff\" stroke-width=\"3\">4 cm</text><text x=\"283.9\" y=\"77.5\" text-anchor=\"middle\" style=\"paint-order:stroke\" stroke=\"#fff\" stroke-width=\"3\">3 cm</text></svg>"
   },
   {
    "id": "T4-09",

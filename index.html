@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<!-- p6-quiz-v5 -->
+<!-- p6-quiz-v6 -->
 <title>P6 Maths Quiz 🌸</title><style>
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:linear-gradient(#fff0f6,#eef6ff);color:#333;min-height:100vh}
 .w{max-width:560px;margin:auto;padding:14px 14px calc(18px + env(safe-area-inset-bottom))}
@@ -42,7 +42,13 @@ body.noscroll{overflow:hidden}
 .reslist{text-align:left;padding-left:1.2em;margin:8px 0}
 .reslist li{margin:4px 0}
 button:focus-visible,input:focus-visible{outline:3px solid #9775fa;outline-offset:2px}
-svg{width:100%;height:auto}
+svg{width:100%;max-width:100%;height:auto}
+.fig{max-width:100%;margin:0 0 8px}
+.fig svg,.q>svg{width:100%;max-width:100%;height:auto;display:block}
+.optgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.opt.pic{margin:0;padding:8px;text-align:center}
+.opt.pic b{display:block;margin:0 0 6px;text-align:left}
+.opt.pic svg{width:auto;max-width:100%;height:auto;max-height:34vh;margin:0 auto;display:block}
 .timer{position:sticky;top:0;z-index:5;text-align:center;font-size:1.7em;font-weight:800;color:#5f3dc4;background:#fff;border-radius:16px;padding:8px 12px;margin:0 0 8px;box-shadow:0 2px 8px #0001}
 .timer.urgent{color:#c92a2a;background:#fff5f5}
 .timer small{display:block;font-size:.45em;font-weight:700;color:#888}
@@ -236,14 +242,37 @@ function bankOk(q,v){
  }
  return false;
 }
+function optionSvgs(raw){
+ const o=raw.option_svgs;
+ if(!o)return null;
+ if(Array.isArray(o))return o;
+ if(typeof o==='object')return ['A','B','C','D'].map(k=>o[k]||'');
+ return null;
+}
 function fromBank(raw){
  const tips=(raw.hints||[]).slice(0,3);
  const w=esc(raw.working||'');
  const graph=raw.data&&raw.data.type==='line'?raw.data:null;
- const qhtml=(graph?lineSvg(graph):'')+esc(raw.question||'');
- const base={id:raw.id,cat:raw.code,q:qhtml,w,tips,diff:raw.difficulty,bank:true,unit:raw.unit||'',answerText:raw.answer,accepted:raw.accepted_answers||[]};
+ // Bank SVGs are inserted as markup from this file. Question text stays escaped.
+ const fig=raw.svg?`<div class="fig">${raw.svg}</div>`:'';
+ const qhtml=(graph?lineSvg(graph):'')+fig+esc(raw.question||'');
+ const pics=optionSvgs(raw);
+ const base={id:raw.id,cat:raw.code,q:qhtml,w,tips,diff:raw.difficulty,bank:true,unit:raw.unit||'',answerText:raw.answer,accepted:raw.accepted_answers||[],pics,diagram:!!(raw.has_diagram||raw.svg||graph)};
  if(raw.format==='mcq')return Object.assign(base,{t:'m',o:raw.options||[],a:'ABCD'.indexOf(raw.answer)});
  return Object.assign(base,{t:'s',a:null,h:raw.unit?'Answer in '+raw.unit:''});
+}
+function choicesHtml(q,sel){
+ const pics=q.pics, grid=Array.isArray(pics)&&pics.some(Boolean);
+ const html=q.o.map((o,k)=>{
+  const face=grid&&pics[k]?pics[k]:(q.bank?esc(o):o);
+  return `<button class="opt${grid?' pic':''}${sel===k?' sel':''}" type="button" data-k="${k}"><b>${'ABCD'[k]}</b>${face}</button>`;
+ }).join('');
+ return grid?`<div class="optgrid">${html}</div>`:html;
+}
+function choicePic(q,k){
+ if(!q.pics||k==null||k==='')return '';
+ const s=q.pics[+k];
+ return s?`<div class="fig">${s}</div>`:'';
 }
 function displayAns(q){
  if(q.t==='m')return 'ABCD'[q.a]+' · '+q.o[q.a];
@@ -324,7 +353,7 @@ function blankRun(ids,mode){
  return {mode:mode||'practice',ids:ids.slice(),i:0,res:{},picks:{},hinted:{},flagged:{},timeUsed:{},done:false,diffs:diffs?diffs.slice():null,limitMs:0,startedAt:Date.now(),qStart:Date.now()};
 }
 function start(ids,sh,mode){if(!ids.length)return;data.run=blankRun(sh?shuf(ids):ids,mode||'practice');save();show()}
-function estMin(q){const base=q.diff==='hard'?3.5:q.diff==='easy'?1:2;return base+(String(q.q).indexOf('<svg')>=0?1:0)}
+function estMin(q){const base=q.diff==='hard'?3.5:q.diff==='easy'?1:2;return base+(q.diagram||String(q.q).indexOf('<svg')>=0?1:0)}
 function catScore(cat){
  const rows=data.attempts.filter(a=>a.cat===cat);
  if(!rows.length)return null;
@@ -494,7 +523,7 @@ function show(){
  let h=`<div class="meta"><span>Question ${run.i+1} / ${n}</span><span>⭐ ${Object.values(run.res).filter(x=>x).length}</span></div><div class="bar"><i style="width:${run.i/n*100}%"></i></div>
  <div class="card"><div class="qhead"><span class="tag">${esc(CN[q.cat])}</span><span class="tag ${q.diff}">${dlab}</span><span class="hint">${q.t=='m'?'Multiple choice':'Short answer'} · ${q.id}</span></div><div class="q">${q.q}</div>
  ${q.tips.length?`<button class="btn hintbtn" id="hint" type="button">💡 Hint</button>`:''}${watchBtn}<p class="hnote" id="hnote" hidden>Using a hint is okay — we’ll note it on your results. 💛</p><div id="steps"></div>`;
- if(q.t=='m')h+=q.o.map((o,k)=>`<button class="opt" type="button" data-k="${k}"><b>${'ABCD'[k]}</b>${q.bank?esc(o):o}</button>`).join('');
+ if(q.t=='m')h+=choicesHtml(q,null);
  else h+=`<input id="inp" autocomplete="off" placeholder="${esc(q.h||'Your answer')}" inputmode="${q.bank?(q.accepted.some(a=>typeof a==='number')?'decimal':'text'):(typeof q.a==='number'?'decimal':'text')}"><button class="btn" id="sub" type="button">Check ✔</button>`;
  h+=`<div id="fb"></div></div><button class="btn ghost" id="hm" type="button">🏠 Home (progress saved)</button>`;
  app.innerHTML=h;
@@ -605,7 +634,7 @@ function showTimed(){
  <div class="navq">${run.ids.map((id,i)=>`<button type="button" data-jump="${i}" class="${i===run.i?'on':''}${run.picks[id]!=null&&run.picks[id]!==''?' ans':''}${run.flagged[id]?' flag':''}">${i+1}</button>`).join('')}</div>
  <div class="card"><div class="qhead"><span class="tag">${esc(CN[q.cat])}</span><span class="tag ${q.diff}">${dlab}</span><span class="hint">${q.t==='m'?'Multiple choice':'Short answer'} · ${q.id}</span></div><div class="q">${q.q}</div>
  ${q.tips.length?`<button class="btn hintbtn" id="hint" type="button">💡 Hint</button>`:''}<p class="hnote" id="hnote" hidden>Using a hint is okay — we’ll note it on your results. 💛</p><div id="steps"></div>`;
- if(q.t==='m')h+=q.o.map((o,k)=>`<button class="opt${pick===k?' sel':''}" type="button" data-k="${k}"><b>${'ABCD'[k]}</b>${q.bank?esc(o):o}</button>`).join('');
+ if(q.t==='m')h+=choicesHtml(q,pick);
  else h+=`<input id="inp" autocomplete="off" placeholder="${esc(q.h||'Your answer')}" value="${pick!=null?esc(String(pick)).replace(/"/g,'&quot;'):''}" inputmode="${q.bank?(q.accepted.some(a=>typeof a==='number')?'decimal':'text'):(typeof q.a==='number'?'decimal':'text')}">`;
  h+=`</div><button class="btn" id="next" type="button">${run.i===n-1?'Save & review':'Save & next ➜'}</button>
  <button class="btn ghost" id="skip" type="button">Skip for now</button>
@@ -697,9 +726,11 @@ function endTimed(preview){
   const q=byId(id); if(!q)return '';
   const ok=!!run.res[id];
   const again=VID[q.cat]?`<button class="btn watchbtn" type="button" data-watch="${q.cat}">🎬 Watch how</button>`:'';
+  const yours=run.picks[id];
+  const same=q.t==='m'&&yours!=null&&yours!==''&&+yours===q.a;
   return `<details ${ok?'':'open'}><summary>${i+1}. ${esc(q.id)} ${esc(CN[q.cat]||'')} — ${ok?'correct':'not correct'}${run.hinted[id]?' · hint':''}${run.flagged[id]?' · flagged':''}</summary>
-  <p>Your answer: ${esc(yourAns(q,run.picks[id]))}</p>
-  <p>Answer: ${esc(rightAns(q))}</p>
+  <p>Your answer: ${esc(yourAns(q,yours))}</p>${choicePic(q,yours)}
+  <p>Answer: ${esc(rightAns(q))}</p>${same?'':choicePic(q,q.a)}
   <div class="fb ${ok?'ok':'no'}">${q.w}</div>${again}</details>`;
  }).join('')}
  </div>`;
@@ -870,7 +901,7 @@ async function boot(){
    if(item.t==='m'&&(item.a<0||item.o.length<2))return;
    Q.push(item);
   });
-  if(!bank.questions||bank.questions.length<190)loadNote='Some extra questions were missing.';
+  if(!bank.questions||bank.questions.length<237)loadNote='Some extra questions were missing.';
  }catch(e){
   loadNote='Extra questions did not load. You can still practise the first set.';
  }
