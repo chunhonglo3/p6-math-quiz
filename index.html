@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<!-- p6-quiz-v7 -->
+<!-- p6-quiz-v8 -->
 <title>P6 Maths Quiz 🌸</title><style>
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:linear-gradient(#fff0f6,#eef6ff);color:#333;min-height:100vh}
 .w{max-width:560px;margin:auto;padding:14px 14px calc(18px + env(safe-area-inset-bottom))}
@@ -69,7 +69,14 @@ textarea.code{width:100%;min-height:88px;font-size:16px;border:3px solid #e5dbff
 .chip.dur{min-height:52px;text-align:center}
 .sync{position:fixed;top:8px;right:8px;z-index:6;font-size:11px;font-weight:700;color:#888;background:#fff;border-radius:999px;padding:2px 7px;box-shadow:0 1px 4px #0002;pointer-events:none}
 .sync.wait{color:#8d6b00}.sync.ok{color:#2b8a3e}.sync.bad{color:#c92a2a}
-</style></head><body><div class="w"><h1>🌸 P6 Maths Practice</h1><div id="app"></div></div>
+.testbar{position:sticky;top:0;z-index:7;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;background:#f76707;color:#fff;font-weight:800;padding:10px 12px;text-align:center}
+.testbar[hidden]{display:none}
+.testbar b{letter-spacing:.04em}
+.testbar button{background:#fff;color:#d9480f;border:0;border-radius:999px;font:inherit;font-weight:800;padding:8px 14px;cursor:pointer}
+body.testmode .sync{top:auto;bottom:calc(8px + env(safe-area-inset-bottom))}
+</style></head><body>
+<div id="testbar" class="testbar" hidden><b>TEST MODE</b><span>Kept separate from her scores.</span><button type="button" id="clearTest">Clear test data</button></div>
+<div class="w"><h1>🌸 P6 Maths Practice</h1><div id="app"></div></div>
 <div id="sync" class="sync ok" title="Saved on this device">☁</div>
 <div id="watch" class="overlay" hidden><div class="overlay-card"><img id="watchimg" alt="" width="480" height="270"><p id="watchcap" class="pick"></p><p class="overlay-tap">Tap to close</p></div></div>
 <script>
@@ -282,7 +289,18 @@ function displayAns(q){
  const t=String(q.answerText);
  return q.unit&&t.indexOf(q.unit)<0?t+' '+q.unit:t;
 }
-const K='p6quiz4';
+function detectTest(){
+ let on=false;
+ try{
+  const q=new URLSearchParams(location.search).get('test');
+  if(q==='1'){localStorage.setItem('p6quizTest','1');on=true}
+  else if(q==='0'){localStorage.removeItem('p6quizTest');on=false}
+  else on=localStorage.getItem('p6quizTest')==='1';
+ }catch(e){on=false}
+ return on;
+}
+let testMode=detectTest();
+const K=testMode?'p6quiz4test':'p6quiz4';
 const DAY=86400000, GAPS=[1,3,7];
 function fresh(){return {v:4,best:{},run:null,attempts:[],review:{}}}
 function nestBest(best){
@@ -310,8 +328,8 @@ function migrate(o){
 function load(){
  try{
   let raw=localStorage.getItem(K);
-  const fromOld=!raw;
-  if(!raw)raw=localStorage.getItem('p6quiz3');
+  const fromOld=!testMode&&!raw;
+  if(fromOld)raw=localStorage.getItem('p6quiz3');
   const o=raw?JSON.parse(raw):null;
   const n=migrate(o);
   localStorage.setItem(K,JSON.stringify(n));
@@ -421,7 +439,7 @@ function logAttempt(q,ok,hint,ms,given){
 }
 const SYNC_URL='https://script.google.com/macros/s/AKfycbzSKho-3EUVhKJ3U8yIQ1vkpP6uFLrWos3Fu38ObSCh-8tnZs6J62tLDO33orcpz_Tw/exec';
 const SYNC_KEY='p6quiz-7Kq2';
-const OUT='p6quiz4out';
+const OUT=testMode?'p6quiz4testout':'p6quiz4out';
 let outbox=[];
 let syncing=false;
 function isoHK(t){
@@ -459,7 +477,8 @@ function queueAttempt(q,ok,hint,ms,given){
   correct:!!ok,
   hint_used:!!hint,
   time_sec:Math.round(Math.max(0,ms||0)/100)/10,
-  answer_given:String(given==null?'':given).slice(0,180)
+  answer_given:String(given==null?'':given).slice(0,180),
+  user:testMode?'test':'niece'
  };
  outbox.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6), row, sent:false});
  if(outbox.length>400)outbox=outbox.slice(-400);
@@ -960,17 +979,43 @@ function backupPage(){
 function confirmReset(){
  stopTick();
  app.innerHTML=`<div class="card" style="text-align:center"><div class="big">🗑️</div>
- <h2>Erase all saved progress?</h2>
- <p>Scores, review cards and the backup on this device will be cleared. This cannot be undone.</p>
+ <h2>${testMode?'Erase test progress?':'Erase all saved progress?'}</h2>
+ <p>${testMode?'Only the test scores on this device will be cleared.':'Scores, review cards and the backup on this device will be cleared. This cannot be undone.'}</p>
  <button class="btn" id="yes" type="button">Yes, erase</button>
  <button class="btn ghost" id="no" type="button">Cancel</button></div>`;
  document.getElementById('yes').onclick=()=>{
   data=fresh();
-  try{localStorage.removeItem(K);localStorage.removeItem('p6quiz1');localStorage.removeItem('p6quiz2');localStorage.removeItem('p6quiz3');localStorage.removeItem(OUT)}catch(e){}
+  try{
+   localStorage.removeItem(K);
+   localStorage.removeItem(OUT);
+   if(!testMode){localStorage.removeItem('p6quiz1');localStorage.removeItem('p6quiz2');localStorage.removeItem('p6quiz3')}
+  }catch(e){}
   outbox=[]; paintSync('ok');
   pick=null; diffs=null; save(); home();
  };
  document.getElementById('no').onclick=backupPage;
+}
+function confirmClearTest(){
+ if(!testMode)return;
+ stopTick();
+ app.innerHTML=`<div class="card" style="text-align:center"><div class="big">🧪</div>
+ <h2>Clear test data?</h2>
+ <p>Test scores, the test review queue and unsent test rows will be erased. Her saved progress stays.</p>
+ <button class="btn" id="yes" type="button">Clear test data</button>
+ <button class="btn ghost" id="no" type="button">Cancel</button></div>`;
+ document.getElementById('yes').onclick=()=>{
+  data=fresh(); outbox=[];
+  try{localStorage.removeItem('p6quiz4test');localStorage.removeItem('p6quiz4testout')}catch(e){}
+  pick=null; diffs=null; save(); saveOut(); paintSync('ok'); home();
+ };
+ document.getElementById('no').onclick=home;
+}
+function toggleTest(){
+ const next=!testMode;
+ try{if(next)localStorage.setItem('p6quizTest','1');else localStorage.removeItem('p6quizTest')}catch(e){}
+ const u=new URL(location.href);
+ if(next)u.searchParams.set('test','1'); else u.searchParams.delete('test');
+ location.replace(u.pathname+u.search+u.hash);
 }
 async function boot(){
  app.innerHTML='<div class="card"><p class="pick">Loading extra questions…</p></div>';
@@ -991,6 +1036,23 @@ async function boot(){
  data=load();
  home();
  flushOut();
+}
+if(testMode){
+ document.body.classList.add('testmode');
+ const bar=document.getElementById('testbar');
+ if(bar)bar.hidden=false;
+ const clearBtn=document.getElementById('clearTest');
+ if(clearBtn)clearBtn.onclick=confirmClearTest;
+}
+const titleEl=document.querySelector('h1');
+let holdT=0;
+if(titleEl){
+ const pressStart=()=>{clearTimeout(holdT);holdT=setTimeout(toggleTest,700)};
+ const pressEnd=()=>clearTimeout(holdT);
+ titleEl.addEventListener('pointerdown',pressStart);
+ titleEl.addEventListener('pointerup',pressEnd);
+ titleEl.addEventListener('pointercancel',pressEnd);
+ titleEl.addEventListener('contextmenu',e=>e.preventDefault());
 }
 boot();
 </script></body></html>
