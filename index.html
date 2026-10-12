@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<!-- p6-quiz-v6 -->
+<!-- p6-quiz-v7 -->
 <title>P6 Maths Quiz 🌸</title><style>
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:linear-gradient(#fff0f6,#eef6ff);color:#333;min-height:100vh}
 .w{max-width:560px;margin:auto;padding:14px 14px calc(18px + env(safe-area-inset-bottom))}
@@ -67,7 +67,10 @@ details{background:#f8f5ff;border-radius:14px;padding:10px 12px;margin:8px 0}
 details summary{font-weight:700;cursor:pointer;overflow-wrap:anywhere}
 textarea.code{width:100%;min-height:88px;font-size:16px;border:3px solid #e5dbff;border-radius:12px;padding:8px}
 .chip.dur{min-height:52px;text-align:center}
+.sync{position:fixed;top:8px;right:8px;z-index:6;font-size:11px;font-weight:700;color:#888;background:#fff;border-radius:999px;padding:2px 7px;box-shadow:0 1px 4px #0002;pointer-events:none}
+.sync.wait{color:#8d6b00}.sync.ok{color:#2b8a3e}.sync.bad{color:#c92a2a}
 </style></head><body><div class="w"><h1>🌸 P6 Maths Practice</h1><div id="app"></div></div>
+<div id="sync" class="sync ok" title="Saved on this device">☁</div>
 <div id="watch" class="overlay" hidden><div class="overlay-card"><img id="watchimg" alt="" width="480" height="270"><p id="watchcap" class="pick"></p><p class="overlay-tap">Tap to close</p></div></div>
 <script>
 const G='<svg viewBox="0 0 340 250" font-size="11" font-family="sans-serif"><text x="170" y="14" text-anchor="middle" font-weight="bold">Number of Books Borrowed</text>'+
@@ -349,8 +352,9 @@ function recordBest(){
 let pick=null;
 function pool(){return Q.filter(q=>(!pick||pick.includes(q.cat))&&inDiff(q,diffs))}
 function chosenIds(){return pool().map(q=>q.id)}
+function newSid(){return Math.random().toString(36).slice(2,8)+Date.now().toString(36).slice(-4)}
 function blankRun(ids,mode){
- return {mode:mode||'practice',ids:ids.slice(),i:0,res:{},picks:{},hinted:{},flagged:{},timeUsed:{},done:false,diffs:diffs?diffs.slice():null,limitMs:0,startedAt:Date.now(),qStart:Date.now()};
+ return {mode:mode||'practice',sid:newSid(),ids:ids.slice(),i:0,res:{},picks:{},hinted:{},flagged:{},timeUsed:{},done:false,diffs:diffs?diffs.slice():null,limitMs:0,startedAt:Date.now(),qStart:Date.now()};
 }
 function start(ids,sh,mode){if(!ids.length)return;data.run=blankRun(sh?shuf(ids):ids,mode||'practice');save();show()}
 function estMin(q){const base=q.diff==='hard'?3.5:q.diff==='easy'?1:2;return base+(q.diagram||String(q.q).indexOf('<svg')>=0?1:0)}
@@ -408,12 +412,85 @@ function scheduleReview(id,success){
  card.box+=1;
  card.due=now+GAPS[card.box]*DAY;
 }
-function logAttempt(q,ok,hint,ms){
+function logAttempt(q,ok,hint,ms,given){
  data.attempts.push({id:q.id,cat:q.cat,diff:q.diff||'medium',ok:!!ok,hint:!!hint,ms:Math.max(0,Math.round(ms||0)),t:Date.now()});
  if(data.attempts.length>2000)data.attempts.splice(0,data.attempts.length-2000);
  if(!ok||hint)scheduleReview(q.id,false);
  else if(data.review[q.id])scheduleReview(q.id,true);
+ queueAttempt(q,ok,hint,ms,given);
 }
+const SYNC_URL='https://script.google.com/macros/s/AKfycbzSKho-3EUVhKJ3U8yIQ1vkpP6uFLrWos3Fu38ObSCh-8tnZs6J62tLDO33orcpz_Tw/exec';
+const SYNC_KEY='p6quiz-7Kq2';
+const OUT='p6quiz4out';
+let outbox=[];
+let syncing=false;
+function isoHK(t){
+ const d=new Date((t||Date.now())+8*3600000), p=n=>String(n).padStart(2,'0');
+ return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'T'+p(d.getUTCHours())+':'+p(d.getUTCMinutes())+':'+p(d.getUTCSeconds())+'+08:00';
+}
+function loadOut(){
+ try{const a=JSON.parse(localStorage.getItem(OUT)); outbox=Array.isArray(a)?a.filter(x=>x&&x.row&&!x.sent):[]}catch(e){outbox=[]}
+}
+function saveOut(){try{localStorage.setItem(OUT,JSON.stringify(outbox.slice(-400)))}catch(e){}}
+function sessionMode(){
+ const m=data.run&&data.run.mode;
+ return m==='timed'||m==='review'||m==='quick10'||m==='category'||m==='practice'?m:'practice';
+}
+function paintSync(state){
+ const el=document.getElementById('sync'); if(!el)return;
+ const n=outbox.filter(x=>x&&!x.sent).length;
+  el.className='sync';
+  if(syncing||state==='wait'){el.classList.add('wait'); el.textContent='☁ Saving…'; el.title='Saving answers'; return}
+  if(n&&navigator.onLine===false){el.classList.add('bad'); el.textContent='☁ Offline'; el.title='Will send when you are back online'; return}
+  if(state==='bad'){el.classList.add('bad'); el.textContent='☁ Retry'; el.title='Will try again'; return}
+  if(n){el.classList.add('wait'); el.textContent='☁ '+n; el.title=n+' answer'+(n===1?'':'s')+' waiting to sync'; return}
+  el.classList.add('ok'); el.textContent='☁'; el.title='Saved on this device';
+}
+function queueAttempt(q,ok,hint,ms,given){
+ const run=data.run;
+ if(run&&!run.sid)run.sid=newSid();
+ const row={
+  timestamp:isoHK(Date.now()),
+  session_id:run&&run.sid?run.sid:'none',
+  mode:sessionMode(),
+  question_id:q.id,
+  category:CN[q.cat]||q.cat,
+  difficulty:q.diff||'medium',
+  correct:!!ok,
+  hint_used:!!hint,
+  time_sec:Math.round(Math.max(0,ms||0)/100)/10,
+  answer_given:String(given==null?'':given).slice(0,180)
+ };
+ outbox.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6), row, sent:false});
+ if(outbox.length>400)outbox=outbox.slice(-400);
+ saveOut();
+ paintSync('wait');
+ flushOut();
+}
+function flushOut(){
+ if(syncing)return;
+ const pending=outbox.filter(x=>x&&!x.sent&&x.row);
+ if(!pending.length){paintSync('ok'); return}
+ if(navigator.onLine===false){paintSync('offline'); return}
+ const batch=pending.slice(0,40);
+ syncing=true;
+ paintSync('wait');
+  let failed=false;
+  fetch(SYNC_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({key:SYNC_KEY,rows:batch.map(x=>x.row)})})
+  .then(()=>{
+   const ids={}; batch.forEach(x=>{ids[x.id]=1});
+   outbox=outbox.filter(x=>!ids[x.id]);
+   saveOut();
+  })
+  .catch(()=>{failed=true})
+  .then(()=>{
+   syncing=false;
+   paintSync(failed?(navigator.onLine===false?'offline':'bad'):'ok');
+   if(!failed&&outbox.some(x=>x&&!x.sent))flushOut();
+  });
+}
+loadOut();
+window.addEventListener('online',()=>flushOut());
 function fmtMs(ms){ms=Math.max(0,ms);const s=Math.ceil(ms/1000),m=Math.floor(s/60);return m+':'+String(s%60).padStart(2,'0')}
 function encodeProgress(obj){return 'P6:'+btoa(unescape(encodeURIComponent(JSON.stringify(obj))))}
 function decodeProgress(text){
@@ -491,8 +568,8 @@ function home(){
   paint();
  });
  paint();
- document.getElementById('go').onclick=()=>{const ids=chosenIds();if(ids.length)start(ids,document.getElementById('sh').checked)};
- document.getElementById('q10').onclick=()=>{const ids=shuf(chosenIds());if(ids.length)start(ids.slice(0,10),false,'practice')};
+ document.getElementById('go').onclick=()=>{const ids=chosenIds();if(ids.length)start(ids,document.getElementById('sh').checked,pick&&pick.length?'category':'practice')};
+ document.getElementById('q10').onclick=()=>{const ids=shuf(chosenIds());if(ids.length)start(ids.slice(0,10),false,'quick10')};
  const rs=document.getElementById('rs');if(rs)rs.onclick=show;
  const review=document.getElementById('review');if(review)review.onclick=()=>start(dueIds(),false,'review');
  document.getElementById('timed').onclick=timedSetup;
@@ -515,7 +592,7 @@ function show(){
  if(!run)return home();
  if(run.mode==='timed')return showTimed();
  stopTick();
- if(run.i>=run.ids.length){run.done=true;recordBest();save();return end()}
+ if(run.i>=run.ids.length){run.done=true;recordBest();save();flushOut();return end()}
  run.qStart=Date.now();
  const q=byId(run.ids[run.i]),n=run.ids.length,vid=VID[q.cat];
  const watchBtn=vid?`<button class="btn watchbtn" type="button" data-watch="${q.cat}">🎬 Watch how</button>`:'';
@@ -540,12 +617,12 @@ function show(){
   if(shown>=q.tips.length){hintBtn.disabled=true;hintBtn.textContent='💡 All steps shown'}
   else hintBtn.textContent='💡 Next hint';
  };
- const fin=(ok,ans)=>{
+ const fin=(ok,ans,given)=>{
   locked=true;if(hintBtn)hintBtn.disabled=true;
   run.res[q.id]=ok;
   const ms=(run.timeUsed[q.id]||0)+(Date.now()-(run.qStart||Date.now()));
   run.timeUsed[q.id]=ms;
-  logAttempt(q,ok,!!run.hinted[q.id],ms);
+  logAttempt(q,ok,!!run.hinted[q.id],ms,given);
   save();
   document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'no'}"><b>${ok?'🎉 Correct! Great job!':'😅 Not quite. Answer: '+esc(ans)}</b><br>${q.w}</div>${watchBtn}<button class="btn alt" id="nx" type="button">Next ➜</button>`;
   bindWatch(document.getElementById('fb'));
@@ -558,11 +635,11 @@ function show(){
   const k=+b.dataset.k,ok=k==q.a;
   b.classList.add(ok?'ok':'no');
   app.querySelectorAll('.opt')[q.a].classList.add('ok');
-  fin(ok,q.bank?displayAns(q):'ABCD'[q.a]);
+  fin(ok,q.bank?displayAns(q):'ABCD'[q.a],'ABCD'[k]);
  });
  else{
   const inp=document.getElementById('inp'),sub=document.getElementById('sub');
-  const go=()=>{if(locked||!inp.value.trim())return;inp.disabled=true;sub.remove();fin(q.bank?bankOk(q,inp.value):check(q,inp.value),q.bank?displayAns(q):String(ansTxt(q)))};
+  const go=()=>{if(locked||!inp.value.trim())return;const given=inp.value.trim();inp.disabled=true;sub.remove();fin(q.bank?bankOk(q,given):check(q,given),q.bank?displayAns(q):String(ansTxt(q)),given)};
   sub.onclick=go;inp.onkeydown=e=>{if(e.key=='Enter')go()};inp.focus();
  }
 }
@@ -686,9 +763,14 @@ function submitTimed(reason){
   const q=byId(id); if(!q)return;
   const ok=gradePick(q,run.picks[id]);
   run.res[id]=ok;
-  logAttempt(q,ok,!!run.hinted[id],run.timeUsed[id]||0);
+  logAttempt(q,ok,!!run.hinted[id],run.timeUsed[id]||0,givenText(q,run.picks[id]));
  });
- recordBest(); save(); endTimed(false);
+ recordBest(); save(); flushOut(); endTimed(false);
+}
+function givenText(q,pick){
+ if(pick==null||pick==='')return '';
+ if(q.t==='m')return 'ABCD'[+pick]||'';
+ return String(pick).slice(0,180);
 }
 function yourAns(q,pick){
  if(pick==null||pick==='')return 'Not answered';
@@ -818,7 +900,7 @@ function progressPage(){
   const ids=weak.map(c=>c.id);
   const missed=new Set(data.attempts.filter(a=>!a.ok&&ids.indexOf(a.cat)>=0).map(a=>a.id));
   const qs=Q.filter(q=>ids.indexOf(q.cat)>=0).slice().sort((a,b)=>(missed.has(b.id)-missed.has(a.id))||Math.random()-0.5);
-  start(qs.slice(0,12).map(q=>q.id),false,'practice');
+  start(qs.slice(0,12).map(q=>q.id),false,'category');
  };
  document.getElementById('hm').onclick=home;
 }
@@ -884,7 +966,8 @@ function confirmReset(){
  <button class="btn ghost" id="no" type="button">Cancel</button></div>`;
  document.getElementById('yes').onclick=()=>{
   data=fresh();
-  try{localStorage.removeItem(K);localStorage.removeItem('p6quiz1');localStorage.removeItem('p6quiz2');localStorage.removeItem('p6quiz3')}catch(e){}
+  try{localStorage.removeItem(K);localStorage.removeItem('p6quiz1');localStorage.removeItem('p6quiz2');localStorage.removeItem('p6quiz3');localStorage.removeItem(OUT)}catch(e){}
+  outbox=[]; paintSync('ok');
   pick=null; diffs=null; save(); home();
  };
  document.getElementById('no').onclick=backupPage;
@@ -907,6 +990,7 @@ async function boot(){
  }
  data=load();
  home();
+ flushOut();
 }
 boot();
 </script></body></html>
