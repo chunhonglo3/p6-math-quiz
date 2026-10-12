@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<!-- p6-quiz-v4 -->
+<!-- p6-quiz-v5 -->
 <title>P6 Maths Quiz 🌸</title><style>
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:linear-gradient(#fff0f6,#eef6ff);color:#333;min-height:100vh}
 .w{max-width:560px;margin:auto;padding:14px 14px calc(18px + env(safe-area-inset-bottom))}
@@ -43,6 +43,24 @@ body.noscroll{overflow:hidden}
 .reslist li{margin:4px 0}
 button:focus-visible,input:focus-visible{outline:3px solid #9775fa;outline-offset:2px}
 svg{width:100%;height:auto}
+.timer{position:sticky;top:0;z-index:5;text-align:center;font-size:1.7em;font-weight:800;color:#5f3dc4;background:#fff;border-radius:16px;padding:8px 12px;margin:0 0 8px;box-shadow:0 2px 8px #0001}
+.timer.urgent{color:#c92a2a;background:#fff5f5}
+.timer small{display:block;font-size:.45em;font-weight:700;color:#888}
+.navq{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.navq button{width:42px;height:42px;border-radius:12px;border:2px solid #e5dbff;background:#fff;font-weight:800;color:#5f3dc4;padding:0}
+.navq button.on{border-color:#f06595;background:#fff0f6}
+.navq button.ans{background:#e7f5ff}
+.navq button.flag{box-shadow:inset 0 -4px 0 #fab005}
+.opt.sel{border-color:#4dabf7;background:#e7f5ff}
+.row{display:flex;align-items:center;gap:8px;margin:7px 0}
+.row .name{width:46%;font-size:.92em;line-height:1.2;overflow-wrap:anywhere}
+.hbar{flex:1;height:14px;background:#ffe3ec;border-radius:8px;overflow:hidden}
+.hbar i{display:block;height:100%;background:linear-gradient(90deg,#69db7c,#9775fa)}
+.row b{width:3em;text-align:right;font-size:.9em}
+details{background:#f8f5ff;border-radius:14px;padding:10px 12px;margin:8px 0}
+details summary{font-weight:700;cursor:pointer;overflow-wrap:anywhere}
+textarea.code{width:100%;min-height:88px;font-size:16px;border:3px solid #e5dbff;border-radius:12px;padding:8px}
+.chip.dur{min-height:52px;text-align:center}
 </style></head><body><div class="w"><h1>🌸 P6 Maths Practice</h1><div id="app"></div></div>
 <div id="watch" class="overlay" hidden><div class="overlay-card"><img id="watchimg" alt="" width="480" height="270"><p id="watchcap" class="pick"></p><p class="overlay-tap">Tap to close</p></div></div>
 <script>
@@ -232,25 +250,49 @@ function displayAns(q){
  const t=String(q.answerText);
  return q.unit&&t.indexOf(q.unit)<0?t+' '+q.unit:t;
 }
-const K='p6quiz3';
-function fresh(){return {v:3,best:{},run:null}}
+const K='p6quiz4';
+const DAY=86400000, GAPS=[1,3,7];
+function fresh(){return {v:4,best:{},run:null,attempts:[],review:{}}}
+function nestBest(best){
+ const out={};
+ Object.keys(best).forEach(cat=>{
+  const b=best[cat];
+  if(!b||typeof b!=='object')return;
+  if(typeof b.c==='number'&&typeof b.n==='number')out[cat]={all:{c:b.c,n:b.n}};
+  else out[cat]=b;
+ });
+ return out;
+}
+function validRun(r){return !!(r&&Array.isArray(r.ids)&&typeof r.i==='number'&&r.res&&typeof r.res==='object'&&r.hinted&&typeof r.hinted==='object')}
+function migrate(o){
+ const n=fresh();
+ if(!o||typeof o!=='object')return n;
+ if(o.best&&typeof o.best==='object')n.best=nestBest(o.best);
+ if(Array.isArray(o.attempts))n.attempts=o.attempts.filter(a=>a&&a.id&&a.cat).slice(-2000);
+ if(o.review&&typeof o.review==='object')n.review=o.review;
+ if(validRun(o.run)&&o.run.ids.every(id=>byId(id))){
+  n.run=Object.assign({mode:'practice',picks:{},flagged:{},timeUsed:{},startedAt:Date.now(),limitMs:0,qStart:Date.now(),done:!!o.run.done,diffs:o.run.diffs||null},o.run);
+ }
+ return n;
+}
 function load(){
- try{localStorage.removeItem('p6quiz1');localStorage.removeItem('p6quiz2')}catch(e){}
  try{
-  const o=JSON.parse(localStorage.getItem(K)||'null');
-  if(!o||o.v!==3||!o.best||typeof o.best!=='object')return fresh();
-  if(o.run){
-   const r=o.run;
-   if(!Array.isArray(r.ids)||typeof r.i!=='number'||!r.res||typeof r.res!=='object'||!r.hinted||typeof r.hinted!=='object')return fresh();
-   if(r.ids.some(id=>!Q.some(q=>q.id===id)))o.run=null;
-  }
-  return o;
+  let raw=localStorage.getItem(K);
+  const fromOld=!raw;
+  if(!raw)raw=localStorage.getItem('p6quiz3');
+  const o=raw?JSON.parse(raw):null;
+  const n=migrate(o);
+  localStorage.setItem(K,JSON.stringify(n));
+  if(fromOld){localStorage.removeItem('p6quiz1');localStorage.removeItem('p6quiz2');localStorage.removeItem('p6quiz3')}
+  return n;
  }catch(e){return fresh()}
 }
-let data=fresh();
+var data=fresh();
 let loadNote='';
 let diffs=null;
-const save=()=>{try{localStorage.setItem(K,JSON.stringify(data))}catch(e){}};
+let tick=0;
+function stopTick(){if(tick){clearInterval(tick);tick=0}}
+function save(){try{localStorage.setItem(K,JSON.stringify(data))}catch(e){}}
 const app=document.getElementById('app');
 const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
 const byId=id=>Q.find(q=>q.id===id);
@@ -278,21 +320,101 @@ function recordBest(){
 let pick=null;
 function pool(){return Q.filter(q=>(!pick||pick.includes(q.cat))&&inDiff(q,diffs))}
 function chosenIds(){return pool().map(q=>q.id)}
-function start(ids,sh){data.run={ids:sh?shuf(ids):ids.slice(),i:0,res:{},hinted:{},done:false,diffs:diffs?diffs.slice():null};save();show()}
+function blankRun(ids,mode){
+ return {mode:mode||'practice',ids:ids.slice(),i:0,res:{},picks:{},hinted:{},flagged:{},timeUsed:{},done:false,diffs:diffs?diffs.slice():null,limitMs:0,startedAt:Date.now(),qStart:Date.now()};
+}
+function start(ids,sh,mode){if(!ids.length)return;data.run=blankRun(sh?shuf(ids):ids,mode||'practice');save();show()}
+function estMin(q){const base=q.diff==='hard'?3.5:q.diff==='easy'?1:2;return base+(String(q.q).indexOf('<svg')>=0?1:0)}
+function catScore(cat){
+ const rows=data.attempts.filter(a=>a.cat===cat);
+ if(!rows.length)return null;
+ const ok=rows.filter(a=>a.ok).length;
+ return ok/rows.length;
+}
+function weakness(cat){const s=catScore(cat);return s==null?0.45:1-s}
+function buildTimed(mins){
+ const buckets={easy:[],medium:[],hard:[]};
+ Q.forEach(q=>buckets[q.diff==='hard'?'hard':q.diff==='easy'?'easy':'medium'].push(q));
+ const targets={easy:mins*0.3,medium:mins*0.5,hard:mins*0.2};
+ const used={easy:0,medium:0,hard:0}, catN={}, chosen=[];
+ let guard=0;
+ while(guard++<400){
+  const total=used.easy+used.medium+used.hard;
+  if(total>=mins)break;
+  const order=['easy','medium','hard'].slice().sort((a,b)=>(used[a]/targets[a])-(used[b]/targets[b]));
+  let added=false;
+  for(const diff of order){
+   const pool=buckets[diff].filter(q=>chosen.indexOf(q)<0);
+   if(!pool.length)continue;
+   pool.sort((a,b)=>{
+    const sa=weakness(a.cat)-(catN[a.cat]||0)*0.25;
+    const sb=weakness(b.cat)-(catN[b.cat]||0)*0.25;
+    const d=sb-sa;
+    return Math.abs(d)>0.02?d:Math.random()-0.5;
+   });
+   const q=pool[0], em=estMin(q);
+   if(chosen.length&&total+em>mins+1)continue;
+   chosen.push(q); used[diff]+=em; catN[q.cat]=(catN[q.cat]||0)+1; added=true; break;
+  }
+  if(!added)break;
+ }
+ return shuf(chosen.map(q=>q.id));
+}
+function endOfToday(){const d=new Date();d.setHours(23,59,59,999);return d.getTime()}
+function dueIds(){
+ const end=endOfToday();
+ return Object.keys(data.review||{}).filter(id=>data.review[id]&&data.review[id].due<=end&&byId(id)).sort((a,b)=>data.review[a].due-data.review[b].due);
+}
+function scheduleReview(id,success){
+ const now=Date.now();
+ if(!data.review)data.review={};
+ if(!success){data.review[id]={box:0,streak:0,due:now+GAPS[0]*DAY};return}
+ const card=data.review[id]; if(!card)return;
+ if(typeof card.box!=='number'||card.box<0)card.box=0;
+ if(card.box>2)card.box=2;
+ card.streak=(card.streak||0)+1;
+ if(card.streak<2){card.due=now+GAPS[card.box]*DAY;return}
+ card.streak=0;
+ if(card.box>=2){delete data.review[id];return}
+ card.box+=1;
+ card.due=now+GAPS[card.box]*DAY;
+}
+function logAttempt(q,ok,hint,ms){
+ data.attempts.push({id:q.id,cat:q.cat,diff:q.diff||'medium',ok:!!ok,hint:!!hint,ms:Math.max(0,Math.round(ms||0)),t:Date.now()});
+ if(data.attempts.length>2000)data.attempts.splice(0,data.attempts.length-2000);
+ if(!ok||hint)scheduleReview(q.id,false);
+ else if(data.review[q.id])scheduleReview(q.id,true);
+}
+function fmtMs(ms){ms=Math.max(0,ms);const s=Math.ceil(ms/1000),m=Math.floor(s/60);return m+':'+String(s%60).padStart(2,'0')}
+function encodeProgress(obj){return 'P6:'+btoa(unescape(encodeURIComponent(JSON.stringify(obj))))}
+function decodeProgress(text){
+ let s=String(text||'').trim();
+ if(!s)throw new Error('empty');
+ if(s.slice(0,3)==='P6:')s=s.slice(3).replace(/\s+/g,'');
+ try{if(s[0]==='{')return JSON.parse(s)}catch(e){}
+ return JSON.parse(decodeURIComponent(escape(atob(s))));
+}
 function home(){
  scrollTo(0,0);
+ stopTick();
  const run=data.run,resume=run&&!run.done&&run.i<run.ids.length;
+ const due=dueIds().length;
+ const timedLeft=run&&run.mode==='timed'&&!run.done?run.limitMs-(Date.now()-run.startedAt):0;
  app.innerHTML=`<div class="card"><div class="big">🧮</div><p class="pick">${Q.length} questions. Pick a difficulty and one or more types.<br>Take your time — you can do it! 💪</p>
+ <p class="pick" id="dueLine"><b>${due}</b> question${due===1?'':'s'} due for review today</p>
+ ${due?`<button class="btn" id="review" type="button">🔁 Review due (${due})</button>`:''}
  ${loadNote?`<p class="pick">${esc(loadNote)}</p>`:''}
+ <button class="btn alt" id="timed" type="button">⏱ Timed session</button>
+ <button class="btn alt" id="progress" type="button">📈 My Progress</button>
  <div class="chips" id="diffs"><button type="button" class="chip all" data-diff="all"><b>All levels</b></button><button type="button" class="chip" data-diff="easy"><b>Easy</b></button><button type="button" class="chip" data-diff="medium"><b>Medium</b></button><button type="button" class="chip" data-diff="hard"><b>Hard</b></button></div>
  <div class="chips" id="chips"><button type="button" class="chip all" data-cat="all"><b>All types</b><small>${Q.length} questions</small></button>`+
  CATS.map(([id,name])=>`<button type="button" class="chip" data-cat="${id}"><b>${esc(name)}</b><small>${catCount(id)} question${catCount(id)===1?'':'s'} · ${bestLabel(id)}</small></button>`).join('')+
  `</div><p class="pick" id="picked"></p>
  <label style="font-size:1.05em;display:flex;gap:10px;align-items:center;margin:10px 0"><input type="checkbox" id="sh" style="width:26px;height:26px;margin:0"> Shuffle questions 🔀</label>
- ${resume?`<button class="btn alt" id="rs" type="button">▶ Continue (question ${run.i+1} of ${run.ids.length})</button>`:''}
+ ${resume?`<button class="btn alt" id="rs" type="button">${run.mode==='timed'?(timedLeft<=0?'⏱ Time’s up — see results':'▶ Continue timed ('+fmtMs(timedLeft)+' left)'):'▶ Continue (question '+(run.i+1)+' of '+run.ids.length+')'}</button>`:''}
  <button class="btn" id="go" type="button"></button>
  <button class="btn alt" id="q10" type="button"></button>
- <button class="btn ghost" id="wipe" type="button">Reset saved data</button></div>
+ <button class="btn ghost" id="backup" type="button">💾 Save / restore progress</button></div>
  <div class="card" id="videos"><h2 style="color:#5f3dc4;margin:.2em 0 .4em;font-size:1.25em">🎬 Videos</h2><p class="pick">Six short walkthroughs. A video loads only when you tap it.</p>
  ${VIDEOS.map(v=>`<button type="button" class="btn watchbtn" data-watch="${v.cat}">${esc(v.title)}<small>${esc(v.note)}</small></button>`).join('')}
  </div>`;
@@ -341,16 +463,31 @@ function home(){
  });
  paint();
  document.getElementById('go').onclick=()=>{const ids=chosenIds();if(ids.length)start(ids,document.getElementById('sh').checked)};
- document.getElementById('q10').onclick=()=>{const ids=shuf(chosenIds());if(ids.length)start(ids.slice(0,10),false)};
+ document.getElementById('q10').onclick=()=>{const ids=shuf(chosenIds());if(ids.length)start(ids.slice(0,10),false,'practice')};
  const rs=document.getElementById('rs');if(rs)rs.onclick=show;
- document.getElementById('wipe').onclick=()=>{data=fresh();try{localStorage.removeItem(K);localStorage.removeItem('p6quiz1');localStorage.removeItem('p6quiz2')}catch(e){}pick=null;diffs=null;home()};
+ const review=document.getElementById('review');if(review)review.onclick=()=>start(dueIds(),false,'review');
+ document.getElementById('timed').onclick=timedSetup;
+ document.getElementById('progress').onclick=progressPage;
+ document.getElementById('backup').onclick=backupPage;
  bindWatch(app);
+ if(run&&run.mode==='timed'&&!run.done){
+  const paintHome=()=>{
+   const rs=document.getElementById('rs');
+   if(!data.run||data.run.done||data.run.mode!=='timed'||!rs){stopTick();return}
+   const left=data.run.limitMs-(Date.now()-data.run.startedAt);
+   rs.textContent=left<=0?'⏱ Time’s up — see results':'▶ Continue timed ('+fmtMs(left)+' left)';
+  };
+  tick=setInterval(paintHome,250);
+ }
 }
 function show(){
  scrollTo(0,0);
  const run=data.run;
  if(!run)return home();
+ if(run.mode==='timed')return showTimed();
+ stopTick();
  if(run.i>=run.ids.length){run.done=true;recordBest();save();return end()}
+ run.qStart=Date.now();
  const q=byId(run.ids[run.i]),n=run.ids.length,vid=VID[q.cat];
  const watchBtn=vid?`<button class="btn watchbtn" type="button" data-watch="${q.cat}">🎬 Watch how</button>`:'';
  const dlab=q.diff==='easy'?'Easy':q.diff==='hard'?'Hard':'Medium';
@@ -376,7 +513,11 @@ function show(){
  };
  const fin=(ok,ans)=>{
   locked=true;if(hintBtn)hintBtn.disabled=true;
-  run.res[q.id]=ok;save();
+  run.res[q.id]=ok;
+  const ms=(run.timeUsed[q.id]||0)+(Date.now()-(run.qStart||Date.now()));
+  run.timeUsed[q.id]=ms;
+  logAttempt(q,ok,!!run.hinted[q.id],ms);
+  save();
   document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'no'}"><b>${ok?'🎉 Correct! Great job!':'😅 Not quite. Answer: '+esc(ans)}</b><br>${q.w}</div>${watchBtn}<button class="btn alt" id="nx" type="button">Next ➜</button>`;
   bindWatch(document.getElementById('fb'));
   const nx=document.getElementById('nx');
@@ -405,8 +546,317 @@ function end(){
  <p>${hinted.length?`💡 You used a hint on ${hinted.length} question${hinted.length===1?'':'s'}.`:'💡 No hints this time — nice work!'}</p>
  ${hinted.length?`<ul class="reslist">${hinted.map(id=>{const q=byId(id);return `<li>${q.id} ${esc(CN[q.cat])} — ${run.res[id]?'correct with a hint':'hint used'}</li>`}).join('')}</ul>`:''}
  ${wrong.length?`<button class="btn" id="rw" type="button">🔁 Retry wrong ones (${wrong.length})</button>`:''}<button class="btn alt" id="ag" type="button">Start again</button></div>`;
- if(wrong.length)document.getElementById('rw').onclick=()=>start(wrong,false);
+ if(wrong.length)document.getElementById('rw').onclick=()=>start(wrong,false,'practice');
  document.getElementById('ag').onclick=()=>{data.run=null;save();pick=null;home()};
+}
+function savePick(){
+ const run=data.run; if(!run)return;
+ const q=byId(run.ids[run.i]); if(!q)return;
+ if(q.t==='m'){
+  const sel=document.querySelector('.opt.sel');
+  if(sel)run.picks[q.id]=+sel.dataset.k; else if(run.picks[q.id]==null)delete run.picks[q.id];
+ }else{
+  const inp=document.getElementById('inp');
+  if(inp){const v=inp.value.trim(); if(v)run.picks[q.id]=v; else delete run.picks[q.id]}
+ }
+}
+function flushTime(){
+ const run=data.run; if(!run||run.i<0||run.i>=run.ids.length)return;
+ const id=run.ids[run.i];
+ if(run.qStart){run.timeUsed[id]=(run.timeUsed[id]||0)+(Date.now()-run.qStart); run.qStart=0}
+}
+window.addEventListener('pagehide',()=>{
+ if(data.run&&data.run.mode==='timed'&&!data.run.done){flushTime();save()}
+});
+window.addEventListener('pageshow',()=>{
+ const run=data.run;
+ if(run&&run.mode==='timed'&&!run.done&&document.getElementById('timer'))run.qStart=Date.now();
+});
+function armTimer(){
+ stopTick();
+ const paint=()=>{
+  const run=data.run, el=document.getElementById('timer');
+  if(!run||run.mode!=='timed'||run.done){stopTick();return}
+  const left=run.limitMs-(Date.now()-run.startedAt);
+  if(left<=0){submitTimed('time');return}
+  if(el){el.textContent=fmtMs(left); el.classList.toggle('urgent',left<60000)}
+ };
+ paint(); tick=setInterval(paint,250);
+}
+function showTimed(){
+ const run=data.run;
+ if(run.done)return endTimed();
+ const left=run.limitMs-(Date.now()-run.startedAt);
+ if(left<=0)return submitTimed('time');
+ if(run.i<0||run.i>=run.ids.length)run.i=0;
+ run.qStart=Date.now();
+ const q=byId(run.ids[run.i]);
+ if(!q){
+  run.ids=run.ids.filter(id=>byId(id));
+  if(!run.ids.length){data.run=null;save();return home()}
+  if(run.i>=run.ids.length)run.i=0;
+  return show();
+ }
+ const n=run.ids.length;
+ const dlab=q.diff==='easy'?'Easy':q.diff==='hard'?'Hard':'Medium';
+ const flagged=!!run.flagged[q.id], pick=run.picks[q.id];
+ let h=`<div class="timer" id="timer">${fmtMs(left)}<small>Timed session · answers at the end</small></div>
+ <div class="meta"><span>Question ${run.i+1} / ${n}</span><span>🚩 ${Object.keys(run.flagged).filter(id=>run.flagged[id]).length} flagged</span></div>
+ <div class="navq">${run.ids.map((id,i)=>`<button type="button" data-jump="${i}" class="${i===run.i?'on':''}${run.picks[id]!=null&&run.picks[id]!==''?' ans':''}${run.flagged[id]?' flag':''}">${i+1}</button>`).join('')}</div>
+ <div class="card"><div class="qhead"><span class="tag">${esc(CN[q.cat])}</span><span class="tag ${q.diff}">${dlab}</span><span class="hint">${q.t==='m'?'Multiple choice':'Short answer'} · ${q.id}</span></div><div class="q">${q.q}</div>
+ ${q.tips.length?`<button class="btn hintbtn" id="hint" type="button">💡 Hint</button>`:''}<p class="hnote" id="hnote" hidden>Using a hint is okay — we’ll note it on your results. 💛</p><div id="steps"></div>`;
+ if(q.t==='m')h+=q.o.map((o,k)=>`<button class="opt${pick===k?' sel':''}" type="button" data-k="${k}"><b>${'ABCD'[k]}</b>${q.bank?esc(o):o}</button>`).join('');
+ else h+=`<input id="inp" autocomplete="off" placeholder="${esc(q.h||'Your answer')}" value="${pick!=null?esc(String(pick)).replace(/"/g,'&quot;'):''}" inputmode="${q.bank?(q.accepted.some(a=>typeof a==='number')?'decimal':'text'):(typeof q.a==='number'?'decimal':'text')}">`;
+ h+=`</div><button class="btn" id="next" type="button">${run.i===n-1?'Save & review':'Save & next ➜'}</button>
+ <button class="btn ghost" id="skip" type="button">Skip for now</button>
+ <button class="btn ghost" id="flag" type="button">${flagged?'🚩 Flagged — tap to unflag':'🚩 Flag & come back'}</button>
+ <button class="btn alt" id="submit" type="button">Submit session</button>
+ <button class="btn ghost" id="hm" type="button">🏠 Home (timer keeps going)</button>`;
+ app.innerHTML=h;
+ let shown=0;
+ const hintBtn=document.getElementById('hint');
+ if(hintBtn)hintBtn.onclick=()=>{
+  if(shown>=q.tips.length)return;
+  shown++; run.hinted[q.id]=true; save();
+  document.getElementById('hnote').hidden=false;
+  document.getElementById('steps').innerHTML=q.tips.slice(0,shown).map((t,i)=>`<p class="step"><b>Step ${i+1}.</b> ${esc(t)}</p>`).join('');
+  if(shown>=q.tips.length){hintBtn.disabled=true;hintBtn.textContent='💡 All steps shown'}
+  else hintBtn.textContent='💡 Next hint';
+ };
+ if(q.t==='m')app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+  app.querySelectorAll('.opt').forEach(x=>x.classList.remove('sel'));
+  b.classList.add('sel'); run.picks[q.id]=+b.dataset.k; save();
+ });
+ const goNext=jump=>{
+  flushTime(); savePick();
+  if(typeof jump==='number')run.i=jump;
+  else if(run.i<n-1)run.i++;
+  else {save();return endTimed(true)}
+  save(); show();
+ };
+ document.getElementById('next').onclick=()=>goNext();
+ document.getElementById('skip').onclick=()=>{flushTime(); savePick(); if(run.i<n-1){run.i++;save();show()}else{save();endTimed(true)}};
+ document.getElementById('flag').onclick=()=>{flushTime(); savePick(); const was=!!run.flagged[q.id]; run.flagged[q.id]=!was; if(!was&&run.i<n-1)run.i++; save(); show()};
+ document.getElementById('submit').onclick=()=>{flushTime(); savePick(); submitTimed('submit')};
+ document.getElementById('hm').onclick=()=>{flushTime(); savePick(); save(); home()};
+ app.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>goNext(+b.dataset.jump));
+ armTimer();
+}
+function gradePick(q,pick){
+ if(pick==null||pick==='')return false;
+ if(q.t==='m')return +pick===q.a;
+ return q.bank?bankOk(q,String(pick)):check(q,String(pick));
+}
+function submitTimed(reason){
+ const run=data.run;
+ if(!run||run.mode!=='timed'||run.done)return;
+ stopTick(); flushTime();
+ run.done=true; run.reason=reason||'submit';
+ run.timeUsedTotal=Math.min(Math.max(0,Date.now()-run.startedAt),run.limitMs);
+ run.ids.forEach(id=>{
+  const q=byId(id); if(!q)return;
+  const ok=gradePick(q,run.picks[id]);
+  run.res[id]=ok;
+  logAttempt(q,ok,!!run.hinted[id],run.timeUsed[id]||0);
+ });
+ recordBest(); save(); endTimed(false);
+}
+function yourAns(q,pick){
+ if(pick==null||pick==='')return 'Not answered';
+ if(q.t==='m'){const o=q.o[+pick];return 'ABCD'[+pick]+(o?' · '+(q.bank?o:o.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')):'')}
+ return String(pick);
+}
+function rightAns(q){return q.bank?displayAns(q):q.t==='m'?'ABCD'[q.a]:String(ansTxt(q))}
+function endTimed(preview){
+ stopTick(); scrollTo(0,0);
+ const run=data.run;
+ if(preview){
+  const left=run.ids.filter(id=>run.picks[id]==null||run.picks[id]==='').length;
+  const flagged=run.ids.filter(id=>run.flagged[id]);
+  const remain=Math.max(0,run.limitMs-(Date.now()-run.startedAt));
+  app.innerHTML=`<div class="timer" id="timer">${fmtMs(remain)}<small>Timed session</small></div>
+  <div class="card" style="text-align:center"><div class="big">📝</div><h2>Ready to hand in?</h2>
+  <p>${left?left+' question'+(left===1?'':'s')+' still blank.':''} ${flagged.length?flagged.length+' flagged.':''}</p>
+  <p class="pick">You still have ${fmtMs(run.limitMs-(Date.now()-run.startedAt))}.</p>
+  <button class="btn" id="submit" type="button">Submit now</button>
+  <button class="btn alt" id="back" type="button">Keep going</button></div>`;
+  document.getElementById('submit').onclick=()=>submitTimed('submit');
+  document.getElementById('back').onclick=()=>{save();show()};
+  armTimer();
+  return;
+ }
+ const n=run.ids.length, c=run.ids.filter(id=>run.res[id]).length, p=n?c/n:0;
+ const used=run.timeUsedTotal!=null?run.timeUsedTotal:Math.min(Date.now()-run.startedAt,run.limitMs);
+ app.innerHTML=`<div class="card" style="text-align:center"><div class="big">${p===1?'🏆':p>=.7?'🌟':'💪'}</div>
+ <h2>You scored ${c} / ${n}</h2>
+ <p>${run.reason==='time'?'Time’s up.':'Handed in.'} Time used <b>${fmtMs(used)}</b> of ${fmtMs(run.limitMs)}.</p>
+ <p>${p===1?'Perfect! Amazing!':p>=.7?'Well done!':'Good try — look through the working below.'}</p>
+ <button class="btn alt" id="ag" type="button">🏠 Home</button></div>
+ <div class="card"><h2 style="color:#5f3dc4;margin:.2em 0">Review</h2>
+ ${run.ids.map((id,i)=>{
+  const q=byId(id); if(!q)return '';
+  const ok=!!run.res[id];
+  const again=VID[q.cat]?`<button class="btn watchbtn" type="button" data-watch="${q.cat}">🎬 Watch how</button>`:'';
+  return `<details ${ok?'':'open'}><summary>${i+1}. ${esc(q.id)} ${esc(CN[q.cat]||'')} — ${ok?'correct':'not correct'}${run.hinted[id]?' · hint':''}${run.flagged[id]?' · flagged':''}</summary>
+  <p>Your answer: ${esc(yourAns(q,run.picks[id]))}</p>
+  <p>Answer: ${esc(rightAns(q))}</p>
+  <div class="fb ${ok?'ok':'no'}">${q.w}</div>${again}</details>`;
+ }).join('')}
+ </div>`;
+ bindWatch(app);
+ document.getElementById('ag').onclick=()=>{data.run=null;save();home()};
+}
+function timedSetup(){
+ stopTick(); scrollTo(0,0);
+ let mins=20, chip=20, planned=[];
+ const draw=()=>{
+  planned=buildTimed(mins);
+  const ids=planned;
+  const plan=document.getElementById('plan');
+  if(plan){
+   const bits={easy:0,medium:0,hard:0};
+   ids.forEach(id=>{const q=byId(id);bits[q.diff==='hard'?'hard':q.diff==='easy'?'easy':'medium']++});
+   plan.textContent='About '+ids.length+' question'+(ids.length===1?'':'s')+' · '+bits.easy+' easy, '+bits.medium+' medium, '+bits.hard+' hard. Diagrams get a little extra time.';
+  }
+ };
+ app.innerHTML=`<div class="card"><h2 style="color:#5f3dc4;margin:.2em 0">⏱ Timed session</h2>
+ <p class="pick">A mix of about 30% easy, 50% medium and 20% hard, spread across topics, with more from the ones you find tricky.</p>
+ ${data.run&&data.run.mode==='timed'&&!data.run.done?'<p class="pick">A timed session is already going. Starting a new one replaces it.</p>':''}
+ <div class="chips" id="durs">
+  <button type="button" class="chip dur" data-mins="10"><b>10 min</b></button>
+  <button type="button" class="chip dur" data-mins="20"><b>20 min</b></button>
+  <button type="button" class="chip dur" data-mins="30"><b>30 min</b></button>
+  <button type="button" class="chip dur" data-mins="40"><b>40 min</b></button>
+ </div>
+ <label style="font-size:1.05em;display:block;margin:10px 0">Custom minutes<br><input id="customMin" inputmode="numeric" placeholder="e.g. 15" style="font-size:16px"></label>
+ <p class="pick" id="plan"></p>
+ <button class="btn" id="begin" type="button">Start session 🚀</button>
+ <button class="btn ghost" id="hm" type="button">🏠 Home</button></div>`;
+ const mark=()=>app.querySelectorAll('[data-mins]').forEach(b=>b.classList.toggle('on',+b.dataset.mins===mins));
+ mark(); draw();
+ app.querySelectorAll('[data-mins]').forEach(b=>b.onclick=()=>{mins=chip=+b.dataset.mins;document.getElementById('customMin').value='';mark();draw()});
+ document.getElementById('customMin').oninput=e=>{
+  const raw=e.target.value.trim();
+  if(!raw){mins=chip;mark();draw();return}
+  const v=parseInt(raw,10);
+  if(v>=1&&v<=180){mins=v;mark();draw()}
+ };
+ document.getElementById('begin').onclick=()=>{
+  const raw=document.getElementById('customMin').value.trim();
+  if(raw){
+   const v=parseInt(raw,10);
+   if(!(v>=1&&v<=180)){document.getElementById('plan').textContent='Choose a time from 1 to 180 minutes.';return}
+   if(v!==mins){mins=v;draw()}
+  }
+  const ids=planned.length?planned:buildTimed(mins);
+  if(!ids.length)return;
+  data.run=blankRun(ids,'timed');
+  data.run.limitMs=mins*60000;
+  data.run.startedAt=Date.now();
+  save(); show();
+ };
+ document.getElementById('hm').onclick=home;
+}
+function dayKey(t){const d=new Date(t);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function progressPage(){
+ stopTick(); scrollTo(0,0);
+ const cats=CATS.map(([id,name])=>{
+  const rows=data.attempts.filter(a=>a.cat===id);
+  return {id,name,n:rows.length,ok:rows.filter(a=>a.ok).length};
+ }).filter(c=>c.n);
+ const weak=[...cats].sort((a,b)=>(a.ok/a.n)-(b.ok/b.n)||b.n-a.n).slice(0,3);
+ const days=[];
+ for(let i=13;i>=0;i--){const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()-i);days.push(dayKey(d.getTime()))}
+ const byDay={};
+ data.attempts.forEach(a=>{const k=dayKey(a.t);if(!byDay[k])byDay[k]={n:0,ok:0};byDay[k].n++;if(a.ok)byDay[k].ok++});
+ app.innerHTML=`<div class="card"><h2 style="color:#5f3dc4;margin:.2em 0">📈 My Progress</h2>
+ <p class="pick">${data.attempts.length} answer${data.attempts.length===1?'':'s'} saved on this device.</p>
+ ${cats.length?cats.map(c=>`<div class="row"><span class="name">${esc(c.name)}</span><span class="hbar"><i style="width:${Math.round(c.ok/c.n*100)}%"></i></span><b>${Math.round(c.ok/c.n*100)}%</b></div>`).join(''):'<p>Answer a few questions and your chart will show up here.</p>'}
+ </div>
+ <div class="card"><h2 style="color:#5f3dc4;margin:.2em 0">Last 14 days</h2>
+ ${days.map(k=>{const r=byDay[k];const pct=r?Math.round(r.ok/r.n*100):0;return `<div class="row"><span class="name">${k.slice(5)}</span><span class="hbar"><i style="width:${pct}%"></i></span><b>${r?pct+'%':'—'}</b></div>`}).join('')}
+ <p class="hint">Each bar is how many of that day’s answers were correct.</p></div>
+ <div class="card"><h2 style="color:#5f3dc4;margin:.2em 0">Review queue</h2>
+ <p>A miss or a hint comes back in 1 day. Two right answers in a row, with no hint, move it to 3 days, then 7 days. Two right answers on the 7-day step finish it. A miss or a hint starts again at 1 day.</p>
+ <p class="pick"><b>${dueIds().length}</b> due today · <b>${Object.keys(data.review).length}</b> still in review</p></div>
+ <div class="card"><h2 style="color:#5f3dc4;margin:.2em 0">Weakest topics</h2>
+ ${weak.length?`<ul class="reslist">${weak.map(c=>`<li>${esc(c.name)} — ${c.ok}/${c.n} correct</li>`).join('')}</ul><button class="btn" id="practise" type="button">Practise these</button>`:'<p>Keep going — three topics will show here once you have some answers.</p>'}
+ <button class="btn ghost" id="hm" type="button">🏠 Home</button></div>`;
+ const p=document.getElementById('practise');
+ if(p)p.onclick=()=>{
+  const ids=weak.map(c=>c.id);
+  const missed=new Set(data.attempts.filter(a=>!a.ok&&ids.indexOf(a.cat)>=0).map(a=>a.id));
+  const qs=Q.filter(q=>ids.indexOf(q.cat)>=0).slice().sort((a,b)=>(missed.has(b.id)-missed.has(a.id))||Math.random()-0.5);
+  start(qs.slice(0,12).map(q=>q.id),false,'practice');
+ };
+ document.getElementById('hm').onclick=home;
+}
+function backupPage(){
+ stopTick(); scrollTo(0,0);
+ app.innerHTML=`<div class="card"><h2 style="color:#5f3dc4;margin:.2em 0">💾 Save / restore</h2>
+ <p class="pick">Copy a code or download a file. Nothing is sent to a server.</p>
+ <button class="btn" id="exp" type="button">Show my backup code</button>
+ <textarea class="code" id="code" hidden readonly></textarea>
+ <button class="btn alt" id="copy" type="button" hidden>Copy code</button>
+ <button class="btn alt" id="file" type="button">Download progress file</button>
+ <h2 style="color:#5f3dc4;font-size:1.15em">Import</h2>
+ <textarea class="code" id="imp" placeholder="Paste a P6: code or JSON"></textarea>
+ <label class="btn ghost" style="text-align:center">Choose a file<input id="impfile" type="file" accept="application/json,.json,.txt,text/plain" hidden></label>
+ <button class="btn" id="doimp" type="button">Import</button>
+ <p class="pick" id="msg"></p>
+ <button class="btn ghost" id="wipe" type="button">Reset saved data</button>
+ <button class="btn ghost" id="hm" type="button">🏠 Home</button></div>`;
+ const msg=t=>{document.getElementById('msg').textContent=t};
+ document.getElementById('exp').onclick=()=>{
+  try{
+   const box=document.getElementById('code');
+   box.hidden=false; box.value=encodeProgress(data);
+   document.getElementById('copy').hidden=false;
+   msg('Code ready. Copy it or download the file.');
+  }catch(e){msg('Could not make a code. Download the file instead.')}
+ };
+ document.getElementById('copy').onclick=async()=>{
+  const text=document.getElementById('code').value;
+  try{await navigator.clipboard.writeText(text);msg('Copied.')}
+  catch(e){document.getElementById('code').focus();document.getElementById('code').select();msg('Select the code and copy it.')}
+ };
+ document.getElementById('file').onclick=()=>{
+  const blob=new Blob([JSON.stringify(data)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob); a.download='p6-progress.json'; a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+  msg('File downloaded.');
+ };
+ document.getElementById('impfile').onchange=e=>{
+  const f=e.target.files&&e.target.files[0]; if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{document.getElementById('imp').value=String(r.result||'')};
+  r.readAsText(f);
+ };
+ document.getElementById('doimp').onclick=()=>{
+  try{
+   const o=decodeProgress(document.getElementById('imp').value);
+   data=migrate(o); save(); pick=null; diffs=null;
+   msg('Imported. Your progress is back.');
+   setTimeout(home,600);
+  }catch(e){msg('That code could not be read. Check it and try again.')}
+ };
+ document.getElementById('wipe').onclick=confirmReset;
+ document.getElementById('hm').onclick=home;
+}
+function confirmReset(){
+ stopTick();
+ app.innerHTML=`<div class="card" style="text-align:center"><div class="big">🗑️</div>
+ <h2>Erase all saved progress?</h2>
+ <p>Scores, review cards and the backup on this device will be cleared. This cannot be undone.</p>
+ <button class="btn" id="yes" type="button">Yes, erase</button>
+ <button class="btn ghost" id="no" type="button">Cancel</button></div>`;
+ document.getElementById('yes').onclick=()=>{
+  data=fresh();
+  try{localStorage.removeItem(K);localStorage.removeItem('p6quiz1');localStorage.removeItem('p6quiz2');localStorage.removeItem('p6quiz3')}catch(e){}
+  pick=null; diffs=null; save(); home();
+ };
+ document.getElementById('no').onclick=backupPage;
 }
 async function boot(){
  app.innerHTML='<div class="card"><p class="pick">Loading extra questions…</p></div>';
