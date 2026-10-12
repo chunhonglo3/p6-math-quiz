@@ -1,0 +1,4508 @@
+{
+ "title": "P6 Maths – Extra Practice Question Bank",
+ "count": 190,
+ "categories": [
+  "T9 Average (mean): new average, missing value, combined groups",
+  "T12 Water level: displacement, height of liquid, thickness/inner capacity",
+  "T16 Money, best buy & tiered charges (taxi, laundry, phone, gas, buffet, bills)",
+  "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+  "T8 Fraction word problems (fraction of a quantity, of the remainder, \"what fraction\")",
+  "T17 Broken line graphs",
+  "T5 Division with remainder in context (\"at most how many\", \"how much is left\", \"how many needed\")",
+  "T6 Factors, multiples, primes, divisibility, H.C.F./L.C.M.",
+  "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+  "T4 Decimal computation: mixed operations, quotient correct to d.p., shifted-decimal \"mistake\"/same-quotient, smallest expression",
+  "T10 Capacity/volume units & reading scales (L, mL, cm³, m³)",
+  "T7 Fractions: compare, equivalent fractions, mixed-number calculation",
+  "T11 Volume of cuboids & composite solids",
+  "T3 Decimals: place value, writing numerals (\"5 tens and 50 thousandths\")",
+  "T2 Rounding & approximation (incl. \"which can be the actual number\", rounding with unit change)",
+  "T18 Length & mass word problems with unit conversion (wire, ribbon, rice…)",
+  "T1 Whole numbers: place value, numerals & words, largest/smallest numbers",
+  "T15 Algebra: expressing quantities with letters",
+  "T19 Directions & turning"
+ ],
+ "questions": [
+  {
+   "id": "T9-01",
+   "code": "T9",
+   "category": "T9 Average (mean): new average, missing value, combined groups",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "What is the average of 18, 25, 32 and 41?",
+   "options": [
+    "116",
+    "30",
+    "28",
+    "29"
+   ],
+   "answer": "D",
+   "accepted_answers": [
+    "D",
+    "29"
+   ],
+   "unit": "",
+   "hints": [
+    "Add all the numbers first.",
+    "Divide the total by how many numbers there are."
+   ],
+   "working": "(18 + 25 + 32 + 41) ÷ 4 = 116 ÷ 4 = 29"
+  },
+  {
+   "id": "T9-02",
+   "code": "T9",
+   "category": "T9 Average (mean): new average, missing value, combined groups",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "Kitty saved $12 on Monday, $15 on Tuesday, nothing on Wednesday, $18 on Thursday and $20 on Friday. What was her average saving per day from Monday to Friday?",
+   "answer": "13",
+   "accepted_answers": [
+    "13",
+    13
+   ],
+   "unit": "$",
+   "hints": [
+    "Wednesday's $0 still counts as one day.",
+    "Total saving ÷ 5 days."
+   ],
+   "working": "(12 + 15 + 0 + 18 + 20) ÷ 5 = 65 ÷ 5 = $13"
+  },
+  {
+   "id": "T9-13",
+   "code": "T9",
+   "category": "T9 Average (mean): new average, missing value, combined groups",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "Which of the following groups of numbers has an average of 20?",
+   "options": [
+    "12, 19, 21, 28",
+    "20, 22, 24",
+    "15, 20, 25, 30",
+    "18, 20, 24"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "12, 19, 21, 28"
+   ],
+   "unit": "",
+   "hints": [
+    "For each group, add the numbers and divide by how many there are.",
+    "Careful: some groups have 3 numbers, some have 4."
+   ],
+   "working": "Averages: 62 ÷ 3 ≈ 20.7; 90 ÷ 4 = 22.5; 80 ÷ 4 = 20; 66 ÷ 3 = 22."
+  },
+  {
+   "id": "T9-03",
+   "code": "T9",
+   "category": "T9 Average (mean): new average, missing value, combined groups",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "The average age of 6 members of a club is 24.5. A new member aged 35 joins the club. What is the new average age of the members?",
+   "options": [
+    "26",
+    "27",
+    "25",
+    "29.75"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "26"
+   ],
+   "unit": "",
+   "hints": [
+    "Find the total age of the 6 members first.",
+    "Add the new member, then divide by the NEW number of members."
+   ],
+   "working": "6 × 24.5 = 147; 147 + 35 = 182; 182 ÷ 7 = 26"
+  },
+  {
+   "id": "T9-04",
+   "code": "T9",
+   "category": "T9 Average (mean): new average, missing value, combined groups",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "The average of 5 numbers is 36. The average of the first four numbers is 33.5. What is the fifth number?",
+   "answer": "46",
+   "accepted_answers": [
+    "46",
+    46
+   ],
+   "unit": "",
+   "hints": [
+    "Total of 5 numbers = 5 × 36.",
+    "Total of first four = 4 × 33.5. Subtract."
+   ],
+   "working": "5 × 36 = 180; 4 × 33.5 = 134; 180 − 134 = 46"
+  },
+  {
+   "id": "T9-05",
+   "code": "T9",
+   "category": "T9 Average (mean): new average, missing value, combined groups",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Grace's average mark in 3 tests is 78. She wants her average mark to be 80 or above after the 4th test. At least how many marks must she get in the 4th test?",
+   "answer": "86",
+   "accepted_answers": [
+    "86",
+    86
+   ],
+   "unit": "marks",
+   "hints": [
+    "What total is needed for an average of 80 in 4 tests?",
+    "Subtract the total she already has."
+   ],
+   "working": "Needed 80 × 4 = 320; now 78 × 3 = 234; 320 − 234 = 86"
+  },
+  {
+   "id": "T9-06",
+   "code": "T9",
+   "category": "T9 Average (mean): new average, missing value, combined groups",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "One number is removed from the group 9, 15, 21, 27, 33 and the average decreases by 1.5. Which number is removed?",
+   "options": [
+    "9",
+    "15",
+    "27",
+    "33"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "27"
+   ],
+   "unit": "",
+   "hints": [
+    "Find the old average and the old total.",
+    "New total = new average × 4. The difference is the removed number."
+   ],
+   "working": "Old average 105 ÷ 5 = 21; new average 19.5; new total 19.5 × 4 = 78; removed 105 − 78 = 27"
+  },
+  {
+   "id": "T9-09",
+   "code": "T9",
+   "category": "T9 Average (mean): new average, missing value, combined groups",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "The average weight of 4 boxes is 2.35 kg. A fifth box weighing 2.8 kg is added. What is the new average weight of the boxes?",
+   "answer": "2.44",
+   "accepted_answers": [
+    "2.44",
+    "2 11/25",
+    "61/25",
+    2.44
+   ],
+   "unit": "kg",
+   "hints": [
+    "Total of 4 boxes = 4 × 2.35 kg.",
+    "Add 2.8 kg and divide by 5."
+   ],
+   "working": "4 × 2.35 = 9.4; 9.4 + 2.8 = 12.2; 12.2 ÷ 5 = 2.44 kg"
+  },
+  {
+   "id": "T9-11",
+   "code": "T9",
+   "category": "T9 Average (mean): new average, missing value, combined groups",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Mr Chan spends $250 each day from Monday to Friday and $460 each day on Saturday and Sunday. What is his average daily expense in that week?",
+   "options": [
+    "$2,170.00",
+    "$305.00",
+    "$310.00",
+    "$355.00"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "$310.00"
+   ],
+   "unit": "",
+   "hints": [
+    "There are 5 weekdays and 2 weekend days.",
+    "Find the week's total, then divide by 7 (not by 2!)."
+   ],
+   "working": "5 × 250 + 2 × 460 = 2,170; 2,170 ÷ 7 = $310.00"
+  },
+  {
+   "id": "T9-07",
+   "code": "T9",
+   "category": "T9 Average (mean): new average, missing value, combined groups",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "The average of A, B and C is 72. C is 96 and A is 3 times B. Find the value of A.",
+   "answer": "90",
+   "accepted_answers": [
+    "90",
+    90
+   ],
+   "unit": "",
+   "hints": [
+    "Find A + B + C, then A + B.",
+    "If A is 3 times B, then A + B is 4 equal parts."
+   ],
+   "working": "A + B + C = 216; A + B = 216 − 96 = 120; B = 120 ÷ 4 = 30; A = 3 × 30 = 90"
+  },
+  {
+   "id": "T9-08",
+   "code": "T9",
+   "category": "T9 Average (mean): new average, missing value, combined groups",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "In a class, the average weight of 12 boys is 45 kg and the average weight of the girls is 40 kg. The average weight of the whole class is 42.4 kg. How many girls are there in the class?",
+   "answer": "13",
+   "accepted_answers": [
+    "13",
+    13
+   ],
+   "unit": "girls",
+   "hints": [
+    "Each boy is 45 − 42.4 kg ABOVE the class average.",
+    "Each girl is 42.4 − 40 kg BELOW it. The 'above' and 'below' amounts must balance."
+   ],
+   "working": "Boys above: 12 × 2.6 = 31.2 kg; each girl below by 2.4 kg; girls = 31.2 ÷ 2.4 = 13"
+  },
+  {
+   "id": "T9-10",
+   "code": "T9",
+   "category": "T9 Average (mean): new average, missing value, combined groups",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "Mabel's average distance in 5 long jumps is 3.4 m. The average of her first three jumps is 3.3 m. Her 4th jump is 0.2 m longer than her 5th jump. How long is her 5th jump?",
+   "answer": "3.45",
+   "accepted_answers": [
+    "3.45",
+    "3 9/20",
+    "69/20",
+    3.45
+   ],
+   "unit": "m",
+   "hints": [
+    "Find the total of all 5 jumps and of the first 3 jumps.",
+    "The last two jumps add to the difference. The 4th is 0.2 m more than the 5th."
+   ],
+   "working": "5 × 3.4 = 17; 3 × 3.3 = 9.9; 4th + 5th = 7.1; 5th = (7.1 − 0.2) ÷ 2 = 3.45 m"
+  },
+  {
+   "id": "T9-12",
+   "code": "T9",
+   "category": "T9 Average (mean): new average, missing value, combined groups",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "The average of 8 numbers is 45. When one of the numbers, 30, is changed to another number, the average becomes 48. What is the new number?",
+   "answer": "54",
+   "accepted_answers": [
+    "54",
+    54
+   ],
+   "unit": "",
+   "hints": [
+    "How much bigger is the new total than the old total?",
+    "The changed number grew by exactly that amount."
+   ],
+   "working": "Total rises by 8 × (48 − 45) = 24; new number = 30 + 24 = 54"
+  },
+  {
+   "id": "T12-01",
+   "code": "T12",
+   "category": "T12 Water level: displacement, height of liquid, thickness/inner capacity",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "A measuring cup contains 300 mL of water. After a stone is put in and sinks completely, the water level reads 375 mL. What is the volume of the stone?",
+   "options": [
+    "675 cm³",
+    "375 cm³",
+    "75 cm³",
+    "7.5 cm³"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "75 cm³"
+   ],
+   "unit": "",
+   "hints": [
+    "The stone pushes the water up by its own volume.",
+    "1 mL = 1 cm³."
+   ],
+   "working": "375 − 300 = 75 mL = 75 cm³"
+  },
+  {
+   "id": "T12-02",
+   "code": "T12",
+   "category": "T12 Water level: displacement, height of liquid, thickness/inner capacity",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A rectangular tank is 25 cm long and 16 cm wide. It contains water 8 cm deep. After a stone is put in and sinks completely, the water level rises to 11 cm. What is the volume of the stone?",
+   "answer": "1,200",
+   "accepted_answers": [
+    "1,200",
+    "1200",
+    1200
+   ],
+   "unit": "cm³",
+   "hints": [
+    "How many cm did the water rise?",
+    "Volume of stone = length × width × rise."
+   ],
+   "working": "Rise 3 cm; 25 × 16 × 3 = 1,200 cm³"
+  },
+  {
+   "id": "T12-03",
+   "code": "T12",
+   "category": "T12 Water level: displacement, height of liquid, thickness/inner capacity",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A cuboid container has a base of 15 cm × 13 cm. Ivy pours in 1.2 L of water and then 3 cups of 250 mL of water. What is the height of the water?",
+   "answer": "10",
+   "accepted_answers": [
+    "10",
+    10
+   ],
+   "unit": "cm",
+   "hints": [
+    "Change everything to mL (1 L = 1000 mL), and 1 mL = 1 cm³.",
+    "Height = volume ÷ base area."
+   ],
+   "working": "1,200 + 750 = 1,950 cm³; 1,950 ÷ (15 × 13) = 1,950 ÷ 195 = 10 cm"
+  },
+  {
+   "id": "T12-04",
+   "code": "T12",
+   "category": "T12 Water level: displacement, height of liquid, thickness/inner capacity",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "2 L of water is poured into an empty container with a square base of side 20 cm. What is the height of the water?",
+   "options": [
+    "50 cm",
+    "0.5 cm",
+    "5 cm",
+    "10 cm"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "5 cm"
+   ],
+   "unit": "",
+   "hints": [
+    "2 L = 2,000 cm³.",
+    "Base area of a square = side × side."
+   ],
+   "working": "2,000 ÷ (20 × 20) = 2,000 ÷ 400 = 5 cm"
+  },
+  {
+   "id": "T12-09",
+   "code": "T12",
+   "category": "T12 Water level: displacement, height of liquid, thickness/inner capacity",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A cubic jug of side 20 cm is full of juice. The juice is poured into an empty tank 25 cm × 16 cm × 15 cm until the tank is full. How much juice is left in the jug? (Give your answer in L.)",
+   "answer": "2",
+   "accepted_answers": [
+    "2",
+    2
+   ],
+   "unit": "L",
+   "hints": [
+    "Find the volume of the jug and the capacity of the tank.",
+    "Left = jug − tank. 1,000 cm³ = 1 L."
+   ],
+   "working": "Jug 20 × 20 × 20 = 8,000 cm³; tank 25 × 16 × 15 = 6,000 cm³; left 2,000 cm³ = 2 L"
+  },
+  {
+   "id": "T12-11",
+   "code": "T12",
+   "category": "T12 Water level: displacement, height of liquid, thickness/inner capacity",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A fish tank is 1.2 m long, 0.8 m wide and 1 m high. When a rock is put in, the water level rises by 0.05 m. What is the volume of the rock in m³?",
+   "answer": "0.048",
+   "accepted_answers": [
+    "0.048",
+    "6/125",
+    0.048
+   ],
+   "unit": "m³",
+   "hints": [
+    "Volume of rock = length × width × rise.",
+    "The height of the tank (1 m) is not needed."
+   ],
+   "working": "1.2 × 0.8 × 0.05 = 0.048 m³ (= 48,000 cm³)"
+  },
+  {
+   "id": "T12-12",
+   "code": "T12",
+   "category": "T12 Water level: displacement, height of liquid, thickness/inner capacity",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A tank has a base of 40 cm × 25 cm and contains water 18 cm deep. An iron cube of side 10 cm is put in and sinks completely. What is the new height of the water?",
+   "answer": "19",
+   "accepted_answers": [
+    "19",
+    19
+   ],
+   "unit": "cm",
+   "hints": [
+    "Volume of the cube = 10 × 10 × 10.",
+    "Rise = volume of cube ÷ base area of the tank. Add it to 18 cm."
+   ],
+   "working": "1,000 ÷ (40 × 25) = 1 cm rise; 18 + 1 = 19 cm"
+  },
+  {
+   "id": "T12-05",
+   "code": "T12",
+   "category": "T12 Water level: displacement, height of liquid, thickness/inner capacity",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "An open wooden box (no cover) measures 30 cm × 20 cm × 12 cm on the outside. The wood is 1 cm thick. What is the capacity of the box in litres?",
+   "answer": "5.544",
+   "accepted_answers": [
+    "5.544",
+    "5 68/125",
+    "693/125",
+    5.544
+   ],
+   "unit": "L",
+   "hints": [
+    "Length and width lose the thickness on BOTH sides.",
+    "An open box has no cover, so the height loses the thickness only once (the bottom)."
+   ],
+   "working": "Inner: 28 × 18 × 11 = 5,544 cm³ = 5.544 L"
+  },
+  {
+   "id": "T12-06",
+   "code": "T12",
+   "category": "T12 Water level: displacement, height of liquid, thickness/inner capacity",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "A container has a base area of 600 cm². When 5 identical marbles are put in (fully under water), the water level rises by 0.8 cm. What is the volume of each marble?",
+   "answer": "96",
+   "accepted_answers": [
+    "96",
+    96
+   ],
+   "unit": "cm³",
+   "hints": [
+    "Volume of all marbles = base area × rise.",
+    "Then share by 5."
+   ],
+   "working": "600 × 0.8 = 480 cm³; 480 ÷ 5 = 96 cm³"
+  },
+  {
+   "id": "T12-07",
+   "code": "T12",
+   "category": "T12 Water level: displacement, height of liquid, thickness/inner capacity",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "A cuboid container 20 cm long, 10 cm wide and 15 cm high holds water 13 cm deep. Identical stones, each 45 cm³, are put in one by one and sink completely. At least how many stones must be put in to make the water overflow?",
+   "answer": "9",
+   "accepted_answers": [
+    "9",
+    9
+   ],
+   "unit": "stones",
+   "hints": [
+    "Find the empty space above the water.",
+    "To OVERFLOW, the stones must be more than the empty space."
+   ],
+   "working": "Space = 20 × 10 × 2 = 400 cm³; 400 ÷ 45 = 8 r 40; 8 stones fill 360 cm³ (no overflow), so 9 stones are needed."
+  },
+  {
+   "id": "T12-08",
+   "code": "T12",
+   "category": "T12 Water level: displacement, height of liquid, thickness/inner capacity",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "A cuboid container 12 cm long, 10 cm wide and 20 cm high holds water 16 cm deep. Marbles of 30 cm³ each are put in and sink. At most how many marbles can be put in WITHOUT the water spilling?",
+   "answer": "16",
+   "accepted_answers": [
+    "16",
+    16
+   ],
+   "unit": "marbles",
+   "hints": [
+    "Find the empty space above the water.",
+    "If the marbles exactly fill the space, the water reaches the brim but does not spill."
+   ],
+   "working": "Space = 12 × 10 × 4 = 480 cm³; 480 ÷ 30 = 16 exactly → 16 marbles (water just reaches the top)."
+  },
+  {
+   "id": "T12-10",
+   "code": "T12",
+   "category": "T12 Water level: displacement, height of liquid, thickness/inner capacity",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "An aquarium has a base of 50 cm × 30 cm and contains water 20 cm deep. After 3 identical air pumps are put in (fully under water), the water level rises to 21.2 cm. What is the volume of each air pump?",
+   "answer": "600",
+   "accepted_answers": [
+    "600",
+    600
+   ],
+   "unit": "cm³",
+   "hints": [
+    "Rise = 21.2 − 20.",
+    "Volume of 3 pumps = base area × rise, then ÷ 3."
+   ],
+   "working": "50 × 30 × 1.2 = 1,800 cm³; 1,800 ÷ 3 = 600 cm³"
+  },
+  {
+   "id": "T12-13",
+   "code": "T12",
+   "category": "T12 Water level: displacement, height of liquid, thickness/inner capacity",
+   "difficulty": "hard",
+   "format": "mcq",
+   "question": "An open steel container (no cover) measures 28 cm × 20 cm × 15 cm on the outside. The steel is 2 cm thick. What is the capacity of the container?",
+   "options": [
+    "4.992 L",
+    "6.084 L",
+    "8.4 L",
+    "4.224 L"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "4.992 L"
+   ],
+   "unit": "",
+   "hints": [
+    "Length and width: subtract 2 cm on each side.",
+    "Height: an open container only has a bottom, so subtract 2 cm once."
+   ],
+   "working": "Inner 24 × 16 × 13 = 4,992 cm³ = 4.992 L"
+  },
+  {
+   "id": "T16-01",
+   "code": "T16",
+   "category": "T16 Money, best buy & tiered charges (taxi, laundry, phone, gas, buffet, bills)",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "A pencil costs $4.60. Jenny buys 3 pencils and pays with a $20 note. How much change should she get?",
+   "options": [
+    "$15.40",
+    "$6.20",
+    "$13.80",
+    "$7.20"
+   ],
+   "answer": "B",
+   "accepted_answers": [
+    "B",
+    "$6.20"
+   ],
+   "unit": "",
+   "hints": [
+    "Find the cost of 3 pencils.",
+    "Change = money paid − cost."
+   ],
+   "working": "3 × 4.60 = 13.80; 20 − 13.80 = $6.20"
+  },
+  {
+   "id": "T16-04",
+   "code": "T16",
+   "category": "T16 Money, best buy & tiered charges (taxi, laundry, phone, gas, buffet, bills)",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "The same can of soup is sold in four ways. Which is the best buy (cheapest per can)?",
+   "options": [
+    "Brand D: 4 cans for $26.00",
+    "Brand B: 5 cans for $31.00",
+    "Brand A: 3 cans for $19.50",
+    "Brand C: $6.40 per can"
+   ],
+   "answer": "B",
+   "accepted_answers": [
+    "B",
+    "Brand B: 5 cans for $31.00"
+   ],
+   "unit": "",
+   "hints": [
+    "Find the price of ONE can for each brand.",
+    "The smallest price per can is the best buy."
+   ],
+   "working": "Per can: A $6.50, B $6.20, C $6.40, D $6.50 → Brand B."
+  },
+  {
+   "id": "T16-05",
+   "code": "T16",
+   "category": "T16 Money, best buy & tiered charges (taxi, laundry, phone, gas, buffet, bills)",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A pen costs $5.60. A shop offers 'Buy 4, get 1 free'. Joe gets 5 pens under the offer. Compared with the usual price, how much cheaper is each pen?",
+   "answer": "1.12",
+   "accepted_answers": [
+    "1.12",
+    "1 3/25",
+    "28/25",
+    1.12
+   ],
+   "unit": "$",
+   "hints": [
+    "He pays for only 4 pens but gets 5.",
+    "Find the cost of each of the 5 pens, then compare with $5.60."
+   ],
+   "working": "4 × 5.60 = 22.40; 22.40 ÷ 5 = 4.48; 5.60 − 4.48 = $1.12"
+  },
+  {
+   "id": "T16-08",
+   "code": "T16",
+   "category": "T16 Money, best buy & tiered charges (taxi, laundry, phone, gas, buffet, bills)",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A buffet costs $268 per adult and $168 per child. A group of 35 people goes to the buffet, and 2/7 of them are children. How much does the group pay altogether?",
+   "answer": "8,380",
+   "accepted_answers": [
+    "8,380",
+    "8380",
+    8380
+   ],
+   "unit": "$",
+   "hints": [
+    "Find the number of children, then the number of adults.",
+    "Multiply each by its price and add."
+   ],
+   "working": "Children 35 × 2/7 = 10; adults 25; 25 × 268 + 10 × 168 = 6,700 + 1,680 = $8,380.00"
+  },
+  {
+   "id": "T16-09",
+   "code": "T16",
+   "category": "T16 Money, best buy & tiered charges (taxi, laundry, phone, gas, buffet, bills)",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "1.5 kg of cherries cost $72. Mrs Ma buys 2.5 kg of the same cherries and pays with $150. How much change does she get?",
+   "answer": "30",
+   "accepted_answers": [
+    "30",
+    30
+   ],
+   "unit": "$",
+   "hints": [
+    "Find the price of 1 kg first.",
+    "Cost of 2.5 kg, then subtract from $150."
+   ],
+   "working": "72 ÷ 1.5 = 48 per kg; 2.5 × 48 = 120; 150 − 120 = $30.00"
+  },
+  {
+   "id": "T16-10",
+   "code": "T16",
+   "category": "T16 Money, best buy & tiered charges (taxi, laundry, phone, gas, buffet, bills)",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "7 notebooks cost the same as 4 files. A file costs $15.75. How much does a notebook cost?",
+   "options": [
+    "$63.00",
+    "$9.00",
+    "$2.25",
+    "$27.56"
+   ],
+   "answer": "B",
+   "accepted_answers": [
+    "B",
+    "$9.00"
+   ],
+   "unit": "",
+   "hints": [
+    "Find the cost of 4 files.",
+    "That money buys 7 notebooks — share it by 7."
+   ],
+   "working": "4 × 15.75 = 63; 63 ÷ 7 = $9.00"
+  },
+  {
+   "id": "T16-02",
+   "code": "T16",
+   "category": "T16 Money, best buy & tiered charges (taxi, laundry, phone, gas, buffet, bills)",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "Taxi fares: the first 2 km (or any part thereof) costs $29. Every subsequent 200 m (or part thereof) costs $2.10. Mr Ho travels 4.5 km by taxi. How much is the fare?",
+   "answer": "56.30",
+   "accepted_answers": [
+    "56.30",
+    "56.3",
+    "$56.30",
+    56.3
+   ],
+   "unit": "$",
+   "hints": [
+    "Distance after the first 2 km, in metres.",
+    "'Or part thereof' means a part of 200 m is counted as a whole 200 m — round UP."
+   ],
+   "working": "4.5 − 2 = 2.5 km = 2,500 m; 2,500 ÷ 200 = 12.5 → 13 parts; 29 + 13 × 2.10 = $56.30"
+  },
+  {
+   "id": "T16-03",
+   "code": "T16",
+   "category": "T16 Money, best buy & tiered charges (taxi, laundry, phone, gas, buffet, bills)",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "A laundry charges $36 for the first 3 kg of clothes, and $5.80 for every additional 0.5 kg (or part thereof). Mrs Wong washes 5.2 kg of clothes. How much does she pay?",
+   "answer": "65",
+   "accepted_answers": [
+    "65",
+    65
+   ],
+   "unit": "$",
+   "hints": [
+    "How many kg are over the first 3 kg?",
+    "How many 0.5 kg parts is that? A part counts as a whole one."
+   ],
+   "working": "5.2 − 3 = 2.2 kg; 2.2 ÷ 0.5 = 4.4 → 5 parts; 36 + 5 × 5.80 = $65.00"
+  },
+  {
+   "id": "T16-06",
+   "code": "T16",
+   "category": "T16 Money, best buy & tiered charges (taxi, laundry, phone, gas, buffet, bills)",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "A mobile phone plan charges $78 for the first 800 minutes of airtime, and $0.25 per minute after that. Mr Lee's bill is $123.50. How many minutes of airtime did he use?",
+   "answer": "982",
+   "accepted_answers": [
+    "982",
+    982
+   ],
+   "unit": "minutes",
+   "hints": [
+    "How much of the bill is for the extra minutes?",
+    "Extra minutes = extra money ÷ $0.25. Don't forget the first 800 minutes."
+   ],
+   "working": "123.50 − 78 = 45.50; 45.50 ÷ 0.25 = 182; 800 + 182 = 982 minutes"
+  },
+  {
+   "id": "T16-07",
+   "code": "T16",
+   "category": "T16 Money, best buy & tiered charges (taxi, laundry, phone, gas, buffet, bills)",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "Gas charges: the first 100 units cost $1.80 per unit; the next 200 units cost $1.60 per unit; each unit above 300 units costs $1.40. A family used 450 units. How much is the gas bill?",
+   "answer": "710",
+   "accepted_answers": [
+    "710",
+    710
+   ],
+   "unit": "$",
+   "hints": [
+    "Split 450 units into the three parts: 100, 200 and the rest.",
+    "Charge each part at its own price, then add."
+   ],
+   "working": "100 × 1.80 = 180; 200 × 1.60 = 320; 150 × 1.40 = 210; total $710.00"
+  },
+  {
+   "id": "T16-11",
+   "code": "T16",
+   "category": "T16 Money, best buy & tiered charges (taxi, laundry, phone, gas, buffet, bills)",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "A car park charges $24 for the first hour and $9 for each subsequent half hour (or part thereof). Mr Tse parks from 9:15 a.m. to 12:40 p.m. How much does he pay?",
+   "answer": "69",
+   "accepted_answers": [
+    "69",
+    69
+   ],
+   "unit": "$",
+   "hints": [
+    "Find how long he parked, then take away the first hour.",
+    "Count the half hours left — a part of a half hour counts as a whole one."
+   ],
+   "working": "9:15 a.m.→12:40 p.m. = 3 h 25 min; after first hour 2 h 25 min = 145 min; 145 ÷ 30 = 4.8… → 5; 24 + 5 × 9 = $69.00"
+  },
+  {
+   "id": "T16-12",
+   "code": "T16",
+   "category": "T16 Money, best buy & tiered charges (taxi, laundry, phone, gas, buffet, bills)",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "Boxes of juice are sold at $10.50 each or $57 for a pack of 6. Ms Lam needs exactly 14 boxes. What is the least amount she must pay?",
+   "answer": "135",
+   "accepted_answers": [
+    "135",
+    135
+   ],
+   "unit": "$",
+   "hints": [
+    "One box in a pack costs $57 ÷ 6. Is that cheaper than $10.50?",
+    "Buy as many packs as you can without going over 14, then buy single boxes. Check whether one extra pack is cheaper."
+   ],
+   "working": "Pack per box $9.50 < $10.50. 2 packs (12 boxes) $114 + 2 × $10.50 = $135; 3 packs = $171. Least $135.00"
+  },
+  {
+   "id": "T13-01",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "How many faces does a pentagonal prism have?",
+   "options": [
+    "15",
+    "7",
+    "5",
+    "10"
+   ],
+   "answer": "B",
+   "accepted_answers": [
+    "B",
+    "7"
+   ],
+   "unit": "",
+   "hints": [
+    "A prism has 2 bases plus one side face for each side of the base."
+   ],
+   "working": "2 pentagons + 5 rectangles = 7 faces"
+  },
+  {
+   "id": "T13-05",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "Which of the following solids has NO vertex?",
+   "options": [
+    "Triangular pyramid",
+    "Cube",
+    "Cylinder",
+    "Cone"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "Cylinder"
+   ],
+   "unit": "",
+   "hints": [
+    "A vertex is a corner point.",
+    "A cone has one pointed tip — that is a vertex."
+   ],
+   "working": "A cylinder has only curved edges and no corner, so it has no vertex."
+  },
+  {
+   "id": "T13-07",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "A cylinder is cut by a plane parallel to its base. What is the shape of the cross-section?",
+   "options": [
+    "Circle",
+    "Rectangle",
+    "Triangle",
+    "Square"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "Circle"
+   ],
+   "unit": "",
+   "hints": [
+    "Cutting parallel to the base gives the same shape as the base."
+   ],
+   "working": "The base of a cylinder is a circle, so the cross-section is a circle."
+  },
+  {
+   "id": "T13-11",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "The net of a prism is made up of 2 hexagons and some rectangles. How many rectangles are there?",
+   "answer": "6",
+   "accepted_answers": [
+    "6",
+    6
+   ],
+   "unit": "rectangles",
+   "hints": [
+    "Each side of the hexagon base joins one rectangle."
+   ],
+   "working": "A hexagon has 6 sides → 6 rectangles."
+  },
+  {
+   "id": "T13-02",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Which of the following solids has the same number of vertices as a pentagonal prism?",
+   "options": [
+    "Hexagonal pyramid",
+    "Hexagonal prism",
+    "Nonagonal pyramid",
+    "Pentagonal pyramid"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "Nonagonal pyramid"
+   ],
+   "unit": "",
+   "hints": [
+    "A pentagonal prism has 5 vertices on top and 5 at the bottom.",
+    "A pyramid with an n-sided base has n + 1 vertices."
+   ],
+   "working": "Pentagonal prism: 10 vertices. Hexagonal pyramid 7, nonagonal pyramid 10, pentagonal pyramid 6, hexagonal prism 12."
+  },
+  {
+   "id": "T13-03",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Sam makes a model of an octagonal prism using plasticine balls as vertices and sticks as edges. Each ball costs $0.80 and each stick costs $1.50. How much do the balls and sticks cost altogether?",
+   "answer": "48.80",
+   "accepted_answers": [
+    "48.80",
+    "48.8",
+    "48 4/5",
+    "244/5",
+    48.8
+   ],
+   "unit": "$",
+   "hints": [
+    "Balls = vertices, sticks = edges.",
+    "An octagonal prism has 2 × 8 vertices and 3 × 8 edges."
+   ],
+   "working": "16 balls × 0.80 = 12.80; 24 sticks × 1.50 = 36; total $48.80"
+  },
+  {
+   "id": "T13-04",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Lily has 9 plasticine balls and 12 sticks. She wants to make a model of a hexagonal prism. How many more balls and how many more sticks does she need?",
+   "answer": "3 balls and 6 sticks",
+   "accepted_answers": [
+    "3 balls and 6 sticks",
+    "3 balls, 6 sticks",
+    "3, 6"
+   ],
+   "unit": "",
+   "hints": [
+    "Count the vertices (balls) and edges (sticks) of a hexagonal prism.",
+    "Subtract what she already has."
+   ],
+   "working": "Hexagonal prism: 12 vertices, 18 edges. 12 − 9 = 3 balls; 18 − 12 = 6 sticks."
+  },
+  {
+   "id": "T13-06",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Ben uses exactly 15 sticks and 10 plasticine balls to make a 3-D model. What could the model be?",
+   "options": [
+    "Hexagonal pyramid",
+    "Decagonal pyramid",
+    "Pentagonal pyramid",
+    "Pentagonal prism"
+   ],
+   "answer": "D",
+   "accepted_answers": [
+    "D",
+    "Pentagonal prism"
+   ],
+   "unit": "",
+   "hints": [
+    "Sticks = edges, balls = vertices.",
+    "Check edges AND vertices of each option."
+   ],
+   "working": "Pentagonal prism: 15 edges, 10 vertices ✓ (pentagonal pyramid 10/6, decagonal pyramid 20/11, hexagonal pyramid 12/7)."
+  },
+  {
+   "id": "T13-08",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "A square pyramid is cut by a plane parallel to its base. What is the shape of the cross-section?",
+   "options": [
+    "Triangle",
+    "Square",
+    "Trapezium",
+    "Pentagon"
+   ],
+   "answer": "B",
+   "accepted_answers": [
+    "B",
+    "Square"
+   ],
+   "unit": "",
+   "hints": [
+    "A cut parallel to the base gives a smaller copy of the base.",
+    "Cutting through the apex would give a triangle — but this cut is parallel to the base."
+   ],
+   "working": "Parallel to a square base → a (smaller) square."
+  },
+  {
+   "id": "T13-13",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A pyramid has 9 faces. How many edges does it have?",
+   "answer": "16",
+   "accepted_answers": [
+    "16",
+    16
+   ],
+   "unit": "edges",
+   "hints": [
+    "A pyramid has 1 base face plus one triangle for each side of the base.",
+    "Edges = 2 × number of sides of the base."
+   ],
+   "working": "9 − 1 = 8 → octagonal pyramid; edges 2 × 8 = 16"
+  },
+  {
+   "id": "T13-09",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "A square pyramid is placed exactly on top of a cube so that the base of the pyramid covers the top face of the cube. How many faces and how many edges does the new solid have?",
+   "answer": "9 faces and 16 edges",
+   "accepted_answers": [
+    "9 faces and 16 edges",
+    "9 faces, 16 edges",
+    "9, 16"
+   ],
+   "unit": "",
+   "hints": [
+    "The top face of the cube and the base of the pyramid are hidden — they are no longer faces.",
+    "The 4 edges where they join are shared, so count them only once."
+   ],
+   "working": "Faces: 5 (cube without top) + 4 (triangles) = 9. Edges: 12 (cube) + 4 (slanting) = 16."
+  },
+  {
+   "id": "T13-10",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "A cube is cut into two identical solids by a plane passing through two opposite vertical edges (along the diagonal of the top face). Name each solid and state how many edges it has.",
+   "answer": "Triangular prism, 9 edges",
+   "accepted_answers": [
+    "Triangular prism, 9 edges",
+    "triangular prism; 9",
+    "triangular prism 9 edges"
+   ],
+   "unit": "",
+   "hints": [
+    "Look at the top face: the diagonal cuts the square into two triangles.",
+    "Triangle on top, same triangle at the bottom, straight sides — what prism is that?"
+   ],
+   "working": "Each part has two triangular bases and three rectangular faces: a triangular prism with 3 × 3 = 9 edges."
+  },
+  {
+   "id": "T13-12",
+   "code": "T13",
+   "category": "T13 3-D shapes: faces/edges/vertices, balls & sticks, nets, cross-sections",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "A prism has 21 edges. How many vertices does it have?",
+   "answer": "14",
+   "accepted_answers": [
+    "14",
+    14
+   ],
+   "unit": "vertices",
+   "hints": [
+    "A prism with an n-sided base has 3 × n edges.",
+    "Find n, then vertices = 2 × n."
+   ],
+   "working": "21 ÷ 3 = 7 → heptagonal prism; vertices 2 × 7 = 14"
+  },
+  {
+   "id": "T8-01",
+   "code": "T8",
+   "category": "T8 Fraction word problems (fraction of a quantity, of the remainder, \"what fraction\")",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "There are 245 students in a school hall. 3/7 of them are girls. How many boys are there?",
+   "options": [
+    "140",
+    "175",
+    "35",
+    "105"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "140"
+   ],
+   "unit": "",
+   "hints": [
+    "Find the number of girls first, or find the fraction that are boys.",
+    "Boys = 1 − 3/7 of the students."
+   ],
+   "working": "245 × 4/7 = 140"
+  },
+  {
+   "id": "T8-02",
+   "code": "T8",
+   "category": "T8 Fraction word problems (fraction of a quantity, of the remainder, \"what fraction\")",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "There was 1,500 mL of juice in a jug. Tom drank 1/4 of it and Mary drank 1/6 of it. How much juice was left?",
+   "answer": "875",
+   "accepted_answers": [
+    "875",
+    875
+   ],
+   "unit": "mL",
+   "hints": [
+    "Both fractions are of the SAME 1,500 mL, so you can add them.",
+    "1/4 + 1/6 = ?/12."
+   ],
+   "working": "1/4 + 1/6 = 5/12; 1,500 × 7/12 = 875 mL"
+  },
+  {
+   "id": "T8-03",
+   "code": "T8",
+   "category": "T8 Fraction word problems (fraction of a quantity, of the remainder, \"what fraction\")",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "There are 420 passengers on a ship. 3/10 of them are men and 2/7 of them are women. The rest are children. How many children are there?",
+   "answer": "174",
+   "accepted_answers": [
+    "174",
+    174
+   ],
+   "unit": "children",
+   "hints": [
+    "Find the number of men and the number of women.",
+    "Children = 420 − men − women."
+   ],
+   "working": "Men 126, women 120; 420 − 126 − 120 = 174"
+  },
+  {
+   "id": "T8-06",
+   "code": "T8",
+   "category": "T8 Fraction word problems (fraction of a quantity, of the remainder, \"what fraction\")",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "The distance from A to B is 96 km. The distance from B to C is 3/8 shorter than the distance from A to B. What is the total distance from A to C through B?",
+   "answer": "156",
+   "accepted_answers": [
+    "156",
+    156
+   ],
+   "unit": "km",
+   "hints": [
+    "'3/8 shorter' means B to C is (1 − 3/8) of 96 km.",
+    "Add the two distances."
+   ],
+   "working": "B→C = 96 × 5/8 = 60 km; 96 + 60 = 156 km"
+  },
+  {
+   "id": "T8-08",
+   "code": "T8",
+   "category": "T8 Fraction word problems (fraction of a quantity, of the remainder, \"what fraction\")",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "There are 120 flowers. 2/3 of them are roses, and 3/5 of the roses are red. Which expression gives the number of roses that are NOT red?",
+   "options": [
+    "120 × 2/3 × 3/5",
+    "120 × (1 − 2/3) × 3/5",
+    "120 × (2/3 − 3/5)",
+    "120 × 2/3 × (1 − 3/5)"
+   ],
+   "answer": "D",
+   "accepted_answers": [
+    "D",
+    "120 × 2/3 × (1 − 3/5)"
+   ],
+   "unit": "",
+   "hints": [
+    "Number of roses = 120 × 2/3.",
+    "Not red is (1 − 3/5) of the roses."
+   ],
+   "working": "120 × 2/3 × (1 − 3/5) = 80 × 2/5 = 32"
+  },
+  {
+   "id": "T8-09",
+   "code": "T8",
+   "category": "T8 Fraction word problems (fraction of a quantity, of the remainder, \"what fraction\")",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A bag costs $180. A wallet costs $54 less than the bag. What fraction of the price of the bag is the price of the wallet?",
+   "answer": "7/10",
+   "accepted_answers": [
+    "7/10",
+    "0.7",
+    0.7
+   ],
+   "unit": "",
+   "hints": [
+    "Find the price of the wallet first.",
+    "Fraction = wallet ÷ bag. Simplify."
+   ],
+   "working": "Wallet 180 − 54 = 126; 126/180 = 7/10"
+  },
+  {
+   "id": "T8-11",
+   "code": "T8",
+   "category": "T8 Fraction word problems (fraction of a quantity, of the remainder, \"what fraction\")",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Mrs Yip had 3 3/4 L of milk. After making some cakes, 1 1/2 L of milk was left. Each cake needs 3/8 L of milk. How many cakes did she make?",
+   "answer": "6",
+   "accepted_answers": [
+    "6",
+    6
+   ],
+   "unit": "cakes",
+   "hints": [
+    "Find how much milk was used.",
+    "Number of cakes = milk used ÷ 3/8."
+   ],
+   "working": "3 3/4 − 1 1/2 = 2 1/4 L; 2 1/4 ÷ 3/8 = 9/4 × 8/3 = 6"
+  },
+  {
+   "id": "T8-04",
+   "code": "T8",
+   "category": "T8 Fraction word problems (fraction of a quantity, of the remainder, \"what fraction\")",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "A shop had 240 shirts. It sold 3/8 of them and donated 2/5 of the remaining shirts to a charity. How many shirts were left?",
+   "answer": "90",
+   "accepted_answers": [
+    "90",
+    90
+   ],
+   "unit": "shirts",
+   "hints": [
+    "Find how many were sold and how many REMAINED.",
+    "2/5 is a fraction of the remainder, not of 240."
+   ],
+   "working": "Sold 90; remaining 150; donated 150 × 2/5 = 60; left 90"
+  },
+  {
+   "id": "T8-05",
+   "code": "T8",
+   "category": "T8 Fraction word problems (fraction of a quantity, of the remainder, \"what fraction\")",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "Kelvin had 96 stamps. He gave away 5/12 of them and then sold 14 stamps. What fraction of his stamps was left?",
+   "answer": "7/16",
+   "accepted_answers": [
+    "7/16",
+    "0.4375",
+    0.4375
+   ],
+   "unit": "",
+   "hints": [
+    "Find how many he gave away, then subtract that and the 14 sold.",
+    "Write stamps left over 96 and simplify."
+   ],
+   "working": "Gave 40; 96 − 40 − 14 = 42; 42/96 = 7/16"
+  },
+  {
+   "id": "T8-07",
+   "code": "T8",
+   "category": "T8 Fraction word problems (fraction of a quantity, of the remainder, \"what fraction\")",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "A bakery made 1,260 cupcakes. 4/7 of them were sold. 5/12 of the cupcakes sold were chocolate. How many of the cupcakes sold were NOT chocolate?",
+   "answer": "420",
+   "accepted_answers": [
+    "420",
+    420
+   ],
+   "unit": "cupcakes",
+   "hints": [
+    "Find the number sold first.",
+    "Not chocolate = 1 − 5/12 of the sold cupcakes."
+   ],
+   "working": "Sold 720; 720 × 7/12 = 420"
+  },
+  {
+   "id": "T8-10",
+   "code": "T8",
+   "category": "T8 Fraction word problems (fraction of a quantity, of the remainder, \"what fraction\")",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "In a fruit box, 1/3 of the fruits are oranges, 2/5 are apples and the rest are 28 pears. How many fruits are there in the box?",
+   "answer": "105",
+   "accepted_answers": [
+    "105",
+    105
+   ],
+   "unit": "fruits",
+   "hints": [
+    "What fraction of the fruits are pears?",
+    "If that fraction is 28 fruits, find the whole."
+   ],
+   "working": "Pears = 1 − 1/3 − 2/5 = 4/15; 28 ÷ 4/15 = 105"
+  },
+  {
+   "id": "T8-12",
+   "code": "T8",
+   "category": "T8 Fraction word problems (fraction of a quantity, of the remainder, \"what fraction\")",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "There was 2 2/5 L of soy sauce in a bottle. Chef Lau took 5/8 of it, and used 2/3 of what he took. How much soy sauce did he use?",
+   "answer": "1",
+   "accepted_answers": [
+    "1",
+    1
+   ],
+   "unit": "L",
+   "hints": [
+    "First find 5/8 of 2 2/5 L.",
+    "Then find 2/3 of that amount."
+   ],
+   "working": "12/5 × 5/8 = 3/2 L; 3/2 × 2/3 = 1 L"
+  },
+  {
+   "id": "T17-01",
+   "code": "T17",
+   "category": "T17 Broken line graphs",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "The broken line graph shows the midday temperature of a city in a week. What is the difference between the highest and the lowest temperature?",
+   "answer": "6",
+   "accepted_answers": [
+    "6",
+    6
+   ],
+   "unit": "°C",
+   "hints": [
+    "Find the highest point and the lowest point on the graph.",
+    "Subtract."
+   ],
+   "working": "Highest 28 °C (Sat), lowest 22 °C (Thu); 28 − 22 = 6 °C",
+   "data": {
+    "type": "line",
+    "title": "Midday Temperature in a Week",
+    "x_label": "Day",
+    "y_label": "Temperature (°C)",
+    "x_labels": [
+     "Mon",
+     "Tue",
+     "Wed",
+     "Thu",
+     "Fri",
+     "Sat",
+     "Sun"
+    ],
+    "y_min": 0,
+    "y_max": 30,
+    "y_step": 2,
+    "series": [
+     {
+      "name": "Temperature",
+      "values": [
+       24,
+       27,
+       26,
+       22,
+       23,
+       28,
+       25
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "T17-04",
+   "code": "T17",
+   "category": "T17 Broken line graphs",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "The broken line graph shows the numbers of A-Pads and B-Pads sold by a shop from January to June. In which month were the same numbers of A-Pads and B-Pads sold?",
+   "answer": "March",
+   "accepted_answers": [
+    "March",
+    "Mar"
+   ],
+   "unit": "",
+   "hints": [
+    "Look for the month where the two lines meet."
+   ],
+   "working": "In March both lines are at 40.",
+   "data": {
+    "type": "line",
+    "title": "Number of Tablets Sold by a Shop",
+    "x_label": "Month",
+    "y_label": "Number sold",
+    "x_labels": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ],
+    "y_min": 0,
+    "y_max": 80,
+    "y_step": 10,
+    "series": [
+     {
+      "name": "A-Pad",
+      "values": [
+       30,
+       45,
+       40,
+       55,
+       50,
+       60
+      ]
+     },
+     {
+      "name": "B-Pad",
+      "values": [
+       50,
+       35,
+       40,
+       45,
+       70,
+       30
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "T17-09",
+   "code": "T17",
+   "category": "T17 Broken line graphs",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "The broken line graph shows the rainfall of a city from January to June. In which month was the rainfall 70 mm less than in May?",
+   "answer": "April",
+   "accepted_answers": [
+    "April",
+    "Apr"
+   ],
+   "unit": "",
+   "hints": [
+    "Read May's rainfall, then subtract 70 mm.",
+    "Find the month with that reading."
+   ],
+   "working": "May 220 mm; 220 − 70 = 150 mm → April.",
+   "data": {
+    "type": "line",
+    "title": "Monthly Rainfall of a City",
+    "x_label": "Month",
+    "y_label": "Rainfall (mm)",
+    "x_labels": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ],
+    "y_min": 0,
+    "y_max": 320,
+    "y_step": 20,
+    "series": [
+     {
+      "name": "Rainfall",
+      "values": [
+       40,
+       65,
+       90,
+       150,
+       220,
+       310
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "T17-14",
+   "code": "T17",
+   "category": "T17 Broken line graphs",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "The broken line graph shows Mrs Kwok's daily expenses in a week. On which two days did her expenses differ by $160?",
+   "options": [
+    "Tuesday and Friday",
+    "Wednesday and Sunday",
+    "Monday and Wednesday",
+    "Thursday and Saturday"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "Tuesday and Friday"
+   ],
+   "unit": "",
+   "hints": [
+    "Read the expense for each day in the options.",
+    "Subtract to find each difference."
+   ],
+   "working": "Mon/Wed $40; Tue/Fri $160 ✓; Wed/Sun $140; Thu/Sat $300.",
+   "data": {
+    "type": "line",
+    "title": "Mrs Kwok's Daily Expenses in a Week",
+    "x_label": "Day",
+    "y_label": "Expense ($)",
+    "x_labels": [
+     "Mon",
+     "Tue",
+     "Wed",
+     "Thu",
+     "Fri",
+     "Sat",
+     "Sun"
+    ],
+    "y_min": 0,
+    "y_max": 650,
+    "y_step": 50,
+    "series": [
+     {
+      "name": "Expense",
+      "values": [
+       320,
+       280,
+       360,
+       300,
+       440,
+       600,
+       500
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "T17-02",
+   "code": "T17",
+   "category": "T17 Broken line graphs",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "The broken line graph shows the midday temperature of a city in a week. Between which two consecutive days was the change in temperature the greatest?",
+   "answer": "Friday and Saturday",
+   "accepted_answers": [
+    "Friday and Saturday",
+    "Fri and Sat",
+    "Friday to Saturday"
+   ],
+   "unit": "",
+   "hints": [
+    "Look for the steepest line segment (up or down).",
+    "Work out each day-to-day change to check."
+   ],
+   "working": "Changes: +3, −1, −4, +1, +5, −3 → greatest is Friday to Saturday (5 °C).",
+   "data": {
+    "type": "line",
+    "title": "Midday Temperature in a Week",
+    "x_label": "Day",
+    "y_label": "Temperature (°C)",
+    "x_labels": [
+     "Mon",
+     "Tue",
+     "Wed",
+     "Thu",
+     "Fri",
+     "Sat",
+     "Sun"
+    ],
+    "y_min": 0,
+    "y_max": 30,
+    "y_step": 2,
+    "series": [
+     {
+      "name": "Temperature",
+      "values": [
+       24,
+       27,
+       26,
+       22,
+       23,
+       28,
+       25
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "T17-03",
+   "code": "T17",
+   "category": "T17 Broken line graphs",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "The broken line graph shows the midday temperature of a city in a week. What was the average midday temperature of that week?",
+   "answer": "25",
+   "accepted_answers": [
+    "25",
+    25
+   ],
+   "unit": "°C",
+   "hints": [
+    "Read all 7 temperatures carefully.",
+    "Add them and divide by 7."
+   ],
+   "working": "24 + 27 + 26 + 22 + 23 + 28 + 25 = 175; 175 ÷ 7 = 25 °C",
+   "data": {
+    "type": "line",
+    "title": "Midday Temperature in a Week",
+    "x_label": "Day",
+    "y_label": "Temperature (°C)",
+    "x_labels": [
+     "Mon",
+     "Tue",
+     "Wed",
+     "Thu",
+     "Fri",
+     "Sat",
+     "Sun"
+    ],
+    "y_min": 0,
+    "y_max": 30,
+    "y_step": 2,
+    "series": [
+     {
+      "name": "Temperature",
+      "values": [
+       24,
+       27,
+       26,
+       22,
+       23,
+       28,
+       25
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "T17-05",
+   "code": "T17",
+   "category": "T17 Broken line graphs",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "The broken line graph shows the numbers of A-Pads and B-Pads sold by a shop from January to June. In which month was the number of A-Pads sold twice the number of B-Pads sold?",
+   "answer": "June",
+   "accepted_answers": [
+    "June",
+    "Jun"
+   ],
+   "unit": "",
+   "hints": [
+    "For each month, double the B-Pad number.",
+    "Compare it with the A-Pad number."
+   ],
+   "working": "June: A-Pad 60 = 2 × 30 (B-Pad).",
+   "data": {
+    "type": "line",
+    "title": "Number of Tablets Sold by a Shop",
+    "x_label": "Month",
+    "y_label": "Number sold",
+    "x_labels": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ],
+    "y_min": 0,
+    "y_max": 80,
+    "y_step": 10,
+    "series": [
+     {
+      "name": "A-Pad",
+      "values": [
+       30,
+       45,
+       40,
+       55,
+       50,
+       60
+      ]
+     },
+     {
+      "name": "B-Pad",
+      "values": [
+       50,
+       35,
+       40,
+       45,
+       70,
+       30
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "T17-06",
+   "code": "T17",
+   "category": "T17 Broken line graphs",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "The broken line graph shows the numbers of A-Pads and B-Pads sold by a shop from January to June. How many A-Pads were sold in the first half of the year?",
+   "options": [
+    "550",
+    "270",
+    "280",
+    "290"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "280"
+   ],
+   "unit": "",
+   "hints": [
+    "The first half of the year is January to June.",
+    "Use only the A-Pad line."
+   ],
+   "working": "30 + 45 + 40 + 55 + 50 + 60 = 280 (270 is the B-Pad total).",
+   "data": {
+    "type": "line",
+    "title": "Number of Tablets Sold by a Shop",
+    "x_label": "Month",
+    "y_label": "Number sold",
+    "x_labels": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ],
+    "y_min": 0,
+    "y_max": 80,
+    "y_step": 10,
+    "series": [
+     {
+      "name": "A-Pad",
+      "values": [
+       30,
+       45,
+       40,
+       55,
+       50,
+       60
+      ]
+     },
+     {
+      "name": "B-Pad",
+      "values": [
+       50,
+       35,
+       40,
+       45,
+       70,
+       30
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "T17-07",
+   "code": "T17",
+   "category": "T17 Broken line graphs",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "The broken line graph shows the numbers of A-Pads and B-Pads sold by a shop from January to June. Each B-Pad was sold at $2,400. How much money was received from selling B-Pads in May?",
+   "answer": "168,000",
+   "accepted_answers": [
+    "168,000",
+    "168000",
+    168000
+   ],
+   "unit": "$",
+   "hints": [
+    "Read the number of B-Pads sold in May.",
+    "Multiply by $2,400."
+   ],
+   "working": "70 × 2,400 = $168,000.00",
+   "data": {
+    "type": "line",
+    "title": "Number of Tablets Sold by a Shop",
+    "x_label": "Month",
+    "y_label": "Number sold",
+    "x_labels": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ],
+    "y_min": 0,
+    "y_max": 80,
+    "y_step": 10,
+    "series": [
+     {
+      "name": "A-Pad",
+      "values": [
+       30,
+       45,
+       40,
+       55,
+       50,
+       60
+      ]
+     },
+     {
+      "name": "B-Pad",
+      "values": [
+       50,
+       35,
+       40,
+       45,
+       70,
+       30
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "T17-08",
+   "code": "T17",
+   "category": "T17 Broken line graphs",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "The broken line graph shows the numbers of A-Pads and B-Pads sold by a shop from January to June. What was the average number of B-Pads sold per month from January to June?",
+   "answer": "45",
+   "accepted_answers": [
+    "45",
+    45
+   ],
+   "unit": "B-Pads",
+   "hints": [
+    "Add the six B-Pad readings.",
+    "Divide by 6."
+   ],
+   "working": "50 + 35 + 40 + 45 + 70 + 30 = 270; 270 ÷ 6 = 45",
+   "data": {
+    "type": "line",
+    "title": "Number of Tablets Sold by a Shop",
+    "x_label": "Month",
+    "y_label": "Number sold",
+    "x_labels": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ],
+    "y_min": 0,
+    "y_max": 80,
+    "y_step": 10,
+    "series": [
+     {
+      "name": "A-Pad",
+      "values": [
+       30,
+       45,
+       40,
+       55,
+       50,
+       60
+      ]
+     },
+     {
+      "name": "B-Pad",
+      "values": [
+       50,
+       35,
+       40,
+       45,
+       70,
+       30
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "T17-10",
+   "code": "T17",
+   "category": "T17 Broken line graphs",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "The broken line graph shows the rainfall of a city from January to June. Compared with the month before, which month had the greatest increase in rainfall?",
+   "answer": "June",
+   "accepted_answers": [
+    "June",
+    "Jun"
+   ],
+   "unit": "",
+   "hints": [
+    "Find the increase from each month to the next.",
+    "The steepest upward segment shows the greatest increase."
+   ],
+   "working": "Increases: 25, 25, 60, 70, 90 → June (+90 mm).",
+   "data": {
+    "type": "line",
+    "title": "Monthly Rainfall of a City",
+    "x_label": "Month",
+    "y_label": "Rainfall (mm)",
+    "x_labels": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ],
+    "y_min": 0,
+    "y_max": 320,
+    "y_step": 20,
+    "series": [
+     {
+      "name": "Rainfall",
+      "values": [
+       40,
+       65,
+       90,
+       150,
+       220,
+       310
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "T17-11",
+   "code": "T17",
+   "category": "T17 Broken line graphs",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "The broken line graph shows the rainfall of a city from January to June. What is the average rainfall of the two months with the most rainfall?",
+   "answer": "265",
+   "accepted_answers": [
+    "265",
+    265
+   ],
+   "unit": "mm",
+   "hints": [
+    "Find the two highest points.",
+    "Add them and divide by 2."
+   ],
+   "working": "(220 + 310) ÷ 2 = 265 mm",
+   "data": {
+    "type": "line",
+    "title": "Monthly Rainfall of a City",
+    "x_label": "Month",
+    "y_label": "Rainfall (mm)",
+    "x_labels": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ],
+    "y_min": 0,
+    "y_max": 320,
+    "y_step": 20,
+    "series": [
+     {
+      "name": "Rainfall",
+      "values": [
+       40,
+       65,
+       90,
+       150,
+       220,
+       310
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "T17-12",
+   "code": "T17",
+   "category": "T17 Broken line graphs",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "The broken line graph shows Mrs Kwok's daily expenses in a week. What was her average daily expense in that week?",
+   "answer": "400",
+   "accepted_answers": [
+    "400",
+    400
+   ],
+   "unit": "$",
+   "hints": [
+    "Add the expenses of all 7 days.",
+    "Divide by 7."
+   ],
+   "working": "Total $2,800.00; 2800 ÷ 7 = $400.00",
+   "data": {
+    "type": "line",
+    "title": "Mrs Kwok's Daily Expenses in a Week",
+    "x_label": "Day",
+    "y_label": "Expense ($)",
+    "x_labels": [
+     "Mon",
+     "Tue",
+     "Wed",
+     "Thu",
+     "Fri",
+     "Sat",
+     "Sun"
+    ],
+    "y_min": 0,
+    "y_max": 650,
+    "y_step": 50,
+    "series": [
+     {
+      "name": "Expense",
+      "values": [
+       320,
+       280,
+       360,
+       300,
+       440,
+       600,
+       500
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "T17-13",
+   "code": "T17",
+   "category": "T17 Broken line graphs",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "The broken line graph shows Mrs Kwok's daily expenses in a week. What fraction of her total expense in that week was spent on Saturday?",
+   "answer": "3/14",
+   "accepted_answers": [
+    "3/14",
+    0.21428571428571427
+   ],
+   "unit": "",
+   "hints": [
+    "Find the week's total first.",
+    "Saturday ÷ total, then simplify."
+   ],
+   "working": "600/2,800 = 3/14",
+   "data": {
+    "type": "line",
+    "title": "Mrs Kwok's Daily Expenses in a Week",
+    "x_label": "Day",
+    "y_label": "Expense ($)",
+    "x_labels": [
+     "Mon",
+     "Tue",
+     "Wed",
+     "Thu",
+     "Fri",
+     "Sat",
+     "Sun"
+    ],
+    "y_min": 0,
+    "y_max": 650,
+    "y_step": 50,
+    "series": [
+     {
+      "name": "Expense",
+      "values": [
+       320,
+       280,
+       360,
+       300,
+       440,
+       600,
+       500
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "T5-01",
+   "code": "T5",
+   "category": "T5 Division with remainder in context (\"at most how many\", \"how much is left\", \"how many needed\")",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "3.5 L of soup is poured into bowls of 0.4 L each. At most how many bowls can be filled, and how much soup is left?",
+   "options": [
+    "8 … 0.3 L",
+    "8 … 0.03 L",
+    "9 … 0.1 L",
+    "8 … 3 L"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "8 … 0.3 L"
+   ],
+   "unit": "",
+   "hints": [
+    "How many 0.4 L fit into 3.5 L without going over?",
+    "Left = 3.5 − (bowls × 0.4)."
+   ],
+   "working": "8 × 0.4 = 3.2; 3.5 − 3.2 = 0.3 L"
+  },
+  {
+   "id": "T5-13",
+   "code": "T5",
+   "category": "T5 Division with remainder in context (\"at most how many\", \"how much is left\", \"how many needed\")",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "130 students go on a picnic. Each coach can carry 42 students. At least how many coaches are needed?",
+   "answer": "4",
+   "accepted_answers": [
+    "4",
+    4
+   ],
+   "unit": "coaches",
+   "hints": [
+    "Divide 130 by 42.",
+    "Students left over still need a coach — round UP."
+   ],
+   "working": "130 ÷ 42 = 3 r 4 → 4 coaches"
+  },
+  {
+   "id": "T5-02",
+   "code": "T5",
+   "category": "T5 Division with remainder in context (\"at most how many\", \"how much is left\", \"how many needed\")",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "4 kg of sweets are packed into bags of 0.35 kg each. How many kg of sweets are left after filling as many bags as possible?",
+   "answer": "0.15",
+   "accepted_answers": [
+    "0.15",
+    "3/20",
+    0.15
+   ],
+   "unit": "kg",
+   "hints": [
+    "Find the greatest number of full bags.",
+    "The remainder must be smaller than 0.35 kg."
+   ],
+   "working": "4 ÷ 0.35 = 11 r 0.15 (11 × 0.35 = 3.85)"
+  },
+  {
+   "id": "T5-03",
+   "code": "T5",
+   "category": "T5 Division with remainder in context (\"at most how many\", \"how much is left\", \"how many needed\")",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "14.2 L of tea is poured into glasses. Each glass can hold 0.6 L. At least how many glasses are needed to hold all the tea?",
+   "answer": "24",
+   "accepted_answers": [
+    "24",
+    24
+   ],
+   "unit": "glasses",
+   "hints": [
+    "Divide 14.2 by 0.6.",
+    "The leftover tea still needs a glass — round UP."
+   ],
+   "working": "14.2 ÷ 0.6 = 23 r 0.4; 23 + 1 = 24 glasses"
+  },
+  {
+   "id": "T5-04",
+   "code": "T5",
+   "category": "T5 Division with remainder in context (\"at most how many\", \"how much is left\", \"how many needed\")",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A petrol tank holds 40 L of petrol. Each time, 2.6 L is used to fill up a lawn mower. At most how many times can the lawn mower be filled up? How much petrol is left?",
+   "answer": "15 times; 1 L left",
+   "accepted_answers": [
+    "15 times; 1 L left",
+    "15, 1",
+    "15 times, 1 L"
+   ],
+   "unit": "",
+   "hints": [
+    "How many 2.6 L fit into 40 L?",
+    "Find what is left over."
+   ],
+   "working": "40 ÷ 2.6 = 15 r 1 (15 × 2.6 = 39)"
+  },
+  {
+   "id": "T5-05",
+   "code": "T5",
+   "category": "T5 Division with remainder in context (\"at most how many\", \"how much is left\", \"how many needed\")",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Notebooks cost $6.80 each. Kitty has $50. After buying as many notebooks as possible, how much money does she have left?",
+   "answer": "2.40",
+   "accepted_answers": [
+    "2.40",
+    "2.4",
+    "2 2/5",
+    "12/5",
+    2.4
+   ],
+   "unit": "$",
+   "hints": [
+    "Find the most notebooks she can afford.",
+    "Money left = 50 − cost of those notebooks."
+   ],
+   "working": "50 ÷ 6.80 = 7 r 2.4; 7 × 6.80 = 47.60; 50 − 47.60 = $2.40"
+  },
+  {
+   "id": "T5-07",
+   "code": "T5",
+   "category": "T5 Division with remainder in context (\"at most how many\", \"how much is left\", \"how many needed\")",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "15.6 kg of rice is packed into packets of 450 g each. How many grams of rice are left after filling as many packets as possible?",
+   "answer": "300",
+   "accepted_answers": [
+    "300",
+    300
+   ],
+   "unit": "g",
+   "hints": [
+    "Change kg to g first: 1 kg = 1,000 g.",
+    "Divide by 450 and find the remainder."
+   ],
+   "working": "15,600 ÷ 450 = 34 r 300; 300 g left"
+  },
+  {
+   "id": "T5-08",
+   "code": "T5",
+   "category": "T5 Division with remainder in context (\"at most how many\", \"how much is left\", \"how many needed\")",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "5.25 L of water is poured into cups of 0.4 L each. At most how many cups can be filled?",
+   "options": [
+    "13",
+    "14",
+    "131",
+    "12"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "13"
+   ],
+   "unit": "",
+   "hints": [
+    "Divide 5.25 by 0.4.",
+    "Only FULL cups count — do not round up."
+   ],
+   "working": "5.25 ÷ 0.4 = 13.125 → 13 full cups"
+  },
+  {
+   "id": "T5-11",
+   "code": "T5",
+   "category": "T5 Division with remainder in context (\"at most how many\", \"how much is left\", \"how many needed\")",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Mrs Fung has 25 m of cloth. She needs 0.7 m of cloth to make a bag. After making as many bags as possible, how much cloth is left?",
+   "answer": "0.5",
+   "accepted_answers": [
+    "0.5",
+    "1/2",
+    0.5
+   ],
+   "unit": "m",
+   "hints": [
+    "How many 0.7 m pieces fit into 25 m?",
+    "Left = 25 − bags × 0.7."
+   ],
+   "working": "25 ÷ 0.7 = 35 r 0.5; 35 × 0.7 = 24.5"
+  },
+  {
+   "id": "T5-06",
+   "code": "T5",
+   "category": "T5 Division with remainder in context (\"at most how many\", \"how much is left\", \"how many needed\")",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "To find 2.73 ÷ 0.08, Tom worked out 273 ÷ 8 = 34 R 1, and wrote the remainder of 2.73 ÷ 0.08 as 1. What is the correct remainder?",
+   "answer": "0.01",
+   "accepted_answers": [
+    "0.01",
+    "1/100",
+    0.01
+   ],
+   "unit": "",
+   "hints": [
+    "The quotient stays the same, but the remainder does not!",
+    "Check: 2.73 − 34 × 0.08 = ?"
+   ],
+   "working": "34 × 0.08 = 2.72; 2.73 − 2.72 = 0.01 (the remainder must be smaller than 0.08)"
+  },
+  {
+   "id": "T5-09",
+   "code": "T5",
+   "category": "T5 Division with remainder in context (\"at most how many\", \"how much is left\", \"how many needed\")",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "A bottle contains 7/8 L of juice. The juice is poured into cups of 1/6 L each. At most how many cups can be filled?",
+   "answer": "5",
+   "accepted_answers": [
+    "5",
+    5
+   ],
+   "unit": "cups",
+   "hints": [
+    "Divide 7/8 by 1/6 (multiply by 6).",
+    "Only full cups count."
+   ],
+   "working": "7/8 ÷ 1/6 = 7/8 × 6 = 21/4 = 5 1/4 → 5 cups"
+  },
+  {
+   "id": "T5-10",
+   "code": "T5",
+   "category": "T5 Division with remainder in context (\"at most how many\", \"how much is left\", \"how many needed\")",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "3.1 L of milk is poured equally into 8 cups. 0.22 L of milk is left. How much milk is there in each cup?",
+   "answer": "0.36",
+   "accepted_answers": [
+    "0.36",
+    "9/25",
+    0.36
+   ],
+   "unit": "L",
+   "hints": [
+    "Take away the milk left over first.",
+    "Share the rest equally among 8 cups."
+   ],
+   "working": "3.1 − 0.22 = 2.88; 2.88 ÷ 8 = 0.36 L"
+  },
+  {
+   "id": "T5-12",
+   "code": "T5",
+   "category": "T5 Division with remainder in context (\"at most how many\", \"how much is left\", \"how many needed\")",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "Ada has a ribbon 6.5 m long. Each ribbon flower needs 45 cm. At most how many flowers can she make, and how many cm of ribbon are left?",
+   "answer": "14 flowers; 20 cm left",
+   "accepted_answers": [
+    "14 flowers; 20 cm left",
+    "14, 20",
+    "14 flowers, 20 cm"
+   ],
+   "unit": "",
+   "hints": [
+    "Change 6.5 m into cm.",
+    "Divide by 45 and keep the remainder in cm."
+   ],
+   "working": "650 ÷ 45 = 14 r 20"
+  },
+  {
+   "id": "T6-09",
+   "code": "T6",
+   "category": "T6 Factors, multiples, primes, divisibility, H.C.F./L.C.M.",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "What is the H.C.F. of 24 and 36?",
+   "options": [
+    "4",
+    "6",
+    "12",
+    "72"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "12"
+   ],
+   "unit": "",
+   "hints": [
+    "H.C.F. is the biggest number that divides both.",
+    "72 is a common MULTIPLE, not a factor."
+   ],
+   "working": "Common factors 1, 2, 3, 4, 6, 12 → H.C.F. 12"
+  },
+  {
+   "id": "T6-01",
+   "code": "T6",
+   "category": "T6 Factors, multiples, primes, divisibility, H.C.F./L.C.M.",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "What is the least number to be added to 2,615 so that the sum is divisible by 6?",
+   "answer": "1",
+   "accepted_answers": [
+    "1",
+    1
+   ],
+   "unit": "",
+   "hints": [
+    "A number divisible by 6 must be even AND its digit sum must be divisible by 3.",
+    "Try 2,616, 2,617, … until it works."
+   ],
+   "working": "2,615 + 1 = 2,616 = 6 × 436"
+  },
+  {
+   "id": "T6-02",
+   "code": "T6",
+   "category": "T6 Factors, multiples, primes, divisibility, H.C.F./L.C.M.",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "What is the least number to be taken away from 5,239 so that the difference is divisible by 7?",
+   "answer": "3",
+   "accepted_answers": [
+    "3",
+    3
+   ],
+   "unit": "",
+   "hints": [
+    "Divide 5,239 by 7.",
+    "The remainder is the number to take away."
+   ],
+   "working": "5,239 ÷ 7 = 748 r 3; 5,239 − 3 = 5,236 = 7 × 748"
+  },
+  {
+   "id": "T6-03",
+   "code": "T6",
+   "category": "T6 Factors, multiples, primes, divisibility, H.C.F./L.C.M.",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "List all the common factors of 54 and 90.",
+   "answer": "1, 2, 3, 6, 9, 18",
+   "accepted_answers": [
+    "1, 2, 3, 6, 9, 18",
+    "1,2,3,6,9,18"
+   ],
+   "unit": "",
+   "hints": [
+    "List the factors of 54 in pairs.",
+    "Keep only those that also divide 90."
+   ],
+   "working": "Factors of 54: 1, 2, 3, 6, 9, 18, 27, 54; of 90: 1, 2, 3, 5, 6, 9, 10, 15, 18, 30, 45, 90. Common: 1, 2, 3, 6, 9, 18"
+  },
+  {
+   "id": "T6-04",
+   "code": "T6",
+   "category": "T6 Factors, multiples, primes, divisibility, H.C.F./L.C.M.",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Which of the following is a prime number?",
+   "options": [
+    "91",
+    "87",
+    "51",
+    "97"
+   ],
+   "answer": "D",
+   "accepted_answers": [
+    "D",
+    "97"
+   ],
+   "unit": "",
+   "hints": [
+    "Test each number: does 3 or 7 divide it?",
+    "91 = 7 × ?, 87 = 3 × ?, 51 = 3 × ?"
+   ],
+   "working": "91 = 7 × 13, 87 = 3 × 29, 51 = 3 × 17; 97 is prime."
+  },
+  {
+   "id": "T6-05",
+   "code": "T6",
+   "category": "T6 Factors, multiples, primes, divisibility, H.C.F./L.C.M.",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "List all the prime numbers between 60 and 80.",
+   "answer": "61, 67, 71, 73, 79",
+   "accepted_answers": [
+    "61, 67, 71, 73, 79",
+    "61,67,71,73,79"
+   ],
+   "unit": "",
+   "hints": [
+    "Skip even numbers and numbers ending in 5.",
+    "Check whether 3 or 7 divides the others."
+   ],
+   "working": "Primes: 61, 67, 71, 73, 79 (63, 69, 75, 77 are not prime)"
+  },
+  {
+   "id": "T6-06",
+   "code": "T6",
+   "category": "T6 Factors, multiples, primes, divisibility, H.C.F./L.C.M.",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Find the L.C.M. of 8, 12 and 30.",
+   "answer": "120",
+   "accepted_answers": [
+    "120",
+    120
+   ],
+   "unit": "",
+   "hints": [
+    "List multiples of the largest number, 30.",
+    "Find the first one that 8 and 12 also divide."
+   ],
+   "working": "30, 60, 90, 120 → 120 ÷ 8 = 15, 120 ÷ 12 = 10. L.C.M. = 120"
+  },
+  {
+   "id": "T6-07",
+   "code": "T6",
+   "category": "T6 Factors, multiples, primes, divisibility, H.C.F./L.C.M.",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Which of the following is the common multiple of 4, 6 and 9 that is nearest to 100?",
+   "options": [
+    "108",
+    "96",
+    "100",
+    "72"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "108"
+   ],
+   "unit": "",
+   "hints": [
+    "Find the L.C.M. of 4, 6 and 9 first.",
+    "List its multiples and see which is closest to 100."
+   ],
+   "working": "L.C.M. = 36; multiples 72, 108; 108 is 8 away from 100, 72 is 28 away → 108."
+  },
+  {
+   "id": "T6-08",
+   "code": "T6",
+   "category": "T6 Factors, multiples, primes, divisibility, H.C.F./L.C.M.",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "How many factors of 84 are 2-digit numbers?",
+   "answer": "6",
+   "accepted_answers": [
+    "6",
+    6
+   ],
+   "unit": "",
+   "hints": [
+    "List all factors of 84 in pairs: 1 × 84, 2 × 42, …",
+    "Count those from 10 to 99."
+   ],
+   "working": "Factors: 1, 2, 3, 4, 6, 7, 12, 14, 21, 28, 42, 84; 2-digit: 12, 14, 21, 28, 42, 84 → 6"
+  },
+  {
+   "id": "T6-10",
+   "code": "T6",
+   "category": "T6 Factors, multiples, primes, divisibility, H.C.F./L.C.M.",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "‘★’ is a missing digit in the 3-digit number 7★4. The number is divisible by both 3 and 4. What is ★?",
+   "answer": "4",
+   "accepted_answers": [
+    "4",
+    4
+   ],
+   "unit": "",
+   "hints": [
+    "For 4: the last two digits ★4 must be divisible by 4.",
+    "For 3: 7 + ★ + 4 must be divisible by 3."
+   ],
+   "working": "★4 divisible by 4 → ★ = 0, 2, 4, 6, 8; 11 + ★ divisible by 3 → ★ = 1, 4, 7. So ★ = 4 (744 = 12 × 62)."
+  },
+  {
+   "id": "T14-01",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "The base of a parallelogram is 18 cm. It is 4 cm longer than the height. What is the area of the parallelogram?",
+   "options": [
+    "288 cm²",
+    "126 cm²",
+    "64 cm²",
+    "252 cm²"
+   ],
+   "answer": "D",
+   "accepted_answers": [
+    "D",
+    "252 cm²"
+   ],
+   "unit": "",
+   "hints": [
+    "Height = base − 4 cm.",
+    "Area of a parallelogram = base × height (no ÷ 2)."
+   ],
+   "working": "Height 14 cm; 18 × 14 = 252 cm²"
+  },
+  {
+   "id": "T14-05",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "The perimeter of a square is 36 cm. What is its area?",
+   "answer": "81",
+   "accepted_answers": [
+    "81",
+    81
+   ],
+   "unit": "cm²",
+   "hints": [
+    "Side = perimeter ÷ 4.",
+    "Area = side × side."
+   ],
+   "working": "Side 9 cm; 9 × 9 = 81 cm²"
+  },
+  {
+   "id": "T14-02",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "The upper base and lower base of a trapezium are 10 cm and 18 cm. Its height is half the sum of the two bases. What is its area?",
+   "answer": "196",
+   "accepted_answers": [
+    "196",
+    196
+   ],
+   "unit": "cm²",
+   "hints": [
+    "Height = (10 + 18) ÷ 2.",
+    "Area = (upper base + lower base) × height ÷ 2."
+   ],
+   "working": "Height 14 cm; (10 + 18) × 14 ÷ 2 = 196 cm²"
+  },
+  {
+   "id": "T14-03",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "The area of a triangle is 60 cm² and its base is 15 cm. What is its height?",
+   "answer": "8",
+   "accepted_answers": [
+    "8",
+    8
+   ],
+   "unit": "cm",
+   "hints": [
+    "Area = base × height ÷ 2.",
+    "So height = area × 2 ÷ base."
+   ],
+   "working": "60 × 2 ÷ 15 = 8 cm"
+  },
+  {
+   "id": "T14-04",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Which of the following is a property of BOTH a square and a rhombus?",
+   "options": [
+    "The two diagonals are equal in length.",
+    "All four angles are right angles.",
+    "All four sides are equal.",
+    "It has only one pair of parallel sides."
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "All four sides are equal."
+   ],
+   "unit": "",
+   "hints": [
+    "A rhombus can be 'leaning' — its angles need not be right angles.",
+    "Think about what makes a rhombus a rhombus."
+   ],
+   "working": "Both have 4 equal sides. A rhombus need not have right angles or equal diagonals."
+  },
+  {
+   "id": "T14-06",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A rectangular piece of cloth is 2.5 m long and its area is 1.5 m². What is its width in cm?",
+   "answer": "60",
+   "accepted_answers": [
+    "60",
+    60
+   ],
+   "unit": "cm",
+   "hints": [
+    "Width = area ÷ length (in m).",
+    "Change m to cm: × 100."
+   ],
+   "working": "1.5 ÷ 2.5 = 0.6 m = 60 cm"
+  },
+  {
+   "id": "T14-07",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "A circle is divided into 8 equal parts and 3 parts are shaded. The shaded part is what fraction of the WHITE part?",
+   "options": [
+    "3/5",
+    "3/8",
+    "5/3",
+    "5/8"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "3/5"
+   ],
+   "unit": "",
+   "hints": [
+    "How many parts are white?",
+    "Compare shaded with WHITE, not with the whole circle."
+   ],
+   "working": "White 5 parts; shaded/white = 3/5"
+  },
+  {
+   "id": "T14-09",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Which of the following is a common property of a kite and a rhombus?",
+   "options": [
+    "The diagonals cross at right angles.",
+    "All four sides are equal.",
+    "It has two pairs of parallel sides.",
+    "It has four right angles."
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "The diagonals cross at right angles."
+   ],
+   "unit": "",
+   "hints": [
+    "A kite has two pairs of equal ADJACENT sides — not all four equal.",
+    "Draw both shapes with their diagonals."
+   ],
+   "working": "In both a kite and a rhombus the diagonals are perpendicular."
+  },
+  {
+   "id": "T14-08",
+   "code": "T14",
+   "category": "T14 2-D shapes: quadrilateral properties, area (parallelogram/triangle/trapezium), perimeter, shaded fractions",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "A parallelogram has an area of 96 cm² and a base of 12 cm. A triangle has the same base and the same height as the parallelogram. What is the area of the triangle?",
+   "answer": "48",
+   "accepted_answers": [
+    "48",
+    48
+   ],
+   "unit": "cm²",
+   "hints": [
+    "Find the height of the parallelogram: area ÷ base.",
+    "Area of triangle = base × height ÷ 2."
+   ],
+   "working": "Height 96 ÷ 12 = 8 cm; 12 × 8 ÷ 2 = 48 cm²"
+  },
+  {
+   "id": "T4-09",
+   "code": "T4",
+   "category": "T4 Decimal computation: mixed operations, quotient correct to d.p., shifted-decimal \"mistake\"/same-quotient, smallest expression",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "3.8 × 2.5 = ?",
+   "answer": "9.5",
+   "accepted_answers": [
+    "9.5",
+    "9 1/2",
+    "19/2",
+    9.5
+   ],
+   "unit": "",
+   "hints": [
+    "Work out 38 × 25 first.",
+    "Count the decimal places in the question: 1 + 1 = 2."
+   ],
+   "working": "38 × 25 = 950 → 9.5"
+  },
+  {
+   "id": "T4-01",
+   "code": "T4",
+   "category": "T4 Decimal computation: mixed operations, quotient correct to d.p., shifted-decimal \"mistake\"/same-quotient, smallest expression",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "2.6 + 5.04 ÷ 0.7 − 4.8 = ?",
+   "answer": "5",
+   "accepted_answers": [
+    "5",
+    5
+   ],
+   "unit": "",
+   "hints": [
+    "Do ÷ before + and −.",
+    "5.04 ÷ 0.7 = 50.4 ÷ 7."
+   ],
+   "working": "5.04 ÷ 0.7 = 7.2; 2.6 + 7.2 − 4.8 = 5"
+  },
+  {
+   "id": "T4-02",
+   "code": "T4",
+   "category": "T4 Decimal computation: mixed operations, quotient correct to d.p., shifted-decimal \"mistake\"/same-quotient, smallest expression",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "2.9 ÷ 0.7 = ? (correct to 2 decimal places)",
+   "options": [
+    "4.15",
+    "4.14",
+    "4.2",
+    "41.43"
+   ],
+   "answer": "B",
+   "accepted_answers": [
+    "B",
+    "4.14"
+   ],
+   "unit": "",
+   "hints": [
+    "Change to 29 ÷ 7.",
+    "Work to 3 decimal places, then round."
+   ],
+   "working": "29 ÷ 7 = 4.142… → 4.14"
+  },
+  {
+   "id": "T4-03",
+   "code": "T4",
+   "category": "T4 Decimal computation: mixed operations, quotient correct to d.p., shifted-decimal \"mistake\"/same-quotient, smallest expression",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "When calculating 2.5 × 0.04, Amy mistakenly worked out 25 × 4. How many times the correct answer was Amy's answer?",
+   "options": [
+    "10",
+    "10,000",
+    "100",
+    "1,000"
+   ],
+   "answer": "D",
+   "accepted_answers": [
+    "D",
+    "1,000"
+   ],
+   "unit": "",
+   "hints": [
+    "Work out both answers.",
+    "Divide Amy's answer by the correct one."
+   ],
+   "working": "2.5 × 0.04 = 0.1; 25 × 4 = 100; 100 ÷ 0.1 = 1,000"
+  },
+  {
+   "id": "T4-04",
+   "code": "T4",
+   "category": "T4 Decimal computation: mixed operations, quotient correct to d.p., shifted-decimal \"mistake\"/same-quotient, smallest expression",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Which of the following has the smallest value?",
+   "options": [
+    "9 × 0.03",
+    "0.09 ÷ 3",
+    "0.9 ÷ 0.3",
+    "0.9 × 0.3"
+   ],
+   "answer": "B",
+   "accepted_answers": [
+    "B",
+    "0.09 ÷ 3"
+   ],
+   "unit": "",
+   "hints": [
+    "Work out each one.",
+    "Dividing by a number less than 1 makes it BIGGER."
+   ],
+   "working": "0.27, 3, 0.03, 0.27 → 0.09 ÷ 3 is smallest."
+  },
+  {
+   "id": "T4-05",
+   "code": "T4",
+   "category": "T4 Decimal computation: mixed operations, quotient correct to d.p., shifted-decimal \"mistake\"/same-quotient, smallest expression",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Which of the following has the same quotient as 24.6 ÷ 0.3?",
+   "options": [
+    "246 ÷ 30",
+    "2.46 ÷ 3",
+    "246 ÷ 3",
+    "2,460 ÷ 3"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "246 ÷ 3"
+   ],
+   "unit": "",
+   "hints": [
+    "Multiply BOTH numbers by the same amount — the quotient stays the same.",
+    "24.6 ÷ 0.3: move both decimal points 1 place right."
+   ],
+   "working": "24.6 ÷ 0.3 = 246 ÷ 3 = 82"
+  },
+  {
+   "id": "T4-06",
+   "code": "T4",
+   "category": "T4 Decimal computation: mixed operations, quotient correct to d.p., shifted-decimal \"mistake\"/same-quotient, smallest expression",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A farm collects 6.45 kg of eggs every day. How many kg of eggs does it collect in September?",
+   "answer": "193.5",
+   "accepted_answers": [
+    "193.5",
+    "193 1/2",
+    "387/2",
+    193.5
+   ],
+   "unit": "kg",
+   "hints": [
+    "How many days are there in September?",
+    "Multiply."
+   ],
+   "working": "September has 30 days; 6.45 × 30 = 193.5 kg"
+  },
+  {
+   "id": "T4-07",
+   "code": "T4",
+   "category": "T4 Decimal computation: mixed operations, quotient correct to d.p., shifted-decimal \"mistake\"/same-quotient, smallest expression",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "7.46 L of juice is poured equally into 12 bottles. How much juice is there in each bottle? (Give your answer correct to 2 decimal places.)",
+   "answer": "0.62",
+   "accepted_answers": [
+    "0.62",
+    "31/50",
+    0.62
+   ],
+   "unit": "L",
+   "hints": [
+    "Divide 7.46 by 12.",
+    "Work to 3 decimal places, then round."
+   ],
+   "working": "7.46 ÷ 12 = 0.6216… → 0.62 L"
+  },
+  {
+   "id": "T4-08",
+   "code": "T4",
+   "category": "T4 Decimal computation: mixed operations, quotient correct to d.p., shifted-decimal \"mistake\"/same-quotient, smallest expression",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "27.3 ÷ (1.25 × 0.8 + 2.9) = ? (Give your answer correct to the nearest hundredth.)",
+   "answer": "7.00",
+   "accepted_answers": [
+    "7.00",
+    "7",
+    7
+   ],
+   "unit": "",
+   "hints": [
+    "Brackets first: 1.25 × 0.8, then + 2.9.",
+    "Then divide."
+   ],
+   "working": "1.25 × 0.8 = 1; 1 + 2.9 = 3.9; 27.3 ÷ 3.9 = 7 → 7.00"
+  },
+  {
+   "id": "T10-01",
+   "code": "T10",
+   "category": "T10 Capacity/volume units & reading scales (L, mL, cm³, m³)",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "3,450 cm³ = ? L",
+   "answer": "3.45",
+   "accepted_answers": [
+    "3.45",
+    "3 9/20",
+    "69/20",
+    3.45
+   ],
+   "unit": "L",
+   "hints": [
+    "1 L = 1,000 cm³.",
+    "Divide by 1,000."
+   ],
+   "working": "3,450 ÷ 1,000 = 3.45 L"
+  },
+  {
+   "id": "T10-02",
+   "code": "T10",
+   "category": "T10 Capacity/volume units & reading scales (L, mL, cm³, m³)",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "4.07 L = ? cm³",
+   "answer": "4,070",
+   "accepted_answers": [
+    "4,070",
+    "4070",
+    4070
+   ],
+   "unit": "cm³",
+   "hints": [
+    "1 L = 1,000 cm³.",
+    "Multiply by 1,000 — watch the zero in 4.07."
+   ],
+   "working": "4.07 × 1,000 = 4,070 cm³"
+  },
+  {
+   "id": "T10-05",
+   "code": "T10",
+   "category": "T10 Capacity/volume units & reading scales (L, mL, cm³, m³)",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "Which unit is most suitable for measuring the capacity of a teaspoon?",
+   "options": [
+    "m³",
+    "L",
+    "mL",
+    "cm"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "mL"
+   ],
+   "unit": "",
+   "hints": [
+    "A teaspoon holds only a tiny amount.",
+    "cm measures length, not capacity."
+   ],
+   "working": "A teaspoon holds about 5 mL → mL."
+  },
+  {
+   "id": "T10-07",
+   "code": "T10",
+   "category": "T10 Capacity/volume units & reading scales (L, mL, cm³, m³)",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "6,060 cm³ = ? L",
+   "answer": "6.06",
+   "accepted_answers": [
+    "6.06",
+    "6 3/50",
+    "303/50",
+    6.06
+   ],
+   "unit": "L",
+   "hints": [
+    "1,000 cm³ = 1 L."
+   ],
+   "working": "6,060 ÷ 1,000 = 6.06 L"
+  },
+  {
+   "id": "T10-03",
+   "code": "T10",
+   "category": "T10 Capacity/volume units & reading scales (L, mL, cm³, m³)",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "0.45 m³ = ? L",
+   "answer": "450",
+   "accepted_answers": [
+    "450",
+    450
+   ],
+   "unit": "L",
+   "hints": [
+    "1 m³ = 1,000,000 cm³ = 1,000 L."
+   ],
+   "working": "0.45 × 1,000 = 450 L"
+  },
+  {
+   "id": "T10-04",
+   "code": "T10",
+   "category": "T10 Capacity/volume units & reading scales (L, mL, cm³, m³)",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A cup holds 350 mL. A jug holds 3 times as much as the cup. How many litres do 2 cups and 1 jug hold altogether?",
+   "answer": "1.75",
+   "accepted_answers": [
+    "1.75",
+    "1 3/4",
+    "7/4",
+    1.75
+   ],
+   "unit": "L",
+   "hints": [
+    "Jug = 3 × 350 mL.",
+    "Add, then change mL to L (÷ 1,000)."
+   ],
+   "working": "700 + 1,050 = 1,750 mL = 1.75 L"
+  },
+  {
+   "id": "T10-06",
+   "code": "T10",
+   "category": "T10 Capacity/volume units & reading scales (L, mL, cm³, m³)",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "1.5 L of milk tea and 450 mL of lemon tea are mixed and shared equally among 6 people. How many litres does each person get?",
+   "answer": "0.325",
+   "accepted_answers": [
+    "0.325",
+    "13/40",
+    0.325
+   ],
+   "unit": "L",
+   "hints": [
+    "Change both to mL and add.",
+    "Divide by 6, then change to L."
+   ],
+   "working": "1,500 + 450 = 1,950 mL; 1,950 ÷ 6 = 325 mL = 0.325 L"
+  },
+  {
+   "id": "T10-08",
+   "code": "T10",
+   "category": "T10 Capacity/volume units & reading scales (L, mL, cm³, m³)",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "Water from a full cubic container of side 6 cm is poured into an empty bottle 3 times, and the bottle becomes exactly full. What is the capacity of the bottle in mL?",
+   "answer": "648",
+   "accepted_answers": [
+    "648",
+    648
+   ],
+   "unit": "mL",
+   "hints": [
+    "Volume of the cube = 6 × 6 × 6 cm³.",
+    "1 cm³ = 1 mL; times 3 pours."
+   ],
+   "working": "216 cm³ × 3 = 648 cm³ = 648 mL"
+  },
+  {
+   "id": "T7-03",
+   "code": "T7",
+   "category": "T7 Fractions: compare, equivalent fractions, mixed-number calculation",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "18/24 = 9/c = d/4. Find c and d.",
+   "answer": "c = 12, d = 3",
+   "accepted_answers": [
+    "c = 12, d = 3",
+    "c=12, d=3",
+    "12, 3"
+   ],
+   "unit": "",
+   "hints": [
+    "18 → 9 means divide by 2: do the same to 24.",
+    "24 → 4 means divide by 6: do the same to 18."
+   ],
+   "working": "18/24 = 9/12 = 3/4"
+  },
+  {
+   "id": "T7-08",
+   "code": "T7",
+   "category": "T7 Fractions: compare, equivalent fractions, mixed-number calculation",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "45/b = 5 = c/8. Find b and c.",
+   "answer": "b = 9, c = 40",
+   "accepted_answers": [
+    "b = 9, c = 40",
+    "b=9, c=40",
+    "9, 40"
+   ],
+   "unit": "",
+   "hints": [
+    "45 ÷ b = 5, so b = 45 ÷ 5.",
+    "c ÷ 8 = 5, so c = 5 × 8."
+   ],
+   "working": "b = 9, c = 40"
+  },
+  {
+   "id": "T7-01",
+   "code": "T7",
+   "category": "T7 Fractions: compare, equivalent fractions, mixed-number calculation",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "2 1/6 − 1 3/4 + 3 5/8 = ?",
+   "answer": "4 1/24",
+   "accepted_answers": [
+    "4 1/24",
+    "97/24",
+    4.041666666666667
+   ],
+   "unit": "",
+   "hints": [
+    "Common denominator of 6, 4 and 8 is 24.",
+    "Change to improper fractions or work whole numbers and fractions separately."
+   ],
+   "working": "52/24 − 42/24 + 87/24 = 97/24 = 4 1/24"
+  },
+  {
+   "id": "T7-02",
+   "code": "T7",
+   "category": "T7 Fractions: compare, equivalent fractions, mixed-number calculation",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Which of the following fractions is the largest?",
+   "options": [
+    "11/24",
+    "5/12",
+    "7/18",
+    "3/8"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "11/24"
+   ],
+   "unit": "",
+   "hints": [
+    "Change them all to the same denominator, 72.",
+    "Compare the numerators."
+   ],
+   "working": "30/72, 28/72, 33/72, 27/72 → 11/24"
+  },
+  {
+   "id": "T7-04",
+   "code": "T7",
+   "category": "T7 Fractions: compare, equivalent fractions, mixed-number calculation",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "3 1/3 ÷ 5 × 2 1/4 = ?",
+   "answer": "1 1/2",
+   "accepted_answers": [
+    "1 1/2",
+    "3/2",
+    "1.5",
+    1.5
+   ],
+   "unit": "",
+   "hints": [
+    "Change mixed numbers to improper fractions.",
+    "÷ 5 is the same as × 1/5. Work from left to right."
+   ],
+   "working": "10/3 × 1/5 × 9/4 = 90/60 = 1 1/2"
+  },
+  {
+   "id": "T7-05",
+   "code": "T7",
+   "category": "T7 Fractions: compare, equivalent fractions, mixed-number calculation",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Which of the following is correct?",
+   "options": [
+    "3/5 > 4/7",
+    "5/8 = 10/15",
+    "7/10 < 2/3",
+    "5/9 > 4/7"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "3/5 > 4/7"
+   ],
+   "unit": "",
+   "hints": [
+    "Cross-multiply to compare two fractions.",
+    "e.g. 3/5 vs 4/7: compare 3 × 7 and 4 × 5."
+   ],
+   "working": "3 × 7 = 21 > 20 ✓; 5 × 7 = 35 < 36; 7 × 3 = 21 > 20; 5/8 = 15/24 ≠ 10/15."
+  },
+  {
+   "id": "T7-06",
+   "code": "T7",
+   "category": "T7 Fractions: compare, equivalent fractions, mixed-number calculation",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "2 1/2 + 4 1/2 ÷ 1 4/5 = ?",
+   "answer": "5",
+   "accepted_answers": [
+    "5",
+    5
+   ],
+   "unit": "",
+   "hints": [
+    "Do ÷ before +.",
+    "4 1/2 ÷ 1 4/5 = 9/2 × 5/9."
+   ],
+   "working": "9/2 × 5/9 = 5/2; 5/2 + 5/2 = 5"
+  },
+  {
+   "id": "T7-07",
+   "code": "T7",
+   "category": "T7 Fractions: compare, equivalent fractions, mixed-number calculation",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "In a race, Amy ran 100 m in 15 1/4 seconds. Betty was 1 2/3 seconds slower than Amy. Cindy was 2 1/6 seconds faster than Betty. How long did Cindy take?",
+   "answer": "14 3/4",
+   "accepted_answers": [
+    "14 3/4",
+    "59/4",
+    "14.75",
+    14.75
+   ],
+   "unit": "seconds",
+   "hints": [
+    "Slower means MORE time; faster means LESS time.",
+    "Betty = 15 1/4 + 1 2/3; Cindy = Betty − 2 1/6."
+   ],
+   "working": "Betty 16 11/12 s; Cindy 16 11/12 − 2 1/6 = 14 3/4 s"
+  },
+  {
+   "id": "T11-01",
+   "code": "T11",
+   "category": "T11 Volume of cuboids & composite solids",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "A cuboid is 12 cm long, 5 cm wide and 4 cm high. What is its volume?",
+   "answer": "240",
+   "accepted_answers": [
+    "240",
+    240
+   ],
+   "unit": "cm³",
+   "hints": [
+    "Volume = length × width × height."
+   ],
+   "working": "12 × 5 × 4 = 240 cm³"
+  },
+  {
+   "id": "T11-07",
+   "code": "T11",
+   "category": "T11 Volume of cuboids & composite solids",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "A tank has a base of 40 cm × 25 cm. The water in it is 18 cm deep. How much water is in the tank?",
+   "options": [
+    "180 L",
+    "18 L",
+    "18,000 L",
+    "1.8 L"
+   ],
+   "answer": "B",
+   "accepted_answers": [
+    "B",
+    "18 L"
+   ],
+   "unit": "",
+   "hints": [
+    "Volume of water = length × width × depth.",
+    "1,000 cm³ = 1 L."
+   ],
+   "working": "40 × 25 × 18 = 18,000 cm³ = 18 L"
+  },
+  {
+   "id": "T11-02",
+   "code": "T11",
+   "category": "T11 Volume of cuboids & composite solids",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A cuboid is 16 cm long and 4.5 cm high. Its volume is 504 cm³. What is its width?",
+   "answer": "7",
+   "accepted_answers": [
+    "7",
+    7
+   ],
+   "unit": "cm",
+   "hints": [
+    "Width = volume ÷ (length × height)."
+   ],
+   "working": "16 × 4.5 = 72; 504 ÷ 72 = 7 cm"
+  },
+  {
+   "id": "T11-03",
+   "code": "T11",
+   "category": "T11 Volume of cuboids & composite solids",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A rectangular card is 40 cm × 25 cm. A square of side 5 cm is cut from each corner and the card is folded into an open box. What is the capacity of the box?",
+   "answer": "2,250",
+   "accepted_answers": [
+    "2,250",
+    "2250",
+    2250
+   ],
+   "unit": "cm³",
+   "hints": [
+    "Each side loses 5 cm at BOTH ends.",
+    "The height of the box is the side of the cut square."
+   ],
+   "working": "30 × 15 × 5 = 2,250 cm³"
+  },
+  {
+   "id": "T11-05",
+   "code": "T11",
+   "category": "T11 Volume of cuboids & composite solids",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A water tank holds 2,400 L when full. Its base is 200 cm long and 1.5 m wide. What is the height of the tank in cm?",
+   "answer": "80",
+   "accepted_answers": [
+    "80",
+    80
+   ],
+   "unit": "cm",
+   "hints": [
+    "Change everything to cm and cm³ (1 L = 1,000 cm³; 1.5 m = 150 cm).",
+    "Height = volume ÷ base area."
+   ],
+   "working": "2,400,000 ÷ (200 × 150) = 80 cm"
+  },
+  {
+   "id": "T11-06",
+   "code": "T11",
+   "category": "T11 Volume of cuboids & composite solids",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A cuboid 10 cm long, 6 cm wide and 8 cm high has a small cuboid 4 cm long, 6 cm wide and 3 cm high cut away from one bottom corner (through the whole width). What is the volume of the remaining solid?",
+   "answer": "408",
+   "accepted_answers": [
+    "408",
+    408
+   ],
+   "unit": "cm³",
+   "hints": [
+    "Find the volume of the big cuboid.",
+    "Subtract the part cut away."
+   ],
+   "working": "480 − 72 = 408 cm³"
+  },
+  {
+   "id": "T11-08",
+   "code": "T11",
+   "category": "T11 Volume of cuboids & composite solids",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A solid is made by putting a cuboid 8 cm × 10 cm × 6 cm on top of a cuboid 15 cm × 10 cm × 4 cm. What is the volume of the solid?",
+   "answer": "1,080",
+   "accepted_answers": [
+    "1,080",
+    "1080",
+    1080
+   ],
+   "unit": "cm³",
+   "hints": [
+    "Find each cuboid's volume.",
+    "Add them."
+   ],
+   "working": "600 + 480 = 1,080 cm³"
+  },
+  {
+   "id": "T11-04",
+   "code": "T11",
+   "category": "T11 Volume of cuboids & composite solids",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "A rectangular card is 40 cm × 25 cm. A square of side 5 cm is cut from each corner and the card is folded into an open box. At most how many cubes of side 3 cm can be put into the box (without sticking out)?",
+   "answer": "50",
+   "accepted_answers": [
+    "50",
+    50
+   ],
+   "unit": "cubes",
+   "hints": [
+    "Box is 30 cm × 15 cm × 5 cm.",
+    "Count how many 3 cm fit along EACH side (whole cubes only), then multiply. Don't just divide the volumes!"
+   ],
+   "working": "30 ÷ 3 = 10, 15 ÷ 3 = 5, 5 ÷ 3 = 1 r 2 → 10 × 5 × 1 = 50"
+  },
+  {
+   "id": "T3-01",
+   "code": "T3",
+   "category": "T3 Decimals: place value, writing numerals (\"5 tens and 50 thousandths\")",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "Write '6 tens and 70 thousandths' as a decimal.",
+   "answer": "60.07",
+   "accepted_answers": [
+    "60.07",
+    "60 7/100",
+    "6007/100",
+    60.07
+   ],
+   "unit": "",
+   "hints": [
+    "6 tens = 60.",
+    "70 thousandths = 0.070."
+   ],
+   "working": "60 + 0.07 = 60.07"
+  },
+  {
+   "id": "T3-02",
+   "code": "T3",
+   "category": "T3 Decimals: place value, writing numerals (\"5 tens and 50 thousandths\")",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "30 tens and 30 hundredths = ?",
+   "options": [
+    "300.03",
+    "30.3",
+    "3.03",
+    "300.3"
+   ],
+   "answer": "D",
+   "accepted_answers": [
+    "D",
+    "300.3"
+   ],
+   "unit": "",
+   "hints": [
+    "30 tens = 300.",
+    "30 hundredths = 0.30."
+   ],
+   "working": "300 + 0.3 = 300.3"
+  },
+  {
+   "id": "T3-03",
+   "code": "T3",
+   "category": "T3 Decimals: place value, writing numerals (\"5 tens and 50 thousandths\")",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "Write 'four hundred six and five hundredths' in figures.",
+   "answer": "406.05",
+   "accepted_answers": [
+    "406.05",
+    "406 1/20",
+    "8121/20",
+    406.05
+   ],
+   "unit": "",
+   "hints": [
+    "'and' marks the decimal point.",
+    "Hundredths is the 2nd place after the point."
+   ],
+   "working": "406.05"
+  },
+  {
+   "id": "T3-04",
+   "code": "T3",
+   "category": "T3 Decimals: place value, writing numerals (\"5 tens and 50 thousandths\")",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "In 52.137, what is the place and value of the digit 7?",
+   "answer": "thousandths place; 0.007",
+   "accepted_answers": [
+    "thousandths place; 0.007",
+    "thousandths, 0.007",
+    "0.007"
+   ],
+   "unit": "",
+   "hints": [
+    "Count the places after the decimal point: tenths, hundredths, …"
+   ],
+   "working": "5 2 . 1 3 7 → 7 is in the 3rd decimal place (thousandths), value 0.007."
+  },
+  {
+   "id": "T3-05",
+   "code": "T3",
+   "category": "T3 Decimals: place value, writing numerals (\"5 tens and 50 thousandths\")",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "In 84.632, what is the value of the digit 3?",
+   "answer": "0.03",
+   "accepted_answers": [
+    "0.03",
+    "3/100",
+    0.03
+   ],
+   "unit": "",
+   "hints": [
+    "3 is in the 2nd place after the decimal point."
+   ],
+   "working": "Hundredths place → 0.03"
+  },
+  {
+   "id": "T3-06",
+   "code": "T3",
+   "category": "T3 Decimals: place value, writing numerals (\"5 tens and 50 thousandths\")",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "Write 'seven hundred twelve and three tenths' in figures.",
+   "answer": "712.3",
+   "accepted_answers": [
+    "712.3",
+    "712 3/10",
+    "7123/10",
+    712.3
+   ],
+   "unit": "",
+   "hints": [
+    "'and' marks the decimal point."
+   ],
+   "working": "712.3"
+  },
+  {
+   "id": "T3-07",
+   "code": "T3",
+   "category": "T3 Decimals: place value, writing numerals (\"5 tens and 50 thousandths\")",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "8 ones, 4 tenths and 16 thousandths = ?",
+   "options": [
+    "8.0416",
+    "84.16",
+    "8.56",
+    "8.416"
+   ],
+   "answer": "D",
+   "accepted_answers": [
+    "D",
+    "8.416"
+   ],
+   "unit": "",
+   "hints": [
+    "16 thousandths = 0.016.",
+    "Add 8 + 0.4 + 0.016."
+   ],
+   "working": "8 + 0.4 + 0.016 = 8.416"
+  },
+  {
+   "id": "T3-08",
+   "code": "T3",
+   "category": "T3 Decimals: place value, writing numerals (\"5 tens and 50 thousandths\")",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Write '2 hundreds, 5 tenths and 9 hundredths' as a decimal.",
+   "answer": "200.59",
+   "accepted_answers": [
+    "200.59",
+    "200 59/100",
+    "20059/100",
+    200.59
+   ],
+   "unit": "",
+   "hints": [
+    "There are no tens or ones — use zeros as place holders."
+   ],
+   "working": "200 + 0.5 + 0.09 = 200.59"
+  },
+  {
+   "id": "T2-01",
+   "code": "T2",
+   "category": "T2 Rounding & approximation (incl. \"which can be the actual number\", rounding with unit change)",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "The number of visitors to a park last year was 3,470,000 (correct to the nearest ten thousand). Which of the following can be the actual number?",
+   "options": [
+    "3,475,000",
+    "3,468,512",
+    "3,464,999",
+    "3,476,120"
+   ],
+   "answer": "B",
+   "accepted_answers": [
+    "B",
+    "3,468,512"
+   ],
+   "unit": "",
+   "hints": [
+    "Which numbers round to 3,470,000? From 3,465,000 up to 3,474,999.",
+    "3,475,000 rounds UP to 3,480,000."
+   ],
+   "working": "3,465,000 ≤ n < 3,475,000 → 3,468,512"
+  },
+  {
+   "id": "T2-07",
+   "code": "T2",
+   "category": "T2 Rounding & approximation (incl. \"which can be the actual number\", rounding with unit change)",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "Round off 4.6352 to the nearest thousandth.",
+   "answer": "4.635",
+   "accepted_answers": [
+    "4.635",
+    "4 127/200",
+    "927/200",
+    4.635
+   ],
+   "unit": "",
+   "hints": [
+    "The thousandths place is the 3rd decimal place.",
+    "Look at the next digit (2)."
+   ],
+   "working": "4.6352 → 4.635"
+  },
+  {
+   "id": "T2-02",
+   "code": "T2",
+   "category": "T2 Rounding & approximation (incl. \"which can be the actual number\", rounding with unit change)",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Round off 5,362,748 g to the nearest 100 kg.",
+   "answer": "5,400",
+   "accepted_answers": [
+    "5,400",
+    "5400",
+    5400
+   ],
+   "unit": "kg",
+   "hints": [
+    "Change g to kg first (÷ 1,000).",
+    "Look at the tens digit to round to the nearest hundred."
+   ],
+   "working": "5,362.748 kg → 5,400 kg"
+  },
+  {
+   "id": "T2-03",
+   "code": "T2",
+   "category": "T2 Rounding & approximation (incl. \"which can be the actual number\", rounding with unit change)",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Round off 2,486,310 cm to the nearest km.",
+   "answer": "25",
+   "accepted_answers": [
+    "25",
+    25
+   ],
+   "unit": "km",
+   "hints": [
+    "1 km = 1,000 m = 100,000 cm.",
+    "Change to km, then round to a whole number."
+   ],
+   "working": "2,486,310 cm = 24.8631 km → 25 km"
+  },
+  {
+   "id": "T2-04",
+   "code": "T2",
+   "category": "T2 Rounding & approximation (incl. \"which can be the actual number\", rounding with unit change)",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Round off 47,520 m to the nearest 10 km.",
+   "answer": "50",
+   "accepted_answers": [
+    "50",
+    50
+   ],
+   "unit": "km",
+   "hints": [
+    "Change m to km first.",
+    "Round to the nearest ten."
+   ],
+   "working": "47.52 km → 50 km"
+  },
+  {
+   "id": "T2-05",
+   "code": "T2",
+   "category": "T2 Rounding & approximation (incl. \"which can be the actual number\", rounding with unit change)",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Round off 63,780 mm to the nearest 10 m.",
+   "answer": "60",
+   "accepted_answers": [
+    "60",
+    60
+   ],
+   "unit": "m",
+   "hints": [
+    "1 m = 1,000 mm.",
+    "Round to the nearest ten."
+   ],
+   "working": "63.78 m → 60 m"
+  },
+  {
+   "id": "T2-06",
+   "code": "T2",
+   "category": "T2 Rounding & approximation (incl. \"which can be the actual number\", rounding with unit change)",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Round off 572,839,416 to the nearest ten thousand.",
+   "answer": "572,840,000",
+   "accepted_answers": [
+    "572,840,000",
+    "572840000",
+    572840000
+   ],
+   "unit": "",
+   "hints": [
+    "Look at the thousands digit.",
+    "5 or more → round up."
+   ],
+   "working": "Thousands digit 9 → 572,840,000"
+  },
+  {
+   "id": "T2-08",
+   "code": "T2",
+   "category": "T2 Rounding & approximation (incl. \"which can be the actual number\", rounding with unit change)",
+   "difficulty": "hard",
+   "format": "mcq",
+   "question": "A city's population is 2,800,000 (correct to the nearest hundred thousand). Which of the following can be the actual population?",
+   "options": [
+    "2,749,999",
+    "2,850,100",
+    "2,705,000",
+    "2,846,000"
+   ],
+   "answer": "D",
+   "accepted_answers": [
+    "D",
+    "2,846,000"
+   ],
+   "unit": "",
+   "hints": [
+    "Find the smallest and largest numbers that round to 2,800,000.",
+    "Look at the ten-thousands digit."
+   ],
+   "working": "2,750,000 ≤ n < 2,850,000 → 2,846,000"
+  },
+  {
+   "id": "T18-05",
+   "code": "T18",
+   "category": "T18 Length & mass word problems with unit conversion (wire, ribbon, rice…)",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "A bag has 2.35 kg of rice. Mum adds 780 g of rice. How many kg of rice are there now?",
+   "answer": "3.13",
+   "accepted_answers": [
+    "3.13",
+    "3 13/100",
+    "313/100",
+    3.13
+   ],
+   "unit": "kg",
+   "hints": [
+    "780 g = 0.78 kg."
+   ],
+   "working": "2.35 + 0.78 = 3.13 kg"
+  },
+  {
+   "id": "T18-08",
+   "code": "T18",
+   "category": "T18 Length & mass word problems with unit conversion (wire, ribbon, rice…)",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "4 km 60 m = ? km",
+   "options": [
+    "4.6",
+    "4.06",
+    "4.006",
+    "460"
+   ],
+   "answer": "B",
+   "accepted_answers": [
+    "B",
+    "4.06"
+   ],
+   "unit": "",
+   "hints": [
+    "1 km = 1,000 m, so 60 m = 0.060 km."
+   ],
+   "working": "4 + 0.06 = 4.06 km"
+  },
+  {
+   "id": "T18-01",
+   "code": "T18",
+   "category": "T18 Length & mass word problems with unit conversion (wire, ribbon, rice…)",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A wire 5 m long is used to make 18 identical ornaments. 32 cm of wire is left. How many cm of wire is used for each ornament?",
+   "answer": "26",
+   "accepted_answers": [
+    "26",
+    26
+   ],
+   "unit": "cm",
+   "hints": [
+    "Change 5 m to cm.",
+    "Take away the 32 cm left, then share by 18."
+   ],
+   "working": "500 − 32 = 468; 468 ÷ 18 = 26 cm"
+  },
+  {
+   "id": "T18-02",
+   "code": "T18",
+   "category": "T18 Length & mass word problems with unit conversion (wire, ribbon, rice…)",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Mrs Lo used a ribbon 15.6 m long to tie 14 presents. 1.6 m of ribbon was left. On average, how many metres of ribbon were used for each present?",
+   "answer": "1",
+   "accepted_answers": [
+    "1",
+    1
+   ],
+   "unit": "m",
+   "hints": [
+    "Ribbon used = 15.6 − 1.6.",
+    "Divide by 14."
+   ],
+   "working": "14 ÷ 14 = 1 m"
+  },
+  {
+   "id": "T18-03",
+   "code": "T18",
+   "category": "T18 Length & mass word problems with unit conversion (wire, ribbon, rice…)",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Carmen used 18.5 m of a ribbon. The rest was cut into 6 pieces of 0.75 m each with nothing left. How long was the ribbon at first?",
+   "options": [
+    "26 m",
+    "111 m",
+    "23 m",
+    "19.25 m"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "23 m"
+   ],
+   "unit": "",
+   "hints": [
+    "Find the length of the 6 pieces.",
+    "Add the part already used."
+   ],
+   "working": "6 × 0.75 = 4.5; 18.5 + 4.5 = 23 m"
+  },
+  {
+   "id": "T18-04",
+   "code": "T18",
+   "category": "T18 Length & mass word problems with unit conversion (wire, ribbon, rice…)",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A string is 21.6 m long. 3.6 m is cut off, and the rest is cut into 15 equal parts. How long is each part?",
+   "answer": "1.2",
+   "accepted_answers": [
+    "1.2",
+    "1 1/5",
+    "6/5",
+    1.2
+   ],
+   "unit": "m",
+   "hints": [
+    "Subtract first.",
+    "Then divide by 15."
+   ],
+   "working": "18 ÷ 15 = 1.2 m"
+  },
+  {
+   "id": "T18-06",
+   "code": "T18",
+   "category": "T18 Length & mass word problems with unit conversion (wire, ribbon, rice…)",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A bag of rice weighs 5 kg. The Chan family uses 650 g of rice each day. How many kg of rice are left after 6 days?",
+   "answer": "1.1",
+   "accepted_answers": [
+    "1.1",
+    "1 1/10",
+    "11/10",
+    1.1
+   ],
+   "unit": "kg",
+   "hints": [
+    "Rice used in 6 days, in g.",
+    "Change to kg and subtract from 5 kg."
+   ],
+   "working": "650 × 6 = 3,900 g = 3.9 kg; 5 − 3.9 = 1.1 kg"
+  },
+  {
+   "id": "T18-07",
+   "code": "T18",
+   "category": "T18 Length & mass word problems with unit conversion (wire, ribbon, rice…)",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "A wire 3 m long is cut into 7 pieces of 38 cm each. The rest is cut into 2 equal pieces. How long is each of the 2 pieces?",
+   "answer": "17",
+   "accepted_answers": [
+    "17",
+    17
+   ],
+   "unit": "cm",
+   "hints": [
+    "3 m = 300 cm.",
+    "Subtract the 7 pieces, then halve."
+   ],
+   "working": "7 × 38 = 266; 300 − 266 = 34; 34 ÷ 2 = 17 cm"
+  },
+  {
+   "id": "T1-01",
+   "code": "T1",
+   "category": "T1 Whole numbers: place value, numerals & words, largest/smallest numbers",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "In 864,365, what is the difference between the values of the two ‘6’s?",
+   "answer": "59,940",
+   "accepted_answers": [
+    "59,940",
+    "59940",
+    59940
+   ],
+   "unit": "",
+   "hints": [
+    "Find the value of each 6 from its place.",
+    "Subtract the smaller value from the larger."
+   ],
+   "working": "60,000 − 60 = 59,940"
+  },
+  {
+   "id": "T1-05",
+   "code": "T1",
+   "category": "T1 Whole numbers: place value, numerals & words, largest/smallest numbers",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "Write 36,205,040 in words.",
+   "answer": "thirty-six million, two hundred and five thousand and forty",
+   "accepted_answers": [
+    "thirty-six million, two hundred and five thousand and forty",
+    "thirty-six million, two hundred five thousand forty",
+    "thirty-six million two hundred and five thousand and forty"
+   ],
+   "unit": "",
+   "hints": [
+    "Split into groups: 36 | 205 | 040.",
+    "Say millions, then thousands, then the rest."
+   ],
+   "working": "thirty-six million, two hundred and five thousand and forty"
+  },
+  {
+   "id": "T1-06",
+   "code": "T1",
+   "category": "T1 Whole numbers: place value, numerals & words, largest/smallest numbers",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "What is the largest 6-digit number that can be made using each of the digits 3, 0, 7, 5, 9, 1 once?",
+   "options": [
+    "103,579",
+    "975,310",
+    "957,310",
+    "975,301"
+   ],
+   "answer": "B",
+   "accepted_answers": [
+    "B",
+    "975,310"
+   ],
+   "unit": "",
+   "hints": [
+    "Put the biggest digit in the highest place.",
+    "Keep going in order from biggest to smallest."
+   ],
+   "working": "975,310"
+  },
+  {
+   "id": "T1-07",
+   "code": "T1",
+   "category": "T1 Whole numbers: place value, numerals & words, largest/smallest numbers",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "In 4,082,615, what is the value of the digit 8?",
+   "options": [
+    "8",
+    "8,000",
+    "80,000",
+    "800,000"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "80,000"
+   ],
+   "unit": "",
+   "hints": [
+    "Count places from the right: ones, tens, hundreds, thousands, ten thousands…"
+   ],
+   "working": "8 is in the ten thousands place → 80,000"
+  },
+  {
+   "id": "T1-02",
+   "code": "T1",
+   "category": "T1 Whole numbers: place value, numerals & words, largest/smallest numbers",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Find the difference between the smallest 7-digit even number and the largest 6-digit odd number.",
+   "answer": "1",
+   "accepted_answers": [
+    "1",
+    1
+   ],
+   "unit": "",
+   "hints": [
+    "Smallest 7-digit number is 1,000,000 — is it even?",
+    "Largest 6-digit number is 999,999 — is it odd?"
+   ],
+   "working": "1,000,000 − 999,999 = 1"
+  },
+  {
+   "id": "T1-03",
+   "code": "T1",
+   "category": "T1 Whole numbers: place value, numerals & words, largest/smallest numbers",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "What is the least number to be added to 8,926,457 to make it an 8-digit odd number?",
+   "answer": "1,073,544",
+   "accepted_answers": [
+    "1,073,544",
+    "1073544",
+    1073544
+   ],
+   "unit": "",
+   "hints": [
+    "What is the smallest 8-digit odd number?",
+    "Subtract 8,926,457 from it."
+   ],
+   "working": "10,000,001 − 8,926,457 = 1,073,544"
+  },
+  {
+   "id": "T1-04",
+   "code": "T1",
+   "category": "T1 Whole numbers: place value, numerals & words, largest/smallest numbers",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "How many 250 thousands are there in 40 million?",
+   "answer": "160",
+   "accepted_answers": [
+    "160",
+    160
+   ],
+   "unit": "",
+   "hints": [
+    "40 million = 40,000,000; 250 thousand = 250,000.",
+    "Divide."
+   ],
+   "working": "40,000,000 ÷ 250,000 = 160"
+  },
+  {
+   "id": "T1-08",
+   "code": "T1",
+   "category": "T1 Whole numbers: place value, numerals & words, largest/smallest numbers",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "What is the smallest 6-digit number that can be made using each of the digits 0, 2, 4, 6, 8, 5 once?",
+   "answer": "204,568",
+   "accepted_answers": [
+    "204,568",
+    "204568",
+    204568
+   ],
+   "unit": "",
+   "hints": [
+    "0 cannot be the first digit.",
+    "Put the smallest non-zero digit first, then 0, then the rest in order."
+   ],
+   "working": "204,568"
+  },
+  {
+   "id": "T15-01",
+   "code": "T15",
+   "category": "T15 Algebra: expressing quantities with letters",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "Mrs Ng bought m boxes of eggs. Each box has 10 eggs. She broke 6 eggs. How many eggs were NOT broken?",
+   "options": [
+    "6m − 10",
+    "m − 60",
+    "10m − 6",
+    "10 − 6m"
+   ],
+   "answer": "C",
+   "accepted_answers": [
+    "C",
+    "10m − 6"
+   ],
+   "unit": "",
+   "hints": [
+    "Total eggs = 10 × m.",
+    "Take away the broken ones."
+   ],
+   "working": "10 × m − 6 = 10m − 6"
+  },
+  {
+   "id": "T15-02",
+   "code": "T15",
+   "category": "T15 Algebra: expressing quantities with letters",
+   "difficulty": "easy",
+   "format": "mcq",
+   "question": "Uncle Wong sold y apples. His son sold 4 fewer than 2 times the number Uncle Wong sold. How many apples did his son sell?",
+   "options": [
+    "2(y − 4)",
+    "2y − 4",
+    "4 − 2y",
+    "2y + 4"
+   ],
+   "answer": "B",
+   "accepted_answers": [
+    "B",
+    "2y − 4"
+   ],
+   "unit": "",
+   "hints": [
+    "'2 times y' is 2y.",
+    "'4 fewer' means subtract 4."
+   ],
+   "working": "2y − 4"
+  },
+  {
+   "id": "T15-05",
+   "code": "T15",
+   "category": "T15 Algebra: expressing quantities with letters",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "When x = 6, what is the value of 4x + 7?",
+   "answer": "31",
+   "accepted_answers": [
+    "31",
+    31
+   ],
+   "unit": "",
+   "hints": [
+    "4x means 4 × x.",
+    "Put 6 in place of x."
+   ],
+   "working": "4 × 6 + 7 = 31"
+  },
+  {
+   "id": "T15-03",
+   "code": "T15",
+   "category": "T15 Algebra: expressing quantities with letters",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "There are k red balls in a box. The number of blue balls is 3 more than twice the number of red balls. How many balls are there altogether? (Answer in terms of k.)",
+   "answer": "3k + 3",
+   "accepted_answers": [
+    "3k + 3",
+    "3k+3",
+    "3 × k + 3",
+    "3(k + 1)"
+   ],
+   "unit": "",
+   "hints": [
+    "Blue = 2k + 3.",
+    "Total = red + blue; combine the k's."
+   ],
+   "working": "k + (2k + 3) = 3k + 3"
+  },
+  {
+   "id": "T15-04",
+   "code": "T15",
+   "category": "T15 Algebra: expressing quantities with letters",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "A school hires 18 large coaches with 45 seats each and n small coaches with 20 seats each. At most how many students can the coaches carry? (Answer in terms of n.)",
+   "answer": "810 + 20n",
+   "accepted_answers": [
+    "810 + 20n",
+    "810+20n",
+    "20n + 810",
+    "20n+810"
+   ],
+   "unit": "",
+   "hints": [
+    "Large coaches carry 18 × 45 students.",
+    "Small coaches carry 20 × n."
+   ],
+   "working": "18 × 45 + 20 × n = 810 + 20n"
+  },
+  {
+   "id": "T15-06",
+   "code": "T15",
+   "category": "T15 Algebra: expressing quantities with letters",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "A pen costs $p. A notebook costs $3 more than the pen. How much do 4 notebooks cost?",
+   "options": [
+    "$(p + 12)",
+    "$(4p + 3)",
+    "$(4p + 7)",
+    "$(4p + 12)"
+   ],
+   "answer": "D",
+   "accepted_answers": [
+    "D",
+    "$(4p + 12)"
+   ],
+   "unit": "",
+   "hints": [
+    "One notebook costs $(p + 3).",
+    "Multiply EVERYTHING in the bracket by 4."
+   ],
+   "working": "4 × (p + 3) = 4p + 12"
+  },
+  {
+   "id": "T15-07",
+   "code": "T15",
+   "category": "T15 Algebra: expressing quantities with letters",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Ann had a stickers. After giving 7 stickers to Ben, she had 25 stickers left. Find a.",
+   "answer": "32",
+   "accepted_answers": [
+    "32",
+    32
+   ],
+   "unit": "",
+   "hints": [
+    "Write the equation: a − 7 = 25.",
+    "Undo the subtraction by adding 7."
+   ],
+   "working": "a = 25 + 7 = 32"
+  },
+  {
+   "id": "T15-08",
+   "code": "T15",
+   "category": "T15 Algebra: expressing quantities with letters",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Solve the equation 3y + 5 = 26.",
+   "answer": "y = 7",
+   "accepted_answers": [
+    "y = 7",
+    "y=7",
+    "7",
+    7
+   ],
+   "unit": "",
+   "hints": [
+    "First take away 5 from both sides.",
+    "Then divide by 3."
+   ],
+   "working": "3y = 21; y = 7"
+  },
+  {
+   "id": "T19-01",
+   "code": "T19",
+   "category": "T19 Directions & turning",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "Peter is facing north. He turns 1 right angle clockwise. Which direction is he facing now?",
+   "answer": "East",
+   "accepted_answers": [
+    "East",
+    "east",
+    "E"
+   ],
+   "unit": "",
+   "hints": [
+    "Clockwise goes N → E → S → W.",
+    "1 right angle = 90°."
+   ],
+   "working": "North + 90° clockwise = east"
+  },
+  {
+   "id": "T19-04",
+   "code": "T19",
+   "category": "T19 Directions & turning",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "A robot is facing south-east. It turns 1 right angle anticlockwise. Which direction is it facing now?",
+   "answer": "North-east",
+   "accepted_answers": [
+    "North-east",
+    "north-east",
+    "NE",
+    "northeast"
+   ],
+   "unit": "",
+   "hints": [
+    "Anticlockwise goes the opposite way to clock hands.",
+    "90° from south-east anticlockwise passes east."
+   ],
+   "working": "SE → E → NE: north-east"
+  },
+  {
+   "id": "T19-07",
+   "code": "T19",
+   "category": "T19 Directions & turning",
+   "difficulty": "easy",
+   "format": "short",
+   "question": "Sue stands with her back facing north. She turns 2 right angles clockwise. Which direction is she facing now?",
+   "answer": "North",
+   "accepted_answers": [
+    "North",
+    "north",
+    "N"
+   ],
+   "unit": "",
+   "hints": [
+    "If your back faces north, you are facing the opposite way.",
+    "2 right angles = a half turn."
+   ],
+   "working": "Facing south; half turn → north"
+  },
+  {
+   "id": "T19-02",
+   "code": "T19",
+   "category": "T19 Directions & turning",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Mary's right-hand side is facing south. She then turns 3 right angles anticlockwise. Which direction is she facing now?",
+   "options": [
+    "South",
+    "West",
+    "East",
+    "North"
+   ],
+   "answer": "A",
+   "accepted_answers": [
+    "A",
+    "South"
+   ],
+   "unit": "",
+   "hints": [
+    "If your right hand points south, which way are you facing?",
+    "Anticlockwise 3 right angles = 270° to the left."
+   ],
+   "working": "Right side south → facing east; 270° anticlockwise → south"
+  },
+  {
+   "id": "T19-03",
+   "code": "T19",
+   "category": "T19 Directions & turning",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Jason is facing west. He turns 270° clockwise. Which direction is he facing now?",
+   "answer": "South",
+   "accepted_answers": [
+    "South",
+    "south",
+    "S"
+   ],
+   "unit": "",
+   "hints": [
+    "270° = 3 right angles.",
+    "Count W → N → E → S."
+   ],
+   "working": "→ south"
+  },
+  {
+   "id": "T19-05",
+   "code": "T19",
+   "category": "T19 Directions & turning",
+   "difficulty": "medium",
+   "format": "short",
+   "question": "Kelly is facing north-west. She turns 135° clockwise. Which direction is she facing now?",
+   "answer": "East",
+   "accepted_answers": [
+    "East",
+    "east",
+    "E"
+   ],
+   "unit": "",
+   "hints": [
+    "Each step between neighbouring directions (e.g. N to NE) is 45°.",
+    "135° = 3 steps."
+   ],
+   "working": "NW → N → NE → E: east"
+  },
+  {
+   "id": "T19-06",
+   "code": "T19",
+   "category": "T19 Directions & turning",
+   "difficulty": "medium",
+   "format": "mcq",
+   "question": "Tom is facing east. He turns clockwise until he faces north. What is the smallest angle he has turned?",
+   "options": [
+    "360°",
+    "270°",
+    "180°",
+    "90°"
+   ],
+   "answer": "B",
+   "accepted_answers": [
+    "B",
+    "270°"
+   ],
+   "unit": "",
+   "hints": [
+    "Clockwise from east goes to south first.",
+    "Count the right angles from east to north going clockwise."
+   ],
+   "working": "E → S → W → N = 3 right angles = 270°"
+  },
+  {
+   "id": "T19-08",
+   "code": "T19",
+   "category": "T19 Directions & turning",
+   "difficulty": "hard",
+   "format": "short",
+   "question": "Leo is facing north-east. He turns 3 right angles anticlockwise and then 1 right angle clockwise. Which direction is he facing now?",
+   "answer": "South-west",
+   "accepted_answers": [
+    "South-west",
+    "south-west",
+    "SW",
+    "southwest"
+   ],
+   "unit": "",
+   "hints": [
+    "3 anticlockwise and 1 clockwise = 2 right angles anticlockwise altogether.",
+    "2 right angles is a half turn."
+   ],
+   "working": "Net 180° turn from north-east → south-west"
+  }
+ ]
+}
