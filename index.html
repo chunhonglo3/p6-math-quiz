@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P6 Maths Quiz 🌸</title><style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:linear-gradient(#fff0f6,#eef6ff);color:#333;min-height:100vh}
+.w{max-width:560px;margin:auto;padding:14px}h1{color:#d6336c;text-align:center;font-size:1.6em;margin:.3em 0}
+.card{background:#fff;border-radius:20px;padding:18px;box-shadow:0 4px 14px #0001;margin:10px 0}
+.bar{height:14px;background:#ffe3ec;border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#f783ac,#9775fa);transition:width .3s}
+.meta{display:flex;justify-content:space-between;font-size:.9em;color:#888;margin:6px 2px}
+.q{font-size:1.2em;line-height:1.5}.opt{display:block;width:100%;text-align:left;font-size:1.1em;padding:16px;margin:9px 0;border:3px solid #e5dbff;border-radius:16px;background:#f8f5ff;cursor:pointer}
+.opt b{color:#7048e8;margin-right:8px}.opt.ok{background:#d3f9d8;border-color:#40c057}.opt.no{background:#ffe3e3;border-color:#fa5252}
+input{width:100%;font-size:1.3em;padding:14px;border:3px solid #e5dbff;border-radius:16px;margin:8px 0}
+.btn{display:block;width:100%;font-size:1.15em;padding:15px;border:0;border-radius:16px;background:#f06595;color:#fff;font-weight:700;margin:8px 0;cursor:pointer}
+.btn.alt{background:#9775fa}.btn.ghost{background:#eee;color:#555}
+.fb{border-radius:16px;padding:14px;margin-top:10px;font-size:1.05em;line-height:1.5}.fb.ok{background:#ebfbee}.fb.no{background:#fff5f5}
+.big{font-size:3em;text-align:center;margin:.2em}label{font-size:1.05em;display:flex;gap:10px;align-items:center;margin:10px 0}label input{width:26px;height:26px;margin:0}
+.hint{font-size:.85em;color:#999}svg{width:100%;height:auto}
+</style></head><body><div class="w"><h1>🌸 P6 Maths Practice</h1><div id="app"></div></div><script>
+const G='<svg viewBox="0 0 340 250" font-size="11" font-family="sans-serif"><text x="170" y="14" text-anchor="middle" font-weight="bold">Number of Books Borrowed</text>'+
+(()=>{let s='';for(let v=0;v<=100;v+=10){let y=220-v*1.9;s+=`<line x1="40" x2="330" y1="${y}" y2="${y}" stroke="#ddd"/><text x="34" y="${y+4}" text-anchor="end">${v}</text>`}
+const d=[35,50,45,70,60],n=['Mon','Tue','Wed','Thu','Fri'];let p=d.map((v,i)=>`${70+i*60},${220-v*1.9}`).join(' ');
+s+=`<polyline points="${p}" fill="none" stroke="#d6336c" stroke-width="2.5"/>`;d.forEach((v,i)=>{s+=`<circle cx="${70+i*60}" cy="${220-v*1.9}" r="4" fill="#d6336c"/><text x="${70+i*60}" y="236" text-anchor="middle">${n[i]}</text>`});
+return s+'<line x1="40" x2="40" y1="20" y2="220" stroke="#333"/><line x1="40" x2="330" y1="220" y2="220" stroke="#333"/><text x="185" y="249" text-anchor="middle">Day</text><text x="10" y="120" transform="rotate(-90 10 120)" text-anchor="middle">No. of books</text>'})()+'</svg>';
+const M=(id,q,o,a,w)=>({id,t:'m',q,o,a,w});
+const S=(id,q,a,w,h)=>({id,t:'s',q,a,w,h});
+const Q=[
+M('A1','The population of a town is 2,560,000 (correct to the nearest ten thousand). Which can be the actual population?',['2,554,980','2,565,210','2,556,413','2,549,999'],2,'Range is 2,555,000 ≤ n &lt; 2,565,000. Only 2,556,413 is in the range.'),
+M('A2','In 863,584, what is the difference between the values of the two ‘8’s?',['799,920','799,992','720,000','800,080'],0,'800,000 − 80 = 799,920.'),
+M('A3','‘★’ is a missing digit of the 3-digit number 52★. The number is divisible by both 3 and 4. What is ★?',['0','4','6','8'],3,'Divisible by 4: 520, 524, 528. Digit sum divisible by 3: 5+2+8 = 15 ✓. So ★ = 8.'),
+M('A4','A bottle holds 2.35 L of water, poured into cups of 0.3 L each. At most how many cups can be filled, and how much is left?',['7 … 0.25 L','7 … 0.025 L','8 … 0.05 L','7 … 2.5 L'],0,'7 × 0.3 = 2.1; 2.35 − 2.1 = 0.25 L.'),
+M('A5','When calculating 4.86 ÷ 0.6, Leo mistakenly worked out 486 ÷ 6. How many times the correct answer was Leo’s answer?',['0.1','10','100','1000'],1,'Correct: 8.1. Leo: 81. 81 ÷ 8.1 = 10.'),
+M('A6','Which expression has the smallest value?',['2.4 ÷ 0.4','0.24 ÷ 4','24 ÷ 0.4','0.24 ÷ 0.04'],1,'Values: 6, 0.06, 60, 6. Smallest is 0.06.'),
+M('A7','5.3 ÷ 0.7 = ?',['7.5 (1 d.p.)','7.56 (2 d.p.)','7.58 (2 d.p.)','7.6 (1 d.p.)'],3,'53 ÷ 7 = 7.5714… → 7.6 (1 d.p.) or 7.57 (2 d.p.).'),
+M('A8','Which group of numbers has an average of 15?',['12, 14, 16, 20','13, 14, 16, 17','10, 15, 20, 25','11, 13, 15, 19'],1,'Sums ÷ 4: 62÷4=15.5; 60÷4=15 ✓; 70÷4=17.5; 58÷4=14.5.'),
+M('A9','A choir has 8 members with average age 11.5. Two new members aged 12 and 16 join. What is the new average age?',['11.75','12.5','12','14'],2,'8 × 11.5 = 92. 92 + 12 + 16 = 120. 120 ÷ 10 = 12.'),
+M('A10','A number is removed from 14, 20, 26, 32 and the average increases by 3. Which number is removed?',['14','20','26','32'],0,'Average 92 ÷ 4 = 23. New average 26 × 3 = 78. Removed 92 − 78 = 14.'),
+M('A11','There were 84 students. 3/7 of them joined the art club, and 1/4 of the art club members were boys. How many girls were in the art club?',['9','27','36','48'],1,'Art club 84 × 3/7 = 36. Boys 36 × 1/4 = 9. Girls 36 − 9 = 27.'),
+M('A12','There were 120 cards. 2/5 were red, and 3/4 of the red cards were torn. Which expression gives the number of torn red cards?',['120 × (2/5 + 3/4)','120 × 2/5 × (1 − 3/4)','120 × (1 − 2/5) × 3/4','120 × 2/5 × 3/4'],3,'Red = 120 × 2/5; torn red = 120 × 2/5 × 3/4 = 36.'),
+M('A13','Which of the following is correct?',['2/3 &lt; 5/8','3/4 &gt; 7/9','5/6 = 15/18','4/5 &lt; 7/9'],2,'5/6 = 15/18 ✓. (2/3 = 16/24 &gt; 15/24; 3/4 = 27/36 &lt; 28/36; 4/5 = 36/45 &gt; 35/45.)'),
+M('A14','Which solid has the same number of edges as a hexagonal pyramid?',['Pentagonal prism','Hexagonal prism','Rectangular prism','Heptagonal pyramid'],2,'Hexagonal pyramid: 2 × 6 = 12 edges. Rectangular prism also has 12 (others: 15, 18, 14).'),
+M('A15','Alice uses exactly 12 sticks and 8 plasticine balls to make a 3-D model. What could it be?',['Triangular prism','Pentagonal pyramid','Hexagonal pyramid','Cube'],3,'Sticks = edges, balls = vertices. Cube: 12 edges, 8 vertices.'),
+M('A16','A triangular prism is cut by a plane parallel to its triangular base. What is the shape of the cross-section?',['Rectangle','Triangle','Trapezium','Square'],1,'A cut parallel to the base gives the same shape as the base: a triangle.'),
+M('A17','A rectangular tank has a base of 20 cm × 15 cm with water 8 cm deep. A stone sinks completely and the level rises to 10 cm. Volume of the stone?',['600 cm³','2,400 cm³','3,000 cm³','6,000 cm³'],0,'Rise 2 cm. 20 × 15 × 2 = 600 cm³.'),
+M('A18','3.06 L = ?',['306 mL','3,006 cm³','3,060 cm³','30.6 mL'],2,'1 L = 1000 cm³, so 3.06 L = 3,060 cm³.'),
+M('A19','A trapezium has upper base 6 cm, lower base 14 cm and height 5 cm. What is its area?',['50 cm²','70 cm²','100 cm²','420 cm²'],0,'(6 + 14) × 5 ÷ 2 = 50 cm².'),
+M('A20','A pen costs $x. A book costs $5 more than 3 times the price of the pen. How much do 1 pen and 1 book cost altogether?',['$(3x + 5)','$(4x − 5)','$(4x + 5)','$(3x + 6)'],2,'Book = 3x + 5. Total = x + 3x + 5 = 4x + 5.'),
+S('B1','What is the least number to be added to 2,345 so that it is divisible by 9?',4,'Digit sum 14; next multiple of 9 is 18 → add 4.'),
+S('B2','List all the common factors of 48 and 60.',{set:[1,2,3,4,6,12]},'48: 1,2,3,4,6,8,12,16,24,48. 60: 1,2,3,4,5,6,10,12,15,20,30,60. Common: 1, 2, 3, 4, 6, 12.','Separate with commas'),
+S('B3','Round off 3,684,520 g to the nearest 10 kg. (answer in kg)',3680,'3,684,520 g = 3,684.52 kg → 3,680 kg.','Answer in kg'),
+S('B4','The average of P, Q, R and S is 60. The average of R and S is 75. P is 12 more than Q. Find P.',51,'P+Q+R+S = 240; R+S = 150; P+Q = 90; Q = (90 − 12) ÷ 2 = 39; P = 51.'),
+S('B5','Mandy’s average mark in 4 tests is 82. She wants an average of 84 or above after the 5th test. At least how many marks must she get in the 5th test?',92,'84 × 5 = 420. 82 × 4 = 328. 420 − 328 = 92.'),
+S('B6a','15.4 L of soup is poured into bowls of 0.45 L each. At most how many bowls can be filled?',34,'15.4 ÷ 0.45 = 34 r 0.1 (34 × 0.45 = 15.3).'),
+S('B6b','15.4 L of soup is poured into bowls of 0.45 L each, filling as many bowls as possible. How much soup is left (in L)?',0.1,'34 × 0.45 = 15.3; 15.4 − 15.3 = 0.1 L.','Answer in L'),
+S('B7','9.5 kg of rice is packed into bags. Each bag holds 1.2 kg. How many bags are needed to pack all the rice?',8,'9.5 ÷ 1.2 = 7 r 1.1 → 7 full bags + 1 more = 8 bags (round UP!).'),
+S('B8','2 3/4 − 1 5/6 + 3 1/3 = ?',{frac:[51,12]},'= 33/12 − 22/12 + 40/12 = 51/12 = 4 1/4.','e.g. 4 1/4 or 17/4'),
+S('B9','A shop had 360 eggs. 5/12 were sold in the morning and 3/7 of the remaining eggs were sold in the afternoon. How many eggs were left?',120,'Morning 150; remaining 210. Afternoon 210 × 3/7 = 90. Left 120.'),
+S('B10','An open wooden box (no cover) measures 22 cm × 17 cm × 9 cm outside. The wood is 1 cm thick. What is the capacity of the box in mL?',2400,'Inner: (22−2) × (17−2) × (9−1) = 20 × 15 × 8 = 2,400 cm³ = 2,400 mL.','Answer in mL'),
+S('B11','A rectangular tank is 30 cm long and 20 cm wide, with water 12 cm deep. After 6 identical iron balls are put in (fully under water), the level rises to 15 cm. Volume of each ball (cm³)?',300,'Rise 3 cm. 30 × 20 × 3 = 1,800 cm³. 1,800 ÷ 6 = 300 cm³.'),
+S('B12','A cuboid container has a base of 16 cm × 10 cm. Jason pours in 1.2 L of water and then 2 cups of 400 mL. What is the height of the water (cm)?',12.5,'1,200 + 800 = 2,000 cm³. 2,000 ÷ 160 = 12.5 cm.'),
+S('B13','A cuboid is 12 cm × 8 cm × 10 cm. A smaller cuboid 4 cm × 8 cm × 5 cm is cut away from one top corner. Volume of the remaining solid (cm³)?',800,'960 − 160 = 800 cm³.'),
+S('B14','Taxi fare: first 2 km (or part) $27; every subsequent 200 m or part thereof $1.90. Mrs Lee travels 5.3 km. How much is the fare ($)?',59.3,'Extra 3.3 km = 3,300 m; 3,300 ÷ 200 = 16.5 → 17 parts. 27 + 17 × 1.90 = $59.30.'),
+S('B15a',G+'(a) Between which two consecutive days was the change in books borrowed the greatest?',{days:['wed','thu']},'Mon 35, Tue 50, Wed 45, Thu 70, Fri 60. Changes: +15, −5, +25, −10 → Wednesday to Thursday.','e.g. Mon and Tue'),
+S('B15b',G+'(b) What was the average number of books borrowed per day?',52,'35+50+45+70+60 = 260. 260 ÷ 5 = 52.'),
+S('B15c',G+'(c) What fraction of the total number of books was borrowed on Thursday?',{frac:[7,26]},'70 / 260 = 7/26.','Fraction, e.g. 1/2'),
+];
+// --- tolerant checking
+function num(s){s=s.toLowerCase().replace(/[,\s$]|cm³|cm3|cm|mm|ml|kg|g\b|l\b|bags?|bowls?|eggs?|books?|marks?/g,' ').trim().replace(/\s+/g,' ');
+ let m;if(m=s.match(/^(-?\d+) (\d+)\/(\d+)$/))return +m[1]+m[2]/m[3];if(m=s.match(/^(-?\d*\.?\d+)\/(\d*\.?\d+)$/))return m[1]/m[2];s=s.replace(/ /g,'');return /^-?\d*\.?\d+$/.test(s)?+s:NaN}
+function check(q,v){const a=q.a,s=v.toLowerCase();
+ if(typeof a=='number')return Math.abs(num(v)-a)<1e-9;
+ if(a.frac)return Math.abs(num(v)-a.frac[0]/a.frac[1])<1e-9;
+ if(a.set){const n=(s.match(/\d+/g)||[]).map(Number);return n.length==a.set.length&&a.set.every(x=>n.includes(x))}
+ if(a.days){const all=['mon','tue','wed','thu','fri'];const f=all.filter(d=>s.includes(d));return f.length==2&&a.days.every(d=>f.includes(d))}}
+const MA=['C','A','D','A','B','B','D','B','C','A','B','D','C','C','D','B','A','C','A','C'];// key letters, verified on load
+Q.slice(0,20).forEach((q,i)=>{if('ABCD'[q.a]!==MA[i])console.error('Key mismatch',q.id)});
+// --- state
+const K='p6quiz1';let st=JSON.parse(localStorage.getItem(K)||'null');
+const save=()=>localStorage.setItem(K,JSON.stringify(st));const app=document.getElementById('app');
+const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+function start(ids,sh){st={ids:sh?shuf(ids):ids,i:0,res:{},done:false};save();show()}
+function home(){const resume=st&&!st.done&&st.i<st.ids.length;
+ app.innerHTML=`<div class="card"><div class="big">🧮</div><p style="text-align:center">${Q.length} questions: multiple choice + short answers.<br>Take your time — you can do it! 💪</p>
+ <label><input type="checkbox" id="sh"> Shuffle questions 🔀</label>
+ ${resume?`<button class="btn alt" id="rs">▶ Continue (question ${st.i+1} of ${st.ids.length})</button>`:''}
+ <button class="btn" id="go">${resume?'Start over':'Start'} 🚀</button></div>`;
+ go.onclick=()=>start(Q.map(q=>q.id),sh.checked);if(resume)rs.onclick=show}
+function show(){if(st.i>=st.ids.length){st.done=true;save();return end()}
+ const q=Q.find(x=>x.id==st.ids[st.i]),n=st.ids.length,r=st.res[q.id];
+ let h=`<div class="meta"><span>Question ${st.i+1} / ${n}</span><span>⭐ ${Object.values(st.res).filter(x=>x).length}</span></div><div class="bar"><i style="width:${st.i/n*100}%"></i></div>
+ <div class="card"><div class="hint">${q.id[0]=='A'?'Multiple choice':'Short answer'} · ${q.id}</div><div class="q">${q.q}</div>`;
+ if(q.t=='m')h+=q.o.map((o,k)=>`<button class="opt" data-k="${k}"><b>${'ABCD'[k]}</b>${o}</button>`).join('');
+ else h+=`<input id="inp" autocomplete="off" placeholder="${q.h||'Your answer'}" inputmode="${typeof q.a=='number'?'decimal':'text'}"><button class="btn" id="sub">Check ✔</button>`;
+ h+=`<div id="fb"></div></div><button class="btn ghost" id="hm">🏠 Home (progress saved)</button>`;app.innerHTML=h;hm.onclick=home;
+ const fin=(ok,ans)=>{st.res[q.id]=ok;save();fb.innerHTML=`<div class="fb ${ok?'ok':'no'}"><b>${ok?'🎉 Correct! Great job!':'😅 Not quite. Answer: '+ans}</b><br>${q.w}</div><button class="btn alt" id="nx">Next ➜</button>`;
+  nx.onclick=()=>{st.i++;save();show();scrollTo(0,0)};nx.scrollIntoView({behavior:'smooth',block:'center'})};
+ if(q.t=='m')app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(fb.innerHTML)return;const k=+b.dataset.k,ok=k==q.a;
+  b.classList.add(ok?'ok':'no');app.querySelectorAll('.opt')[q.a].classList.add('ok');fin(ok,'ABCD'[q.a])});
+ else{const go=()=>{if(!inp.value.trim()||fb.innerHTML)return;inp.disabled=true;sub.remove();fin(check(q,inp.value),ansTxt(q))};sub.onclick=go;inp.onkeydown=e=>{if(e.key=='Enter')go()};inp.focus()}}
+function ansTxt(q){const a=q.a;if(typeof a=='number')return a;if(a.frac)return a.frac[0]%a.frac[1]&&a.frac[0]>a.frac[1]?(q.id=='B8'?'4 1/4':a.frac.join('/')):a.frac.join('/');if(a.set)return a.set.join(', ');return 'Wednesday and Thursday'}
+function end(){const n=st.ids.length,c=st.ids.filter(i=>st.res[i]).length,wrong=st.ids.filter(i=>!st.res[i]),p=c/n;
+ app.innerHTML=`<div class="card" style="text-align:center"><div class="big">${p==1?'🏆':p>=.7?'🌟':'💪'}</div><h2>You scored ${c} / ${n}</h2><p>${p==1?'Perfect! Amazing!':p>=.7?'Well done! Keep it up!':'Good try! Practice makes perfect!'}</p>
+ ${wrong.length?`<button class="btn" id="rw">🔁 Retry wrong ones (${wrong.length})</button>`:''}<button class="btn alt" id="ag">Start again</button></div>`;
+ if(wrong.length)rw.onclick=()=>start(wrong,false);ag.onclick=()=>{st=null;localStorage.removeItem(K);home()}}
+home();
+</script></body></html>
