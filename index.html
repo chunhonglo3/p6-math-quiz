@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<!-- p6-quiz-v9 -->
+<!-- p6-quiz-v10 -->
 <title>P6 Maths Quiz 🌸</title><style>
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:linear-gradient(#fff0f6,#eef6ff);color:#333;min-height:100vh}
 .w{max-width:560px;margin:auto;padding:14px 14px calc(18px + env(safe-area-inset-bottom))}
@@ -19,11 +19,6 @@ input{width:100%;font-size:1.2em;padding:14px;border:3px solid #e5dbff;border-ra
 .btn.hintbtn{background:#fff3bf;color:#5c4a00}
 .btn.watchbtn{background:#4dabf7}
 .btn.watchbtn small{display:block;font-weight:600;font-size:.82em;opacity:.95}
-.overlay{position:fixed;inset:0;z-index:30;background:rgba(20,10,30,.72);display:flex;align-items:center;justify-content:center;padding:16px}
-.overlay[hidden]{display:none}
-.overlay-card{width:min(100%,520px);background:#fff;border-radius:20px;padding:12px 12px 14px;text-align:center}
-.overlay img{width:100%;height:auto;max-height:calc(100vh - 140px);object-fit:contain;border-radius:12px;background:#eef6ff}
-.overlay-tap{margin:8px 0 0;color:#888;font-weight:700}
 body.noscroll{overflow:hidden}
 .btn:disabled{opacity:.55;cursor:default}
 .fb{border-radius:16px;padding:14px;margin-top:10px;font-size:1.05em;line-height:1.5}.fb.ok{background:#ebfbee}.fb.no{background:#fff5f5}
@@ -78,7 +73,8 @@ body.testmode .sync{top:auto;bottom:calc(8px + env(safe-area-inset-bottom))}
 <div id="testbar" class="testbar" hidden><b>TEST MODE</b><span>Kept separate from her scores.</span><button type="button" id="clearTest">Clear test data</button></div>
 <div class="w"><h1>🌸 P6 Maths Practice</h1><div id="app"></div></div>
 <div id="sync" class="sync ok" title="Saved on this device">☁</div>
-<div id="watch" class="overlay" hidden><div class="overlay-card"><img id="watchimg" alt="" width="480" height="270"><p id="watchcap" class="pick"></p><p class="overlay-tap">Tap to close</p></div></div>
+<div id="learn" hidden></div>
+<script src="learn.js"></script>
 <script>
 const G='<svg viewBox="0 0 340 250" font-size="11" font-family="sans-serif"><text x="170" y="14" text-anchor="middle" font-weight="bold">Number of Books Borrowed</text>'+
 (()=>{let s='';for(let v=0;v<=100;v+=10){let y=220-v*1.9;s+=`<line x1="40" x2="330" y1="${y}" y2="${y}" stroke="#ddd"/><text x="34" y="${y+4}" text-anchor="end">${v}</text>`}
@@ -108,32 +104,17 @@ const CATS=[
 ];
 const CN=Object.fromEntries(CATS);
 const VIDEOS=[
-{cat:'T9',title:'Average',note:'New average and a missing value',file:'animations/1-average.gif'},
-{cat:'T12',title:'Water level',note:'Displacement and the water height',file:'animations/2-water.gif'},
-{cat:'T8',title:'Fraction word problem',note:'Fraction of the remainder',file:'animations/3-fraction-remainder.gif'},
-{cat:'T16',title:'Money & charges',note:'Taxi fare, step by step',file:'animations/4-taxi.gif'},
-{cat:'T13',title:'3-D shapes',note:'Edges, vertices and solids',file:'animations/5-shapes-3d.gif'},
-{cat:'T5',title:'Remainder',note:'Division with a remainder',file:'animations/6-decimal-remainder.gif'}
+{cat:'T9',title:'Average',note:'Four tests, average 85, missing mark'},
+{cat:'T12',title:'Water level',note:'A stone, a rise, and a spill'},
+{cat:'T8',title:'Fraction word problem',note:'1/3 of $360, then 3/4 of the rest'},
+{cat:'T16',title:'Money & charges',note:'Taxi fare, 5.3 km'},
+{cat:'T13',title:'3-D shapes',note:'Prisms, pyramids, and a folding cube'},
+{cat:'T5',title:'Remainder',note:'2.51 ÷ 0.06'}
 ];
 const VID=Object.fromEntries(VIDEOS.map(v=>[v.cat,v]));
-function openVid(cat){
- const v=VID[cat]; if(!v)return;
- const img=document.getElementById('watchimg');
- document.getElementById('watchcap').textContent=v.title+' · '+v.note;
- img.alt=v.title+' walkthrough';
- img.src=v.file;
- document.getElementById('watch').hidden=false;
- document.body.classList.add('noscroll');
-}
-function closeVid(){
- const ov=document.getElementById('watch'); if(!ov||ov.hidden)return;
- ov.hidden=true;
- document.getElementById('watchimg').removeAttribute('src');
- document.body.classList.remove('noscroll');
-}
+function openVid(cat){ if(VID[cat]&&window.openLearn) openLearn(cat); }
+function closeVid(){ if(window.closeLearn) closeLearn(); }
 function bindWatch(root){(root||document).querySelectorAll('[data-watch]').forEach(b=>{b.onclick=e=>{e.stopPropagation();openVid(b.dataset.watch)}})}
-document.getElementById('watch').onclick=closeVid;
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeVid()});
 const M=(id,cat,q,o,a,w,tips)=>({id,cat,t:'m',q,o,a,w,tips});
 const S=(id,cat,q,a,w,h,tips)=>({id,cat,t:'s',q,a,w,h,tips});
 const Q=[
@@ -540,7 +521,7 @@ function home(){
  <button class="btn" id="go" type="button"></button>
  <button class="btn alt" id="q10" type="button"></button>
  <button class="btn ghost" id="backup" type="button">💾 Save / restore progress</button></div>
- <div class="card" id="videos"><h2 style="color:#5f3dc4;margin:.2em 0 .4em;font-size:1.25em">🎬 Videos</h2><p class="pick">Six short walkthroughs. A video loads only when you tap it.</p>
+ <div class="card" id="learnlist"><h2 style="color:#5f3dc4;margin:.2em 0 .4em;font-size:1.25em">Learn</h2><p class="pick">Six lessons. The picture stays while the steps move — scroll, or tap Prev and Next.</p>
  ${VIDEOS.map(v=>`<button type="button" class="btn watchbtn" data-watch="${v.cat}">${esc(v.title)}<small>${esc(v.note)}</small></button>`).join('')}
  </div>`;
  const paint=()=>{
