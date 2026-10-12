@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<!-- p6-quiz-v8 -->
+<!-- p6-quiz-v9 -->
 <title>P6 Maths Quiz 🌸</title><style>
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:linear-gradient(#fff0f6,#eef6ff);color:#333;min-height:100vh}
 .w{max-width:560px;margin:auto;padding:14px 14px calc(18px + env(safe-area-inset-bottom))}
@@ -437,7 +437,7 @@ function logAttempt(q,ok,hint,ms,given){
  else if(data.review[q.id])scheduleReview(q.id,true);
  queueAttempt(q,ok,hint,ms,given);
 }
-const SYNC_URL='https://script.google.com/macros/s/AKfycbzSKho-3EUVhKJ3U8yIQ1vkpP6uFLrWos3Fu38ObSCh-8tnZs6J62tLDO33orcpz_Tw/exec';
+const SYNC_URL='https://script.google.com/macros/s/AKfycbyatheq18si3u1yzWxpYZURWXaYfmmXLUIAbb8EHS1SmSqy-JBIunVIIwPBxNO_HGVx/exec';
 const SYNC_KEY='p6quiz-7Kq2';
 const OUT=testMode?'p6quiz4testout':'p6quiz4out';
 let outbox=[];
@@ -478,7 +478,7 @@ function queueAttempt(q,ok,hint,ms,given){
   hint_used:!!hint,
   time_sec:Math.round(Math.max(0,ms||0)/100)/10,
   answer_given:String(given==null?'':given).slice(0,180),
-  user:testMode?'test':'niece'
+  user:testMode?'test':'ansbie'
  };
  outbox.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6), row, sent:false});
  if(outbox.length>400)outbox=outbox.slice(-400);
@@ -525,7 +525,7 @@ function home(){
  const run=data.run,resume=run&&!run.done&&run.i<run.ids.length;
  const due=dueIds().length;
  const timedLeft=run&&run.mode==='timed'&&!run.done?run.limitMs-(Date.now()-run.startedAt):0;
- app.innerHTML=`<div class="card"><div class="big">🧮</div><p class="pick">${Q.length} questions. Pick a difficulty and one or more types.<br>Take your time — you can do it! 💪</p>
+ app.innerHTML=`<div class="card"><div class="big">🧮</div><h2 style="text-align:center;color:#d6336c;margin:.1em 0">Hi Ansbie!</h2><p class="pick">${Q.length} questions. Pick a difficulty and one or more types.<br>Take your time — you can do it! 💪</p>
  <p class="pick" id="dueLine"><b>${due}</b> question${due===1?'':'s'} due for review today</p>
  ${due?`<button class="btn" id="review" type="button">🔁 Review due (${due})</button>`:''}
  ${loadNote?`<p class="pick">${esc(loadNote)}</p>`:''}
