@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<!-- p6-quiz-v2 -->
+<!-- p6-quiz-v3 -->
 <title>P6 Maths Quiz 🌸</title><style>
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:linear-gradient(#fff0f6,#eef6ff);color:#333;min-height:100vh}
 .w{max-width:560px;margin:auto;padding:14px 14px calc(18px + env(safe-area-inset-bottom))}
@@ -16,6 +16,14 @@ input{width:100%;font-size:1.2em;padding:14px;border:3px solid #e5dbff;border-ra
 .btn{display:block;width:100%;font-size:1.1em;padding:15px;border:0;border-radius:16px;background:#f06595;color:#fff;font-weight:700;margin:8px 0;cursor:pointer}
 .btn.alt{background:#9775fa}.btn.ghost{background:#eee;color:#555}
 .btn.hintbtn{background:#fff3bf;color:#5c4a00}
+.btn.watchbtn{background:#4dabf7}
+.btn.watchbtn small{display:block;font-weight:600;font-size:.82em;opacity:.95}
+.overlay{position:fixed;inset:0;z-index:30;background:rgba(20,10,30,.72);display:flex;align-items:center;justify-content:center;padding:16px}
+.overlay[hidden]{display:none}
+.overlay-card{width:min(100%,520px);background:#fff;border-radius:20px;padding:12px 12px 14px;text-align:center}
+.overlay img{width:100%;height:auto;max-height:calc(100vh - 140px);object-fit:contain;border-radius:12px;background:#eef6ff}
+.overlay-tap{margin:8px 0 0;color:#888;font-weight:700}
+body.noscroll{overflow:hidden}
 .btn:disabled{opacity:.55;cursor:default}
 .fb{border-radius:16px;padding:14px;margin-top:10px;font-size:1.05em;line-height:1.5}.fb.ok{background:#ebfbee}.fb.no{background:#fff5f5}
 .big{font-size:3em;text-align:center;margin:.2em}
@@ -34,7 +42,9 @@ input{width:100%;font-size:1.2em;padding:14px;border:3px solid #e5dbff;border-ra
 .reslist li{margin:4px 0}
 button:focus-visible,input:focus-visible{outline:3px solid #9775fa;outline-offset:2px}
 svg{width:100%;height:auto}
-</style></head><body><div class="w"><h1>🌸 P6 Maths Practice</h1><div id="app"></div></div><script>
+</style></head><body><div class="w"><h1>🌸 P6 Maths Practice</h1><div id="app"></div></div>
+<div id="watch" class="overlay" hidden><div class="overlay-card"><img id="watchimg" alt="" width="480" height="270"><p id="watchcap" class="pick"></p><p class="overlay-tap">Tap to close</p></div></div>
+<script>
 const G='<svg viewBox="0 0 340 250" font-size="11" font-family="sans-serif"><text x="170" y="14" text-anchor="middle" font-weight="bold">Number of Books Borrowed</text>'+
 (()=>{let s='';for(let v=0;v<=100;v+=10){let y=220-v*1.9;s+=`<line x1="40" x2="330" y1="${y}" y2="${y}" stroke="#ddd"/><text x="34" y="${y+4}" text-anchor="end">${v}</text>`}
 const d=[35,50,45,70,60],n=['Mon','Tue','Wed','Thu','Fri'];let p=d.map((v,i)=>`${70+i*60},${220-v*1.9}`).join(' ');
@@ -59,6 +69,33 @@ const CATS=[
 ['T15','Algebra']
 ];
 const CN=Object.fromEntries(CATS);
+const VIDEOS=[
+{cat:'T9',title:'Average',note:'New average and a missing value',file:'animations/1-average.gif'},
+{cat:'T12',title:'Water level',note:'Displacement and the water height',file:'animations/2-water.gif'},
+{cat:'T8',title:'Fraction word problem',note:'Fraction of the remainder',file:'animations/3-fraction-remainder.gif'},
+{cat:'T16',title:'Money & charges',note:'Taxi fare, step by step',file:'animations/4-taxi.gif'},
+{cat:'T13',title:'3-D shapes',note:'Edges, vertices and solids',file:'animations/5-shapes-3d.gif'},
+{cat:'T5',title:'Remainder',note:'Division with a remainder',file:'animations/6-decimal-remainder.gif'}
+];
+const VID=Object.fromEntries(VIDEOS.map(v=>[v.cat,v]));
+function openVid(cat){
+ const v=VID[cat]; if(!v)return;
+ const img=document.getElementById('watchimg');
+ document.getElementById('watchcap').textContent=v.title+' · '+v.note;
+ img.alt=v.title+' walkthrough';
+ img.src=v.file;
+ document.getElementById('watch').hidden=false;
+ document.body.classList.add('noscroll');
+}
+function closeVid(){
+ const ov=document.getElementById('watch'); if(!ov||ov.hidden)return;
+ ov.hidden=true;
+ document.getElementById('watchimg').removeAttribute('src');
+ document.body.classList.remove('noscroll');
+}
+function bindWatch(root){(root||document).querySelectorAll('[data-watch]').forEach(b=>{b.onclick=e=>{e.stopPropagation();openVid(b.dataset.watch)}})}
+document.getElementById('watch').onclick=closeVid;
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeVid()});
 const M=(id,cat,q,o,a,w,tips)=>({id,cat,t:'m',q,o,a,w,tips});
 const S=(id,cat,q,a,w,h,tips)=>({id,cat,t:'s',q,a,w,h,tips});
 const Q=[
@@ -162,7 +199,10 @@ function home(){
  <label style="font-size:1.05em;display:flex;gap:10px;align-items:center;margin:10px 0"><input type="checkbox" id="sh" style="width:26px;height:26px;margin:0"> Shuffle questions 🔀</label>
  ${resume?`<button class="btn alt" id="rs" type="button">▶ Continue (question ${run.i+1} of ${run.ids.length})</button>`:''}
  <button class="btn" id="go" type="button"></button>
- <button class="btn ghost" id="wipe" type="button">Reset saved data</button></div>`;
+ <button class="btn ghost" id="wipe" type="button">Reset saved data</button></div>
+ <div class="card" id="videos"><h2 style="color:#5f3dc4;margin:.2em 0 .4em;font-size:1.25em">🎬 Videos</h2><p class="pick">Six short walkthroughs. A video loads only when you tap it.</p>
+ ${VIDEOS.map(v=>`<button type="button" class="btn watchbtn" data-watch="${v.cat}">${esc(v.title)}<small>${esc(v.note)}</small></button>`).join('')}
+ </div>`;
  const paint=()=>{
   app.querySelectorAll('.chip').forEach(el=>{
    const id=el.dataset.cat;
@@ -189,21 +229,24 @@ function home(){
  document.getElementById('go').onclick=()=>{const ids=chosenIds();if(ids.length)start(ids,document.getElementById('sh').checked)};
  const rs=document.getElementById('rs');if(rs)rs.onclick=show;
  document.getElementById('wipe').onclick=()=>{data=fresh();try{localStorage.removeItem(K);localStorage.removeItem(OLD)}catch(e){}pick=null;home()};
+ bindWatch(app);
 }
 function show(){
  scrollTo(0,0);
  const run=data.run;
  if(!run)return home();
  if(run.i>=run.ids.length){run.done=true;recordBest();save();return end()}
- const q=byId(run.ids[run.i]),n=run.ids.length;
+ const q=byId(run.ids[run.i]),n=run.ids.length,vid=VID[q.cat];
+ const watchBtn=vid?`<button class="btn watchbtn" type="button" data-watch="${q.cat}">🎬 Watch how</button>`:'';
  let h=`<div class="meta"><span>Question ${run.i+1} / ${n}</span><span>⭐ ${Object.values(run.res).filter(x=>x).length}</span></div><div class="bar"><i style="width:${run.i/n*100}%"></i></div>
  <div class="card"><div class="qhead"><span class="tag">${esc(CN[q.cat])}</span><span class="hint">${q.t=='m'?'Multiple choice':'Short answer'} · ${q.id}</span></div><div class="q">${q.q}</div>
- <button class="btn hintbtn" id="hint" type="button">💡 Hint</button><p class="hnote" id="hnote" hidden>Using a hint is okay — we’ll note it on your results. 💛</p><div id="steps"></div>`;
+ <button class="btn hintbtn" id="hint" type="button">💡 Hint</button>${watchBtn}<p class="hnote" id="hnote" hidden>Using a hint is okay — we’ll note it on your results. 💛</p><div id="steps"></div>`;
  if(q.t=='m')h+=q.o.map((o,k)=>`<button class="opt" type="button" data-k="${k}"><b>${'ABCD'[k]}</b>${o}</button>`).join('');
  else h+=`<input id="inp" autocomplete="off" placeholder="${esc(q.h||'Your answer')}" inputmode="${typeof q.a=='number'?'decimal':'text'}"><button class="btn" id="sub" type="button">Check ✔</button>`;
  h+=`<div id="fb"></div></div><button class="btn ghost" id="hm" type="button">🏠 Home (progress saved)</button>`;
  app.innerHTML=h;
  document.getElementById('hm').onclick=home;
+ bindWatch(app);
  let locked=false,shown=0;
  const hintBtn=document.getElementById('hint');
  hintBtn.onclick=()=>{
@@ -218,7 +261,8 @@ function show(){
  const fin=(ok,ans)=>{
   locked=true;hintBtn.disabled=true;
   run.res[q.id]=ok;save();
-  document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'no'}"><b>${ok?'🎉 Correct! Great job!':'😅 Not quite. Answer: '+ans}</b><br>${q.w}</div><button class="btn alt" id="nx" type="button">Next ➜</button>`;
+  document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'no'}"><b>${ok?'🎉 Correct! Great job!':'😅 Not quite. Answer: '+ans}</b><br>${q.w}</div>${watchBtn}<button class="btn alt" id="nx" type="button">Next ➜</button>`;
+  bindWatch(document.getElementById('fb'));
   const nx=document.getElementById('nx');
   nx.onclick=()=>{run.i++;save();show();scrollTo(0,0)};
   nx.scrollIntoView({behavior:'smooth',block:'center'});
