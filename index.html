@@ -1,65 +1,105 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- p6-quiz-v2 -->
 <title>P6 Maths Quiz 🌸</title><style>
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:linear-gradient(#fff0f6,#eef6ff);color:#333;min-height:100vh}
-.w{max-width:560px;margin:auto;padding:14px}h1{color:#d6336c;text-align:center;font-size:1.6em;margin:.3em 0}
+.w{max-width:560px;margin:auto;padding:14px 14px calc(18px + env(safe-area-inset-bottom))}
+h1{color:#d6336c;text-align:center;font-size:1.5em;line-height:1.2;margin:.3em 0}
 .card{background:#fff;border-radius:20px;padding:18px;box-shadow:0 4px 14px #0001;margin:10px 0}
 .bar{height:14px;background:#ffe3ec;border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#f783ac,#9775fa);transition:width .3s}
-.meta{display:flex;justify-content:space-between;font-size:.9em;color:#888;margin:6px 2px}
-.q{font-size:1.2em;line-height:1.5}.opt{display:block;width:100%;text-align:left;font-size:1.1em;padding:16px;margin:9px 0;border:3px solid #e5dbff;border-radius:16px;background:#f8f5ff;cursor:pointer}
+.meta{display:flex;justify-content:space-between;gap:8px;font-size:.9em;color:#888;margin:6px 2px}
+.q{font-size:1.15em;line-height:1.45;overflow-wrap:anywhere}
+.qhead{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:8px}
+.tag{display:inline-block;background:#fff0f6;color:#c2255c;font-weight:700;border-radius:999px;padding:4px 10px;font-size:.85em}
+.opt{display:block;width:100%;text-align:left;font-size:1.05em;padding:16px;margin:9px 0;border:3px solid #e5dbff;border-radius:16px;background:#f8f5ff;cursor:pointer}
 .opt b{color:#7048e8;margin-right:8px}.opt.ok{background:#d3f9d8;border-color:#40c057}.opt.no{background:#ffe3e3;border-color:#fa5252}
-input{width:100%;font-size:1.3em;padding:14px;border:3px solid #e5dbff;border-radius:16px;margin:8px 0}
-.btn{display:block;width:100%;font-size:1.15em;padding:15px;border:0;border-radius:16px;background:#f06595;color:#fff;font-weight:700;margin:8px 0;cursor:pointer}
+input{width:100%;font-size:1.2em;padding:14px;border:3px solid #e5dbff;border-radius:16px;margin:8px 0}
+.btn{display:block;width:100%;font-size:1.1em;padding:15px;border:0;border-radius:16px;background:#f06595;color:#fff;font-weight:700;margin:8px 0;cursor:pointer}
 .btn.alt{background:#9775fa}.btn.ghost{background:#eee;color:#555}
+.btn.hintbtn{background:#fff3bf;color:#5c4a00}
+.btn:disabled{opacity:.55;cursor:default}
 .fb{border-radius:16px;padding:14px;margin-top:10px;font-size:1.05em;line-height:1.5}.fb.ok{background:#ebfbee}.fb.no{background:#fff5f5}
-.big{font-size:3em;text-align:center;margin:.2em}label{font-size:1.05em;display:flex;gap:10px;align-items:center;margin:10px 0}label input{width:26px;height:26px;margin:0}
-.hint{font-size:.85em;color:#999}svg{width:100%;height:auto}
+.big{font-size:3em;text-align:center;margin:.2em}
+.hint{font-size:.85em;color:#999}
+.step{background:#fff9db;border-radius:12px;padding:10px 12px;margin:6px 0;line-height:1.4}
+.step b{color:#8d6b00}
+.hnote{font-size:.85em;color:#8d6b00;margin:0 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{flex:1 1 calc(50% - 4px);min-height:72px;text-align:left;border:3px solid #e5dbff;background:#f8f5ff;border-radius:16px;padding:10px 12px;cursor:pointer;font:inherit;color:#333}
+.chip.all{flex-basis:100%}
+.chip.on{border-color:#f06595;background:#fff0f6}
+.chip b{display:block;color:#5f3dc4;font-size:1em;line-height:1.25}
+.chip small{display:block;color:#666;font-weight:600;margin-top:3px;line-height:1.3}
+.pick{text-align:center;color:#555;margin:4px 0 8px}
+.reslist{text-align:left;padding-left:1.2em;margin:8px 0}
+.reslist li{margin:4px 0}
+button:focus-visible,input:focus-visible{outline:3px solid #9775fa;outline-offset:2px}
+svg{width:100%;height:auto}
 </style></head><body><div class="w"><h1>🌸 P6 Maths Practice</h1><div id="app"></div></div><script>
 const G='<svg viewBox="0 0 340 250" font-size="11" font-family="sans-serif"><text x="170" y="14" text-anchor="middle" font-weight="bold">Number of Books Borrowed</text>'+
 (()=>{let s='';for(let v=0;v<=100;v+=10){let y=220-v*1.9;s+=`<line x1="40" x2="330" y1="${y}" y2="${y}" stroke="#ddd"/><text x="34" y="${y+4}" text-anchor="end">${v}</text>`}
 const d=[35,50,45,70,60],n=['Mon','Tue','Wed','Thu','Fri'];let p=d.map((v,i)=>`${70+i*60},${220-v*1.9}`).join(' ');
 s+=`<polyline points="${p}" fill="none" stroke="#d6336c" stroke-width="2.5"/>`;d.forEach((v,i)=>{s+=`<circle cx="${70+i*60}" cy="${220-v*1.9}" r="4" fill="#d6336c"/><text x="${70+i*60}" y="236" text-anchor="middle">${n[i]}</text>`});
 return s+'<line x1="40" x2="40" y1="20" y2="220" stroke="#333"/><line x1="40" x2="330" y1="220" y2="220" stroke="#333"/><text x="185" y="249" text-anchor="middle">Day</text><text x="10" y="120" transform="rotate(-90 10 120)" text-anchor="middle">No. of books</text>'})()+'</svg>';
-const M=(id,q,o,a,w)=>({id,t:'m',q,o,a,w});
-const S=(id,q,a,w,h)=>({id,t:'s',q,a,w,h});
+const CATS=[
+['T9','Average'],
+['T12','Water level'],
+['T13','3-D shapes'],
+['T16','Money & charges'],
+['T8','Fraction word problem'],
+['T17','Line graph'],
+['T5','Remainder'],
+['T6','Factors'],
+['T4','Decimal computation'],
+['T14','2-D shapes'],
+['T7','Fractions'],
+['T10','Units'],
+['T11','Volume'],
+['T2','Rounding'],
+['T1','Whole numbers'],
+['T15','Algebra']
+];
+const CN=Object.fromEntries(CATS);
+const M=(id,cat,q,o,a,w,tips)=>({id,cat,t:'m',q,o,a,w,tips});
+const S=(id,cat,q,a,w,h,tips)=>({id,cat,t:'s',q,a,w,h,tips});
 const Q=[
-M('A1','The population of a town is 2,560,000 (correct to the nearest ten thousand). Which can be the actual population?',['2,554,980','2,565,210','2,556,413','2,549,999'],2,'Range is 2,555,000 ≤ n &lt; 2,565,000. Only 2,556,413 is in the range.'),
-M('A2','In 863,584, what is the difference between the values of the two ‘8’s?',['799,920','799,992','720,000','800,080'],0,'800,000 − 80 = 799,920.'),
-M('A3','‘★’ is a missing digit of the 3-digit number 52★. The number is divisible by both 3 and 4. What is ★?',['0','4','6','8'],3,'Divisible by 4: 520, 524, 528. Digit sum divisible by 3: 5+2+8 = 15 ✓. So ★ = 8.'),
-M('A4','A bottle holds 2.35 L of water, poured into cups of 0.3 L each. At most how many cups can be filled, and how much is left?',['7 … 0.25 L','7 … 0.025 L','8 … 0.05 L','7 … 2.5 L'],0,'7 × 0.3 = 2.1; 2.35 − 2.1 = 0.25 L.'),
-M('A5','When calculating 4.86 ÷ 0.6, Leo mistakenly worked out 486 ÷ 6. How many times the correct answer was Leo’s answer?',['0.1','10','100','1000'],1,'Correct: 8.1. Leo: 81. 81 ÷ 8.1 = 10.'),
-M('A6','Which expression has the smallest value?',['2.4 ÷ 0.4','0.24 ÷ 4','24 ÷ 0.4','0.24 ÷ 0.04'],1,'Values: 6, 0.06, 60, 6. Smallest is 0.06.'),
-M('A7','5.3 ÷ 0.7 = ?',['7.5 (1 d.p.)','7.56 (2 d.p.)','7.58 (2 d.p.)','7.6 (1 d.p.)'],3,'53 ÷ 7 = 7.5714… → 7.6 (1 d.p.) or 7.57 (2 d.p.).'),
-M('A8','Which group of numbers has an average of 15?',['12, 14, 16, 20','13, 14, 16, 17','10, 15, 20, 25','11, 13, 15, 19'],1,'Sums ÷ 4: 62÷4=15.5; 60÷4=15 ✓; 70÷4=17.5; 58÷4=14.5.'),
-M('A9','A choir has 8 members with average age 11.5. Two new members aged 12 and 16 join. What is the new average age?',['11.75','12.5','12','14'],2,'8 × 11.5 = 92. 92 + 12 + 16 = 120. 120 ÷ 10 = 12.'),
-M('A10','A number is removed from 14, 20, 26, 32 and the average increases by 3. Which number is removed?',['14','20','26','32'],0,'Average 92 ÷ 4 = 23. New average 26 × 3 = 78. Removed 92 − 78 = 14.'),
-M('A11','There were 84 students. 3/7 of them joined the art club, and 1/4 of the art club members were boys. How many girls were in the art club?',['9','27','36','48'],1,'Art club 84 × 3/7 = 36. Boys 36 × 1/4 = 9. Girls 36 − 9 = 27.'),
-M('A12','There were 120 cards. 2/5 were red, and 3/4 of the red cards were torn. Which expression gives the number of torn red cards?',['120 × (2/5 + 3/4)','120 × 2/5 × (1 − 3/4)','120 × (1 − 2/5) × 3/4','120 × 2/5 × 3/4'],3,'Red = 120 × 2/5; torn red = 120 × 2/5 × 3/4 = 36.'),
-M('A13','Which of the following is correct?',['2/3 &lt; 5/8','3/4 &gt; 7/9','5/6 = 15/18','4/5 &lt; 7/9'],2,'5/6 = 15/18 ✓. (2/3 = 16/24 &gt; 15/24; 3/4 = 27/36 &lt; 28/36; 4/5 = 36/45 &gt; 35/45.)'),
-M('A14','Which solid has the same number of edges as a hexagonal pyramid?',['Pentagonal prism','Hexagonal prism','Rectangular prism','Heptagonal pyramid'],2,'Hexagonal pyramid: 2 × 6 = 12 edges. Rectangular prism also has 12 (others: 15, 18, 14).'),
-M('A15','Alice uses exactly 12 sticks and 8 plasticine balls to make a 3-D model. What could it be?',['Triangular prism','Pentagonal pyramid','Hexagonal pyramid','Cube'],3,'Sticks = edges, balls = vertices. Cube: 12 edges, 8 vertices.'),
-M('A16','A triangular prism is cut by a plane parallel to its triangular base. What is the shape of the cross-section?',['Rectangle','Triangle','Trapezium','Square'],1,'A cut parallel to the base gives the same shape as the base: a triangle.'),
-M('A17','A rectangular tank has a base of 20 cm × 15 cm with water 8 cm deep. A stone sinks completely and the level rises to 10 cm. Volume of the stone?',['600 cm³','2,400 cm³','3,000 cm³','6,000 cm³'],0,'Rise 2 cm. 20 × 15 × 2 = 600 cm³.'),
-M('A18','3.06 L = ?',['306 mL','3,006 cm³','3,060 cm³','30.6 mL'],2,'1 L = 1000 cm³, so 3.06 L = 3,060 cm³.'),
-M('A19','A trapezium has upper base 6 cm, lower base 14 cm and height 5 cm. What is its area?',['50 cm²','70 cm²','100 cm²','420 cm²'],0,'(6 + 14) × 5 ÷ 2 = 50 cm².'),
-M('A20','A pen costs $x. A book costs $5 more than 3 times the price of the pen. How much do 1 pen and 1 book cost altogether?',['$(3x + 5)','$(4x − 5)','$(4x + 5)','$(3x + 6)'],2,'Book = 3x + 5. Total = x + 3x + 5 = 4x + 5.'),
-S('B1','What is the least number to be added to 2,345 so that it is divisible by 9?',4,'Digit sum 14; next multiple of 9 is 18 → add 4.'),
-S('B2','List all the common factors of 48 and 60.',{set:[1,2,3,4,6,12]},'48: 1,2,3,4,6,8,12,16,24,48. 60: 1,2,3,4,5,6,10,12,15,20,30,60. Common: 1, 2, 3, 4, 6, 12.','Separate with commas'),
-S('B3','Round off 3,684,520 g to the nearest 10 kg. (answer in kg)',3680,'3,684,520 g = 3,684.52 kg → 3,680 kg.','Answer in kg'),
-S('B4','The average of P, Q, R and S is 60. The average of R and S is 75. P is 12 more than Q. Find P.',51,'P+Q+R+S = 240; R+S = 150; P+Q = 90; Q = (90 − 12) ÷ 2 = 39; P = 51.'),
-S('B5','Mandy’s average mark in 4 tests is 82. She wants an average of 84 or above after the 5th test. At least how many marks must she get in the 5th test?',92,'84 × 5 = 420. 82 × 4 = 328. 420 − 328 = 92.'),
-S('B6a','15.4 L of soup is poured into bowls of 0.45 L each. At most how many bowls can be filled?',34,'15.4 ÷ 0.45 = 34 r 0.1 (34 × 0.45 = 15.3).'),
-S('B6b','15.4 L of soup is poured into bowls of 0.45 L each, filling as many bowls as possible. How much soup is left (in L)?',0.1,'34 × 0.45 = 15.3; 15.4 − 15.3 = 0.1 L.','Answer in L'),
-S('B7','9.5 kg of rice is packed into bags. Each bag holds 1.2 kg. How many bags are needed to pack all the rice?',8,'9.5 ÷ 1.2 = 7 r 1.1 → 7 full bags + 1 more = 8 bags (round UP!).'),
-S('B8','2 3/4 − 1 5/6 + 3 1/3 = ?',{frac:[51,12]},'= 33/12 − 22/12 + 40/12 = 51/12 = 4 1/4.','e.g. 4 1/4 or 17/4'),
-S('B9','A shop had 360 eggs. 5/12 were sold in the morning and 3/7 of the remaining eggs were sold in the afternoon. How many eggs were left?',120,'Morning 150; remaining 210. Afternoon 210 × 3/7 = 90. Left 120.'),
-S('B10','An open wooden box (no cover) measures 22 cm × 17 cm × 9 cm outside. The wood is 1 cm thick. What is the capacity of the box in mL?',2400,'Inner: (22−2) × (17−2) × (9−1) = 20 × 15 × 8 = 2,400 cm³ = 2,400 mL.','Answer in mL'),
-S('B11','A rectangular tank is 30 cm long and 20 cm wide, with water 12 cm deep. After 6 identical iron balls are put in (fully under water), the level rises to 15 cm. Volume of each ball (cm³)?',300,'Rise 3 cm. 30 × 20 × 3 = 1,800 cm³. 1,800 ÷ 6 = 300 cm³.'),
-S('B12','A cuboid container has a base of 16 cm × 10 cm. Jason pours in 1.2 L of water and then 2 cups of 400 mL. What is the height of the water (cm)?',12.5,'1,200 + 800 = 2,000 cm³. 2,000 ÷ 160 = 12.5 cm.'),
-S('B13','A cuboid is 12 cm × 8 cm × 10 cm. A smaller cuboid 4 cm × 8 cm × 5 cm is cut away from one top corner. Volume of the remaining solid (cm³)?',800,'960 − 160 = 800 cm³.'),
-S('B14','Taxi fare: first 2 km (or part) $27; every subsequent 200 m or part thereof $1.90. Mrs Lee travels 5.3 km. How much is the fare ($)?',59.3,'Extra 3.3 km = 3,300 m; 3,300 ÷ 200 = 16.5 → 17 parts. 27 + 17 × 1.90 = $59.30.'),
-S('B15a',G+'(a) Between which two consecutive days was the change in books borrowed the greatest?',{days:['wed','thu']},'Mon 35, Tue 50, Wed 45, Thu 70, Fri 60. Changes: +15, −5, +25, −10 → Wednesday to Thursday.','e.g. Mon and Tue'),
-S('B15b',G+'(b) What was the average number of books borrowed per day?',52,'35+50+45+70+60 = 260. 260 ÷ 5 = 52.'),
-S('B15c',G+'(c) What fraction of the total number of books was borrowed on Thursday?',{frac:[7,26]},'70 / 260 = 7/26.','Fraction, e.g. 1/2'),
+M('A1','T2','The population of a town is 2,560,000 (correct to the nearest ten thousand). Which can be the actual population?',['2,554,980','2,565,210','2,556,413','2,549,999'],2,'Range is 2,555,000 ≤ n &lt; 2,565,000. Only 2,556,413 is in the range.',['“Nearest ten thousand” means a range.','Step half of 10,000 down, and up to the next cut-off.','Keep the choice that sits inside the range.']),
+M('A2','T1','In 863,584, what is the difference between the values of the two ‘8’s?',['799,920','799,992','720,000','800,080'],0,'800,000 − 80 = 799,920.',['Find both 8s.','Write each 8 as its place value.','Subtract the smaller value from the bigger one.']),
+M('A3','T6','‘★’ is a missing digit of the 3-digit number 52★. The number is divisible by both 3 and 4. What is ★?',['0','4','6','8'],3,'Divisible by 4: 520, 524, 528. Digit sum divisible by 3: 5+2+8 = 15 ✓. So ★ = 8.',['For ÷ 4, check the last two digits.','Keep only the choices that pass.','Then keep the one whose digits add up for ÷ 3.']),
+M('A4','T5','A bottle holds 2.35 L of water, poured into cups of 0.3 L each. At most how many cups can be filled, and how much is left?',['7 … 0.25 L','7 … 0.025 L','8 … 0.05 L','7 … 2.5 L'],0,'7 × 0.3 = 2.1; 2.35 − 2.1 = 0.25 L.',['Divide the water by one cup.','“At most” means whole cups only.','Leftover = start − cups × 0.3.']),
+M('A5','T4','When calculating 4.86 ÷ 0.6, Leo mistakenly worked out 486 ÷ 6. How many times the correct answer was Leo’s answer?',['0.1','10','100','1000'],1,'Correct: 8.1. Leo: 81. 81 ÷ 8.1 = 10.',['Work out the real division.','Work out Leo’s division too.','His answer ÷ the real answer = how many times.']),
+M('A6','T4','Which expression has the smallest value?',['2.4 ÷ 0.4','0.24 ÷ 4','24 ÷ 0.4','0.24 ÷ 0.04'],1,'Values: 6, 0.06, 60, 6. Smallest is 0.06.',['Work out all four divisions.','Write the four results in a line.','Circle the smallest.']),
+M('A7','T4','5.3 ÷ 0.7 = ?',['7.5 (1 d.p.)','7.56 (2 d.p.)','7.58 (2 d.p.)','7.6 (1 d.p.)'],3,'53 ÷ 7 = 7.5714… → 7.6 (1 d.p.) or 7.57 (2 d.p.).',['Shift the dots: 53 ÷ 7.','Keep dividing past the decimal point.','Round the way each choice asks.']),
+M('A8','T9','Which group of numbers has an average of 15?',['12, 14, 16, 20','13, 14, 16, 17','10, 15, 20, 25','11, 13, 15, 19'],1,'Sums ÷ 4: 62÷4=15.5; 60÷4=15 ✓; 70÷4=17.5; 58÷4=14.5.',['Add the four numbers.','Divide that total by 4.','Find the group whose average is 15.']),
+M('A9','T9','A choir has 8 members with average age 11.5. Two new members aged 12 and 16 join. What is the new average age?',['11.75','12.5','12','14'],2,'8 × 11.5 = 92. 92 + 12 + 16 = 120. 120 ÷ 10 = 12.',['Old total = people × old average.','Add the two new ages.','New average = new total ÷ new number of people.']),
+M('A10','T9','A number is removed from 14, 20, 26, 32 and the average increases by 3. Which number is removed?',['14','20','26','32'],0,'Average 92 ÷ 4 = 23. New average 26 × 3 = 78. Removed 92 − 78 = 14.',['Find the old average, then add 3.','Totals = average × how many numbers.','Removed = old total − new total.']),
+M('A11','T8','There were 84 students. 3/7 of them joined the art club, and 1/4 of the art club members were boys. How many girls were in the art club?',['9','27','36','48'],1,'Art club 84 × 3/7 = 36. Boys 36 × 1/4 = 9. Girls 36 − 9 = 27.',['Art club = everyone × 3/7.','Boys = art club × 1/4.','Girls = art club − boys.']),
+M('A12','T8','There were 120 cards. 2/5 were red, and 3/4 of the red cards were torn. Which expression gives the number of torn red cards?',['120 × (2/5 + 3/4)','120 × 2/5 × (1 − 3/4)','120 × (1 − 2/5) × 3/4','120 × 2/5 × 3/4'],3,'Red = 120 × 2/5; torn red = 120 × 2/5 × 3/4 = 36.',['First take the fraction that are red.','Then take the fraction of those that are torn.','Match that story to one expression.']),
+M('A13','T7','Which of the following is correct?',['2/3 &lt; 5/8','3/4 &gt; 7/9','5/6 = 15/18','4/5 &lt; 7/9'],2,'5/6 = 15/18 ✓. (2/3 = 16/24 &gt; 15/24; 3/4 = 27/36 &lt; 28/36; 4/5 = 36/45 &gt; 35/45.)',['Test one statement at a time.','Make fractions with the same denominator.','Keep the statement that is true.']),
+M('A14','T13','Which solid has the same number of edges as a hexagonal pyramid?',['Pentagonal prism','Hexagonal prism','Rectangular prism','Heptagonal pyramid'],2,'Hexagonal pyramid: 2 × 6 = 12 edges. Rectangular prism also has 12 (others: 15, 18, 14).',['A pyramid’s edges = 2 × the base sides.','Count the edges of each choice.','Find the solid with the same count.']),
+M('A15','T13','Alice uses exactly 12 sticks and 8 plasticine balls to make a 3-D model. What could it be?',['Triangular prism','Pentagonal pyramid','Hexagonal pyramid','Cube'],3,'Sticks = edges, balls = vertices. Cube: 12 edges, 8 vertices.',['Sticks are edges. Balls are vertices.','Count edges and vertices for each solid.','Match both counts to the sticks and balls.']),
+M('A16','T13','A triangular prism is cut by a plane parallel to its triangular base. What is the shape of the cross-section?',['Rectangle','Triangle','Trapezium','Square'],1,'A cut parallel to the base gives the same shape as the base: a triangle.',['The cut is parallel to the base.','A parallel cut copies the base’s shape.','Name that same shape.']),
+M('A17','T12','A rectangular tank has a base of 20 cm × 15 cm with water 8 cm deep. A stone sinks completely and the level rises to 10 cm. Volume of the stone?',['600 cm³','2,400 cm³','3,000 cm³','6,000 cm³'],0,'Rise 2 cm. 20 × 15 × 2 = 600 cm³.',['See how many cm the water rose.','That rise equals the stone’s volume.','Volume = length × width × rise.']),
+M('A18','T10','3.06 L = ?',['306 mL','3,006 cm³','3,060 cm³','30.6 mL'],2,'1 L = 1000 cm³, so 3.06 L = 3,060 cm³.',['1 L = 1,000 cm³.','1 L is also 1,000 mL.','Multiply by 1,000, then match the unit.']),
+M('A19','T14','A trapezium has upper base 6 cm, lower base 14 cm and height 5 cm. What is its area?',['50 cm²','70 cm²','100 cm²','420 cm²'],0,'(6 + 14) × 5 ÷ 2 = 50 cm².',['Add the top base and the bottom base.','Multiply by the height.','Then divide by 2.']),
+M('A20','T15','A pen costs $x. A book costs $5 more than 3 times the price of the pen. How much do 1 pen and 1 book cost altogether?',['$(3x + 5)','$(4x − 5)','$(4x + 5)','$(3x + 6)'],2,'Book = 3x + 5. Total = x + 3x + 5 = 4x + 5.',['Write the book as 3 times the pen, plus 5.','The pen is x.','Add pen + book, then join the x terms.']),
+S('B1','T6','What is the least number to be added to 2,345 so that it is divisible by 9?',4,'Digit sum 14; next multiple of 9 is 18 → add 4.','',['Add the digits of 2,345.','÷ 9 needs a digit sum of 9, 18, 27…','Jump to the next one. The gap is what you add.']),
+S('B2','T6','List all the common factors of 48 and 60.',{set:[1,2,3,4,6,12]},'48: 1,2,3,4,6,8,12,16,24,48. 60: 1,2,3,4,5,6,10,12,15,20,30,60. Common: 1, 2, 3, 4, 6, 12.','Separate with commas',['List every factor of 48.','List every factor of 60.','Write only the numbers in both lists.']),
+S('B3','T2','Round off 3,684,520 g to the nearest 10 kg. (answer in kg)',3680,'3,684,520 g = 3,684.52 kg → 3,680 kg.','Answer in kg',['Change grams into kilograms first.','You need the nearest 10 kg.','Look at the ones digit, then round.']),
+S('B4','T9','The average of P, Q, R and S is 60. The average of R and S is 75. P is 12 more than Q. Find P.',51,'P+Q+R+S = 240; R+S = 150; P+Q = 90; Q = (90 − 12) ÷ 2 = 39; P = 51.','',['Four-number total = average × 4.','R + S = their average × 2. P + Q is what’s left.','P is 12 more than Q. Split that pair.']),
+S('B5','T9','Mandy’s average mark in 4 tests is 82. She wants an average of 84 or above after the 5th test. At least how many marks must she get in the 5th test?',92,'84 × 5 = 420. 82 × 4 = 328. 420 − 328 = 92.','',['Target total = wanted average × 5.','Marks so far = her average × 4.','5th test = target − marks so far.']),
+S('B6a','T5','15.4 L of soup is poured into bowls of 0.45 L each. At most how many bowls can be filled?',34,'15.4 ÷ 0.45 = 34 r 0.1 (34 × 0.45 = 15.3).','',['Divide the soup by one bowl.','“At most” keeps whole bowls only.','Bowls × 0.45 must not go past 15.4.']),
+S('B6b','T5','15.4 L of soup is poured into bowls of 0.45 L each, filling as many bowls as possible. How much soup is left (in L)?',0.1,'34 × 0.45 = 15.3; 15.4 − 15.3 = 0.1 L.','Answer in L',['First find how many full bowls fit.','Soup used = bowls × 0.45.','Left = soup you started with − soup used.']),
+S('B7','T5','9.5 kg of rice is packed into bags. Each bag holds 1.2 kg. How many bags are needed to pack all the rice?',8,'9.5 ÷ 1.2 = 7 r 1.1 → 7 full bags + 1 more = 8 bags (round UP!).','',['Divide the rice by one bag.','A leftover still needs its own bag.','Round up. Do not drop the remainder.']),
+S('B8','T7','2 3/4 − 1 5/6 + 3 1/3 = ?',{frac:[51,12]},'= 33/12 − 22/12 + 40/12 = 51/12 = 4 1/4.','e.g. 4 1/4 or 17/4',['Turn each mixed number into a fraction.','Use twelfths for all three.','Do the minus, then the plus. Simplify.']),
+S('B9','T8','A shop had 360 eggs. 5/12 were sold in the morning and 3/7 of the remaining eggs were sold in the afternoon. How many eggs were left?',120,'Morning 150; remaining 210. Afternoon 210 × 3/7 = 90. Left 120.','',['Morning sold = all eggs × 5/12.','Subtract to get the remaining eggs.','Afternoon = remaining × 3/7. Then subtract again.']),
+S('B10','T12','An open wooden box (no cover) measures 22 cm × 17 cm × 9 cm outside. The wood is 1 cm thick. What is the capacity of the box in mL?',2400,'Inner: (22−2) × (17−2) × (9−1) = 20 × 15 × 8 = 2,400 cm³ = 2,400 mL.','Answer in mL',['There is no lid, and the wood is 1 cm thick.','Length and width lose 1 cm on each side.','Height loses 1 cm on the bottom only. Then multiply.']),
+S('B11','T12','A rectangular tank is 30 cm long and 20 cm wide, with water 12 cm deep. After 6 identical iron balls are put in (fully under water), the level rises to 15 cm. Volume of each ball (cm³)?',300,'Rise 3 cm. 30 × 20 × 3 = 1,800 cm³. 1,800 ÷ 6 = 300 cm³.','',['Find how many cm the water rose.','Base × rise = the volume of all the balls.','Divide by how many balls.']),
+S('B12','T12','A cuboid container has a base of 16 cm × 10 cm. Jason pours in 1.2 L of water and then 2 cups of 400 mL. What is the height of the water (cm)?',12.5,'1,200 + 800 = 2,000 cm³. 2,000 ÷ 160 = 12.5 cm.','',['Turn litres and mL into cm³.','Add the water and the two cups.','Height = volume ÷ (length × width).']),
+S('B13','T11','A cuboid is 12 cm × 8 cm × 10 cm. A smaller cuboid 4 cm × 8 cm × 5 cm is cut away from one top corner. Volume of the remaining solid (cm³)?',800,'960 − 160 = 800 cm³.','',['Find the volume of the big cuboid.','Find the volume of the piece cut off.','Remaining = big − small.']),
+S('B14','T16','Taxi fare: first 2 km (or part) $27; every subsequent 200 m or part thereof $1.90. Mrs Lee travels 5.3 km. How much is the fare ($)?',59.3,'Extra 3.3 km = 3,300 m; 3,300 ÷ 200 = 16.5 → 17 parts. 27 + 17 × 1.90 = $59.30.','',['The first 2 km has its own fare.','Change the extra distance into metres, in steps of 200 m.','A leftover piece still counts as one step. Then add the fare.']),
+S('B15a','T17',G+'(a) Between which two consecutive days was the change in books borrowed the greatest?',{days:['wed','thu']},'Mon 35, Tue 50, Wed 45, Thu 70, Fri 60. Changes: +15, −5, +25, −10 → Wednesday to Thursday.','e.g. Mon and Tue',['Read the number of books for each day.','Find the change from one day to the next.','Pick the biggest change, up or down.']),
+S('B15b','T17',G+'(b) What was the average number of books borrowed per day?',52,'35+50+45+70+60 = 260. 260 ÷ 5 = 52.','',['Add the books from every day.','Count how many days there are.','Average = total ÷ number of days.']),
+S('B15c','T17',G+'(c) What fraction of the total number of books was borrowed on Thursday?',{frac:[7,26]},'70 / 260 = 7/26.','Fraction, e.g. 1/2',['Read Thursday’s number of books.','Add all the days to get the total.','Fraction = Thursday ÷ total. Then simplify.']),
 ];
 // --- tolerant checking
 function num(s){s=s.toLowerCase().replace(/[,\s$]|cm³|cm3|cm|mm|ml|kg|g\b|l\b|bags?|bowls?|eggs?|books?|marks?/g,' ').trim().replace(/\s+/g,' ');
@@ -71,33 +111,142 @@ function check(q,v){const a=q.a,s=v.toLowerCase();
  if(a.days){const all=['mon','tue','wed','thu','fri'];const f=all.filter(d=>s.includes(d));return f.length==2&&a.days.every(d=>f.includes(d))}}
 const MA=['C','A','D','A','B','B','D','B','C','A','B','D','C','C','D','B','A','C','A','C'];// key letters, verified on load
 Q.slice(0,20).forEach((q,i)=>{if('ABCD'[q.a]!==MA[i])console.error('Key mismatch',q.id)});
-// --- state
-const K='p6quiz1';let st=JSON.parse(localStorage.getItem(K)||'null');
-const save=()=>localStorage.setItem(K,JSON.stringify(st));const app=document.getElementById('app');
+Q.forEach(q=>{if(!CN[q.cat]||!q.tips||q.tips.length<1||q.tips.length>3)console.error('Bad question meta',q.id)});
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const K='p6quiz2',OLD='p6quiz1';
+function fresh(){return {v:2,best:{},run:null}}
+function load(){
+ try{localStorage.removeItem(OLD)}catch(e){}
+ try{
+  const o=JSON.parse(localStorage.getItem(K)||'null');
+  if(!o||o.v!==2||!o.best||typeof o.best!=='object')return fresh();
+  if(o.run){
+   const r=o.run;
+   if(!Array.isArray(r.ids)||typeof r.i!=='number'||!r.res||typeof r.res!=='object'||!r.hinted||typeof r.hinted!=='object')return fresh();
+   if(r.ids.some(id=>!Q.some(q=>q.id===id)))o.run=null;
+  }
+  return o;
+ }catch(e){return fresh()}
+}
+let data=load();
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(data))}catch(e){}};
+const app=document.getElementById('app');
 const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
-function start(ids,sh){st={ids:sh?shuf(ids):ids,i:0,res:{},done:false};save();show()}
-function home(){const resume=st&&!st.done&&st.i<st.ids.length;
- app.innerHTML=`<div class="card"><div class="big">🧮</div><p style="text-align:center">${Q.length} questions: multiple choice + short answers.<br>Take your time — you can do it! 💪</p>
- <label><input type="checkbox" id="sh"> Shuffle questions 🔀</label>
- ${resume?`<button class="btn alt" id="rs">▶ Continue (question ${st.i+1} of ${st.ids.length})</button>`:''}
- <button class="btn" id="go">${resume?'Start over':'Start'} 🚀</button></div>`;
- go.onclick=()=>start(Q.map(q=>q.id),sh.checked);if(resume)rs.onclick=show}
-function show(){if(st.i>=st.ids.length){st.done=true;save();return end()}
- const q=Q.find(x=>x.id==st.ids[st.i]),n=st.ids.length,r=st.res[q.id];
- let h=`<div class="meta"><span>Question ${st.i+1} / ${n}</span><span>⭐ ${Object.values(st.res).filter(x=>x).length}</span></div><div class="bar"><i style="width:${st.i/n*100}%"></i></div>
- <div class="card"><div class="hint">${q.id[0]=='A'?'Multiple choice':'Short answer'} · ${q.id}</div><div class="q">${q.q}</div>`;
- if(q.t=='m')h+=q.o.map((o,k)=>`<button class="opt" data-k="${k}"><b>${'ABCD'[k]}</b>${o}</button>`).join('');
- else h+=`<input id="inp" autocomplete="off" placeholder="${q.h||'Your answer'}" inputmode="${typeof q.a=='number'?'decimal':'text'}"><button class="btn" id="sub">Check ✔</button>`;
- h+=`<div id="fb"></div></div><button class="btn ghost" id="hm">🏠 Home (progress saved)</button>`;app.innerHTML=h;hm.onclick=home;
- const fin=(ok,ans)=>{st.res[q.id]=ok;save();fb.innerHTML=`<div class="fb ${ok?'ok':'no'}"><b>${ok?'🎉 Correct! Great job!':'😅 Not quite. Answer: '+ans}</b><br>${q.w}</div><button class="btn alt" id="nx">Next ➜</button>`;
-  nx.onclick=()=>{st.i++;save();show();scrollTo(0,0)};nx.scrollIntoView({behavior:'smooth',block:'center'})};
- if(q.t=='m')app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(fb.innerHTML)return;const k=+b.dataset.k,ok=k==q.a;
-  b.classList.add(ok?'ok':'no');app.querySelectorAll('.opt')[q.a].classList.add('ok');fin(ok,'ABCD'[q.a])});
- else{const go=()=>{if(!inp.value.trim()||fb.innerHTML)return;inp.disabled=true;sub.remove();fin(check(q,inp.value),ansTxt(q))};sub.onclick=go;inp.onkeydown=e=>{if(e.key=='Enter')go()};inp.focus()}}
+const byId=id=>Q.find(q=>q.id===id);
+function catCount(cat){return Q.filter(q=>q.cat===cat).length}
+function bestLabel(cat){const b=data.best[cat];return b?'Best '+b.c+'/'+b.n+(b.c===b.n?' ⭐':''):'Best —'}
+function recordBest(){
+ const tally={};
+ data.run.ids.forEach(id=>{
+  const cat=byId(id).cat;
+  if(!tally[cat])tally[cat]={c:0,n:0};
+  tally[cat].n++;
+  if(data.run.res[id])tally[cat].c++;
+ });
+ Object.keys(tally).forEach(cat=>{
+  if(tally[cat].n!==catCount(cat))return;
+  const prev=data.best[cat],cur=tally[cat];
+  if(!prev||cur.c/cur.n>prev.c/prev.n)data.best[cat]={c:cur.c,n:cur.n};
+ });
+}
+let pick=null;
+function chosenIds(){return (pick===null?Q:Q.filter(q=>pick.includes(q.cat))).map(q=>q.id)}
+function start(ids,sh){data.run={ids:sh?shuf(ids):ids.slice(),i:0,res:{},hinted:{},done:false};save();show()}
+function home(){
+ scrollTo(0,0);
+ const run=data.run,resume=run&&!run.done&&run.i<run.ids.length;
+ app.innerHTML=`<div class="card"><div class="big">🧮</div><p class="pick">${Q.length} questions. Pick <b>All</b>, or one or more types.<br>Take your time — you can do it! 💪</p>
+ <div class="chips" id="chips"><button type="button" class="chip all" data-cat="all"><b>All</b><small>${Q.length} questions</small></button>`+
+ CATS.map(([id,name])=>`<button type="button" class="chip" data-cat="${id}"><b>${esc(name)}</b><small>${catCount(id)} question${catCount(id)===1?'':'s'} · ${bestLabel(id)}</small></button>`).join('')+
+ `</div><p class="pick" id="picked"></p>
+ <label style="font-size:1.05em;display:flex;gap:10px;align-items:center;margin:10px 0"><input type="checkbox" id="sh" style="width:26px;height:26px;margin:0"> Shuffle questions 🔀</label>
+ ${resume?`<button class="btn alt" id="rs" type="button">▶ Continue (question ${run.i+1} of ${run.ids.length})</button>`:''}
+ <button class="btn" id="go" type="button"></button>
+ <button class="btn ghost" id="wipe" type="button">Reset saved data</button></div>`;
+ const paint=()=>{
+  app.querySelectorAll('.chip').forEach(el=>{
+   const id=el.dataset.cat;
+   el.classList.toggle('on',id==='all'?pick===null:!!(pick&&pick.includes(id)));
+  });
+  const n=chosenIds().length;
+  const picked=document.getElementById('picked');
+  picked.textContent=n?n+' question'+(n===1?'':'s')+' selected':'Pick All or at least one type';
+  const go=document.getElementById('go');
+  go.disabled=n===0;
+  go.textContent=(resume?'Start over':'Start')+' · '+n+' 🚀';
+ };
+ app.querySelectorAll('.chip').forEach(el=>el.onclick=()=>{
+  const id=el.dataset.cat;
+  if(id==='all')pick=null;
+  else{
+   if(pick===null)pick=[id];
+   else if(pick.includes(id))pick=pick.filter(x=>x!==id);
+   else pick=pick.concat(id);
+  }
+  paint();
+ });
+ paint();
+ document.getElementById('go').onclick=()=>{const ids=chosenIds();if(ids.length)start(ids,document.getElementById('sh').checked)};
+ const rs=document.getElementById('rs');if(rs)rs.onclick=show;
+ document.getElementById('wipe').onclick=()=>{data=fresh();try{localStorage.removeItem(K);localStorage.removeItem(OLD)}catch(e){}pick=null;home()};
+}
+function show(){
+ scrollTo(0,0);
+ const run=data.run;
+ if(!run)return home();
+ if(run.i>=run.ids.length){run.done=true;recordBest();save();return end()}
+ const q=byId(run.ids[run.i]),n=run.ids.length;
+ let h=`<div class="meta"><span>Question ${run.i+1} / ${n}</span><span>⭐ ${Object.values(run.res).filter(x=>x).length}</span></div><div class="bar"><i style="width:${run.i/n*100}%"></i></div>
+ <div class="card"><div class="qhead"><span class="tag">${esc(CN[q.cat])}</span><span class="hint">${q.t=='m'?'Multiple choice':'Short answer'} · ${q.id}</span></div><div class="q">${q.q}</div>
+ <button class="btn hintbtn" id="hint" type="button">💡 Hint</button><p class="hnote" id="hnote" hidden>Using a hint is okay — we’ll note it on your results. 💛</p><div id="steps"></div>`;
+ if(q.t=='m')h+=q.o.map((o,k)=>`<button class="opt" type="button" data-k="${k}"><b>${'ABCD'[k]}</b>${o}</button>`).join('');
+ else h+=`<input id="inp" autocomplete="off" placeholder="${esc(q.h||'Your answer')}" inputmode="${typeof q.a=='number'?'decimal':'text'}"><button class="btn" id="sub" type="button">Check ✔</button>`;
+ h+=`<div id="fb"></div></div><button class="btn ghost" id="hm" type="button">🏠 Home (progress saved)</button>`;
+ app.innerHTML=h;
+ document.getElementById('hm').onclick=home;
+ let locked=false,shown=0;
+ const hintBtn=document.getElementById('hint');
+ hintBtn.onclick=()=>{
+  if(locked||shown>=q.tips.length)return;
+  shown++;
+  run.hinted[q.id]=true;save();
+  document.getElementById('hnote').hidden=false;
+  document.getElementById('steps').innerHTML=q.tips.slice(0,shown).map((t,i)=>`<p class="step"><b>Step ${i+1}.</b> ${esc(t)}</p>`).join('');
+  if(shown>=q.tips.length){hintBtn.disabled=true;hintBtn.textContent='💡 All steps shown'}
+  else hintBtn.textContent='💡 Next hint';
+ };
+ const fin=(ok,ans)=>{
+  locked=true;hintBtn.disabled=true;
+  run.res[q.id]=ok;save();
+  document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'no'}"><b>${ok?'🎉 Correct! Great job!':'😅 Not quite. Answer: '+ans}</b><br>${q.w}</div><button class="btn alt" id="nx" type="button">Next ➜</button>`;
+  const nx=document.getElementById('nx');
+  nx.onclick=()=>{run.i++;save();show();scrollTo(0,0)};
+  nx.scrollIntoView({behavior:'smooth',block:'center'});
+ };
+ if(q.t=='m')app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+  if(locked)return;
+  const k=+b.dataset.k,ok=k==q.a;
+  b.classList.add(ok?'ok':'no');
+  app.querySelectorAll('.opt')[q.a].classList.add('ok');
+  fin(ok,'ABCD'[q.a]);
+ });
+ else{
+  const inp=document.getElementById('inp'),sub=document.getElementById('sub');
+  const go=()=>{if(locked||!inp.value.trim())return;inp.disabled=true;sub.remove();fin(check(q,inp.value),ansTxt(q))};
+  sub.onclick=go;inp.onkeydown=e=>{if(e.key=='Enter')go()};inp.focus();
+ }
+}
 function ansTxt(q){const a=q.a;if(typeof a=='number')return a;if(a.frac)return a.frac[0]%a.frac[1]&&a.frac[0]>a.frac[1]?(q.id=='B8'?'4 1/4':a.frac.join('/')):a.frac.join('/');if(a.set)return a.set.join(', ');return 'Wednesday and Thursday'}
-function end(){const n=st.ids.length,c=st.ids.filter(i=>st.res[i]).length,wrong=st.ids.filter(i=>!st.res[i]),p=c/n;
+function end(){
+ scrollTo(0,0);
+ const run=data.run,n=run.ids.length,c=run.ids.filter(i=>run.res[i]).length,wrong=run.ids.filter(i=>!run.res[i]),p=c/n;
+ const hinted=run.ids.filter(i=>run.hinted[i]);
  app.innerHTML=`<div class="card" style="text-align:center"><div class="big">${p==1?'🏆':p>=.7?'🌟':'💪'}</div><h2>You scored ${c} / ${n}</h2><p>${p==1?'Perfect! Amazing!':p>=.7?'Well done! Keep it up!':'Good try! Practice makes perfect!'}</p>
- ${wrong.length?`<button class="btn" id="rw">🔁 Retry wrong ones (${wrong.length})</button>`:''}<button class="btn alt" id="ag">Start again</button></div>`;
- if(wrong.length)rw.onclick=()=>start(wrong,false);ag.onclick=()=>{st=null;localStorage.removeItem(K);home()}}
+ <p>${hinted.length?`💡 You used a hint on ${hinted.length} question${hinted.length===1?'':'s'}.`:'💡 No hints this time — nice work!'}</p>
+ ${hinted.length?`<ul class="reslist">${hinted.map(id=>{const q=byId(id);return `<li>${q.id} ${esc(CN[q.cat])} — ${run.res[id]?'correct with a hint':'hint used'}</li>`}).join('')}</ul>`:''}
+ ${wrong.length?`<button class="btn" id="rw" type="button">🔁 Retry wrong ones (${wrong.length})</button>`:''}<button class="btn alt" id="ag" type="button">Start again</button></div>`;
+ if(wrong.length)document.getElementById('rw').onclick=()=>start(wrong,false);
+ document.getElementById('ag').onclick=()=>{data.run=null;save();pick=null;home()};
+}
 home();
 </script></body></html>
