@@ -31,12 +31,13 @@ body.noscroll{overflow:hidden}
 .chip{flex:1 1 calc(50% - 4px);min-height:72px;text-align:left;border:3px solid #e5dbff;background:#f8f5ff;border-radius:16px;padding:10px 12px;cursor:pointer;font:inherit;color:#333}
 .chip.all{flex-basis:100%}
 .chip.on{border-color:#f06595;background:#fff0f6}
+a.chip,a.chip:visited{text-decoration:none;color:#333}
 .chip b{display:block;color:#5f3dc4;font-size:1em;line-height:1.25}
 .chip small{display:block;color:#666;font-weight:600;margin-top:3px;line-height:1.3}
 .pick{text-align:center;color:#555;margin:4px 0 8px}
 .reslist{text-align:left;padding-left:1.2em;margin:8px 0}
 .reslist li{margin:4px 0}
-button:focus-visible,input:focus-visible{outline:3px solid #9775fa;outline-offset:2px}
+button:focus-visible,input:focus-visible,a.chip:focus-visible{outline:3px solid #9775fa;outline-offset:2px}
 svg{width:100%;max-width:100%;height:auto}
 .fig{max-width:100%;margin:0 0 8px}
 .fig svg,.q>svg{width:100%;max-width:100%;height:auto;display:block}
@@ -507,6 +508,7 @@ function home(){
  const due=dueIds().length;
  const timedLeft=run&&run.mode==='timed'&&!run.done?run.limitMs-(Date.now()-run.startedAt):0;
  app.innerHTML=`<div class="card"><div class="big">🧮</div><h2 style="text-align:center;color:#d6336c;margin:.1em 0">Hi Ansbie!</h2><p class="pick">${Q.length} questions. Pick a difficulty and one or more types.<br>Take your time — you can do it! 💪</p>
+ <div class="chips"><a class="chip all" href="./chinese.html"><b>Chinese 中文</b><small>詞語小測驗</small></a></div>
  <p class="pick" id="dueLine"><b>${due}</b> question${due===1?'':'s'} due for review today</p>
  ${due?`<button class="btn" id="review" type="button">🔁 Review due (${due})</button>`:''}
  ${loadNote?`<p class="pick">${esc(loadNote)}</p>`:''}
