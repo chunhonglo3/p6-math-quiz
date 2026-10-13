@@ -70,6 +70,52 @@ textarea.code{width:100%;min-height:88px;font-size:16px;border:3px solid #e5dbff
 .testbar b{letter-spacing:.04em}
 .testbar button{background:#fff;color:#d9480f;border:0;border-radius:999px;font:inherit;font-weight:800;padding:8px 14px;cursor:pointer}
 body.testmode .sync{top:auto;bottom:calc(8px + env(safe-area-inset-bottom))}
+.ws-ck{display:flex;align-items:flex-start;gap:10px;font-size:1.05em;line-height:1.35;margin:8px 0}
+.ws-ck input{width:26px;height:26px;margin:2px 0 0;padding:0;flex:none}
+.ws{background:#fff;color:#111;border-radius:16px;padding:16px 14px;box-shadow:0 4px 14px #0001}
+.ws h2{text-align:center;margin:.15em 0;color:#111;font-size:1.35em}
+.ws-sub{text-align:center;margin:0 0 8px;color:#333;font-size:.95em}
+.ws-meta{display:flex;flex-wrap:wrap;gap:6px 14px;margin:10px 0 12px;font-size:1.02em}
+.ws-meta span{flex:1 1 150px}
+.ws-meta i{display:inline-block;min-width:7.2em;border-bottom:1.5px solid #111;height:1.15em;vertical-align:-2px}
+.ws-meta i.score{min-width:3.2em}
+.ws ol{margin:0;padding-left:1.5em}
+.ws-q{margin:0 0 14px;padding:0 0 4px;break-inside:avoid;page-break-inside:avoid;-webkit-column-break-inside:avoid}
+.ws-body{font-size:1.05em;line-height:1.45;overflow-wrap:anywhere}
+.ws-body .fig{margin:6px 0}
+.ws .fig>svg,.ws-body>svg{width:100%;max-width:100%;height:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.ws svg svg{width:revert;height:revert;max-width:none;max-height:none}
+.ws-opts{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;margin:8px 0}
+.ws-opt{display:flex;gap:6px;align-items:flex-start;min-width:0;break-inside:avoid;page-break-inside:avoid}
+.ws-opt b{min-width:1.2em}
+.ws-opt div{min-width:0;overflow-wrap:anywhere}
+.ws-pic svg{width:auto;max-width:100%;max-height:34mm;height:auto}
+.ws-gap{height:14mm}
+.ws-write{margin-top:6px}
+.ws-line{display:block;border-bottom:1.5px solid #111;height:1.7em;margin-top:4px}
+.ws-box{display:inline-block;width:2.4em;height:1.35em;border:1.5px solid #111;vertical-align:-0.25em}
+.ws-key{break-before:page;page-break-before:always;padding-top:6px}
+.ws-key[hidden]{display:none!important}
+.ws-key li{margin:0 0 5px;break-inside:avoid;page-break-inside:avoid}
+.ws-id{color:#666;font-size:.85em}
+@media(max-width:420px){
+ .ws{padding:12px 10px}
+ .ws h2{font-size:1.15em}
+ .ws-opts,.ws-opts.pics{grid-template-columns:1fr}
+ .ws-meta span{flex-basis:100%}
+}
+@media print{
+ @page{size:A4;margin:14mm 12mm}
+ body.ws-on{background:#fff!important}
+ body.ws-on .testbar,body.ws-on #sync,body.ws-on #learn,body.ws-on .w>h1,body.ws-on .noprint{display:none!important}
+ body.ws-on .w{max-width:none;margin:0;padding:0}
+ body.ws-on .ws{box-shadow:none;border-radius:0;padding:0;font-size:12pt;line-height:1.4}
+ body.ws-on .ws-q{break-inside:avoid;page-break-inside:avoid;margin:0 0 8mm}
+ body.ws-on .ws .fig>svg,body.ws-on .ws-body>svg{width:auto;max-width:100%;max-height:62mm;height:auto}
+ body.ws-on .ws-opts{grid-template-columns:1fr 1fr}
+ body.ws-on .ws svg{print-color-adjust:exact;-webkit-print-color-adjust:exact;color-adjust:exact}
+ body.ws-on .ws-key{break-before:page;page-break-before:always}
+}
 </style></head><body>
 <div id="testbar" class="testbar" hidden><b>TEST MODE</b><span>Kept separate from her scores.</span><button type="button" id="clearTest">Clear test data</button></div>
 <div class="w"><h1>🌸 P6 Maths Practice</h1><div id="app"></div></div>
@@ -502,6 +548,7 @@ function decodeProgress(text){
  return JSON.parse(decodeURIComponent(escape(atob(s))));
 }
 function home(){
+ document.body.classList.remove('ws-on');
  scrollTo(0,0);
  stopTick();
  const run=data.run,resume=run&&!run.done&&run.i<run.ids.length;
@@ -514,6 +561,7 @@ function home(){
  ${loadNote?`<p class="pick">${esc(loadNote)}</p>`:''}
  <button class="btn alt" id="timed" type="button">⏱ Timed session</button>
  <button class="btn alt" id="progress" type="button">📈 My Progress</button>
+ <button class="btn alt" id="printws" type="button">🖨️ 列印工作紙</button>
  <div class="chips" id="diffs"><button type="button" class="chip all" data-diff="all"><b>All levels</b></button><button type="button" class="chip" data-diff="easy"><b>Easy</b></button><button type="button" class="chip" data-diff="medium"><b>Medium</b></button><button type="button" class="chip" data-diff="hard"><b>Hard</b></button></div>
  <div class="chips" id="chips"><button type="button" class="chip all" data-cat="all"><b>All types</b><small>${Q.length} questions</small></button>`+
  CATS.map(([id,name])=>`<button type="button" class="chip" data-cat="${id}"><b>${esc(name)}</b><small>${catCount(id)} question${catCount(id)===1?'':'s'} · ${bestLabel(id)}</small></button>`).join('')+
@@ -576,6 +624,7 @@ function home(){
  const review=document.getElementById('review');if(review)review.onclick=()=>start(dueIds(),false,'review');
  document.getElementById('timed').onclick=timedSetup;
  document.getElementById('progress').onclick=progressPage;
+ document.getElementById('printws').onclick=()=>wsSetup();
  document.getElementById('backup').onclick=backupPage;
  bindWatch(app);
  if(run&&run.mode==='timed'&&!run.done){
@@ -999,6 +1048,168 @@ function toggleTest(){
  const u=new URL(location.href);
  if(next)u.searchParams.set('test','1'); else u.searchParams.delete('test');
  location.replace(u.pathname+u.search+u.hash);
+}
+let ws={cats:null,diffs:null,n:10,weak:false,key:true};
+function wsPool(){return Q.filter(q=>(!ws.cats||ws.cats.includes(q.cat))&&inDiff(q,ws.diffs))}
+function wsMissSet(){
+ const ids=new Set();
+ Object.keys(data.review||{}).forEach(id=>{if(data.review[id])ids.add(id)});
+ (data.attempts||[]).forEach(a=>{if(a&&a.id&&(!a.ok||a.hint))ids.add(a.id)});
+ return ids;
+}
+function wsChoose(){
+ const pool=wsPool();
+ if(!pool.length)return [];
+ const n=Math.min(ws.n,pool.length);
+ if(!ws.weak)return shuf(pool).slice(0,n);
+ const miss=wsMissSet();
+ const hot=pool.filter(q=>miss.has(q.id));
+ const cool=pool.filter(q=>!miss.has(q.id));
+ const jitter=new Map(cool.map(q=>[q.id,Math.random()]));
+ cool.sort((a,b)=>weakness(b.cat)-weakness(a.cat)||jitter.get(a.id)-jitter.get(b.id));
+ return shuf(shuf(hot).concat(cool).slice(0,n));
+}
+function wsPlainOpt(q,k){
+ const o=q.o&&q.o[k];
+ if(o==null)return '';
+ const s=String(o);
+ return q.bank?s:s.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+}
+function wsAnsText(q){
+ if(q.t==='m'){
+  const letter='ABCD'[q.a]||'';
+  const text=wsPlainOpt(q,q.a);
+  return text?letter+' · '+text:letter;
+ }
+ if(q.bank)return displayAns(q);
+ return String(ansTxt(q));
+}
+function wsTopicLine(){
+ let cats;
+ if(!ws.cats||!ws.cats.length)cats='全部課題';
+ else if(ws.cats.length>4)cats=ws.cats.length+' 個課題';
+ else cats=ws.cats.map(id=>CN[id]||id).join('、');
+ const dlab={easy:'Easy',medium:'Medium',hard:'Hard'};
+ const diffs=!ws.diffs||!ws.diffs.length?'全部難度':ws.diffs.map(d=>dlab[d]||d).join('、');
+ return cats+' · '+diffs;
+}
+function wsChoices(q){
+ if(q.t!=='m'||!q.o)return '';
+ const stemSvg=/<svg[\s>]/i.test(q.q);
+ const pics=!stemSvg&&q.pics&&q.pics.some(Boolean);
+ return `<div class="ws-opts${pics?' pics':''}">${q.o.map((o,k)=>{
+  const pic=pics&&q.pics[k]?`<div class="ws-pic">${q.pics[k]}</div>`:'';
+  const text=q.bank?esc(o):o;
+  return `<div class="ws-opt"><b>${'ABCD'[k]||''}</b><div>${text}${pic}</div></div>`;
+ }).join('')}</div>`;
+}
+function wsWrite(q){
+ if(q.t==='m')return '<div class="ws-write">答案 <span class="ws-box"></span></div>';
+ return '<div class="ws-gap"></div><div class="ws-write">答案 <span class="ws-line"></span></div>';
+}
+function wsSetup(note){
+ stopTick();
+ scrollTo(0,0);
+ document.body.classList.add('ws-on');
+ app.innerHTML=`<div class="card"><h2 style="color:#5f3dc4;margin:.2em 0">🖨️ 列印工作紙</h2>
+ <p class="pick">揀課題、難度和題數，然後印一張 A4 工作紙。不會記分，也不會送到試算表。</p>
+ <div class="chips" id="wdiffs"><button type="button" class="chip all" data-wdiff="all"><b>All levels</b></button><button type="button" class="chip" data-wdiff="easy"><b>Easy</b></button><button type="button" class="chip" data-wdiff="medium"><b>Medium</b></button><button type="button" class="chip" data-wdiff="hard"><b>Hard</b></button></div>
+ <div class="chips" id="wcats"><button type="button" class="chip all" data-wcat="all"><b>All types</b><small></small></button>`+
+ CATS.map(([id,name])=>`<button type="button" class="chip" data-wcat="${id}"><b>${esc(name)}</b><small></small></button>`).join('')+
+ `</div>
+ <p class="pick">題目數量</p>
+ <div class="chips" id="wns">${[10,20,30].map(n=>`<button type="button" class="chip dur" data-wn="${n}"><b>${n}</b></button>`).join('')}</div>
+ <label class="ws-ck"><input type="checkbox" id="wsWeak"> 集中弱項／錯過的題目</label>
+ <p class="hint" id="wsWeakNote"></p>
+ <label class="ws-ck"><input type="checkbox" id="wsKeyOn"> 附答案頁（另頁，可關掉）</label>
+ <p class="pick" id="wsMsg"></p>
+ <button class="btn" id="wsGo" type="button">📄 產生工作紙</button>
+ <button class="btn ghost" id="hm" type="button">🏠 Home</button></div>`;
+ const paint=()=>{
+  app.querySelectorAll('[data-wdiff]').forEach(el=>{
+   const id=el.dataset.wdiff;
+   el.classList.toggle('on',id==='all'?ws.diffs===null:!!(ws.diffs&&ws.diffs.includes(id)));
+  });
+  app.querySelectorAll('[data-wcat]').forEach(el=>{
+   const id=el.dataset.wcat;
+   el.classList.toggle('on',id==='all'?ws.cats===null:!!(ws.cats&&ws.cats.includes(id)));
+   const small=el.querySelector('small');
+   if(!small)return;
+   const n=id==='all'?Q.filter(q=>inDiff(q,ws.diffs)).length:Q.filter(q=>q.cat===id&&inDiff(q,ws.diffs)).length;
+   small.textContent=n+' question'+(n===1?'':'s');
+  });
+  app.querySelectorAll('[data-wn]').forEach(el=>el.classList.toggle('on',+el.dataset.wn===ws.n));
+  const poolN=wsPool().length;
+  const missed=wsPool().filter(q=>wsMissSet().has(q.id)).length;
+  document.getElementById('wsWeak').checked=ws.weak;
+  document.getElementById('wsKeyOn').checked=ws.key;
+  document.getElementById('wsWeakNote').textContent=missed?`這部裝置的進度裡，符合篩選的錯過題有 ${missed} 題。`:'這部裝置還沒有符合篩選的錯過題，會改從較弱的課題抽題。';
+  const msg=document.getElementById('wsMsg');
+  msg.textContent=poolN?`符合 ${poolN} 題，將印 ${Math.min(ws.n,poolN)} 題。`:'沒有符合的題目。';
+  const go=document.getElementById('wsGo');
+  go.disabled=poolN===0;
+ };
+ paint();
+ if(typeof note==='string'&&note)document.getElementById('wsMsg').textContent=note;
+ app.querySelectorAll('[data-wcat]').forEach(el=>el.onclick=()=>{
+  const id=el.dataset.wcat;
+  if(id==='all')ws.cats=null;
+  else if(ws.cats===null)ws.cats=[id];
+  else if(ws.cats.includes(id))ws.cats=ws.cats.filter(x=>x!==id);
+  else ws.cats=ws.cats.concat(id);
+  paint();
+ });
+ app.querySelectorAll('[data-wdiff]').forEach(el=>el.onclick=()=>{
+  const id=el.dataset.wdiff;
+  if(id==='all')ws.diffs=null;
+  else if(ws.diffs===null)ws.diffs=[id];
+  else if(ws.diffs.includes(id))ws.diffs=ws.diffs.filter(x=>x!==id);
+  else ws.diffs=ws.diffs.concat(id);
+  paint();
+ });
+ app.querySelectorAll('[data-wn]').forEach(el=>el.onclick=()=>{ws.n=+el.dataset.wn;paint()});
+ document.getElementById('wsWeak').onchange=e=>{ws.weak=e.target.checked;paint()};
+ document.getElementById('wsKeyOn').onchange=e=>{ws.key=e.target.checked};
+ document.getElementById('wsGo').onclick=()=>{if(wsPool().length)wsSheet();else paint()};
+ document.getElementById('hm').onclick=home;
+}
+function wsSheet(){
+ const ids=wsChoose();
+ if(!ids.length)return wsSetup('沒有符合的題目。');
+ const qs=ids.map(byId).filter(Boolean);
+ if(!qs.length)return wsSetup('沒有符合的題目。');
+ stopTick();
+ scrollTo(0,0);
+ document.body.classList.add('ws-on');
+ const missed=ws.weak?wsPool().filter(q=>wsMissSet().has(q.id)).length:0;
+ app.innerHTML=`<div class="noprint">
+ <button class="btn" id="wsPrint" type="button">🖨️ 列印 / 儲存為 PDF</button>
+ <button class="btn alt" id="wsShuffle" type="button">🔀 重新洗牌</button>
+ <label class="ws-ck"><input type="checkbox" id="wsKeyTog"${ws.key?' checked':''}> 顯示答案頁</label>
+ ${ws.weak&&!missed?'<p class="pick">沒有錯過的題，已按較弱的課題抽題。</p>':''}
+ <button class="btn ghost" id="wsBack" type="button">⚙️ 返回設定</button>
+ <button class="btn ghost" id="hm" type="button">🏠 Home</button>
+ </div>
+ <article class="ws">
+ <h2>P6 Maths · 數學工作紙</h2>
+ <p class="ws-sub">${esc(wsTopicLine())}</p>
+ <div class="ws-meta"><span>姓名 <i></i></span><span>日期 <i></i></span><span>分數 <i class="score"></i>／${qs.length}</span></div>
+ <ol>${qs.map(q=>`<li class="ws-q"><div class="ws-body">${q.q}</div>${wsChoices(q)}${wsWrite(q)}</li>`).join('')}</ol>
+ <section class="ws-key" id="wsKey"${ws.key?'':' hidden'}>
+ <h2>答案</h2>
+ <p class="ws-sub">${esc(wsTopicLine())} · ${qs.length} 題</p>
+ <ol>${qs.map(q=>`<li>${esc(wsAnsText(q))} <span class="ws-id">${esc(q.id)}</span></li>`).join('')}</ol>
+ </section>
+ </article>`;
+ document.getElementById('wsPrint').onclick=()=>window.print();
+ document.getElementById('wsShuffle').onclick=()=>wsSheet();
+ document.getElementById('wsKeyTog').onchange=e=>{
+  ws.key=e.target.checked;
+  const key=document.getElementById('wsKey');
+  if(key)key.hidden=!ws.key;
+ };
+ document.getElementById('wsBack').onclick=()=>wsSetup();
+ document.getElementById('hm').onclick=home;
 }
 async function boot(){
  app.innerHTML='<div class="card"><p class="pick">Loading extra questions…</p></div>';
