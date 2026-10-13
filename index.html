@@ -1061,13 +1061,14 @@ function wsChoose(){
  const pool=wsPool();
  if(!pool.length)return [];
  const n=Math.min(ws.n,pool.length);
- if(!ws.weak)return shuf(pool).slice(0,n);
+ const take=list=>shuf(list).slice(0,n).map(q=>q.id);
+ if(!ws.weak)return take(pool);
  const miss=wsMissSet();
  const hot=pool.filter(q=>miss.has(q.id));
  const cool=pool.filter(q=>!miss.has(q.id));
  const jitter=new Map(cool.map(q=>[q.id,Math.random()]));
  cool.sort((a,b)=>weakness(b.cat)-weakness(a.cat)||jitter.get(a.id)-jitter.get(b.id));
- return shuf(shuf(hot).concat(cool).slice(0,n));
+ return shuf(shuf(hot).concat(cool).slice(0,n)).map(q=>q.id);
 }
 function wsPlainOpt(q,k){
  const o=q.o&&q.o[k];
