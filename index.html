@@ -159,14 +159,7 @@ function openVid(cat){ if(VID[cat]&&window.openLearn) openLearn(cat); }
 function closeVid(){ if(window.closeLearn) closeLearn(); }
 function bindWatch(root){(root||document).querySelectorAll('[data-watch]').forEach(b=>{b.onclick=e=>{e.stopPropagation();openVid(b.dataset.watch)}})}
 const Q=CLASSIC_Q.slice();
-// --- tolerant checking
-function num(s){s=s.toLowerCase().replace(/[,\s$]|cm³|cm3|cm|mm|ml|kg|g\b|l\b|bags?|bowls?|eggs?|books?|marks?/g,' ').trim().replace(/\s+/g,' ');
- let m;if(m=s.match(/^(-?\d+) (\d+)\/(\d+)$/))return +m[1]+m[2]/m[3];if(m=s.match(/^(-?\d*\.?\d+)\/(\d*\.?\d+)$/))return m[1]/m[2];s=s.replace(/ /g,'');return /^-?\d*\.?\d+$/.test(s)?+s:NaN}
-function check(q,v){const a=q.a,s=v.toLowerCase();
- if(typeof a=='number')return Math.abs(num(v)-a)<1e-9;
- if(a.frac)return Math.abs(num(v)-a.frac[0]/a.frac[1])<1e-9;
- if(a.set){const n=(s.match(/\d+/g)||[]).map(Number);return n.length==a.set.length&&a.set.every(x=>n.includes(x))}
- if(a.days){const all=['mon','tue','wed','thu','fri'];const f=all.filter(d=>s.includes(d));return f.length==2&&a.days.every(d=>f.includes(d))}}
+// Short answers are marked by check / bankOk in classic.js.
 const MA=['C','A','D','A','B','B','D','B','C','A','B','D','C','C','D','B','A','C','A','C'];// key letters, verified on load
 Q.slice(0,20).forEach((q,i)=>{if('ABCD'[q.a]!==MA[i])console.error('Key mismatch',q.id)});
 Q.forEach(q=>{if(!CN[q.cat]||!q.tips||q.tips.length<1||q.tips.length>3)console.error('Bad question meta',q.id)});
@@ -214,27 +207,6 @@ function lineSvg(d){
  s+=`<text x="14" y="${ly}" text-anchor="middle" transform="rotate(-90 14 ${ly})">${esc(d.y_label)}</text></svg>`;
  return s;
 }
-function looksNumeric(a){
- const s=String(a).trim().replace(/[$,]/g,'');
- return /^-?\d+(\.\d+)?$/.test(s)||/^-?\d+\s+\d+\/\d+$/.test(s)||/^-?\d+\/\d+$/.test(s);
-}
-function loose(s){return String(s).toLowerCase().replace(/\s+/g,'')}
-function numIn(q,v){
- let s=String(v);
- if(q.unit){const u=q.unit.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');s=s.replace(new RegExp(u,'ig'),' ')}
- return num(s);
-}
-function bankOk(q,v){
- const folded=loose(v), n=numIn(q,v);
- for(const a of q.accepted){
-  if(typeof a==='number'){if(typeof n==='number'&&!Number.isNaN(n)&&Math.abs(n-a)<1e-6)return true}
-  else{
-   if(loose(a)===folded)return true;
-   if(looksNumeric(a)){const an=num(String(a));if(typeof n==='number'&&!Number.isNaN(n)&&!Number.isNaN(an)&&Math.abs(n-an)<1e-6)return true}
-  }
- }
- return false;
-}
 function optionSvgs(raw){
  const o=raw.option_svgs;
  if(!o)return null;
@@ -250,7 +222,7 @@ function fromBank(raw){
  const fig=raw.svg?`<div class="fig">${raw.svg}</div>`:'';
  const qhtml=(graph?lineSvg(graph):'')+fig+esc(raw.question||'');
  const pics=optionSvgs(raw);
- const base={id:raw.id,cat:raw.code,q:qhtml,w,tips,diff:raw.difficulty,bank:true,unit:raw.unit||'',answerText:raw.answer,accepted:raw.accepted_answers||[],pics,diagram:!!(raw.has_diagram||raw.svg||graph)};
+ const base={id:raw.id,cat:raw.code,q:qhtml,w,tips,diff:raw.difficulty,bank:true,unit:raw.unit||'',answerText:raw.answer,accepted:raw.accepted_answers||[],rawQ:raw.question||'',pics,diagram:!!(raw.has_diagram||raw.svg||graph)};
  if(raw.format==='mcq')return Object.assign(base,{t:'m',o:raw.options||[],a:'ABCD'.indexOf(raw.answer)});
  return Object.assign(base,{t:'s',a:null,h:raw.unit?'Answer in '+raw.unit:''});
 }

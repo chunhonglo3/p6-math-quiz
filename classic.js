@@ -47,3 +47,380 @@ S('B15a','T17',G+'(a) Between which two consecutive days was the change in books
 S('B15b','T17',G+'(b) What was the average number of books borrowed per day?',52,'35+50+45+70+60 = 260. 260 ÷ 5 = 52.','',['Add the books from every day.','Count how many days there are.','Average = total ÷ number of days.']),
 S('B15c','T17',G+'(c) What fraction of the total number of books was borrowed on Thursday?',{frac:[7,26]},'70 / 260 = 7/26.','Fraction, e.g. 1/2',['Read Thursday’s number of books.','Add all the days to get the total.','Fraction = Thursday ÷ total. Then simplify.']),
 ];
+
+/* Short-answer marking shared by the quiz.
+   Tolerant of case, spacing, full-width characters, list separators,
+   variable labels, equivalent number forms, optional units, and
+   equation chains that fill in the blanks from the question. */
+const ANSWER_IGNORABLE = [
+  'ball','balls','stick','sticks','face','faces','edge','edges',
+  'time','times','left','flower','flowers','more','pair','pairs','place',
+  'of','the','a','an','to','is','are','equals','equal',
+  'cm3','cm2','m3','m2','cm','mm','km','ml','kg','mg','g','l','m',
+  'sec','secs','second','seconds','minute','minutes','min','mins',
+  'mark','marks','dollar','dollars','cent','cents',
+  'litre','litres','liter','liters','millilitre','millilitres','milliliter','milliliters',
+  'metre','metres','meter','meters','gram','grams','kilogram','kilograms',
+  'cubic','square','bag','bags','bowl','bowls','egg','eggs','book','books','cup','cups'
+];
+function escapeRe(s){return String(s).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
+function baseNorm(s){
+  return String(s==null?'':s)
+    .normalize('NFKC')
+    .replace(/\u3001/g,',')
+    .replace(/[−–—]/g,'-')
+    .replace(/[×·∙*]/g,'x')
+    .replace(/[³]/g,'3')
+    .replace(/[²]/g,'2')
+    .replace(/[$£¥]/g,'')
+    .toLowerCase()
+    .replace(/\s+/g,' ')
+    .trim();
+}
+function closeNums(a,b){
+  if(typeof a!=='number'||typeof b!=='number')return false;
+  if(!Number.isFinite(a)||!Number.isFinite(b))return false;
+  return Math.abs(a-b)<=1e-6;
+}
+function protectThousands(s){
+  let prev;
+  do{
+    prev=s;
+    s=s.replace(/(\d),(\d{3})(?!\d)/g,'$1$2');
+  }while(s!==prev);
+  return s;
+}
+function stripAssign(s){
+  return s.replace(/(^|[^a-z])([a-z])\s*(?:=|is)\s*/g,'$1');
+}
+function unifySeps(s){
+  return s.replace(/\s*(?:,|;|&|\band\b|和)\s*/g,',');
+}
+function canon(s){
+  let t=unifySeps(baseNorm(s));
+  t=protectThousands(t);
+  t=stripAssign(t);
+  t=t.replace(/([a-z])\.(?=[a-z])/g,'$1');
+  t=t.replace(/\s+/g,'');
+  t=t.replace(/([a-z])-(?=[a-z])/g,'$1');
+  t=t.replace(/(\d)x(?=[a-z(])/g,'$1');
+  t=t.replace(/([a-z)])x(?=\d)/g,'$1');
+  t=t.replace(/,+/g,',').replace(/^,|,$/g,'');
+  t=t.replace(/[.!?]+$/g,'');
+  return t;
+}
+function extraUnits(unit){
+  const set=new Set();
+  const u=baseNorm(unit||'').replace(/\s+/g,'');
+  if(!u||u==='$')return set;
+  set.add(u);
+  if(u.endsWith('s')&&u.length>2)set.add(u.slice(0,-1));
+  else if(!u.endsWith('s'))set.add(u+'s');
+  return set;
+}
+function ignorableWordRe(unit){
+  const words=ANSWER_IGNORABLE.concat([...extraUnits(unit)]);
+  words.sort((a,b)=>b.length-a.length);
+  return new RegExp('\\b(?:'+words.map(escapeRe).join('|')+')\\b','g');
+}
+function stripGluedUnits(s,unit){
+  let t=s;
+  const longs=['millilitres','milliliters','kilograms','millilitre','milliliter','kilogram','seconds','second','minutes','litres','liters','metres','meters','grams','cm3','cm2','m3','m2','cm','mm','km','ml','kg','mg'];
+  longs.sort((a,b)=>b.length-a.length);
+  t=t.replace(new RegExp('(\\d)\\s*(?:'+longs.join('|')+')\\b','g'),'$1 ');
+  t=t.replace(/(\d)\s*(?:l|g|m)\b/g,'$1 ');
+  extraUnits(unit).forEach(u=>{
+    if(u)t=t.replace(new RegExp('(\\d)\\s*'+escapeRe(u)+'\\b','g'),'$1 ');
+  });
+  return t;
+}
+function parseNumberToken(tok){
+  const t=String(tok).trim();
+  let m;
+  if((m=t.match(/^(-?)(\d+)\s+(\d+)\/(\d+)$/))){
+    const den=+m[4];
+    if(!den)return null;
+    const mag=+m[2]+(+m[3])/den;
+    return m[1]==='-'?-mag:mag;
+  }
+  if((m=t.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/))){
+    const den=+m[2];
+    if(!den)return null;
+    return +m[1]/den;
+  }
+  if((m=t.match(/^(-?(?:\d+(?:\.\d+)?|\.\d+))$/)))return +m[1];
+  return null;
+}
+function parseNumberList(s){
+  const t=String(s).replace(/\s*\/\s*/g,'/').trim();
+  if(!t)return null;
+  if(/^(-?\d+\s+\d+\/\d+|-?\d+(?:\.\d+)?\/-?\d+(?:\.\d+)?|-?(?:\d+(?:\.\d+)?|\.\d+))$/.test(t)){
+    const n=parseNumberToken(t);
+    return n==null||Number.isNaN(n)?null:[n];
+  }
+  if(!/\s/.test(t))return null;
+  const bits=t.split(/\s+/), nums=[];
+  for(const b of bits){
+    if(!/^(-?\d+(?:\.\d+)?\/-?\d+(?:\.\d+)?|-?(?:\d+(?:\.\d+)?|\.\d+))$/.test(b))return null;
+    const n=parseNumberToken(b);
+    if(n==null||Number.isNaN(n))return null;
+    nums.push(n);
+  }
+  return nums.length?nums:null;
+}
+function mixedExtract(p){
+  const numbers=[];
+  const rest=p.replace(/-?\d+\s+\d+\/\d+|-?\d+(?:\.\d+)?\/-?\d+(?:\.\d+)?|-?\d+(?:\.\d+)?/g,m=>{
+    const n=parseNumberToken(m);
+    if(n==null||Number.isNaN(n))return m;
+    numbers.push(n);
+    return ' ';
+  });
+  const words=rest.split(/[^a-z]+/).filter(Boolean).map(w=>w.replace(/-/g,''));
+  return {numbers,words};
+}
+function parsePart(part,unit){
+  let p=String(part).trim().replace(/[.!?]+$/g,'');
+  if(!p)return {numbers:[],words:[]};
+  p=p.replace(ignorableWordRe(unit),' ');
+  p=stripGluedUnits(p,unit);
+  p=p.replace(/\s*\/\s*/g,'/').replace(/\s+/g,' ').trim();
+  if(!p)return {numbers:[],words:[]};
+  const compact=p.replace(/\s+/g,'');
+  if(/[a-z]/.test(compact)&&/\d/.test(compact)&&/[a-z]\d|\d[a-z]/.test(compact)){
+    let expr=compact.replace(/(\d)x(?=[a-z(])/g,'$1').replace(/([a-z)])x(?=\d)/g,'$1');
+    expr=expr.replace(/([a-z])-(?=[a-z])/g,'$1');
+    return {numbers:[],words:[expr]};
+  }
+  if(!/[a-z]/.test(p)){
+    const nums=parseNumberList(p);
+    if(!nums)return null;
+    return {numbers:nums,words:[]};
+  }
+  if(/^[a-z][a-z-]*(\s+[a-z][a-z-]*)*$/.test(p)){
+    return {numbers:[],words:p.split(/\s+/).map(w=>w.replace(/-/g,''))};
+  }
+  const mixed=mixedExtract(p);
+  if(!mixed.numbers.length&&!mixed.words.length)return null;
+  return mixed;
+}
+function signature(raw,unit){
+  let s=unifySeps(baseNorm(raw));
+  s=protectThousands(s);
+  s=stripAssign(s);
+  const parts=s.split(',').map(x=>x.trim()).filter(Boolean);
+  const numbers=[], words=[];
+  for(const part of parts){
+    const bit=parsePart(part,unit);
+    if(!bit)return null;
+    numbers.push(...bit.numbers);
+    words.push(...bit.words);
+  }
+  if(!numbers.length&&!words.length)return null;
+  return {numbers,words};
+}
+function maybeGrouped(nums){
+  if(!nums||nums.length<2)return null;
+  if(!nums.every(n=>Number.isInteger(n)&&n>=0&&n<=1e15))return null;
+  const parts=nums.map(n=>String(n));
+  if(parts[0].length>3)return null;
+  if(!parts.slice(1).every(p=>p.length===3))return null;
+  const v=Number(parts.join(''));
+  return Number.isSafeInteger(v)?v:null;
+}
+function sigEqual(exp,got){
+  if(!exp||!got)return false;
+  if(exp.numbers.length===got.numbers.length&&exp.words.length===got.words.length
+    &&exp.numbers.every((n,i)=>closeNums(n,got.numbers[i]))
+    &&exp.words.every((w,i)=>w===got.words[i])
+    &&(exp.numbers.length||exp.words.length))return true;
+  if(!exp.words.length&&!got.words.length&&exp.numbers.length===1&&got.numbers.length>1){
+    const g=maybeGrouped(got.numbers);
+    if(g!=null&&closeNums(g,exp.numbers[0]))return true;
+  }
+  return false;
+}
+function parseQAtom(tok){
+  const t=String(tok).replace(/\s+/g,'');
+  let m;
+  if((m=t.match(/^(\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/)))return {num:{v:+m[1]},den:{v:+m[2]},bare:false};
+  if((m=t.match(/^(\d+(?:\.\d+)?)\/([a-z])$/)))return {num:{v:+m[1]},den:{x:m[2]},bare:false};
+  if((m=t.match(/^([a-z])\/(\d+(?:\.\d+)?)$/)))return {num:{x:m[1]},den:{v:+m[2]},bare:false};
+  if((m=t.match(/^([a-z])\/([a-z])$/)))return {num:{x:m[1]},den:{x:m[2]},bare:false};
+  if((m=t.match(/^(\d+(?:\.\d+)?)$/)))return {num:{v:+m[1]},den:{v:1},bare:true};
+  if((m=t.match(/^([a-z])$/)))return {num:{x:m[1]},den:{v:1},bare:true};
+  return null;
+}
+function chainVars(parts){
+  const names=[];
+  parts.forEach(p=>{
+    if(p.num.x&&names.indexOf(p.num.x)<0)names.push(p.num.x);
+    if(p.den.x&&names.indexOf(p.den.x)<0)names.push(p.den.x);
+  });
+  return names;
+}
+function findQuestionChain(text){
+  const src=baseNorm(text).replace(/<[^>]+>/g,' ');
+  const atom='(?:\\d+(?:\\.\\d+)?\\s*\\/\\s*(?:\\d+(?:\\.\\d+)?|[a-z])|[a-z]\\s*\\/\\s*(?:\\d+(?:\\.\\d+)?|[a-z])|\\d+(?:\\.\\d+)?|[a-z])';
+  const re=new RegExp(atom+'(?:\\s*=\\s*'+atom+')+','gi');
+  let m,best=null;
+  while((m=re.exec(src))){
+    const bits=m[0].split('=').map(x=>x.trim());
+    if(bits.length<2||bits.length>6)continue;
+    const parts=bits.map(parseQAtom);
+    if(parts.some(p=>!p))continue;
+    const vars=chainVars(parts);
+    const frac=parts.some(p=>!p.bare);
+    if(!vars.length||!frac)continue;
+    if(!best||vars.length>best.vars.length)best={parts,vars};
+  }
+  return best;
+}
+function parseAssignments(answer){
+  const s=baseNorm(answer);
+  const out={};
+  const re=/([a-z])\s*=\s*(-?\d+(?:\.\d+)?|\d+\s*\/\s*\d+)/g;
+  let m;
+  while((m=re.exec(s))){
+    out[m[1]]=m[2].indexOf('/')>=0?parseNumberToken(m[2].replace(/\s+/g,'')):+m[2];
+  }
+  return out;
+}
+function parseNumericChain(given){
+  let s=baseNorm(given).replace(/[.!?]+$/g,'').trim();
+  if(s.indexOf('=')<0)return null;
+  const bits=s.split('=').map(x=>x.trim()).filter(Boolean);
+  if(bits.length<2||bits.length>6)return null;
+  const atoms=[];
+  for(const bit of bits){
+    const t=bit.replace(/\s+/g,'');
+    let m, atom=null;
+    if((m=t.match(/^(\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/)))atom={num:+m[1],den:+m[2],bare:false};
+    else if((m=t.match(/^(\d+(?:\.\d+)?)$/)))atom={num:+m[1],den:1,bare:true};
+    if(!atom||!atom.den)return null;
+    atoms.push(atom);
+  }
+  return atoms;
+}
+function expectedVarMap(qChain,acceptedList){
+  const map={};
+  acceptedList.forEach(a=>{
+    const asg=parseAssignments(a);
+    Object.keys(asg).forEach(k=>{map[k]=asg[k]});
+  });
+  if(qChain.vars.every(n=>map[n]!=null&&Number.isFinite(map[n])))return map;
+  if(qChain.vars.length<2)return null;
+  for(const a of acceptedList){
+    const sig=signature(a,'');
+    if(sig&&!sig.words.length&&sig.numbers.length===qChain.vars.length){
+      const z={};
+      qChain.vars.forEach((n,i)=>{z[n]=sig.numbers[i]});
+      return z;
+    }
+  }
+  return null;
+}
+function slotsMatch(qAtom,sAtom,assigns){
+  const sval=sAtom.num/sAtom.den;
+  if(qAtom.bare){
+    if(qAtom.num.x){
+      if(assigns[qAtom.num.x]!=null&&!closeNums(assigns[qAtom.num.x],sval))return false;
+      assigns[qAtom.num.x]=sval;
+      return true;
+    }
+    return closeNums(qAtom.num.v,sval);
+  }
+  if(sAtom.bare)return false;
+  function slot(slot,value){
+    if(slot.x){
+      if(assigns[slot.x]!=null&&!closeNums(assigns[slot.x],value))return false;
+      assigns[slot.x]=value;
+      return true;
+    }
+    return closeNums(slot.v,value);
+  }
+  return slot(qAtom.num,sAtom.num)&&slot(qAtom.den,sAtom.den);
+}
+function chainMatches(question,acceptedList,given){
+  const q=findQuestionChain(question);
+  if(!q)return false;
+  const student=parseNumericChain(given);
+  if(!student)return false;
+  const expected=expectedVarMap(q,acceptedList);
+  if(!expected)return false;
+  function rec(i,j,assigns){
+    if(j===student.length)return q.vars.every(n=>assigns[n]!=null&&closeNums(assigns[n],expected[n]));
+    for(let k=i;k<q.parts.length;k++){
+      const next=Object.assign({},assigns);
+      if(slotsMatch(q.parts[k],student[j],next)&&rec(k+1,j+1,next))return true;
+    }
+    return false;
+  }
+  return rec(0,0,{});
+}
+function answersMatch(accepted,given,ctx){
+  ctx=ctx||{};
+  const g=String(given==null?'':given).trim();
+  if(!g)return false;
+  const list=(accepted||[]).filter(a=>a!=null&&String(a).trim()!=='');
+  for(const a of list){
+    if(canon(g)===canon(a))return true;
+    if(sigEqual(signature(g,ctx.unit),signature(a,ctx.unit)))return true;
+  }
+  if(ctx.question&&chainMatches(ctx.question,list,g))return true;
+  return false;
+}
+function check(q,v){
+  const a=q&&q.a;
+  const s=baseNorm(v);
+  if(typeof a==='number'){
+    const sig=signature(v,'');
+    if(!sig||sig.words.length)return false;
+    if(sig.numbers.length===1)return closeNums(sig.numbers[0],a);
+    const grouped=maybeGrouped(sig.numbers);
+    return grouped!=null&&closeNums(grouped,a);
+  }
+  if(a&&a.frac){
+    const sig=signature(v,'');
+    return !!(sig&&!sig.words.length&&sig.numbers.length===1&&closeNums(sig.numbers[0],a.frac[0]/a.frac[1]));
+  }
+  if(a&&a.set){
+    const sig=signature(v,'');
+    let nums=sig?sig.numbers.slice():null;
+    if(!nums)nums=(s.match(/\d+(?:\.\d+)?/g)||[]).map(Number);
+    if(nums.length!==a.set.length)return false;
+    const got=nums.slice().sort((x,y)=>x-y);
+    const exp=a.set.slice().sort((x,y)=>x-y);
+    return exp.every((n,i)=>closeNums(n,got[i]));
+  }
+  if(a&&a.days){
+    const all=['mon','tue','wed','thu','fri'];
+    const f=all.filter(d=>s.indexOf(d)>=0);
+    return f.length===2&&a.days.every(d=>f.indexOf(d)>=0);
+  }
+  return false;
+}
+function bankOk(q,v){
+  const accepted=(q&&q.accepted?q.accepted:[]).slice();
+  if(q&&q.answerText!=null&&String(q.answerText).trim()!==''&&!accepted.some(a=>String(a)===String(q.answerText)))accepted.unshift(q.answerText);
+  return answersMatch(accepted,v,{unit:(q&&q.unit)||'',question:(q&&(q.rawQ||q.q))||''});
+}
+function runAnswerSelfTest(){
+  const accepted=['c = 12, d = 3'];
+  const ctx={question:'18/24 = 9/c = d/4. Find c and d.',unit:''};
+  const ok=['12;3','9/12=3/4','18/24=9/12=3/4','18/24 = 9/12 = 3/4','c = 12 ; d = 3','c = 12 , d = 3','c=12, d=3','12, 3','１２；３','c＝１２，d＝３','9／12＝3／4','12 and 3','12、3','c = 12和d = 3'];
+  const bad=['3;12','9/13=3/4','12','c=12','d=3','18/24=9/11=3/4','9/12','3/4','18/24=9/12'];
+  const fails=[];
+  ok.forEach(g=>{if(!answersMatch(accepted,g,ctx))fails.push('expected accept: '+g)});
+  bad.forEach(g=>{if(answersMatch(accepted,g,ctx))fails.push('expected reject: '+g)});
+  if(fails.length){
+    console.error('answer self-test failed');
+    fails.forEach(f=>console.error(f));
+    return false;
+  }
+  console.log('answer self-test passed ('+ok.length+' accepted T7-03 forms)');
+  return true;
+}
+if(typeof module!=='undefined'&&module.exports){
+  module.exports={answersMatch,check,bankOk,runAnswerSelfTest,CLASSIC_Q};
+}
