@@ -1,0 +1,936 @@
+<!DOCTYPE html><html lang="zh-Hant-HK"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<!-- Parent page. Not linked from index.html or chinese.html. -->
+<title>Ansbie 練習進度</title><style>
+*{box-sizing:border-box}
+body{margin:0;font-family:"PingFang HK","Noto Sans CJK TC","Microsoft JhengHei",system-ui,-apple-system,"Segoe UI",sans-serif;background:linear-gradient(#fff0f6,#eef6ff);color:#333;min-height:100vh}
+.w{max-width:560px;margin:auto;padding:14px 14px calc(24px + env(safe-area-inset-bottom))}
+h1{color:#d6336c;text-align:center;font-size:1.45em;line-height:1.25;margin:.35em 0 .15em}
+h2{color:#5f3dc4;font-size:1.15em;margin:.2em 0 .45em}
+h3{color:#5f3dc4;font-size:1em;margin:.8em 0 .3em}
+.card{background:#fff;border-radius:20px;padding:16px;box-shadow:0 4px 14px #0001;margin:10px 0}
+.pick{text-align:center;color:#666;margin:4px 0 8px;line-height:1.4}
+.hint{font-size:.85em;color:#888}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.9em;color:#666;margin:6px 2px}
+.row{display:flex;align-items:center;gap:8px;margin:7px 0}
+.row .name{width:46%;font-size:.92em;line-height:1.25;overflow-wrap:anywhere}
+.hbar{flex:1;height:14px;background:#ffe3ec;border-radius:8px;overflow:hidden}
+.hbar i{display:block;height:100%;width:0;background:#adb5bd}
+.hbar i.bad{background:#fa5252}.hbar i.mid{background:#fab005}.hbar i.good{background:#40c057}
+.row b{width:3.2em;text-align:right;font-size:.9em}
+.sub{margin:-2px 0 8px 0;color:#777;font-size:.82em}
+.flag{display:inline-block;background:#ffe3e3;color:#c92a2a;border-radius:999px;padding:0 7px;font-size:.75em;font-weight:800;margin-left:4px;vertical-align:1px}
+.tag{display:inline-block;background:#fff0f6;color:#c2255c;font-weight:700;border-radius:999px;padding:2px 8px;font-size:.8em}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:#fff0f6;border-radius:14px;padding:10px 12px}
+.stat b{display:block;font-size:1.35em;color:#d6336c;line-height:1.2}
+.stat span{color:#666;font-size:.82em}
+.live{display:flex;gap:12px;align-items:flex-start}
+.dot{width:14px;height:14px;border-radius:50%;background:#adb5bd;margin-top:5px;flex:none}
+.live.on .dot{background:#40c057;box-shadow:0 0 0 6px #d3f9d8}
+.live b{color:#2b8a3e}
+.live.off b{color:#5f3dc4}
+.btn{display:block;width:100%;font-size:1.05em;padding:14px;border:0;border-radius:16px;background:#f06595;color:#fff;font-weight:700;margin:8px 0;cursor:pointer;font-family:inherit}
+.btn.alt{background:#9775fa}.btn.ghost{background:#eee;color:#555}
+.btn.mini{width:auto;display:inline-block;padding:8px 12px;margin:0;font-size:.92em}
+.btn:disabled{opacity:.55}
+input[type=password],input[type=text].rk{width:100%;font-size:1.15em;padding:14px;border:3px solid #e5dbff;border-radius:16px;margin:8px 0}
+.showk{display:flex;align-items:center;gap:8px;font-size:.95em;color:#555}
+.tools{display:flex;flex-wrap:wrap;gap:8px}
+.tools .btn{width:auto;flex:1 1 140px;margin:0}
+details.item,details.sess{background:#fff;border-radius:16px;padding:10px 12px;margin:8px 0;box-shadow:0 2px 8px #0001}
+details summary{cursor:pointer;font-weight:700;line-height:1.4;overflow-wrap:anywhere}
+details summary small{display:block;font-weight:600;color:#666}
+.stem{font-size:1.05em;line-height:1.45;overflow-wrap:anywhere;margin:8px 0}
+.fig svg,.stem svg,.qsvg svg{width:100%;max-width:100%;height:auto;display:block}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.pair>div{border-radius:12px;padding:8px 10px;min-width:0}
+.pair span{display:block;font-size:.78em;color:#666;font-weight:700}
+.pair .aval{font-weight:700;line-height:1.35;overflow-wrap:anywhere}
+.hers{background:#fff5f5}.right{background:#ebfbee}
+.work{background:#f8f5ff;border-radius:12px;padding:10px;margin-top:8px;line-height:1.45;overflow-wrap:anywhere}
+.work b{color:#5f3dc4}
+.blank{display:inline-block;min-width:3.2em;border-bottom:2px solid #9775fa}
+.optgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.opt{border:3px solid #e5dbff;border-radius:14px;background:#f8f5ff;padding:8px;min-width:0}
+.opt.ok{background:#d3f9d8;border-color:#40c057}.opt.no{background:#ffe3e3;border-color:#fa5252}
+.opt b{color:#7048e8;margin-right:6px}
+.opt svg{width:auto;max-width:100%;max-height:28vh;height:auto;display:block;margin:4px auto}
+.chart{width:100%;height:auto;display:block}
+.legend{display:flex;gap:12px;justify-content:center;font-size:.82em;color:#666}
+.sw{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.sw.ok{background:#40c057}.sw.no{background:#fa5252}
+.banner{background:#fff3bf;color:#5c4a00;border-radius:14px;padding:10px 12px;margin:8px 0;line-height:1.4}
+.err{background:#fff5f5;color:#c92a2a;border-radius:14px;padding:10px 12px;margin:8px 0}
+.word{display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid #ffe3ec}
+.word b{color:#c2255c}
+#toastbox{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:20;display:flex;flex-direction:column;gap:8px;pointer-events:none;max-width:560px;margin:0 auto}
+.toast{pointer-events:auto;background:#fff;border-radius:16px;padding:12px 14px;box-shadow:0 6px 20px #0003;border:3px solid #f06595;line-height:1.35}
+.toast b{color:#d6336c}
+@media(max-width:380px){.pair,.stats{grid-template-columns:1fr}.row .name{width:42%}}
+</style></head><body>
+<div class="w">
+<h1>🌸 Ansbie 練習進度</h1>
+<p class="pick">家長專頁 Parent tracker</p>
+<div id="app"></div>
+</div>
+<div id="toastbox"></div>
+<script src="classic.js"></script>
+<script>
+const SYNC_URL='https://script.google.com/macros/s/AKfycbyatheq18si3u1yzWxpYZURWXaYfmmXLUIAbb8EHS1SmSqy-JBIunVIIwPBxNO_HGVx/exec';
+const KEY_LS='p6parentReadKey';
+const POLL_MS=60000;
+const LIVE_MS=5*60*1000;
+const CAP_SEC=300;
+const HK='Asia/Hong_Kong';
+const TOPICS={
+ T9:{en:'Average',zh:'平均數'},
+ T12:{en:'Water level',zh:'水位'},
+ T13:{en:'3-D shapes',zh:'立體圖形'},
+ T16:{en:'Money & charges',zh:'金錢收費'},
+ T8:{en:'Fraction word problem',zh:'分數應用題'},
+ T17:{en:'Line graph',zh:'折線圖'},
+ T5:{en:'Remainder',zh:'餘數'},
+ T6:{en:'Factors',zh:'因數'},
+ T4:{en:'Decimal computation',zh:'小數計算'},
+ T14:{en:'2-D shapes',zh:'平面圖形'},
+ T7:{en:'Fractions',zh:'分數'},
+ T10:{en:'Units',zh:'單位'},
+ T11:{en:'Volume',zh:'體積'},
+ T2:{en:'Rounding',zh:'四捨五入'},
+ T1:{en:'Whole numbers',zh:'整數'},
+ T15:{en:'Algebra',zh:'代數'},
+ T3:{en:'Decimals',zh:'小數'},
+ T18:{en:'Length & mass',zh:'長度重量'},
+ T19:{en:'Directions',zh:'方向'}
+};
+const TOPIC_ORDER=Object.keys(TOPICS);
+const ZH_UNITS={
+ 'zh-u2':{label:'(二)',name:'職業體驗'},
+ 'zh-u4':{label:'(四)',name:'潮流'},
+ 'zh-u5':{label:'(五)',name:'和時間賽跑'}
+};
+const ZH_ORDER=['zh-u2','zh-u4','zh-u5'];
+const params=new URLSearchParams(location.search);
+const DEMO=params.get('demo')==='1';
+const app=document.getElementById('app');
+let BANK={questions:[]};
+let ZH={units:{},questions:[]};
+let BY_ID={};
+let ROWS=[];
+let seeded=false;
+let pulling=false;
+let loadedOnce=false;
+let preferJsonp=false;
+let lastUpdated=0;
+let lastError='';
+let warning='';
+let qNote='';
+let wrongLimit=30;
+let sessionLimit=20;
+let gateMsg='';
+let gateValue='';
+
+function esc(s){return String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function safeRich(s){return String(s||'').replace(/<script[\s\S]*?<\/script>/gi,'').replace(/\son\w+\s*=/gi,' data-blocked=');}
+function asBool(v){
+ if(v===true||v===1)return true;
+ if(v===false||v===0||v==null||v==='')return false;
+ const s=String(v).trim().toLowerCase();
+ return s==='true'||s==='1'||s==='yes'||s==='y';
+}
+function isoHK(t){
+ const d=new Date((t||Date.now())+8*3600000), p=n=>String(n).padStart(2,'0');
+ return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'T'+p(d.getUTCHours())+':'+p(d.getUTCMinutes())+':'+p(d.getUTCSeconds())+'+08:00';
+}
+function hkParts(ms){
+ const bag={};
+ new Intl.DateTimeFormat('en-GB',{timeZone:HK,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23',weekday:'short'})
+  .formatToParts(new Date(ms)).forEach(p=>{if(p.type!=='literal')bag[p.type]=p.value;});
+ return bag;
+}
+function hkKey(ms){const p=hkParts(ms);return p.year+'-'+p.month+'-'+p.day;}
+function hkMidnight(ms){const p=hkParts(ms);return Date.parse(p.year+'-'+p.month+'-'+p.day+'T00:00:00+08:00');}
+function weekStart(ms){
+ const mid=hkMidnight(ms);
+ const wd=hkParts(mid).weekday;
+ const map={Mon:0,Tue:1,Wed:2,Thu:3,Fri:4,Sat:5,Sun:6};
+ return mid-(map[wd]||0)*86400000;
+}
+function getKey(){try{return localStorage.getItem(KEY_LS)||'';}catch(e){return '';}}
+function setKey(v){try{if(v)localStorage.setItem(KEY_LS,v);else localStorage.removeItem(KEY_LS);}catch(e){}}
+
+function topicOf(category){
+ const c=String(category||'').trim();
+ const low=c.toLowerCase();
+ if(low.startsWith('zh-')||low.startsWith('zh_')){
+  const code=(low.match(/zh-[a-z0-9]+/)||[low.replace('_','-')])[0];
+  const u=ZH_UNITS[code];
+  return {key:code,subject:'zh',en:'Chinese',zh:u?u.name:c,label:u?u.name+' '+u.label:c};
+ }
+ const exact=TOPIC_ORDER.find(code=>TOPICS[code].en.toLowerCase()===low);
+ if(exact)return packTopic(exact);
+ const code=(c.match(/T\d+/)||[])[0];
+ if(code&&TOPICS[code])return packTopic(code);
+ const loose=TOPIC_ORDER.find(k=>low.includes(TOPICS[k].en.toLowerCase()));
+ if(loose)return packTopic(loose);
+ return {key:c||'?',subject:'math',en:c||'Unknown',zh:'',label:c||'未知課題'};
+}
+function packTopic(code){
+ const t=TOPICS[code];
+ return {key:code,subject:'math',en:t.en,zh:t.zh,label:t.zh+' '+t.en};
+}
+function modeLabel(mode){
+ const m=String(mode||'');
+ const map={practice:'練習 practice',quick10:'快問十題',timed:'限時 timed',review:'錯題重溫',category:'課題練習',all:'中文 · 全部單元'};
+ if(map[m])return map[m];
+ if(ZH_UNITS[m])return '中文 · '+ZH_UNITS[m].name;
+ if(m.indexOf('zh-')===0&&ZH_UNITS[m])return '中文 · '+ZH_UNITS[m].name;
+ return m||'練習';
+}
+function tone(ok,n){
+ if(!n)return '';
+ const shown=Math.round(ok/n*100);
+ if(shown<60)return 'bad';
+ if(shown<=80)return 'mid';
+ return 'good';
+}
+function pctText(ok,n){return n?Math.round(ok/n*100)+'%':'—';}
+function fmtMin(sec){
+ const m=sec/60;
+ if(m<0.05)return '0 分鐘';
+ if(m<1)return Math.round(sec)+' 秒';
+ const r=Math.round(m*10)/10;
+ return (Math.abs(r-Math.round(r))<0.05?String(Math.round(r)):r.toFixed(1))+' 分鐘';
+}
+function fmtDur(sec){
+ sec=Math.round(Math.max(0,sec));
+ if(sec<60)return sec+' 秒';
+ const m=Math.floor(sec/60), s=sec%60;
+ if(m<60)return s?m+' 分 '+s+' 秒':m+' 分鐘';
+ const h=Math.floor(m/60);
+ return h+' 小時 '+(m%60)+' 分';
+}
+function agoText(ms,now){
+ const d=now-ms;
+ if(!isFinite(d)||d<60000)return '剛剛';
+ if(d<3600000)return Math.floor(d/60000)+' 分鐘前';
+ if(d<86400000)return Math.floor(d/3600000)+' 小時前';
+ return Math.floor(d/86400000)+' 日前';
+}
+function whenText(ms,now){
+ const p=hkParts(ms);
+ const clock=p.hour+':'+p.minute;
+ const key=hkKey(ms), today=hkKey(now), yest=hkKey(hkMidnight(now)-86400000);
+ if(key===today)return '今日 '+clock;
+ if(key===yest)return '昨日 '+clock;
+ return p.month+'月'+p.day+'日 '+clock;
+}
+function rowKey(r){return [r.timestamp,r.session_id,r.question_id,r.answer_given,r.correct?'1':'0',r.hint?'1':'0'].join('|');}
+function normalise(raw){
+ if(!raw||typeof raw!=='object')return null;
+ const user=String(raw.user==null?'':raw.user).trim().toLowerCase();
+ if(user!=='ansbie')return null;
+ const time=Number(raw.time_sec);
+ const ts=Date.parse(raw.timestamp);
+ return {
+  timestamp:String(raw.timestamp||''),
+  ts:isFinite(ts)?ts:NaN,
+  session_id:String(raw.session_id||''),
+  mode:String(raw.mode||''),
+  question_id:String(raw.question_id||''),
+  category:String(raw.category||''),
+  difficulty:String(raw.difficulty||''),
+  correct:asBool(raw.correct),
+  hint:asBool(raw.hint_used),
+  time:isFinite(time)&&time>0?time:0,
+  answer_given:String(raw.answer_given==null?'':raw.answer_given),
+  user:'ansbie'
+ };
+}
+function normaliseList(raws){
+ const out=[], seen=new Set();
+ (raws||[]).forEach(raw=>{
+  const row=normalise(raw);
+  if(!row)return;
+  const k=rowKey(row);
+  if(seen.has(k))return;
+  seen.add(k);
+  out.push(row);
+ });
+ out.sort((a,b)=>(a.ts||0)-(b.ts||0));
+ return out;
+}
+function setRaw(raws){
+ const prevKeys=new Set(ROWS.map(rowKey));
+ const prevSessions=new Set(ROWS.map(r=>r.session_id));
+ const next=normaliseList(raws);
+ const fresh=next.filter(r=>!prevKeys.has(rowKey(r)));
+ ROWS=next;
+ return {fresh,prevSessions};
+}
+function addRaw(raws){
+ const prevKeys=new Set(ROWS.map(rowKey));
+ const prevSessions=new Set(ROWS.map(r=>r.session_id));
+ const map=new Map(ROWS.map(r=>[rowKey(r),r]));
+ normaliseList(raws).forEach(r=>map.set(rowKey(r),r));
+ const next=[...map.values()].sort((a,b)=>(a.ts||0)-(b.ts||0));
+ const fresh=next.filter(r=>!prevKeys.has(rowKey(r)));
+ ROWS=next;
+ return {fresh,prevSessions};
+}
+function tally(rows){
+ const n=rows.length, ok=rows.filter(r=>r.correct).length;
+ const hints=rows.filter(r=>r.hint).length;
+ const sec=rows.reduce((s,r)=>s+Math.min(CAP_SEC,Math.max(0,r.time)),0);
+ const math=rows.filter(r=>topicOf(r.category).subject!=='zh').length;
+ return {n,ok,hints,sec,math,zh:n-math,pct:pctText(ok,n)};
+}
+function inWindow(r,start,end){return isFinite(r.ts)&&r.ts>=start&&r.ts<end;}
+function groupSessions(rows){
+ const named=new Map();
+ const loose=[];
+ rows.forEach(r=>{
+  const id=r.session_id&&r.session_id!=='none'?r.session_id:'';
+  if(id){if(!named.has(id))named.set(id,[]);named.get(id).push(r);}
+  else loose.push(r);
+ });
+ const sessions=[...named.values()];
+ loose.sort((a,b)=>(a.ts||0)-(b.ts||0));
+ let cur=[];
+ loose.forEach(r=>{
+  if(!cur.length||(isFinite(r.ts)&&isFinite(cur[cur.length-1].ts)&&r.ts-cur[cur.length-1].ts<=20*60*1000))cur.push(r);
+  else{sessions.push(cur);cur=[r];}
+ });
+ if(cur.length)sessions.push(cur);
+ sessions.forEach(s=>s.sort((a,b)=>(a.ts||0)-(b.ts||0)));
+ sessions.sort((a,b)=>(b[b.length-1].ts||0)-(a[a.length-1].ts||0));
+ return sessions;
+}
+function sessionSec(rows){
+ const sum=rows.reduce((s,r)=>s+Math.max(0,r.time),0);
+ if(sum>0)return sum;
+ const a=rows[0].ts,b=rows[rows.length-1].ts;
+ if(isFinite(a)&&isFinite(b))return Math.max(0,(b-a)/1000);
+ return 0;
+}
+function sessionTopics(rows){
+ const labels=[];
+ rows.forEach(r=>{
+  const t=topicOf(r.category).label;
+  if(labels.indexOf(t)<0)labels.push(t);
+ });
+ if(labels.length<=2)return labels.join('、')||'—';
+ return labels.slice(0,2).join('、')+'等';
+}
+function markWeak(topics){
+ const ranked=topics.filter(t=>t.n>0).slice().sort((a,b)=>(a.ok/a.n)-(b.ok/b.n)||b.n-a.n);
+ const flags=new Set();
+ ranked.forEach(t=>{if(t.n>=3&&t.ok/t.n<0.6)flags.add(t.key);});
+ let added=0;
+ ranked.forEach(t=>{
+  if(added>=3)return;
+  if(Math.round(t.ok/t.n*100)<=80){flags.add(t.key);added++;}
+ });
+ return flags;
+}
+function meaningOf(unit,word){
+ const u=ZH.units&&ZH.units[unit];
+ if(!u||!u.words)return '';
+ const w=u.words.find(x=>x.word===word);
+ return w?w.meaning:'';
+}
+function optionSvgs(raw){
+ const o=raw.option_svgs;
+ if(!o)return null;
+ if(Array.isArray(o))return o;
+ if(typeof o==='object')return ['A','B','C','D'].map(k=>o[k]||'');
+ return null;
+}
+function lineSvg(d){
+ const W=360,H=270,left=48,right=14,bottom=46;
+ const multi=d.series.length>1, top=multi?48:28;
+ const plotH=H-top-bottom, plotW=W-left-right;
+ const yMin=d.y_min, yMax=d.y_max, step=d.y_step||1;
+ const yOf=v=>top+(yMax-v)/(yMax-yMin||1)*plotH;
+ const n=d.x_labels.length;
+ const xOf=i=>left+(n<=1?plotW/2:(i/(n-1))*plotW);
+ const ticks=[];
+ for(let i=0,lim=Math.round((yMax-yMin)/step);i<=lim;i++)ticks.push(Math.round((yMin+i*step)*1000)/1000);
+ const colors=['#d6336c','#4263eb'];
+ const tick=v=>Math.abs(v-Math.round(v))<1e-6?String(Math.round(v)):String(v);
+ let s='<svg viewBox="0 0 '+W+' '+H+'" font-size="11" font-family="sans-serif" role="img">';
+ s+='<text x="'+(W/2)+'" y="16" text-anchor="middle" font-weight="bold">'+esc(d.title)+'</text>';
+ if(multi){
+  let lx=left;
+  d.series.forEach((ser,si)=>{
+   s+='<rect x="'+lx+'" y="22" width="12" height="8" rx="2" fill="'+colors[si%colors.length]+'"/>';
+   s+='<text x="'+(lx+16)+'" y="30">'+esc(ser.name)+'</text>';
+   lx+=16+ser.name.length*6.4+16;
+  });
+ }
+ ticks.forEach(v=>{
+  const y=yOf(v);
+  s+='<line x1="'+left+'" x2="'+(W-right)+'" y1="'+y+'" y2="'+y+'" stroke="#eee"/>';
+  s+='<text x="'+(left-4)+'" y="'+(y+3)+'" text-anchor="end" font-size="9">'+tick(v)+'</text>';
+ });
+ d.series.forEach((ser,si)=>{
+  const col=colors[si%colors.length];
+  const pts=ser.values.map((v,i)=>xOf(i)+','+yOf(v)).join(' ');
+  s+='<polyline points="'+pts+'" fill="none" stroke="'+col+'" stroke-width="2.5"/>';
+  ser.values.forEach((v,i)=>{s+='<circle cx="'+xOf(i)+'" cy="'+yOf(v)+'" r="3.5" fill="'+col+'"/>';});
+ });
+ d.x_labels.forEach((lab,i)=>{s+='<text x="'+xOf(i)+'" y="'+(H-24)+'" text-anchor="middle">'+esc(lab)+'</text>';});
+ s+='<line x1="'+left+'" x2="'+left+'" y1="'+top+'" y2="'+yOf(yMin)+'" stroke="#333"/>';
+ s+='<line x1="'+left+'" x2="'+(W-right)+'" y1="'+yOf(yMin)+'" y2="'+yOf(yMin)+'" stroke="#333"/>';
+ s+='<text x="'+((left+W-right)/2)+'" y="'+(H-6)+'" text-anchor="middle">'+esc(d.x_label)+'</text>';
+ const ly=(top+yOf(yMin))/2;
+ s+='<text x="14" y="'+ly+'" text-anchor="middle" transform="rotate(-90 14 '+ly+')">'+esc(d.y_label)+'</text></svg>';
+ return s;
+}
+function ansTxt(q){
+ const a=q.a;
+ if(typeof a=='number')return String(a);
+ if(a&&a.frac)return a.frac[0]%a.frac[1]&&a.frac[0]>a.frac[1]?(q.id=='B8'?'4 1/4':a.frac.join('/')):a.frac.join('/');
+ if(a&&a.set)return a.set.join(', ');
+ return 'Wednesday and Thursday';
+}
+function bankChoices(raw){
+ if(raw.format!=='mcq')return [];
+ const pics=optionSvgs(raw);
+ return (raw.options||[]).map((text,i)=>({
+  key:'ABCD'[i]||String(i+1),
+  text:String(text),
+  html:(pics&&pics[i])?safeRich(pics[i]):esc(text)
+ }));
+}
+function classicChoices(q){
+ if(q.t!=='m')return [];
+ return (q.o||[]).map((text,i)=>({key:'ABCD'[i],text:String(text).replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&'),html:String(text)}));
+}
+function letterOf(ans,opts){
+ const s=String(ans||'').trim();
+ return /^[A-D]$/i.test(s)&&opts.length?s.toUpperCase():'';
+}
+function choiceFace(key,opts){
+ const opt=opts.find(o=>o.key===key);
+ if(!opt)return esc(key);
+ return esc(key)+' · '+opt.html;
+}
+function present(row){
+ const hit=BY_ID[row.question_id];
+ const topic=topicOf(row.category);
+ const base={id:row.question_id,topic:topic.label,diagram:false,stem:'',pair:'',extra:'',work:''};
+ if(!hit){
+  base.stem='<p class="stem">題目未找到 Question not in the bank · '+esc(row.question_id)+'</p>';
+  base.pair=pairHtml(esc(row.answer_given||'（空白）'),'—');
+  return base;
+ }
+ if(hit.kind==='zh'){
+  const q=hit.q;
+  const unit=ZH_UNITS['zh-'+q.unit];
+  const prompt=esc(q.prompt).replace(/_{2,}/g,'<span class="blank">　　</span>');
+  const accept=(q.accept||[]).filter(Boolean);
+  base.topic=unit?unit.name+' '+unit.label:topic.label;
+  base.stem='<p class="stem">'+prompt+'</p><p class="hint">詞語：'+esc(q.word)+(meaningOf(q.unit,q.word)?' · '+esc(meaningOf(q.unit,q.word)):'')+'</p>';
+  base.pair=pairHtml(esc(row.answer_given||'（空白）'),esc(q.answer));
+  base.extra=accept.length?'<p class="hint">亦接受 Also accepted：'+accept.map(esc).join('、')+'</p>':'';
+  base.work='<div class="work"><b>解釋 Explanation</b><div style="white-space:pre-line">'+esc(q.explanation||'')+'</div></div>';
+  base.word=q.word;
+  base.unit=q.unit;
+  return base;
+ }
+ let stem='', opts=[], correctKey='', correctText='', work='', diagram=false;
+ if(hit.kind==='classic'){
+  const q=hit.q;
+  stem='<div class="stem">'+safeRich(q.q)+'</div>';
+  diagram=String(q.q).indexOf('<svg')>=0;
+  opts=classicChoices(q);
+  if(q.t==='m'){correctKey='ABCD'[q.a]||'';correctText=choiceFace(correctKey,opts);}
+  else correctText=esc(ansTxt(q));
+  work=safeRich(q.w||'');
+ }else{
+  const raw=hit.raw;
+  const graph=raw.data&&raw.data.type==='line'?lineSvg(raw.data):'';
+  const fig=raw.svg?'<div class="fig">'+safeRich(raw.svg)+'</div>':'';
+  stem='<div class="stem">'+(graph?('<div class="qsvg">'+graph+'</div>'):'')+fig+esc(raw.question||'')+'</div>';
+  diagram=!!(raw.has_diagram||raw.svg||graph);
+  opts=bankChoices(raw);
+  if(raw.format==='mcq'){
+   correctKey=String(raw.answer||'').trim().toUpperCase();
+   if(!/^[A-D]$/.test(correctKey))correctKey='';
+   correctText=correctKey?choiceFace(correctKey,opts):esc(raw.answer||'');
+  }else{
+   const t=String(raw.answer==null?'':raw.answer);
+   const unit=raw.unit||'';
+   correctText=esc(unit&&t.indexOf(unit)<0?t+' '+unit:t);
+  }
+  work=esc(raw.working||'');
+  const primary=String(raw.answer==null?'':raw.answer);
+  const alt=(raw.accepted_answers||[]).map(a=>String(a)).filter(a=>a&&a!==primary&&a.toUpperCase()!==correctKey);
+  if(alt.length&&raw.format!=='mcq')base.extra='<p class="hint">亦接受：'+[...new Set(alt)].map(esc).join('、')+'</p>';
+ }
+ const givenKey=letterOf(row.answer_given,opts);
+ const givenHtml=givenKey?choiceFace(givenKey,opts):esc(row.answer_given||'（空白）');
+ base.diagram=diagram;
+ base.stem=stem;
+ base.pair=pairHtml(givenHtml,correctText);
+ base.work=work?'<div class="work"><b>計法 Working</b><div>'+work+'</div></div>':'';
+ if(opts.length){
+  base.extra=(base.extra||'')+'<div class="'+(opts.some(o=>String(o.html).indexOf('<svg')>=0)?'optgrid':'')+'">'+opts.map(o=>{
+   const cls=o.key===correctKey?'ok':(o.key===givenKey?'no':'');
+   return '<div class="opt '+cls+'"><b>'+o.key+'</b>'+o.html+'</div>';
+  }).join('')+'</div>';
+ }
+ return base;
+}
+function pairHtml(given,correct){
+ return '<div class="pair"><div class="hers"><span>她的答案 Her answer</span><div class="aval">'+given+'</div></div><div class="right"><span>正確答案 Correct</span><div class="aval">'+correct+'</div></div></div>';
+}
+function summarise(rows,now){
+ now=now||Date.now();
+ const today0=hkMidnight(now), week0=weekStart(now);
+ const todayRows=rows.filter(r=>inWindow(r,today0,today0+86400000));
+ const weekRows=rows.filter(r=>isFinite(r.ts)&&r.ts>=week0&&r.ts<=now+1000);
+ const last=[...rows].reverse().find(r=>isFinite(r.ts))||null;
+ let live={on:false,topic:'',mode:'',score:'',total:0,ok:0,when:'',ago:'',session:''};
+ if(last){
+  const sess=rows.filter(r=>r.session_id===last.session_id);
+  const ok=sess.filter(r=>r.correct).length;
+  const topic=topicOf(last.category);
+  live={
+   on:now-last.ts<LIVE_MS&&now-last.ts>=-60000,
+   topic:topic.label,
+   mode:modeLabel(last.mode),
+   score:ok+'/'+sess.length,
+   total:sess.length,
+   ok,
+   when:whenText(last.ts,now),
+   ago:agoText(last.ts,now),
+   session:last.session_id
+  };
+ }
+ const byTopic={};
+ rows.forEach(r=>{
+  const t=topicOf(r.category);
+  if(t.subject==='zh')return;
+  if(!byTopic[t.key])byTopic[t.key]=Object.assign({n:0,ok:0,hints:0},t);
+  byTopic[t.key].n++;
+  if(r.correct)byTopic[t.key].ok++;
+  if(r.hint)byTopic[t.key].hints++;
+ });
+ const topics=TOPIC_ORDER.filter(k=>byTopic[k]).map(k=>byTopic[k]);
+ Object.keys(byTopic).forEach(k=>{if(TOPIC_ORDER.indexOf(k)<0)topics.push(byTopic[k]);});
+ const flags=markWeak(topics);
+ topics.forEach(t=>{t.tone=tone(t.ok,t.n);t.weak=flags.has(t.key);t.pct=pctText(t.ok,t.n);});
+ const byUnit={};
+ ZH_ORDER.forEach(k=>{byUnit[k]={key:k,label:ZH_UNITS[k].name+' '+ZH_UNITS[k].label,n:0,ok:0,hints:0};});
+ rows.forEach(r=>{
+  const t=topicOf(r.category);
+  if(t.subject!=='zh')return;
+  if(!byUnit[t.key])byUnit[t.key]={key:t.key,label:t.label,n:0,ok:0,hints:0};
+  byUnit[t.key].n++;
+  if(r.correct)byUnit[t.key].ok++;
+  if(r.hint)byUnit[t.key].hints++;
+ });
+ const units=ZH_ORDER.map(k=>byUnit[k]).concat(Object.keys(byUnit).filter(k=>ZH_ORDER.indexOf(k)<0).map(k=>byUnit[k]));
+ units.forEach(u=>{u.tone=tone(u.ok,u.n);u.pct=pctText(u.ok,u.n);});
+ const words={};
+ rows.forEach(r=>{
+  if(r.correct)return;
+  const hit=BY_ID[r.question_id];
+  if(!hit||hit.kind!=='zh')return;
+  const word=hit.q.word||r.question_id;
+  if(!words[word])words[word]={word,unit:hit.q.unit,misses:0,typed:[],last:0,meaning:meaningOf(hit.q.unit,word)};
+  words[word].misses++;
+  if(r.answer_given&&words[word].typed.indexOf(r.answer_given)<0)words[word].typed.push(r.answer_given);
+  if(r.ts>words[word].last)words[word].last=r.ts;
+ });
+ const wordList=Object.keys(words).map(k=>words[k]).sort((a,b)=>b.misses-a.misses||b.last-a.last);
+ const days=[];
+ for(let i=13;i>=0;i--){
+  const start=today0-i*86400000;
+  const key=hkKey(start);
+  const list=rows.filter(r=>isFinite(r.ts)&&hkKey(r.ts)===key);
+  const p=hkParts(start);
+  days.push({key,label:p.month+'-'+p.day,short:String(Number(p.day)),n:list.length,ok:list.filter(r=>r.correct).length});
+ }
+ const wrongs=rows.filter(r=>!r.correct).slice().reverse();
+ const sessions=groupSessions(rows).map(list=>{
+  const ok=list.filter(r=>r.correct).length;
+  const hints=list.filter(r=>r.hint).length;
+  return {
+   id:list[0].session_id||'none',
+   start:list[0].ts,
+   end:list[list.length-1].ts,
+   mode:modeLabel(list[0].mode),
+   topic:sessionTopics(list),
+   ok,n:list.length,hints,
+   sec:sessionSec(list),
+   items:list
+  };
+ });
+ return {live,today:tally(todayRows),week:tally(weekRows),topics,units,words:wordList,days,wrongs,sessions,last};
+}
+function chartSvg(days){
+ const W=336,H=150,base=118,top=18,n=days.length||1,gap=W/n;
+ const max=Math.max(1,...days.map(d=>d.n));
+ let s='<svg class="chart" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="最近14日答題數">';
+ days.forEach((d,i)=>{
+  const x=i*gap+gap/2;
+  const bh=d.n?(d.n/max)*(base-top-10):0;
+  const okH=d.n?bh*(d.ok/d.n):0;
+  const badH=bh-okH;
+  const y=base-bh;
+  const tip=d.label+' · '+d.n+' 題 · 對 '+d.ok;
+  if(d.n){
+   s+='<rect x="'+(x-6).toFixed(1)+'" y="'+(y+badH).toFixed(1)+'" width="12" height="'+Math.max(0,okH).toFixed(1)+'" rx="2" fill="#40c057"><title>'+esc(tip)+'</title></rect>';
+   s+='<rect x="'+(x-6).toFixed(1)+'" y="'+y.toFixed(1)+'" width="12" height="'+Math.max(0,badH).toFixed(1)+'" rx="2" fill="#fa5252"><title>'+esc(tip)+'</title></rect>';
+   s+='<text x="'+x.toFixed(1)+'" y="'+(y-3).toFixed(1)+'" text-anchor="middle" font-size="9" fill="#555">'+d.n+'</text>';
+  }else s+='<rect x="'+(x-6).toFixed(1)+'" y="'+(base-2)+'" width="12" height="2" fill="#ffe3ec"></rect>';
+  s+='<text x="'+x.toFixed(1)+'" y="'+(base+14)+'" text-anchor="middle" font-size="8" fill="#888">'+esc(d.short)+'</text>';
+ });
+ s+='</svg>';
+ return s;
+}
+function statGrid(block){
+ return '<div class="stats">'+
+  '<div class="stat"><b data-k="n">'+block.n+'</b><span>題 Questions</span></div>'+
+  '<div class="stat"><b data-k="pct">'+block.pct+'</b><span>正確 Correct</span></div>'+
+  '<div class="stat"><b data-k="min">'+fmtMin(block.sec)+'</b><span>練習時間 Time</span></div>'+
+  '<div class="stat"><b data-k="hints">'+block.hints+'</b><span>用提示 Hints</span></div>'+
+  '</div><p class="hint">數學 '+block.math+' 題 · 中文 '+block.zh+' 題。每題最多計 300 秒。</p>';
+}
+function bars(list,empty){
+ if(!list.length)return '<p>'+empty+'</p>';
+ return list.map(t=>{
+  const width=t.n?Math.round(t.ok/t.n*100):0;
+  return '<div class="row" data-topic="'+esc(t.key)+'"><span class="name">'+esc(t.label)+(t.weak?'<em class="flag">較弱</em>':'')+'</span><span class="hbar"><i class="'+(t.tone||'')+'" style="width:'+width+'%"></i></span><b>'+(t.n?t.pct:'—')+'</b></div>'+
+   '<div class="sub">'+(t.n?t.ok+'/'+t.n+' 題'+(t.hints?' · 提示 '+t.hints:''):'未有紀錄')+'</div>';
+ }).join('');
+}
+function render(){
+ const open=new Set([...document.querySelectorAll('details[open][data-id]')].map(d=>d.dataset.id));
+ const y=window.scrollY;
+ if(!DEMO&&!getKey()){renderGate(gateMsg,gateValue);return;}
+ if(!DEMO&&!loadedOnce){
+  app.innerHTML='<div class="card"><p class="pick">'+(pulling?'載入紀錄…':'')+'</p>'+(lastError?'<div class="err">'+esc(lastError)+'</div><button class="btn" type="button" data-act="refresh">再試</button>':'')+'</div>';
+  return;
+ }
+ const now=Date.now();
+ const view=summarise(ROWS,now);
+ const live=view.live;
+ const liveHtml=live.topic?('<div id="live" class="live'+(live.on?' on':' off')+'" data-on="'+(live.on?'1':'0')+'"><div class="dot"></div><div>'+
+  (live.on?'<b>練習緊 Practising now</b>':'<b>上次練習 Last active</b>')+
+  '<div>'+esc(live.when)+' · '+esc(live.ago)+'</div>'+
+  '<div>'+esc(live.topic)+' · '+esc(live.mode)+'</div>'+
+  '<div>呢次 '+esc(live.score)+(live.total?(' · '+pctText(live.ok,live.total)):'')+'</div>'+
+  '</div></div>'):'<div id="live" class="live off" data-on="0"><div class="dot"></div><div><b>未有紀錄</b><div>Ansbie 的答題還未同步過嚟。</div></div></div>';
+ const wrongs=view.wrongs.slice(0,wrongLimit);
+ const sessions=view.sessions.slice(0,sessionLimit);
+ const clock=lastUpdated?hkParts(lastUpdated):null;
+ const updated=clock?(clock.hour+':'+clock.minute+':'+clock.second):'—';
+ app.innerHTML=
+  (DEMO?'<div class="banner">示範數據 Demo data。未連接試算表。正式頁要輸入 READ_KEY。</div>':'')+
+  (warning?'<div class="banner">'+esc(warning)+'</div>':'')+
+  (qNote?'<div class="banner">'+esc(qNote)+'</div>':'')+
+  (lastError?'<div class="err">'+esc(lastError)+'</div>':'')+
+  '<div class="card"><div class="meta"><span id="updated">最後更新 Last updated '+esc(updated)+'</span><button class="btn mini" type="button" data-act="refresh"'+(pulling?' disabled':'')+'>'+(pulling?'更新緊…':'重新整理')+'</button></div>'+
+  liveHtml+
+  '<div class="tools" style="margin-top:10px"><button class="btn alt" type="button" data-act="notify">開啟錯題提示</button><button class="btn ghost" type="button" data-act="changekey">更改密碼</button></div>'+
+  '<p class="hint" id="notePerm"></p>'+
+  (DEMO?'<button class="btn ghost" type="button" data-act="simulate">模擬一題新錯題</button>':'')+
+  '</div>'+
+  '<div class="card" id="today"><h2>今日 Today</h2>'+statGrid(view.today)+'</div>'+
+  '<div class="card" id="week"><h2>本週 This week</h2><p class="hint">由星期一計到而家，香港時間。</p>'+statGrid(view.week)+'</div>'+
+  '<div class="card" id="topics"><h2>數學課題 Maths</h2>'+
+   (view.topics.length?bars(view.topics,''):'<p>未有數學紀錄。</p>')+
+   '<p class="hint">紅色少過 60%，黃色 60–80%，綠色高過 80%。標咗「較弱」嘅係最需要再練嘅課題。</p></div>'+
+  '<div class="card" id="chinese"><h2>中文 Chinese</h2>'+bars(view.units,'')+
+   '<h3>最常錯嘅詞 Words she misses most</h3><div id="words">'+
+   (view.words.length?view.words.slice(0,8).map(w=>{
+    const un=ZH_UNITS['zh-'+w.unit];
+    return '<div class="word" data-word="'+esc(w.word)+'"><div><b>'+esc(w.word)+'</b><div class="hint">'+(un?esc(un.name)+' ': '')+(w.meaning?esc(w.meaning):'')+'<br>她寫過：'+esc(w.typed.join('、')||'—')+'</div></div><div>錯過 '+w.misses+' 次</div></div>';
+   }).join(''):'<p>暫時未有錯過的中文詞。</p>')+
+   '</div></div>'+
+  '<div class="card" id="chart"><h2>最近 14 日</h2>'+chartSvg(view.days)+
+   '<div class="legend"><span><i class="sw ok"></i>答對</span><span><i class="sw no"></i>答錯</span></div>'+
+   '<p class="hint">柱愈高，當日做得愈多。日期係香港時間。</p></div>'+
+  '<div class="card" id="wrongs"><h2>錯題 Wrong answers</h2><p class="hint">新嘅排前面。撳開可以睇題目、圖、她的答案同計法。</p>'+
+   (wrongs.length?wrongs.map(r=>{
+    const p=present(r);
+    const id=rowKey(r);
+    return '<details class="item" data-id="'+esc(id)+'"'+(open.has(id)?' open':'')+'><summary>'+esc(whenText(r.ts,now))+' · '+esc(p.topic)+
+     (p.diagram?' · 有圖':'')+(r.hint?' · 用咗提示':'')+
+     '<small>'+esc(r.question_id)+(r.answer_given?' · 她寫 '+r.answer_given:'')+'</small></summary>'+
+     p.stem+p.pair+(p.extra||'')+(p.work||'')+'</details>';
+   }).join(''):'<p>未有錯題。做得好。</p>')+
+   (view.wrongs.length>wrongLimit?'<button class="btn ghost" type="button" data-act="morewrong">仲有 '+(view.wrongs.length-wrongLimit)+' 題</button>':'')+
+  '</div>'+
+  '<div class="card" id="sessions"><h2>每次練習 Sessions</h2>'+
+   (sessions.length?sessions.map(s=>{
+    const id='s:'+s.id+':'+s.start;
+    const going=live.on&&s.id===live.session;
+    return '<details class="sess" data-id="'+esc(id)+'"'+(open.has(id)?' open':'')+'><summary>'+esc(isFinite(s.start)?whenText(s.start,now):'—')+
+     (going?' <em class="flag">進行中</em>':'')+
+     '<small>'+esc(s.mode)+' · '+esc(s.topic)+' · '+s.ok+'/'+s.n+' · '+esc(fmtDur(s.sec))+(s.hints?' · 提示 '+s.hints:'')+'</small></summary><ul class="hint">'+
+     s.items.map(r=>'<li>'+(r.correct?'✅':'❌')+' '+esc(r.question_id)+' '+esc(topicOf(r.category).label)+(r.hint?' · 提示':'')+(r.answer_given?' · '+esc(r.answer_given):'')+'</li>').join('')+
+     '</ul></details>';
+   }).join(''):'<p>未有練習紀錄。</p>')+
+   (view.sessions.length>sessionLimit?'<button class="btn ghost" type="button" data-act="moresess">仲有 '+(view.sessions.length-sessionLimit)+' 次</button>':'')+
+  '</div>';
+ paintPerm();
+ window.scrollTo(0,y);
+}
+function paintPerm(){
+ const el=document.getElementById('notePerm');
+ if(!el||!window.Notification)return;
+ if(Notification.permission==='granted')el.textContent='提示已開。新練習或錯題會通知這部機，頁面開住時亦會彈出。';
+ else if(Notification.permission==='denied')el.textContent='瀏覽器未允許通知。頁面開住時仍會彈出提示。';
+ else el.textContent='可選擇接收通知。頁面開住時，新練習同錯題都會彈出提示。';
+}
+function renderGate(msg,value){
+ app.innerHTML='<div class="card" id="gate"><h2>讀取密碼 Read key</h2>'+
+  '<p>呢頁只俾家長睇，學生主頁沒有連結。密碼係 Apps Script 入面嘅 READ_KEY，記住喺呢部機。</p>'+
+  (msg?'<div class="err">'+esc(msg)+'</div>':'')+
+  '<input class="rk" id="rk" type="password" autocomplete="off" placeholder="READ_KEY" value="'+esc(value||'')+'">'+
+  '<label class="showk"><input type="checkbox" id="showk"> 顯示密碼</label>'+
+  '<button class="btn" type="button" data-act="savekey">儲存並載入</button>'+
+  '<p class="hint">部署時要 Manage deployments → Edit → New version，/exec 網址先會用到新嘅 doGet，而且唔會變。</p></div>';
+}
+function toast(title,body){
+ const box=document.getElementById('toastbox');
+ const el=document.createElement('div');
+ el.className='toast';
+ el.innerHTML='<b>'+esc(title)+'</b><div>'+esc(body)+'</div>';
+ box.appendChild(el);
+ setTimeout(()=>{el.remove();},6500);
+}
+function ping(title,body){
+ toast(title,body);
+ if(window.Notification&&Notification.permission==='granted'){
+  try{new Notification(title,{body:body});}catch(e){}
+ }
+}
+function announce(fresh,prevSessions){
+ if(!seeded){seeded=true;return;}
+ if(!fresh||!fresh.length)return;
+ const seen=new Set();
+ fresh.forEach(r=>{
+  if(prevSessions.has(r.session_id)||seen.has(r.session_id))return;
+  seen.add(r.session_id);
+  const t=topicOf(r.category);
+  ping('Ansbie 開始練習',(t.zh||t.en)+' · '+modeLabel(r.mode));
+ });
+ const wrong=fresh.filter(r=>!r.correct);
+ if(wrong.length===1){
+  const r=wrong[0], t=topicOf(r.category);
+  ping('答錯咗',(t.zh||t.en)+' · '+r.question_id+(r.answer_given?' · 她寫 '+r.answer_given:''));
+ }else if(wrong.length>1){
+  const r=wrong[wrong.length-1];
+  ping('新嘅錯題',wrong.length+' 題答錯，最新係 '+r.question_id);
+ }
+}
+async function fetchRows(key){
+ const base=SYNC_URL+'?rk='+encodeURIComponent(key);
+ // Apps Script usually answers a browser fetch with a redirect the page cannot read.
+ // Try once, then remember to use JSONP, which follows that redirect.
+ if(!preferJsonp){
+  try{
+   const ctrl=typeof AbortController==='function'?new AbortController():null;
+   const timer=ctrl?setTimeout(()=>ctrl.abort(),4000):0;
+   const r=await fetch(base,{cache:'no-store',redirect:'follow',signal:ctrl?ctrl.signal:undefined});
+   if(timer)clearTimeout(timer);
+   const t=await r.text();
+   const trimmed=t.trim();
+   if(trimmed.charAt(0)==='{')return JSON.parse(trimmed);
+  }catch(e){}
+  preferJsonp=true;
+ }
+ return jsonp(base);
+}
+function jsonp(base){
+ return new Promise((resolve,reject)=>{
+  const cb='p6cb_'+Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+  const s=document.createElement('script');
+  let done=false;
+  const timer=setTimeout(()=>finish(new Error('timeout')),20000);
+  function finish(err,data){
+   if(done)return;
+   done=true;
+   clearTimeout(timer);
+   try{delete window[cb];}catch(e){}
+   s.remove();
+   if(err)reject(err);else resolve(data);
+  }
+  window[cb]=data=>finish(null,data);
+  s.onerror=()=>finish(new Error('jsonp'));
+  s.src=base+'&callback='+cb;
+  document.head.appendChild(s);
+ });
+}
+async function refresh(){
+ if(DEMO){lastUpdated=Date.now();lastError='';render();return;}
+ if(!getKey()){renderGate(gateMsg,gateValue);return;}
+ if(pulling)return;
+ pulling=true;
+ render();
+ try{
+  const data=await fetchRows(getKey());
+  if(!data||data.ok===false){
+   const why=data&&data.error==='unauthorized'?'unauthorized':'bad';
+   throw new Error(why);
+  }
+  if(!Array.isArray(data.rows))throw new Error('bad');
+  warning=data.warning?('讀取密碼仍然係預設值。請喺 Apps Script 改 READ_KEY，再用 New version 部署。'):'';
+  const info=setRaw(data.rows);
+  loadedOnce=true;
+  announce(info.fresh,info.prevSessions);
+  lastUpdated=Date.now();
+  lastError='';
+ }catch(e){
+  if(String(e.message)==='unauthorized'){
+   gateValue=getKey();
+   gateMsg='密碼唔啱，請再試。The read key was not accepted.';
+   setKey('');
+   seeded=false;
+   loadedOnce=false;
+   ROWS=[];
+  }else if(!ROWS.length){
+   lastError='連唔到試算表。請確認已將 doGet 貼上，並且用 Manage deployments → Edit → New version 部署，/exec 網址先會更新。';
+  }else{
+   lastError='今次更新失敗，下面仍然係上次成功讀到的紀錄。';
+  }
+ }finally{
+  pulling=false;
+  render();
+ }
+}
+function saveKey(){
+ const input=document.getElementById('rk');
+ const v=input?input.value.trim():'';
+ if(!v){gateMsg='請輸入密碼。';gateValue='';renderGate(gateMsg,'');return;}
+ gateMsg='';
+ gateValue='';
+ setKey(v);
+ refresh();
+}
+function simulate(){
+ const raw={
+  timestamp:isoHK(Date.now()),
+  session_id:'sim'+Date.now().toString(36),
+  mode:'practice',
+  question_id:'A1',
+  category:'Rounding',
+  difficulty:'easy',
+  correct:false,
+  hint_used:false,
+  time_sec:8,
+  answer_given:'A',
+  user:'ansbie'
+ };
+ const info=addRaw([raw]);
+ announce(info.fresh,info.prevSessions);
+ lastUpdated=Date.now();
+ render();
+}
+function demoRows(now){
+ now=now||Date.now();
+ const row=(ago,extra)=>Object.assign({
+  timestamp:isoHK(now-ago),session_id:'s',mode:'practice',question_id:'A1',category:'Rounding',
+  difficulty:'easy',correct:false,hint_used:false,time_sec:10,answer_given:'',user:'ansbie'
+ },extra);
+ return [
+  row(0,{user:'',answer_given:'blank user'}),
+  row(0,{user:'test',session_id:'t1',mode:'u2',question_id:'zh-u2-02-q1',category:'zh-u2',answer_given:'年紀很小'}),
+  row(90000,{session_id:'live1',mode:'category',question_id:'T14-21',category:'2-D shapes',difficulty:'easy',correct:false,time_sec:20,answer_given:'2'}),
+  row(90000,{session_id:'live1',mode:'category',question_id:'T14-21',category:'2-D shapes',difficulty:'easy',correct:false,time_sec:20,answer_given:'2'}),
+  row(40000,{session_id:'live1',mode:'category',question_id:'A8',category:'Average',difficulty:'medium',correct:'FALSE',hint_used:'TRUE',time_sec:12,answer_given:'D'}),
+  row(20000,{session_id:'live1',mode:'category',question_id:'T15-01',category:'Algebra',difficulty:'easy',correct:true,time_sec:15,answer_given:'C',user:'Ansbie'}),
+  row(3600000,{session_id:'zh1',mode:'u2',question_id:'zh-u2-10-q3',category:'zh-u2',difficulty:'fill',correct:false,hint_used:true,time_sec:30,answer_given:'偶然'}),
+  row(3500000,{session_id:'zh1',mode:'u2',question_id:'zh-u2-10-q1',category:'zh-u2',difficulty:'fill',correct:false,time_sec:18,answer_given:'突然'}),
+  row(3400000,{session_id:'zh1',mode:'u2',question_id:'zh-u2-07-q1',category:'zh-u2',difficulty:'fill',correct:'TRUE',time_sec:400,answer_given:'風範'}),
+  row(86400000,{session_id:'old1',mode:'quick10',question_id:'B15a',category:'Line graph',difficulty:'easy',correct:false,time_sec:40,answer_given:'mon tue'}),
+  row(10*86400000,{session_id:'old2',mode:'practice',question_id:'T17-01',category:'Line graph',difficulty:'easy',correct:false,time_sec:10,answer_given:'5'})
+ ];
+}
+app.addEventListener('click',e=>{
+ const t=e.target.closest('[data-act]');
+ if(!t)return;
+ const act=t.dataset.act;
+ if(act==='refresh')refresh();
+ else if(act==='savekey')saveKey();
+ else if(act==='changekey'){gateMsg='';gateValue=getKey();setKey('');seeded=false;loadedOnce=false;ROWS=[];renderGate('輸入新的讀取密碼。',gateValue);}
+ else if(act==='notify'){
+  if(!window.Notification){toast('這部機沒有通知','頁面開住時仍會彈出提示。');return;}
+  Notification.requestPermission().then(paintPerm).catch(()=>{});
+ }
+ else if(act==='simulate')simulate();
+ else if(act==='morewrong'){wrongLimit+=30;render();}
+ else if(act==='moresess'){sessionLimit+=20;render();}
+});
+app.addEventListener('change',e=>{
+ if(e.target.id==='showk'){const rk=document.getElementById('rk');if(rk)rk.type=e.target.checked?'text':'password';}
+});
+app.addEventListener('keydown',e=>{
+ if(e.key==='Enter'&&e.target.id==='rk'){e.preventDefault();saveKey();}
+});
+
+function indexQuestions(){
+ BY_ID={};
+ (typeof CLASSIC_Q!=='undefined'?CLASSIC_Q:[]).forEach(q=>{BY_ID[q.id]={kind:'classic',q};});
+ (BANK.questions||[]).forEach(raw=>{BY_ID[raw.id]={kind:'bank',raw};});
+ (ZH.questions||[]).forEach(q=>{BY_ID[q.id]={kind:'zh',q};});
+}
+async function loadQuestions(){
+ try{
+  const [bankRes,zhRes]=await Promise.all([fetch('question_bank.json'),fetch('chinese.html')]);
+  if(!bankRes.ok||!zhRes.ok)throw new Error('load');
+  BANK=await bankRes.json();
+  const zhText=await zhRes.text();
+  const open=zhText.indexOf('id="zh-data">');
+  const from=open<0?-1:zhText.indexOf('>',open)+1;
+  const end=from<0?-1:zhText.indexOf('<'+'/script>',from);
+  if(from<0||end<0)throw new Error('zh-data');
+  ZH=JSON.parse(zhText.slice(from,end));
+ }catch(e){
+  qNote='有部分題目檔未載入，錯題可能只顯示題號。';
+ }
+ indexQuestions();
+}
+function takeRkFromUrl(){
+ const rk=params.get('rk');
+ if(!rk)return;
+ setKey(rk);
+ try{
+  const u=new URL(location.href);
+  u.searchParams.delete('rk');
+  history.replaceState(null,'',u.pathname+u.search+u.hash);
+ }catch(e){}
+}
+async function boot(){
+ takeRkFromUrl();
+ app.innerHTML='<div class="card"><p class="pick">載入題目…</p></div>';
+ await loadQuestions();
+ window.__p6.ready=true;
+ window.__p6.zhCount=(ZH.questions||[]).length;
+ window.__p6.bankCount=(BANK.questions||[]).length;
+ window.__p6.classicCount=(typeof CLASSIC_Q!=='undefined'?CLASSIC_Q.length:0);
+ if(DEMO){
+  const info=setRaw(demoRows());
+  announce(info.fresh,info.prevSessions);
+  lastUpdated=Date.now();
+  render();
+  return;
+ }
+ if(getKey())refresh();
+ else renderGate('','');
+}
+window.__p6={
+ POLL_MS, summarise, normaliseList, demoRows, topicOf, present, setRaw, addRaw, announce,
+ isoHK, asBool, fmtMin, get rows(){return ROWS;}, ready:false, zhCount:0, bankCount:0, classicCount:0,
+ refresh, simulate
+};
+setInterval(()=>{if(getKey()||DEMO)refresh();},POLL_MS);
+boot();
+</script></body></html>
