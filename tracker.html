@@ -111,6 +111,12 @@ const ZH_UNITS={
  'zh-u5':{label:'(五)',name:'和時間賽跑'}
 };
 const ZH_ORDER=['zh-u2','zh-u4','zh-u5'];
+const GS_UNITS={
+ 'gs-L1':{label:'第一課',name:'最後的皇朝'},
+ 'gs-L4':{label:'第四課',name:'中國近年的發展'}
+};
+const GS_ORDER=['gs-L1','gs-L4'];
+let GS={questions:[],subs:{},src:{}};
 const params=new URLSearchParams(location.search);
 const DEMO=params.get('demo')==='1';
 const app=document.getElementById('app');
@@ -163,6 +169,12 @@ function setKey(v){try{if(v)localStorage.setItem(KEY_LS,v);else localStorage.rem
 function topicOf(category){
  const c=String(category||'').trim();
  const low=c.toLowerCase();
+ if(c.indexOf('常識')===0||low.startsWith('gs-')){
+  const m=c.match(/L\d+/);
+  const code=m?'gs-'+m[0]:'gs-?';
+  const u=GS_UNITS[code];
+  return {key:code,subject:'gs',en:'General Studies',zh:u?u.name:c,label:u?'常識 '+u.name:c};
+ }
  if(low.startsWith('zh-')||low.startsWith('zh_')){
   const code=(low.match(/zh-[a-z0-9]+/)||[low.replace('_','-')])[0];
   const u=ZH_UNITS[code];
@@ -283,8 +295,9 @@ function tally(rows){
  const n=rows.length, ok=rows.filter(r=>r.correct).length;
  const hints=rows.filter(r=>r.hint).length;
  const sec=rows.reduce((s,r)=>s+Math.min(CAP_SEC,Math.max(0,r.time)),0);
- const math=rows.filter(r=>topicOf(r.category).subject!=='zh').length;
- return {n,ok,hints,sec,math,zh:n-math,pct:pctText(ok,n)};
+ const zh=rows.filter(r=>topicOf(r.category).subject==='zh').length;
+ const gs=rows.filter(r=>topicOf(r.category).subject==='gs').length;
+ return {n,ok,hints,sec,math:n-zh-gs,zh,gs,pct:pctText(ok,n)};
 }
 function inWindow(r,start,end){return isFinite(r.ts)&&r.ts>=start&&r.ts<end;}
 function groupSessions(rows){
@@ -426,6 +439,25 @@ function present(row){
   base.pair=pairHtml(esc(row.answer_given||'（空白）'),'—');
   return base;
  }
+ if(hit.kind==='gs'){
+  const q=hit.q, L='ABCDEFGH';
+  const src=q.src&&GS.src&&GS.src[q.src]?'<p class="hint">📄 '+esc(GS.src[q.src].title)+'</p>':'';
+  let correct='';
+  if(q.type==='mcq')correct=L[q.answer]+' · '+esc(q.options[q.answer]);
+  else if(q.type==='multi')correct=q.answer.map(i=>L[i]+' · '+esc(q.options[i])).join('<br>');
+  else if(q.type==='tf')correct=q.answer?'✓ 正確':'✗ 錯誤';
+  else if(q.type==='match')correct=q.items.map((it,i)=>esc(it)+' → '+L[q.answer[i]]+' · '+esc(q.options[q.answer[i]])).join('<br>');
+  else if(q.type==='order')correct=esc(q.answer.split('').join(' → '));
+  else correct=esc(q.answer);
+  let opts='';
+  if(q.options&&q.type!=='match')opts='<div>'+q.options.map((o,i)=>'<div class="opt"><b>'+L[i]+'</b>'+esc(o)+'</div>').join('')+'</div>';
+  base.topic=topic.label+' · '+esc((GS.subs[q.sub]||{}).name||'');
+  base.stem=src+(q.pic?'<p class="hint">'+esc(q.pic)+'</p>':'')+'<p class="stem">'+esc(q.q)+'</p>'+opts;
+  base.pair=pairHtml(esc(row.answer_given||'（空白）'),correct);
+  base.extra=(q.accept||[]).length?'<p class="hint">亦接受：'+q.accept.map(esc).join('、')+'</p>':'';
+  base.work='<div class="work"><b>解說 Explanation</b><div>'+esc(q.explain||'')+'</div></div>';
+  return base;
+ }
  if(hit.kind==='zh'){
   const q=hit.q;
   const unit=ZH_UNITS['zh-'+q.unit];
@@ -513,7 +545,7 @@ function summarise(rows,now){
  const byTopic={};
  rows.forEach(r=>{
   const t=topicOf(r.category);
-  if(t.subject==='zh')return;
+  if(t.subject!=='math')return;
   if(!byTopic[t.key])byTopic[t.key]=Object.assign({n:0,ok:0,hints:0},t);
   byTopic[t.key].n++;
   if(r.correct)byTopic[t.key].ok++;
@@ -535,6 +567,28 @@ function summarise(rows,now){
  });
  const units=ZH_ORDER.map(k=>byUnit[k]).concat(Object.keys(byUnit).filter(k=>ZH_ORDER.indexOf(k)<0).map(k=>byUnit[k]));
  units.forEach(u=>{u.tone=tone(u.ok,u.n);u.pct=pctText(u.ok,u.n);});
+ const byGs={};
+ GS_ORDER.forEach(k=>{byGs[k]={key:k,label:GS_UNITS[k].label+' '+GS_UNITS[k].name,n:0,ok:0,hints:0};});
+ rows.forEach(r=>{
+  const t=topicOf(r.category);
+  if(t.subject!=='gs')return;
+  if(!byGs[t.key])byGs[t.key]={key:t.key,label:t.label,n:0,ok:0,hints:0};
+  byGs[t.key].n++;
+  if(r.correct)byGs[t.key].ok++;
+  if(r.hint)byGs[t.key].hints++;
+ });
+ const gsUnits=GS_ORDER.map(k=>byGs[k]).concat(Object.keys(byGs).filter(k=>GS_ORDER.indexOf(k)<0).map(k=>byGs[k]));
+ gsUnits.forEach(u=>{u.tone=tone(u.ok,u.n);u.pct=pctText(u.ok,u.n);});
+ const gsMiss={};
+ rows.forEach(r=>{
+  if(r.correct)return;
+  const hit=BY_ID[r.question_id];
+  if(!hit||hit.kind!=='gs')return;
+  const sub=hit.q.sub;
+  if(!gsMiss[sub])gsMiss[sub]={sub,name:(GS.subs[sub]||{}).name||sub,misses:0};
+  gsMiss[sub].misses++;
+ });
+ const gsWeak=Object.keys(gsMiss).map(k=>gsMiss[k]).sort((a,b)=>b.misses-a.misses);
  const words={};
  rows.forEach(r=>{
   if(r.correct)return;
@@ -570,7 +624,7 @@ function summarise(rows,now){
    items:list
   };
  });
- return {live,today:tally(todayRows),week:tally(weekRows),topics,units,words:wordList,days,wrongs,sessions,last};
+ return {live,today:tally(todayRows),week:tally(weekRows),topics,units,gsUnits,gsWeak,words:wordList,days,wrongs,sessions,last};
 }
 function chartSvg(days){
  const W=336,H=150,base=118,top=18,n=days.length||1,gap=W/n;
@@ -599,7 +653,7 @@ function statGrid(block){
   '<div class="stat"><b data-k="pct">'+block.pct+'</b><span>正確 Correct</span></div>'+
   '<div class="stat"><b data-k="min">'+fmtMin(block.sec)+'</b><span>練習時間 Time</span></div>'+
   '<div class="stat"><b data-k="hints">'+block.hints+'</b><span>用提示 Hints</span></div>'+
-  '</div><p class="hint">數學 '+block.math+' 題 · 中文 '+block.zh+' 題。每題最多計 300 秒。</p>';
+  '</div><p class="hint">數學 '+block.math+' 題 · 中文 '+block.zh+' 題 · 常識 '+block.gs+' 題。每題最多計 300 秒。</p>';
 }
 function bars(list,empty){
  if(!list.length)return '<p>'+empty+'</p>';
@@ -653,6 +707,9 @@ function render(){
     return '<div class="word" data-word="'+esc(w.word)+'"><div><b>'+esc(w.word)+'</b><div class="hint">'+(un?esc(un.name)+' ': '')+(w.meaning?esc(w.meaning):'')+'<br>她寫過：'+esc(w.typed.join('、')||'—')+'</div></div><div>錯過 '+w.misses+' 次</div></div>';
    }).join(''):'<p>暫時未有錯過的中文詞。</p>')+
    '</div></div>'+
+  '<div class="card" id="gs"><h2>常識 General Studies</h2>'+bars(view.gsUnits,'')+
+   '<h3>最常錯嘅小課題</h3>'+(view.gsWeak.length?'<ul class="hint">'+view.gsWeak.slice(0,6).map(w=>'<li>'+esc(w.name)+' · 錯 '+w.misses+' 次</li>').join('')+'</ul>':'<p>暫時未有錯過的常識題。</p>')+
+   '</div>'+
   '<div class="card" id="chart"><h2>最近 14 日</h2>'+chartSvg(view.days)+
    '<div class="legend"><span><i class="sw ok"></i>答對</span><span><i class="sw no"></i>答錯</span></div>'+
    '<p class="hint">柱愈高，當日做得愈多。日期係香港時間。</p></div>'+
@@ -850,6 +907,8 @@ function demoRows(now){
   row(3600000,{session_id:'zh1',mode:'u2',question_id:'zh-u2-10-q3',category:'zh-u2',difficulty:'fill',correct:false,hint_used:true,time_sec:30,answer_given:'偶然'}),
   row(3500000,{session_id:'zh1',mode:'u2',question_id:'zh-u2-10-q1',category:'zh-u2',difficulty:'fill',correct:false,time_sec:18,answer_given:'突然'}),
   row(3400000,{session_id:'zh1',mode:'u2',question_id:'zh-u2-07-q1',category:'zh-u2',difficulty:'fill',correct:'TRUE',time_sec:400,answer_given:'風範'}),
+  row(7200000,{session_id:'gs1',mode:'quick10',question_id:'gs-L1b-03',category:'常識-L1 最後的皇朝',difficulty:'easy',correct:false,time_sec:14,answer_given:'B'}),
+  row(7100000,{session_id:'gs1',mode:'quick10',question_id:'gs-L4c-01',category:'常識-L4 中國近年的發展',difficulty:'easy',correct:true,hint_used:true,time_sec:22,answer_given:'世貿'}),
   row(86400000,{session_id:'old1',mode:'quick10',question_id:'B15a',category:'Line graph',difficulty:'easy',correct:false,time_sec:40,answer_given:'mon tue'}),
   row(10*86400000,{session_id:'old2',mode:'practice',question_id:'T17-01',category:'Line graph',difficulty:'easy',correct:false,time_sec:10,answer_given:'5'})
  ];
@@ -881,6 +940,7 @@ function indexQuestions(){
  (typeof CLASSIC_Q!=='undefined'?CLASSIC_Q:[]).forEach(q=>{BY_ID[q.id]={kind:'classic',q};});
  (BANK.questions||[]).forEach(raw=>{BY_ID[raw.id]={kind:'bank',raw};});
  (ZH.questions||[]).forEach(q=>{BY_ID[q.id]={kind:'zh',q};});
+ (GS.questions||[]).forEach(q=>{BY_ID['gs-'+q.id]={kind:'gs',q};});
 }
 async function loadQuestions(){
  try{
@@ -893,6 +953,18 @@ async function loadQuestions(){
   const end=from<0?-1:zhText.indexOf('<'+'/script>',from);
   if(from<0||end<0)throw new Error('zh-data');
   ZH=JSON.parse(zhText.slice(from,end));
+ }catch(e){
+  qNote='有部分題目檔未載入，錯題可能只顯示題號。';
+ }
+ try{
+  const gsRes=await fetch('gs.html');
+  if(!gsRes.ok)throw new Error('gs');
+  const gsText=await gsRes.text();
+  const open=gsText.indexOf('id="gs-data">');
+  const from=open<0?-1:gsText.indexOf('>',open)+1;
+  const end=from<0?-1:gsText.indexOf('<'+'/script>',from);
+  if(from<0||end<0)throw new Error('gs-data');
+  GS=JSON.parse(gsText.slice(from,end));
  }catch(e){
   qNote='有部分題目檔未載入，錯題可能只顯示題號。';
  }
@@ -914,6 +986,7 @@ async function boot(){
  await loadQuestions();
  window.__p6.ready=true;
  window.__p6.zhCount=(ZH.questions||[]).length;
+ window.__p6.gsCount=(GS.questions||[]).length;
  window.__p6.bankCount=(BANK.questions||[]).length;
  window.__p6.classicCount=(typeof CLASSIC_Q!=='undefined'?CLASSIC_Q.length:0);
  if(DEMO){
