@@ -482,7 +482,7 @@ function home(){
  const due=dueIds().length;
  const timedLeft=run&&run.mode==='timed'&&!run.done?run.limitMs-(Date.now()-run.startedAt):0;
  app.innerHTML=`<div class="card"><div class="big">🧮</div><h2 style="text-align:center;color:#d6336c;margin:.1em 0">Hi Ansbie!</h2><p class="pick">${Q.length} questions. Pick a difficulty and one or more types.<br>Take your time — you can do it! 💪</p>
- <div class="chips"><a class="chip all" href="./chinese.html"><b>Chinese 中文</b><small>詞語小測驗</small></a><a class="chip all" href="./gs.html"><b>常識 General Studies</b><small>最後的皇朝 · 中國近年的發展</small></a></div>
+ <div class="chips"><a class="chip all" href="./chinese.html"><b>Chinese 中文</b><small>詞語小測驗</small></a><a class="chip all" href="./gs.html"><b>常識 General Studies</b><small>最後的皇朝 · 中國近年的發展</small></a><a class="chip all" href="./science.html"><b>🔬 Science</b><small>Unit 1 Biodiversity · classification · plants &amp; animals and environment</small></a></div>
  <p class="pick" id="dueLine"><b>${due}</b> question${due===1?'':'s'} due for review today</p>
  ${due?`<button class="btn" id="review" type="button">🔁 Review due (${due})</button>`:''}
  ${loadNote?`<p class="pick">${esc(loadNote)}</p>`:''}
